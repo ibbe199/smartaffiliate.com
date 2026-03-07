@@ -16,6 +16,19 @@
 
 <body>
 
+<!-- Navigation -->
+
+<nav class="nav">
+
+<a href="index.html">Home</a>
+<a href="chatgpt-review.html">ChatGPT</a>
+<a href="jasper-review.html">Jasper</a>
+<a href="best-ai-writing-tools-2026.html">Top AI Tools</a>
+<a href="contact.html">Contact</a>
+
+</nav>
+
+
 <header class="hero">
 
 <h1>SmartAffiliate</h1>
