@@ -6,6 +6,27 @@ color:#333;
 line-height:1.7;
 }
 
+/* Navigation */
+
+.nav{
+background:#111;
+padding:12px;
+text-align:center;
+}
+
+.nav a{
+color:white;
+margin:0 12px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.nav a:hover{
+text-decoration:underline;
+}
+
+/* Hero Section */
+
 .hero{
 text-align:center;
 padding:60px 20px;
@@ -13,16 +34,27 @@ background:#111;
 color:white;
 }
 
+/* Main Content */
+
 .container{
 max-width:900px;
 margin:auto;
-padding:20px;
+padding:25px;
 background:white;
 }
 
-h1,h2{
-color:#111;
+/* Headings */
+
+h1{
+color:white;
 }
+
+h2{
+color:#111;
+margin-top:30px;
+}
+
+/* Button */
 
 .btn{
 display:inline-block;
@@ -34,6 +66,22 @@ border-radius:40px;
 font-weight:bold;
 margin-top:15px;
 }
+
+.btn:hover{
+background:#218838;
+}
+
+/* Lists */
+
+ul{
+padding-left:20px;
+}
+
+li{
+margin-bottom:10px;
+}
+
+/* Tables */
 
 table{
 width:100%;
@@ -47,10 +95,22 @@ padding:10px;
 text-align:left;
 }
 
+/* Footer */
+
 footer{
 background:#111;
 color:#ccc;
 text-align:center;
 padding:30px;
 margin-top:40px;
+}
+
+footer a{
+color:#ccc;
+text-decoration:none;
+margin:0 8px;
+}
+
+footer a:hover{
+text-decoration:underline;
 }
