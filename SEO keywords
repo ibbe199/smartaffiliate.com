@@ -1,18 +1,21 @@
-best-ai-writing-tools-2026
-chatgpt-vs-jasper
-jasper-review
-chatgpt-review
-best-ai-tools-for-bloggers
-ai-tools-for-affiliate-marketing
-how-to-use-ai-for-seo
-best-ai-tools-for-content-writing
-jasper-pricing
-copy-ai-review
-<footer>
-<p>© 2024 AI Tools Review</p>
-
-<a href="privacy.html">Privacy Policy</a> |
-<a href="disclosure.html">Affiliate Disclosure</a> |
-<a href="contact.html">Contact</a>
-
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2026 <strong>SmartAffiliate</strong>. All rights reserved.</p>
+                <p class="tagline">Your Guide to the Best AI Marketing Tools.</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="disclosure.html">Affiliate Disclosure</a>
+            </div>
+        </div>
+        
+        <div class="disclosure-box">
+            <p><strong>Affiliate Disclosure:</strong> SmartAffiliate is a review site that receives compensation from the companies whose products we review. We test each product thoroughly and give high marks to only the very best.</p>
+        </div>
+    </div>
 </footer>
