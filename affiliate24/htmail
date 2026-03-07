@@ -1,49 +1,185 @@
-<ul>
+/* الألوان والخطوط الأساسية لعام 2026 */
+:root {
+    --primary-color: #2563eb; /* أزرق ذكي */
+    --secondary-color: #0f172a; /* كحلي غامق */
+    --accent-color: #10b981; /* أخضر للنجاح والروابط */
+    --text-main: #334155;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+}
 
-<li>
-<a href="chatgpt-review.html">ChatGPT Review</a>
-</li>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<li>
-<a href="jasper-review.html">Jasper AI Review</a>
-</li>
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: var(--bg-light);
+}
 
-<li>
-<a href="copy-ai-review.html">Copy AI Review</a>
-</li>
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-<li>
-<a href="jasper-pricing.html">Jasper Pricing</a>
-</li>
+/* الهيدر والقائمة */
+.main-header {
+    background: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-<li>
-<a href="best-ai-writing-tools-2026.html">Best AI Writing Tools</a>
-</li>
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-<li>
-<a href="chatgpt-vs-jasper.html">ChatGPT vs Jasper</a>
-</li>
+.logo h1 {
+    font-size: 24px;
+    color: var(--secondary-color);
+}
 
-</ul>
+.logo span {
+    color: var(--primary-color);
+}
 
-smartaffiliate.com
+.nav-links {
+    display: flex;
+    list-style: none;
+}
 
-index.html
-chatgpt-review.html
-jasper-review.html
-jasper-pricing.html
-copy-ai-review.html
+.nav-links li {
+    margin-left: 20px;
+}
 
-best-ai-writing-tools-2026.html
-chatgpt-vs-jasper.html
-best-ai-tools-for-bloggers.html
-ai-tools-for-affiliate-marketing.html
-how-to-use-ai-for-seo.html
-best-ai-tools-for-content-writing.html
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: 0.3s;
+}
 
-about.html
-contact.html
-privacy.html
-disclosure.html
+.nav-links a:hover {
+    color: var(--primary-color);
+}
 
-style.css
+/* قسم الـ Hero */
+.hero-section {
+    text-align: center;
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-radius: 20px;
+    margin: 40px 0;
+}
+
+.hero-section h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+/* شبكة الكروت */
+.section-title {
+    margin-bottom: 30px;
+    font-size: 28px;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+.cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* قائمة الأدلة (Guides) */
+.guides-list {
+    list-style: none;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.guides-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.guides-list li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* الفوتر */
+footer {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+/* الموبايل */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+    }
+    .nav-links {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-links li {
+        margin: 5px 10px;
+    }
+}
