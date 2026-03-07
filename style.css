@@ -1,119 +1,167 @@
-body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#f6f7fb;
-color:#333;
-line-height:1.7;
+/* الأساسيات */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif; /* خطوط أوضح للقراءة */
+    margin: 0;
+    background: #f6f7fb;
+    color: #333;
+    line-height: 1.7;
 }
 
-/* Navigation */
-
-nav{
-background:#111;
-padding:10px;
-text-align:center;
+/* القائمة العلوية - Navigation */
+nav {
+    background: #111;
+    padding: 15px;
+    text-align: center;
+    position: sticky; /* جعل القائمة تتبع المستخدم أثناء التمرير */
+    top: 0;
+    z-index: 1000;
 }
 
-nav a{
-color:white;
-margin:10px;
-text-decoration:none;
-font-weight:bold;
+nav a {
+    color: white;
+    margin: 0 15px; /* تباعد أفضل */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: color 0.3s;
 }
 
-.card{
-background:#f4f4f4;
-padding:20px;
-margin:20px 0;
-border-radius:8px;
+nav a:hover {
+    color: #28a745; /* تغيير اللون عند التمرير */
 }
 
-/* Hero Section */
-
-.hero{
-text-align:center;
-padding:60px 20px;
-background:#111;
-color:white;
+/* قسم الـ Hero */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: #111;
+    color: white;
 }
 
-/* Main Content */
-
-.container{
-max-width:900px;
-margin:auto;
-padding:25px;
-background:white;
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-/* Headings */
-
-h1{
-color:white;
+.hero p {
+    font-size: 1.1rem;
+    color: #ccc;
 }
 
-h2{
-color:#111;
-margin-top:30px;
+/* الحاوية الرئيسية */
+.container {
+    max-width: 900px;
+    margin: 40px auto; /* تباعد عمودي متوازن */
+    padding: 30px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* ظل خفيف لإعطاء عمق */
+    border-radius: 12px;
 }
 
-/* Button */
-
-.btn{
-display:inline-block;
-padding:14px 28px;
-background:#28a745;
-color:white;
-text-decoration:none;
-border-radius:40px;
-font-weight:bold;
-margin-top:15px;
+/* الكروت - Cards */
+.card {
+    background: #f9f9f9;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.btn:hover{
-background:#218838;
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
 }
 
-/* Lists */
-
-ul{
-padding-left:20px;
+/* العناوين */
+h2 {
+    color: #111;
+    margin-top: 35px;
+    border-bottom: 2px solid #28a745;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
-li{
-margin-bottom:10px;
+/* الأزرار */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #28a745;
+    color: white !important; /* لضمان عدم تغير اللون في الروابط */
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background 0.3s, transform 0.2s;
 }
 
-/* Tables */
-
-table{
-width:100%;
-border-collapse:collapse;
-margin:20px 0;
+.btn:hover {
+    background: #218838;
+    transform: scale(1.05);
 }
 
-td,th{
-border-bottom:1px solid #eee;
-padding:10px;
-text-align:left;
+/* الجداول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 16px;
 }
 
-/* Footer */
-
-footer{
-background:#111;
-color:#ccc;
-text-align:center;
-padding:30px;
-margin-top:40px;
+th {
+    background: #f8f9fa;
+    font-weight: bold;
 }
 
-footer a{
-color:#ccc;
-text-decoration:none;
-margin:0 8px;
+td, th {
+    border-bottom: 1px solid #eee;
+    padding: 15px;
+    text-align: left;
 }
 
-footer a:hover{
-text-decoration:underline;
+/* القوائم */
+ul {
+    padding-left: 20px;
+    list-style-type: '✔ '; /* شكل أيقونة جذاب للقوائم */
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+/* الفوتر - Footer */
+footer {
+    background: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+footer a {
+    color: #999;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* توافق الشاشات الصغيرة (Mobile Friendly) */
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
 }
