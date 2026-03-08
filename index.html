@@ -105,17 +105,22 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
-/* CARD */
+/* PRODUCT CARD */
 
-.card{
+.product-card{
 background:white;
 padding:20px;
-border-radius:10px;
+border-radius:12px;
 box-shadow:0 6px 20px rgba(0,0,0,0.08);
 text-align:center;
+transition:0.3s;
 }
 
-.card img{
+.product-card:hover{
+transform:translateY(-5px);
+}
+
+.product-card img{
 width:100%;
 height:200px;
 object-fit:cover;
@@ -123,16 +128,35 @@ border-radius:8px;
 margin-bottom:10px;
 }
 
-.card h3{
+.product-card h3{
 margin-bottom:10px;
 }
 
-.card p{
-font-size:14px;
-margin-bottom:15px;
+.rating{
+color:#ffb703;
+font-size:15px;
+margin-bottom:5px;
 }
 
-.card a{
+.price{
+font-size:22px;
+font-weight:700;
+color:#e63946;
+margin-bottom:6px;
+}
+
+.prime{
+background:#00a8e1;
+color:white;
+font-size:12px;
+padding:4px 8px;
+border-radius:5px;
+display:inline-block;
+margin-bottom:10px;
+}
+
+.buy-btn{
+display:inline-block;
 background:#0077ff;
 color:white;
 padding:10px 16px;
@@ -164,11 +188,8 @@ margin-top:50px;
 <div class="logo">Smart<span>Affiliate</span></div>
 
 <ul class="nav-links">
-
 <li><a href="#">Home</a></li>
-<li><a href="#tools">AI Tools</a></li>
 <li><a href="#products">Products</a></li>
-
 </ul>
 
 </div>
@@ -177,45 +198,22 @@ margin-top:50px;
 
 <section class="hero">
 
-<h1>Discover The Best AI Tools & Tech Products</h1>
+<h1>Best Tech Products 2026</h1>
 
-<p>Find powerful AI tools and top tech products in one place.</p>
+<p>Discover the best tech products with reviews and Amazon deals.</p>
 
 <a href="#products">Explore Products</a>
 
 </section>
 
-<!-- AI TOOLS -->
+<section class="container" id="products">
 
-<section class="container" id="tools">
-
-<h2 style="margin-bottom:30px;">Popular AI Tools</h2>
+<h2 style="margin-bottom:30px;">Top Amazon Products</h2>
 
 <div class="grid">
 
-<div class="card">
-<h3>ChatGPT</h3>
-<p>AI assistant for writing, coding and research.</p>
-<a href="https://chat.openai.com" target="_blank">Visit Tool</a>
-</div>
+<!-- PRODUCT -->
 
-<div class="card">
-<h3>Canva</h3>
-<p>Create amazing graphics and designs with AI.</p>
-<a href="https://www.canva.com" target="_blank">Visit Tool</a>
-</div>
-
-<div class="card">
-<h3>Notion AI</h3>
-<p>Smart workspace and productivity tool.</p>
-<a href="https://www.notion.so" target="_blank">Visit Tool</a>
-</div>
-
-<div class="card">
-<h3>Grammarly</h3>
-<p>AI writing assistant for grammar and clarity.</p>
-<a href="https://www.grammarly.com" target="_blank">Visit Tool</a>
-</div>
 <div class="product-card">
 
 <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg">
@@ -223,7 +221,7 @@ margin-top:50px;
 <h3>Sony WH-1000XM5 Headphones</h3>
 
 <div class="rating">
-⭐⭐⭐⭐⭐ <span>(4.7 / 5)</span>
+⭐⭐⭐⭐⭐ (4.7)
 </div>
 
 <div class="price">
@@ -239,69 +237,80 @@ Buy on Amazon
 </a>
 
 </div>
-</div>
 
-</section>
+<!-- PRODUCT -->
 
-<!-- AMAZON PRODUCTS -->
-
-<section class="container" id="products">
-
-<h2 style="margin-bottom:30px;">Best Tech Products 2026</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg">
-
-<h3>Sony WH-1000XM5 Headphones</h3>
-
-<p>Premium wireless noise cancelling headphones.</p>
-
-<a href="https://www.amazon.com/dp/B09XS7JWHH?tag=YOURTAG-20" target="_blank">
-Buy on Amazon
-</a>
-
-</div>
-
-<div class="card">
+<div class="product-card">
 
 <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_SL1500_.jpg">
 
 <h3>Apple MacBook Air M2</h3>
 
-<p>Lightweight and powerful laptop for work.</p>
+<div class="rating">
+⭐⭐⭐⭐⭐ (4.8)
+</div>
 
-<a href="https://www.amazon.com/dp/B0B3C7WJ8F?tag=YOURTAG-20" target="_blank">
+<div class="price">
+$999
+</div>
+
+<div class="prime">
+Prime 🚚 Free Shipping
+</div>
+
+<a href="https://www.amazon.com/dp/B0B3C7WJ8F?tag=YOURTAG-20" target="_blank" class="buy-btn">
 Buy on Amazon
 </a>
 
 </div>
 
-<div class="card">
+<!-- PRODUCT -->
+
+<div class="product-card">
 
 <img src="https://m.media-amazon.com/images/I/71Swqqe7XAL._AC_SL1500_.jpg">
 
 <h3>Apple Watch Series</h3>
 
-<p>Track fitness, health and notifications.</p>
+<div class="rating">
+⭐⭐⭐⭐⭐ (4.6)
+</div>
 
-<a href="https://www.amazon.com/dp/B0BDHWDR12?tag=YOURTAG-20" target="_blank">
+<div class="price">
+$429
+</div>
+
+<div class="prime">
+Prime 🚚 Free Shipping
+</div>
+
+<a href="https://www.amazon.com/dp/B0BDHWDR12?tag=YOURTAG-20" target="_blank" class="buy-btn">
 Buy on Amazon
 </a>
 
 </div>
 
-<div class="card">
+<!-- PRODUCT -->
+
+<div class="product-card">
 
 <img src="https://m.media-amazon.com/images/I/71xb2xkN5qL._AC_SL1500_.jpg">
 
 <h3>Samsung Galaxy Smartphone</h3>
 
-<p>Powerful smartphone with amazing camera.</p>
+<div class="rating">
+⭐⭐⭐⭐⭐ (4.5)
+</div>
 
-<a href="https://www.amazon.com/dp/B0BQXHK363?tag=YOURTAG-20" target="_blank">
+<div class="price">
+$899
+</div>
+
+<div class="prime">
+Prime 🚚 Free Shipping
+</div>
+
+<a href="https://www.amazon.com/dp/B0BQXHK363?tag=YOURTAG-20" target="_blank" class="buy-btn">
 Buy on Amazon
 </a>
 
