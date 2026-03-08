@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Best Amazon Products 2026</title>
+<style>
+body{
+font-family: Arial;
+margin:40px;
+background:#f5f5f5;
+}
+
+.product{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.product img{
+width:200px;
+}
+
+.buy-btn{
+display:inline-block;
+padding:10px 20px;
+background:#ff9900;
+color:white;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Best Amazon Products 2026</h1>
+
+<div class="product">
+<h2>Sony WH-1000XM5 Headphones</h2>
+
+<img src="product-image.jpg">
+
+<p>
+High quality noise cancelling headphones with excellent sound.
+Perfect for travel and work.
+</p>
+
+<a class="buy-btn" href="YOUR_AFFILIATE_LINK">
+Buy on Amazon
+</a>
+
+</div>
+
+
+<div class="product">
+
+<h2>JBL Tune 760NC Headphones</h2>
+
+<img src="product-image.jpg">
+
+<p>
+Affordable wireless headphones with strong bass and long battery life.
+</p>
+
+<a class="buy-btn" href="YOUR_AFFILIATE_LINK">
+Buy on Amazon
+</a>
+
+</div>
+
+
+<div class="product">
+
+<h2>Logitech MX Master Mouse</h2>
+
+<img src="product-image.jpg">
+
+<p>
+One of the best productivity mice for work and design.
+</p>
+
+<a class="buy-btn" href="YOUR_AFFILIATE_LINK">
+Buy on Amazon
+</a>
+
+</div>
+
+</body>
+</html>
