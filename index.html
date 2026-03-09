@@ -1,11 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmartAffiliate - Product Reviews</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f5f6fa;
+}
+
+nav{
+background:white;
+padding:20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+display:flex;
+justify-content:space-between;
+}
+
+.logo{
+font-size:20px;
+font-weight:bold;
+color:#0052cc;
+}
+
+.hero{
+background:linear-gradient(135deg,#0052cc,#003a99);
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.section{
+max-width:1200px;
+margin:auto;
+padding:50px 20px;
+}
+
+.filters{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:30px;
+}
+
+.filters input,
+.filters select{
+padding:10px;
+border-radius:6px;
+border:1px solid #ddd;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+padding:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card-header{
+font-size:40px;
+text-align:center;
+}
+
+.price{
+background:#0052cc;
+color:white;
+padding:4px 10px;
+border-radius:20px;
+font-size:12px;
+display:inline-block;
+margin-bottom:10px;
+}
+
+.rating{
+color:#ffc107;
+}
+
+.btn{
+display:block;
+margin-top:15px;
+background:#0052cc;
+color:white;
+text-align:center;
+padding:10px;
+border-radius:6px;
+text-decoration:none;
+}
+
+footer{
+background:#111;
+color:#aaa;
+text-align:center;
+padding:30px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<div class="logo">⚡ SmartAffiliate</div>
+</nav>
+
+<section class="hero">
+<h1>SmartAffiliate</h1>
+<p>Expert reviews, honest comparisons, smart choices</p>
+</section>
+
+<section class="section">
+
+<h2>Latest Product Reviews</h2>
+
+<div class="filters">
+
+<input type="text" id="searchInput" placeholder="Search products">
+
+<select id="categoryFilter">
+<option value="all">All Categories</option>
+<option value="audio">Audio</option>
+<option value="electronics">Electronics</option>
+<option value="accessories">Accessories</option>
+</select>
+
+<select id="priceFilter">
+<option value="all">All Prices</option>
+<option value="100">Under $100</option>
+<option value="300">Under $300</option>
+<option value="1000">Under $1000</option>
+</select>
+
+</div>
+
 <div class="grid">
 
 <div class="card product" data-category="audio" data-price="199">
 <div class="card-header">🎧</div>
 <span class="price">$199</span>
-<h3 class="card-title">Wireless Earbuds Pro</h3>
+<h3 class="card-title">Wireless Earbuds</h3>
 <div class="rating">★★★★★</div>
-<p>Excellent sound quality with noise cancellation.</p>
+<p>Premium sound with noise cancellation.</p>
 <a href="https://amzn.to/4lh1nZr" class="btn">Buy Now</a>
 </div>
 
@@ -14,16 +167,16 @@
 <span class="price">$299</span>
 <h3 class="card-title">Smartwatch Elite</h3>
 <div class="rating">★★★★☆</div>
-<p>Advanced health tracking and long battery life.</p>
+<p>Advanced health tracking features.</p>
 <a href="https://amzn.to/4d7byxw" class="btn">Check Price</a>
 </div>
 
 <div class="card product" data-category="electronics" data-price="249">
 <div class="card-header">💻</div>
 <span class="price">$249</span>
-<h3 class="card-title">Portable SSD 1TB</h3>
+<h3 class="card-title">Portable SSD</h3>
 <div class="rating">★★★★★</div>
-<p>Ultra fast storage for professionals.</p>
+<p>High speed portable storage.</p>
 <a href="https://amzn.to/40T35qo" class="btn">View Deal</a>
 </div>
 
@@ -32,7 +185,7 @@
 <span class="price">$349</span>
 <h3 class="card-title">Over Ear Headphones</h3>
 <div class="rating">★★★★★</div>
-<p>Studio quality sound and premium comfort.</p>
+<p>Studio sound quality.</p>
 <a href="https://amzn.to/4ud1BoF" class="btn">Buy Now</a>
 </div>
 
@@ -41,25 +194,25 @@
 <span class="price">$129</span>
 <h3 class="card-title">Bluetooth Speaker</h3>
 <div class="rating">★★★★☆</div>
-<p>Portable speaker with deep bass.</p>
+<p>Portable powerful sound.</p>
 <a href="https://amzn.to/40SpLXM" class="btn">View Deal</a>
 </div>
 
 <div class="card product" data-category="electronics" data-price="799">
 <div class="card-header">📷</div>
 <span class="price">$799</span>
-<h3 class="card-title">4K Webcam Ultra</h3>
+<h3 class="card-title">4K Webcam</h3>
 <div class="rating">★★★★★</div>
-<p>Perfect for streaming and video meetings.</p>
+<p>Ultra HD webcam for streaming.</p>
 <a href="https://amzn.to/3Nc6Tjs" class="btn">Check Price</a>
 </div>
 
 <div class="card product" data-category="accessories" data-price="49">
 <div class="card-header">🔋</div>
 <span class="price">$49</span>
-<h3 class="card-title">Power Bank 20000mAh</h3>
+<h3 class="card-title">Power Bank</h3>
 <div class="rating">★★★★★</div>
-<p>Fast charging portable battery.</p>
+<p>Portable fast charging battery.</p>
 <a href="https://amzn.to/46M2FFY" class="btn">Buy Now</a>
 </div>
 
@@ -68,7 +221,7 @@
 <span class="price">$159</span>
 <h3 class="card-title">Smart Home Hub</h3>
 <div class="rating">★★★★☆</div>
-<p>Control all smart devices in one place.</p>
+<p>Control your smart home devices.</p>
 <a href="https://amzn.to/47kGcQm" class="btn">View Deal</a>
 </div>
 
@@ -77,14 +230,14 @@
 <span class="price">$39</span>
 <h3 class="card-title">Gaming Controller</h3>
 <div class="rating">★★★★☆</div>
-<p>Wireless controller with high precision.</p>
+<p>Wireless controller with precision.</p>
 <a href="https://amzn.to/4renAZn" class="btn">Check Price</a>
 </div>
 
 <div class="card product" data-category="electronics" data-price="89">
 <div class="card-header">💡</div>
 <span class="price">$89</span>
-<h3 class="card-title">Smart LED Light Kit</h3>
+<h3 class="card-title">Smart LED Lights</h3>
 <div class="rating">★★★★★</div>
 <p>Voice controlled lighting system.</p>
 <a href="https://amzn.to/4lCvN8R" class="btn">Buy Now</a>
@@ -93,9 +246,9 @@
 <div class="card product" data-category="electronics" data-price="69">
 <div class="card-header">📶</div>
 <span class="price">$69</span>
-<h3 class="card-title">WiFi Range Extender</h3>
+<h3 class="card-title">WiFi Extender</h3>
 <div class="rating">★★★★☆</div>
-<p>Boost your home internet coverage.</p>
+<p>Boost home internet coverage.</p>
 <a href="https://amzn.to/3OQ0xa5" class="btn">View Deal</a>
 </div>
 
@@ -104,17 +257,64 @@
 <span class="price">$29</span>
 <h3 class="card-title">Wireless Keyboard</h3>
 <div class="rating">★★★★☆</div>
-<p>Compact keyboard with silent keys.</p>
+<p>Compact keyboard for work.</p>
 <a href="https://amzn.to/4bdAbWZ" class="btn">Check Price</a>
 </div>
 
 <div class="card product" data-category="accessories" data-price="19">
 <div class="card-header">📱</div>
 <span class="price">$19</span>
-<h3 class="card-title">Phone Stand Adjustable</h3>
+<h3 class="card-title">Phone Stand</h3>
 <div class="rating">★★★★★</div>
-<p>Perfect for desk and video watching.</p>
+<p>Adjustable stand for smartphones.</p>
 <a href="https://amzn.to/4cCQUp4" class="btn">Buy Now</a>
 </div>
 
 </div>
+
+</section>
+
+<footer>
+© 2026 SmartAffiliate — Affiliate links may earn us commission at no extra cost to you.
+</footer>
+
+<script>
+
+const searchInput=document.getElementById("searchInput");
+const categoryFilter=document.getElementById("categoryFilter");
+const priceFilter=document.getElementById("priceFilter");
+
+const products=document.querySelectorAll(".product");
+
+function filterProducts(){
+
+const search=searchInput.value.toLowerCase();
+const category=categoryFilter.value;
+const price=priceFilter.value;
+
+products.forEach(product=>{
+
+const name=product.querySelector(".card-title").textContent.toLowerCase();
+const productCategory=product.dataset.category;
+const productPrice=parseInt(product.dataset.price);
+
+let show=true;
+
+if(!name.includes(search)) show=false;
+if(category!=="all" && category!==productCategory) show=false;
+if(price!=="all" && productPrice>price) show=false;
+
+product.style.display=show?"block":"none";
+
+});
+
+}
+
+searchInput.addEventListener("input",filterProducts);
+categoryFilter.addEventListener("change",filterProducts);
+priceFilter.addEventListener("change",filterProducts);
+
+</script>
+
+</body>
+</html>
