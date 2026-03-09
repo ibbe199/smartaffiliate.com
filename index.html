@@ -1,683 +1,198 @@
-<!doctype html>
-<html lang="en" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Affiliate Review Hub - Best Product Reviews &amp; Comparisons</title>
-  <meta name="description" content="Read in-depth product reviews and comparisons from experts. Find the best products for your needs with honest reviews and detailed comparisons.">
-  <meta name="keywords" content="product reviews, product comparisons, affiliate reviews, tech reviews, best products">
-  <meta name="author" content="Affiliate Review Hub">
-  <meta property="og:title" content="Affiliate Review Hub">
-  <meta property="og:description" content="Ärliga produktrecensioner och jämförelser">
-  <meta property="og:type" content="website">
-  <script src="/_sdk/element_sdk.js"></script>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    html, body {
-      height: 100%;
-      background: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    }
+<title>Product Finder - Affiliate Reviews</title>
 
-    .app-wrapper {
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-      width: 100%;
-    }
+<style>
 
-    /* Modern gradient background */
-    .hero-section {
-      background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
-      color: white;
-      padding: 60px 20px;
-    }
+body{
+font-family:Arial, sans-serif;
+background:#f5f6fa;
+margin:0;
+padding:0;
+}
 
-    .hero-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
 
-    .hero-section h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
+h1{
+text-align:center;
+margin-bottom:30px;
+}
 
-    .hero-section p {
-      font-size: 1.125rem;
-      opacity: 0.95;
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
+.filters{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:30px;
+}
 
-    .cta-button {
-      display: inline-block;
-      background: #ff6b6b;
-      color: white;
-      padding: 14px 32px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
+.filters input,
+.filters select{
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+}
 
-    .cta-button:hover {
-      background: #ff5252;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
-    }
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
 
-    /* Navigation */
-    nav {
-      background: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+.card{
+background:white;
+border-radius:10px;
+padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+}
 
-    .nav-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 70px;
-    }
+.card:hover{
+transform:translateY(-6px);
+}
 
-    .nav-logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #0066cc;
-      text-decoration: none;
-    }
+.card h3{
+margin-top:10px;
+}
 
-    .nav-menu {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
+.price{
+color:#0066cc;
+font-weight:bold;
+margin:10px 0;
+}
 
-    .nav-menu a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      font-size: 0.95rem;
-    }
+.btn{
+display:block;
+background:#0066cc;
+color:white;
+text-decoration:none;
+padding:10px;
+text-align:center;
+border-radius:6px;
+margin-top:10px;
+}
 
-    .nav-menu a:hover,
-    .nav-menu a.active {
-      color: #0066cc;
-    }
+.rating{
+color:#ffc107;
+}
 
-    /* Content sections */
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
-      width: 100%;
-    }
+</style>
+</head>
 
-    .section h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 40px;
-      color: #333;
-    }
+<body>
 
-    .section h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: #333;
-    }
+<div class="container">
 
-    /* Grid layouts */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-bottom: 30px;
-    }
+<h1>Find The Best Products</h1>
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
+<div class="filters">
 
-    /* Cards */
-    .card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-      border: 1px solid #f0f0f0;
-    }
+<input type="text" id="search" placeholder="Search product...">
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-    }
+<select id="category">
+<option value="all">All Categories</option>
+<option value="electronics">Electronics</option>
+<option value="gaming">Gaming</option>
+<option value="audio">Audio</option>
+</select>
 
-    .card-header {
-      background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-    }
+<select id="price">
+<option value="all">All Prices</option>
+<option value="100">Under $100</option>
+<option value="300">Under $300</option>
+<option value="1000">Under $1000</option>
+</select>
 
-    .card-content {
-      padding: 24px;
-    }
+</div>
 
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: #333;
-    }
+<div class="products" id="products">
 
-    .card-text {
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 16px;
-      font-size: 0.95rem;
-    }
+<div class="card" data-category="audio" data-price="199">
+<h3>Wireless Earbuds</h3>
+<div class="rating">★★★★★</div>
+<p class="price">$199</p>
+<a href="#" class="btn">Check Price</a>
+</div>
 
-    .rating {
-      display: flex;
-      gap: 4px;
-      margin-bottom: 12px;
-    }
+<div class="card" data-category="electronics" data-price="799">
+<h3>4K Webcam</h3>
+<div class="rating">★★★★☆</div>
+<p class="price">$799</p>
+<a href="#" class="btn">Check Price</a>
+</div>
 
-    .star {
-      color: #ffc107;
-      font-size: 1.1rem;
-    }
+<div class="card" data-category="gaming" data-price="89">
+<h3>Gaming Mouse</h3>
+<div class="rating">★★★★★</div>
+<p class="price">$89</p>
+<a href="#" class="btn">Check Price</a>
+</div>
 
-    .price-badge {
-      display: inline-block;
-      background: #0066cc;
-      color: white;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
+<div class="card" data-category="electronics" data-price="299">
+<h3>Smartwatch</h3>
+<div class="rating">★★★★☆</div>
+<p class="price">$299</p>
+<a href="#" class="btn">Check Price</a>
+</div>
 
-    .affiliate-link {
-      display: inline-block;
-      background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
-      color: white;
-      padding: 10px 24px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      font-size: 0.95rem;
-      width: 100%;
-      text-align: center;
-    }
+<div class="card" data-category="audio" data-price="349">
+<h3>Noise Cancelling Headphones</h3>
+<div class="rating">★★★★★</div>
+<p class="price">$349</p>
+<a href="#" class="btn">Check Price</a>
+</div>
 
-    .affiliate-link:hover {
-      opacity: 0.9;
-      transform: scale(1.02);
-    }
+</div>
 
-    /* Category pills */
-    .category-pills {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
+</div>
 
-    .category-pill {
-      background: #f0f0f0;
-      color: #333;
-      padding: 10px 20px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-      font-weight: 500;
-    }
+<script>
 
-    .category-pill:hover,
-    .category-pill.active {
-      background: #0066cc;
-      color: white;
-      border-color: #0066cc;
-    }
+const searchInput=document.getElementById("search");
+const categoryFilter=document.getElementById("category");
+const priceFilter=document.getElementById("price");
 
-    /* Comparison table */
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    }
+const products=document.querySelectorAll(".card");
 
-    .comparison-table th {
-      background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
-      color: white;
-      padding: 16px;
-      text-align: left;
-      font-weight: 600;
-    }
+function filterProducts(){
 
-    .comparison-table td {
-      padding: 16px;
-      border-bottom: 1px solid #f0f0f0;
-      color: #666;
-    }
+const search=searchInput.value.toLowerCase();
+const category=categoryFilter.value;
+const price=priceFilter.value;
 
-    .comparison-table tr:last-child td {
-      border-bottom: none;
-    }
+products.forEach(product=>{
 
-    .checkmark {
-      color: #28a745;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
+const name=product.querySelector("h3").textContent.toLowerCase();
+const productCategory=product.dataset.category;
+const productPrice=parseInt(product.dataset.price);
 
-    .cross {
-      color: #dc3545;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
+let show=true;
 
-    /* Footer */
-    footer {
-      background: #1a1a2e;
-      color: #aaa;
-      padding: 40px 20px 20px;
-      text-align: center;
-      margin-top: auto;
-    }
+if(!name.includes(search)) show=false;
 
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+if(category!=="all" && category!==productCategory) show=false;
 
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
+if(price!=="all" && productPrice>price) show=false;
 
-    .footer-links a {
-      color: #aaa;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+product.style.display=show?"block":"none";
 
-    .footer-links a:hover {
-      color: #0066cc;
-    }
+});
 
-    .footer-text {
-      font-size: 0.9rem;
-      color: #777;
-    }
+}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-section h1 {
-        font-size: 2rem;
-      }
+searchInput.addEventListener("input",filterProducts);
+categoryFilter.addEventListener("change",filterProducts);
+priceFilter.addEventListener("change",filterProducts);
 
-      .hero-section p {
-        font-size: 1rem;
-      }
+</script>
 
-      .nav-menu {
-        gap: 15px;
-        font-size: 0.9rem;
-      }
-
-      .section h2 {
-        font-size: 1.5rem;
-      }
-
-      .grid-3, .grid-2 {
-        grid-template-columns: 1fr;
-      }
-
-      .comparison-table {
-        font-size: 0.9rem;
-      }
-
-      .comparison-table th, .comparison-table td {
-        padding: 12px;
-      }
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .section {
-      animation: fadeIn 0.6s ease-out;
-    }
-  </style>
-  <style>body { box-sizing: border-box; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body>
-  <div class="app-wrapper">
-   <!-- Navigation -->
-   <nav>
-    <div class="nav-content">
-     <a href="#home" class="nav-logo">🔍 ReviewHub</a>
-     <ul class="nav-menu">
-      <li><a href="#home" class="nav-link active">Home</a></li>
-      <li><a href="#reviews" class="nav-link">Reviews</a></li>
-      <li><a href="#best-products" class="nav-link">Best 2024</a></li>
-      <li><a href="#comparisons" class="nav-link">Comparisons</a></li>
-      <li><a href="#blog" class="nav-link">Blog</a></li>
-      <li><a href="#categories" class="nav-link">Categories</a></li>
-     </ul>
-    </div>
-   </nav><!-- Hero Section -->
-   <section id="home" class="hero-section">
-    <div class="hero-content">
-     <h1 id="hero-title">Affiliate Review Hub</h1>
-     <p id="hero-tagline">Honest product reviews and comparisons</p><a href="#reviews" class="cta-button" id="cta-text">View All Reviews</a>
-    </div>
-   </section><!-- Categories Section -->
-   <section id="categories" class="section" style="background: #f9f9f9;">
-    <h2>Categories</h2>
-    <div class="category-pills">
-     <div class="category-pill active" onclick="this.parentElement.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active')); this.classList.add('active');">
-      💻 Electronics
-     </div>
-     <div class="category-pill" onclick="this.parentElement.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active')); this.classList.add('active');">
-      🏠 Home &amp; Garden
-     </div>
-     <div class="category-pill" onclick="this.parentElement.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active')); this.classList.add('active');">
-      👜 Fashion &amp; Accessories
-     </div>
-     <div class="category-pill" onclick="this.parentElement.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active')); this.classList.add('active');">
-      💪 Sports &amp; Fitness
-     </div>
-     <div class="category-pill" onclick="this.parentElement.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active')); this.classList.add('active');">
-      🍳 Kitchen &amp; Cooking
-     </div>
-    </div>
-   </section><!-- Reviews Section -->
-   <section id="reviews" class="section">
-    <h2>Latest Product Reviews</h2>
-    <div class="grid-3">
-     <!-- Review 1 -->
-     <div class="card">
-      <div class="card-header">
-       📱
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$199</span>
-       <h3 class="card-title">Wireless Earbuds Pro</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Excellent sound quality with active noise cancellation. Perfect for daily use and travel.</p><a href="https://example.com/product1" target="_blank" rel="noopener noreferrer" class="affiliate-link">Buy Now</a>
-      </div>
-     </div><!-- Review 2 -->
-     <div class="card">
-      <div class="card-header">
-       ⌚
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$299</span>
-       <h3 class="card-title">Smartwatch Elite</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">☆</span>
-       </div>
-       <p class="card-text">Impressive fitness features with long battery life. A must for health-conscious users.</p><a href="https://example.com/product2" target="_blank" rel="noopener noreferrer" class="affiliate-link">Buy Now</a>
-      </div>
-     </div><!-- Review 3 -->
-     <div class="card">
-      <div class="card-header">
-       💻
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$249</span>
-       <h3 class="card-title">Portable SSD 1TB</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Super-fast data transfer with solid encryption. Compact design for travelers.</p><a href="https://example.com/product3" target="_blank" rel="noopener noreferrer" class="affiliate-link">Buy Now</a>
-      </div>
-     </div><!-- Review 4 -->
-     <div class="card">
-      <div class="card-header">
-       🎧
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$349</span>
-       <h3 class="card-title">Over-Ear Headphones Pro</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Professional studio-grade sound quality. Comfortable for extended listening sessions.</p><a href="https://example.com/product4" target="_blank" rel="noopener noreferrer" class="affiliate-link">Check Price</a>
-      </div>
-     </div><!-- Review 5 -->
-     <div class="card">
-      <div class="card-header">
-       📷
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$799</span>
-       <h3 class="card-title">4K Webcam Ultra</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">☆</span>
-       </div>
-       <p class="card-text">Crystal-clear 4K video for streaming and video calls. Wide-angle lens with auto-focus.</p><a href="https://example.com/product5" target="_blank" rel="noopener noreferrer" class="affiliate-link">View Deal</a>
-      </div>
-     </div><!-- Review 6 -->
-     <div class="card">
-      <div class="card-header">
-       🖱️
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$89</span>
-       <h3 class="card-title">Wireless Mouse Pro</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Precision tracking with ergonomic design. 24-month battery life on 2 AAA batteries.</p><a href="https://example.com/product6" target="_blank" rel="noopener noreferrer" class="affiliate-link">Buy Now</a>
-      </div>
-     </div>
-    </div>
-   </section><!-- Comparison Section -->
-   <section id="comparisons" class="section" style="background: #f9f9f9;">
-    <h2>Produktjämförelser</h2>
-    <h3>Trådlösa Hörlurars Jämförelse</h3>
-    <table class="comparison-table">
-     <thead>
-      <tr>
-       <th>Modell</th>
-       <th>Pris</th>
-       <th>Batteritid</th>
-       <th>ANC</th>
-       <th>IP-klassificering</th>
-       <th>Rekommendation</th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td><strong>Hörlurar Pro</strong></td>
-       <td>999 kr</td>
-       <td>30 timmar</td>
-       <td><span class="checkmark">✓</span></td>
-       <td>IPX4</td>
-       <td><span class="checkmark">✓ Bäst</span></td>
-      </tr>
-      <tr>
-       <td><strong>Budget Plus</strong></td>
-       <td>499 kr</td>
-       <td>20 timmar</td>
-       <td><span class="cross">✗</span></td>
-       <td>IPX2</td>
-       <td>God värde</td>
-      </tr>
-      <tr>
-       <td><strong>Premium Max</strong></td>
-       <td>1 799 kr</td>
-       <td>40 timmar</td>
-       <td><span class="checkmark">✓</span></td>
-       <td>IPX5</td>
-       <td>Mest premium</td>
-      </tr>
-     </tbody>
-    </table>
-   </section><!-- Blog Section -->
-   <section id="blog" class="section">
-    <h2>Blogg &amp; Guides</h2>
-    <div class="grid-2">
-     <div class="card">
-      <div class="card-header">
-       📝
-      </div>
-      <div class="card-content">
-       <h3 class="card-title">Guide: Hur välja rätt hörlurar</h3>
-       <p class="card-text">Läs vår omfattande guide för att förstå viktiga specifikationer och vad du bör leta efter.</p><a href="#" class="affiliate-link" style="background: #667eea;">Läs artikeln</a>
-      </div>
-     </div>
-     <div class="card">
-      <div class="card-header">
-       🔧
-      </div>
-      <div class="card-content">
-       <h3 class="card-title">Tips: Maximera batteriets livslängd</h3>
-       <p class="card-text">Praktiska tips för att få längre batteritid på dina elektroniska enheter.</p><a href="#" class="affiliate-link" style="background: #667eea;">Läs artikeln</a>
-      </div>
-     </div>
-     <div class="card">
-      <div class="card-header">
-       🏆
-      </div>
-      <div class="card-content">
-       <h3 class="card-title">Årets bästa produkter enligt experter</h3>
-       <p class="card-text">Upptäck vilka produkter som stått ut under året enligt vår granskningsprocess.</p><a href="#" class="affiliate-link" style="background: #667eea;">Läs artikeln</a>
-      </div>
-     </div>
-     <div class="card">
-      <div class="card-header">
-       💡
-      </div>
-      <div class="card-content">
-       <h3 class="card-title">Trend: Framtiden för smarta enheter</h3>
-       <p class="card-text">Vad kommer härnäst inom smart home och wearables? En djup analys.</p><a href="#" class="affiliate-link" style="background: #667eea;">Läs artikeln</a>
-      </div>
-     </div>
-    </div>
-   </section><!-- Footer -->
-   <footer>
-    <div class="footer-content">
-     <div class="footer-links">
-      <a href="#home">Hem</a> <a href="#reviews">Recenser</a> <a href="#comparisons">Jämförelser</a> <a href="#blog">Blogg</a> <a href="#">Kontakt</a> <a href="#">Integritetspolicy</a>
-     </div>
-     <p class="footer-text">© 2024 Affiliate Review Hub. Alla produktlänkar är affiliate-länkar. Vi tjänar en provision om du köper genom våra länkar utan extra kostnad för dig.</p>
-    </div>
-   </footer>
-  </div>
-  <script>
-    window.elementSdk.init({
-      defaultConfig: {
-        site_title: "Affiliate Review Hub",
-        tagline: "Ärliga produktrecensioner och jämförelser",
-        cta_button_text: "Se alla recenser"
-      },
-      onConfigChange: async (config) => {
-        const titleEl = document.getElementById('hero-title');
-        const taglineEl = document.getElementById('hero-tagline');
-        const ctaEl = document.getElementById('cta-text');
-
-        if (titleEl) titleEl.textContent = config.site_title || "Affiliate Review Hub";
-        if (taglineEl) taglineEl.textContent = config.tagline || "Ärliga produktrecensioner och jämförelser";
-        if (ctaEl) ctaEl.textContent = config.cta_button_text || "Se alla recenser";
-      },
-      mapToCapabilities: (config) => ({
-        recolorables: [],
-        borderables: [],
-        fontEditable: undefined,
-        fontSizeable: undefined
-      }),
-      mapToEditPanelValues: (config) => new Map([
-        ["site_title", config.site_title || "Affiliate Review Hub"],
-        ["tagline", config.tagline || "Ärliga produktrecensioner och jämförelser"],
-        ["cta_button_text", config.cta_button_text || "Se alla recenser"]
-      ])
-    });
-
-    // Smooth scrolling for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-          this.classList.add('active');
-        }
-      });
-    });
-
-    // Update active nav link on scroll
-    window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section[id]');
-      let current = '';
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d9a822a44439ade',t:'MTc3MzA2MzgwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
