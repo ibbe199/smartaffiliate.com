@@ -1,883 +1,280 @@
-<!doctype html>
-<html lang="en" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmartAffiliate - Best Product Reviews &amp; Comparisons</title>
-  <meta name="description" content="SmartAffiliate (smartafiliate.com) delivers honest product reviews and comparisons. Discover the best products for your needs with expert recommendations and detailed analysis.">
-  <meta name="keywords" content="product reviews, product comparisons, affiliate reviews, tech reviews, best products">
-  <meta name="author" content="SmartAffiliate">
-  <meta property="og:title" content="SmartAffiliate - Best Product Reviews">
-  <meta property="og:description" content="Expert reviews, honest comparisons, smart choices">
-  <meta property="og:type" content="website">
-  <script src="/_sdk/element_sdk.js"></script>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    html, body {
-      height: 100%;
-      background: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    }
+<title>SmartAffiliate - Product Reviews</title>
 
-    .app-wrapper {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      width: 100%;
-    }
+<style>
 
-    /* Modern gradient background */
-    .hero-section {
-      background: linear-gradient(135deg, #0052cc 0%, #003a99 100%);
-      color: white;
-      padding: 60px 20px;
-    }
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#f5f6fa;
+}
 
-    .hero-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+nav{
+background:white;
+padding:20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+display:flex;
+justify-content:space-between;
+}
 
-    .hero-section h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
+.logo{
+font-weight:bold;
+font-size:20px;
+color:#0052cc;
+}
 
-    .hero-section p {
-      font-size: 1.125rem;
-      opacity: 0.95;
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
+.section{
+max-width:1200px;
+margin:auto;
+padding:50px 20px;
+}
 
-    .cta-button {
-      display: inline-block;
-      background: #0066cc;
-      color: white;
-      padding: 14px 32px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
+.hero{
+background:linear-gradient(135deg,#0052cc,#003a99);
+color:white;
+text-align:center;
+padding:80px 20px;
+}
 
-    .cta-button:hover {
-      background: #0052a3;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
-    }
+.hero h1{
+font-size:40px;
+}
 
-    /* Navigation */
-    nav {
-      background: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+.filters{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:30px;
+}
 
-    .nav-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 70px;
-    }
+.filters input,
+.filters select{
+padding:10px;
+border-radius:6px;
+border:1px solid #ddd;
+}
 
-    .nav-logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #0052cc;
-      text-decoration: none;
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
 
-    .nav-menu {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
+.card{
+background:white;
+border-radius:10px;
+padding:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:.3s;
+}
 
-    .nav-menu a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      font-size: 0.95rem;
-    }
+.card:hover{
+transform:translateY(-5px);
+}
 
-    .nav-menu a:hover,
-    .nav-menu a.active {
-      color: #0052cc;
-    }
+.card-header{
+font-size:40px;
+text-align:center;
+}
 
-    /* Content sections */
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
-      width: 100%;
-    }
+.price{
+background:#0052cc;
+color:white;
+display:inline-block;
+padding:4px 10px;
+border-radius:20px;
+font-size:12px;
+margin-bottom:10px;
+}
 
-    .section h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 40px;
-      color: #1a1a1a;
-    }
+.rating{
+color:#ffc107;
+}
 
-    .section h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: #333;
-    }
+.btn{
+display:block;
+margin-top:15px;
+text-align:center;
+background:#0052cc;
+color:white;
+padding:10px;
+border-radius:6px;
+text-decoration:none;
+}
 
-    /* Grid layouts */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-bottom: 30px;
-    }
+footer{
+background:#111;
+color:#aaa;
+text-align:center;
+padding:30px;
+margin-top:40px;
+}
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
+</style>
 
-    /* Cards */
-    .card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-      border: 1px solid #f0f0f0;
-    }
+</head>
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-    }
+<body>
 
-    .card-header {
-      background: linear-gradient(135deg, #0052cc 0%, #003a99 100%);
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-    }
+<nav>
+<div class="logo">⚡ SmartAffiliate</div>
+</nav>
 
-    .card-content {
-      padding: 24px;
-    }
+<section class="hero">
+<h1>SmartAffiliate</h1>
+<p>Expert reviews, honest comparisons, smart choices</p>
+</section>
 
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: #1a1a1a;
-    }
+<section class="section">
 
-    .card-text {
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 16px;
-      font-size: 0.95rem;
-    }
+<h2>Latest Product Reviews</h2>
 
-    .rating {
-      display: flex;
-      gap: 4px;
-      margin-bottom: 12px;
-    }
+<div class="filters">
 
-    .star {
-      color: #ffc107;
-      font-size: 1.1rem;
-    }
+<input type="text" id="searchInput" placeholder="Search products">
 
-    .price-badge {
-      display: inline-block;
-      background: #0052cc;
-      color: white;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
+<select id="categoryFilter">
+<option value="all">All Categories</option>
+<option value="audio">Audio</option>
+<option value="electronics">Electronics</option>
+<option value="accessories">Accessories</option>
+</select>
 
-    .best-badge {
-      display: inline-block;
-      background: #ffc107;
-      color: #1a1a1a;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
+<select id="priceFilter">
+<option value="all">All Prices</option>
+<option value="100">Under $100</option>
+<option value="300">Under $300</option>
+<option value="1000">Under $1000</option>
+</select>
 
-    .affiliate-link {
-      display: inline-block;
-      background: linear-gradient(135deg, #0052cc 0%, #003a99 100%);
-      color: white;
-      padding: 10px 24px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      font-size: 0.95rem;
-      width: 100%;
-      text-align: center;
-    }
+</div>
 
-    .affiliate-link:hover {
-      opacity: 0.9;
-      transform: scale(1.02);
-    }
+<div class="grid">
 
-    /* Category pills */
-    .category-pills {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
+<div class="card product" data-category="audio" data-price="199">
+<div class="card-header">🎧</div>
+<span class="price">$199</span>
+<h3 class="card-title">Wireless Earbuds Pro</h3>
+<div class="rating">★★★★★</div>
+<p>Excellent sound quality with noise cancellation.</p>
+<a href="https://amzn.to/4lh1nZr" class="btn">Buy Now</a>
+</div>
 
-    .category-pill {
-      background: #f0f0f0;
-      color: #333;
-      padding: 10px 20px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-      font-weight: 500;
-    }
+<div class="card product" data-category="electronics" data-price="299">
+<div class="card-header">⌚</div>
+<span class="price">$299</span>
+<h3 class="card-title">Smartwatch Elite</h3>
+<div class="rating">★★★★☆</div>
+<p>Advanced health tracking and long battery life.</p>
+<a href="https://amzn.to/4d7byxw" class="btn">Check Price</a>
+</div>
 
-    .category-pill:hover,
-    .category-pill.active {
-      background: #0052cc;
-      color: white;
-      border-color: #0052cc;
-    }
+<div class="card product" data-category="electronics" data-price="249">
+<div class="card-header">💻</div>
+<span class="price">$249</span>
+<h3 class="card-title">Portable SSD 1TB</h3>
+<div class="rating">★★★★★</div>
+<p>Ultra fast storage for professionals.</p>
+<a href="https://amzn.to/40T35qo" class="btn">View Deal</a>
+</div>
 
-    /* Comparison table */
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    }
+<div class="card product" data-category="audio" data-price="349">
+<div class="card-header">🎵</div>
+<span class="price">$349</span>
+<h3 class="card-title">Over Ear Headphones</h3>
+<div class="rating">★★★★★</div>
+<p>Studio quality sound and premium comfort.</p>
+<a href="https://amzn.to/4ud1BoF" class="btn">Buy Now</a>
+</div>
 
-    .comparison-table th {
-      background: linear-gradient(135deg, #0052cc 0%, #003a99 100%);
-      color: white;
-      padding: 16px;
-      text-align: left;
-      font-weight: 600;
-    }
+<div class="card product" data-category="accessories" data-price="89">
+<div class="card-header">🖱️</div>
+<span class="price">$89</span>
+<h3 class="card-title">Wireless Mouse Pro</h3>
+<div class="rating">★★★★★</div>
+<p>Ergonomic design and long battery life.</p>
+<a href="https://amzn.to/4lh1nZr" class="btn">Buy Now</a>
+</div>
 
-    .comparison-table td {
-      padding: 16px;
-      border-bottom: 1px solid #f0f0f0;
-      color: #666;
-    }
+<div class="card product" data-category="electronics" data-price="79">
+<div class="card-header">🔌</div>
+<span class="price">$79</span>
+<h3 class="card-title">Fast USB-C Charger</h3>
+<div class="rating">★★★★★</div>
+<p>Fast charging for all devices.</p>
+<a href="https://amzn.to/4d7byxw" class="btn">View Deal</a>
+</div>
 
-    .comparison-table tr:last-child td {
-      border-bottom: none;
-    }
+<div class="card product" data-category="accessories" data-price="149">
+<div class="card-header">🎮</div>
+<span class="price">$149</span>
+<h3 class="card-title">Gaming Mouse Pad XL</h3>
+<div class="rating">★★★★☆</div>
+<p>Extra large surface for gamers.</p>
+<a href="https://amzn.to/40T35qo" class="btn">Check Price</a>
+</div>
 
-    .checkmark {
-      color: #28a745;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
+<div class="card product" data-category="accessories" data-price="35">
+<div class="card-header">📱</div>
+<span class="price">$35</span>
+<h3 class="card-title">Phone Screen Protector</h3>
+<div class="rating">★★★★★</div>
+<p>Tempered glass with full protection.</p>
+<a href="https://amzn.to/4ud1BoF" class="btn">Buy Now</a>
+</div>
 
-    .cross {
-      color: #dc3545;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
+</div>
 
-    /* Footer */
-    footer {
-      background: #1a1a1a;
-      color: #aaa;
-      padding: 40px 20px 20px;
-      text-align: center;
-      margin-top: auto;
-    }
+</section>
 
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+<footer>
+© 2026 SmartAffiliate — Affiliate links may earn us commission at no extra cost to you.
+</footer>
 
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
+<script>
 
-    .footer-links a {
-      color: #aaa;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+const searchInput=document.getElementById("searchInput");
+const categoryFilter=document.getElementById("categoryFilter");
+const priceFilter=document.getElementById("priceFilter");
 
-    .footer-links a:hover {
-      color: #0052cc;
-    }
+const products=document.querySelectorAll(".product");
 
-    .footer-text {
-      font-size: 0.9rem;
-      color: #777;
-    }
+function filterProducts(){
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-section h1 {
-        font-size: 2rem;
-      }
+const search=searchInput.value.toLowerCase();
+const category=categoryFilter.value;
+const price=priceFilter.value;
 
-      .hero-section p {
-        font-size: 1rem;
-      }
+products.forEach(product=>{
 
-      .nav-menu {
-        gap: 15px;
-        font-size: 0.9rem;
-      }
+const name=product.querySelector(".card-title").textContent.toLowerCase();
+const productCategory=product.dataset.category;
+const productPrice=parseInt(product.dataset.price);
 
-      .section h2 {
-        font-size: 1.5rem;
-      }
+let show=true;
 
-      .grid-3, .grid-2 {
-        grid-template-columns: 1fr;
-      }
+if(!name.includes(search)) show=false;
 
-      .comparison-table {
-        font-size: 0.9rem;
-      }
+if(category!=="all" && category!==productCategory) show=false;
 
-      .comparison-table th, .comparison-table td {
-        padding: 12px;
-      }
-    }
+if(price!=="all" && productPrice>price) show=false;
 
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+product.style.display=show?"block":"none";
 
-    .section {
-      animation: fadeIn 0.6s ease-out;
-    }
-  </style>
-  <style>body { box-sizing: border-box; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body>
-  <div class="app-wrapper">
-   <!-- Navigation -->
-   <nav>
-    <div class="nav-content">
-     <a href="#home" class="nav-logo">⚡ SmartAffiliate</a>
-     <ul class="nav-menu">
-      <li><a href="#home" class="nav-link active">Home</a></li>
-      <li><a href="#reviews" class="nav-link">Reviews</a></li>
-      <li><a href="#best-products" class="nav-link">Best 2026</a></li>
-      <li><a href="#comparisons" class="nav-link">Comparisons</a></li>
-      <li><a href="#blog" class="nav-link">Blog</a></li>
-      <li><a href="#categories" class="nav-link">Categories</a></li>
-     </ul>
-    </div>
-   </nav><!-- Hero Section -->
-   <section id="home" class="hero-section">
-    <div class="hero-content">
-     <h1 id="hero-title">SmartAffiliate</h1>
-     <p id="hero-tagline">Expert reviews, honest comparisons, smart choices</p><a href="#reviews" class="cta-button" id="cta-text">Discover Best Deals</a>
-    </div>
-   </section><!-- Categories Section -->
-   <section id="categories" class="section" style="background: #f9f9f9;">
-    <h2>Categories</h2>
-    <div class="category-pills">
-     <div class="category-pill active" onclick="this.parentElement.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active')); this.classList.add('active');">
-      💻 Electronics
-     </div>
-     <div class="category-pill" onclick="this.parentElement.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active')); this.classList.add('active');">
-      🏠 Home &amp; Garden
-     </div>
-     <div class="category-pill" onclick="this.parentElement.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active')); this.classList.add('active');">
-      👜 Fashion &amp; Accessories
-     </div>
-     <div class="category-pill" onclick="this.parentElement.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active')); this.classList.add('active');">
-      💪 Sports &amp; Fitness
-     </div>
-     <div class="category-pill" onclick="this.parentElement.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active')); this.classList.add('active');">
-      🍳 Kitchen &amp; Cooking
-     </div>
-    </div>
-   </section><!-- Reviews Section -->
-   <section id="reviews" class="section">
-    <h2>Latest Product Reviews</h2>
-    <div class="grid-3">
-     <!-- Review 1 -->
-     <div class="card">
-      <div class="card-header">
-       📱
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$199</span>
-       <h3 class="card-title">Wireless Earbuds Pro</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Excellent sound quality with active noise cancellation. Perfect for daily use and travel.</p><a href="https://amzn.to/4lh1nZr" target="_blank" rel="noopener noreferrer" class="affiliate-link">Buy Now</a>
-      </div>
-     </div><!-- Review 2 -->
-     <div class="card">
-      <div class="card-header">
-       ⌚
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$299</span>
-       <h3 class="card-title">Smartwatch Elite</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">☆</span>
-       </div>
-       <p class="card-text">Impressive fitness features with long battery life. A must for health-conscious users.</p><a href="https://amzn.to/4d7byxw" target="_blank" rel="noopener noreferrer" class="affiliate-link">Check Price</a>
-      </div>
-     </div><!-- Review 3 -->
-     <div class="card">
-      <div class="card-header">
-       💻
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$249</span>
-       <h3 class="card-title">Portable SSD 1TB</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Super-fast data transfer with solid encryption. Compact design for travelers.</p><a href="https://amzn.to/40T35qo" target="_blank" rel="noopener noreferrer" class="affiliate-link">View Deal</a>
-      </div>
-     </div><!-- Review 4 -->
-     <div class="card">
-      <div class="card-header">
-       🎧
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$349</span>
-       <h3 class="card-title">Over-Ear Headphones Pro</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Professional studio-grade sound quality. Comfortable for extended listening sessions.</p><a href="https://amzn.to/4ud1BoF" target="_blank" rel="noopener noreferrer" class="affiliate-link">Buy Now</a>
-      </div>
-     </div><!-- Review 5 -->
-     <div class="card">
-      <div class="card-header">
-       📷
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$799</span>
-       <h3 class="card-title">4K Webcam Ultra</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">☆</span>
-       </div>
-       <p class="card-text">Crystal-clear 4K video for streaming and video calls. Wide-angle lens with auto-focus.</p><a href="https://amzn.to/3Nc6Tjso05c2b-20" target="_blank" rel="noopener noreferrer" class="affiliate-link">Check Price</a>
-      </div>
-     </div><!-- Review 6 -->
-     <div class="card">
-      <div class="card-header">
-       🖱️
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$89</span>
-       <h3 class="card-title">Wireless Mouse Pro</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Precision tracking with ergonomic design. 24-month battery life on 2 AAA batteries.</p><a href="https://amzn.to/4lh1nZr" target="_blank" rel="noopener noreferrer" class="affiliate-link">Buy Now</a>
-      </div>
-     </div><!-- Review 7 -->
-     <div class="card">
-      <div class="card-header">
-       🔌
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$79</span>
-       <h3 class="card-title">Fast USB-C Charger</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Ultra-fast charging for all your devices. Compact design with safety certifications.</p><a href="https://amzn.to/4d7byxw" target="_blank" rel="noopener noreferrer" class="affiliate-link">View Deal</a>
-      </div>
-     </div><!-- Review 8 -->
-     <div class="card">
-      <div class="card-header">
-       🎮
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$149</span>
-       <h3 class="card-title">Gaming Mouse Pad XL</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">☆</span>
-       </div>
-       <p class="card-text">Extra-large surface for gaming and work. Non-slip base with smooth tracking surface.</p><a href="https://amzn.to/40T35qo" target="_blank" rel="noopener noreferrer" class="affiliate-link">Check Price</a>
-      </div>
-     </div><!-- Review 9 -->
-     <div class="card">
-      <div class="card-header">
-       📱
-      </div>
-      <div class="card-content">
-       <span class="price-badge">$35</span>
-       <h3 class="card-title">Phone Screen Protector</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Premium tempered glass with full coverage. Easy installation and crystal-clear display.</p><a href="https://amzn.to/4ud1BoF" target="_blank" rel="noopener noreferrer" class="affiliate-link">Buy Now</a>
-      </div>
-     </div>
-    </div>
-   </section><!-- Best Products 2026 Section -->
-   <section id="best-products" class="section" style="background: #f9f9f9;">
-    <h2>Best Products 2026</h2>
-    <div class="grid-3">
-     <!-- Best Product 1 -->
-     <div class="card">
-      <div class="card-header">
-       🏆
-      </div>
-      <div class="card-content">
-       <span class="best-badge">★ Best Overall</span> <span class="price-badge">$199</span>
-       <h3 class="card-title">Wireless Earbuds Pro</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Our top pick for 2026. Outstanding audio quality, noise cancellation, and reliability make this the best choice for most users.</p><a href="https://amzn.to/4lh1nZr" target="_blank" rel="noopener noreferrer" class="affiliate-link">View Deal</a>
-      </div>
-     </div><!-- Best Product 2 -->
-     <div class="card">
-      <div class="card-header">
-       💎
-      </div>
-      <div class="card-content">
-       <span class="best-badge">★ Best Value</span> <span class="price-badge">$89</span>
-       <h3 class="card-title">Wireless Mouse Pro</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Unbeatable value for the money. Great performance at an affordable price with excellent battery life.</p><a href="https://amzn.to/4lh1nZr" target="_blank" rel="noopener noreferrer" class="affiliate-link">Check Price</a>
-      </div>
-     </div><!-- Best Product 3 -->
-     <div class="card">
-      <div class="card-header">
-       👑
-      </div>
-      <div class="card-content">
-       <span class="best-badge">★ Premium Pick</span> <span class="price-badge">$799</span>
-       <h3 class="card-title">4K Webcam Ultra</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">☆</span>
-       </div>
-       <p class="card-text">Professional-grade video quality. Perfect for content creators and streamers who demand the best.</p><a href="https://amzn.to/3Nc6Tjso05c2b-20" target="_blank" rel="noopener noreferrer" class="affiliate-link">Buy Now</a>
-      </div>
-     </div><!-- Best Product 4 -->
-     <div class="card">
-      <div class="card-header">
-       ⭐
-      </div>
-      <div class="card-content">
-       <span class="best-badge">★ Most Innovative</span> <span class="price-badge">$299</span>
-       <h3 class="card-title">Smartwatch Elite</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">☆</span>
-       </div>
-       <p class="card-text">Cutting-edge features with health monitoring. The best smartwatch for staying connected and healthy.</p><a href="https://amzn.to/4d7byxw" target="_blank" rel="noopener noreferrer" class="affiliate-link">View Deal</a>
-      </div>
-     </div><!-- Best Product 5 -->
-     <div class="card">
-      <div class="card-header">
-       🎯
-      </div>
-      <div class="card-content">
-       <span class="best-badge">★ Editor's Choice</span> <span class="price-badge">$249</span>
-       <h3 class="card-title">Portable SSD 1TB</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Lightning-fast storage solution. Our editors chose this for its speed, reliability, and portability.</p><a href="https://amzn.to/40T35qo" target="_blank" rel="noopener noreferrer" class="affiliate-link">Check Price</a>
-      </div>
-     </div><!-- Best Product 6 -->
-     <div class="card">
-      <div class="card-header">
-       🎵
-      </div>
-      <div class="card-content">
-       <span class="best-badge">★ Best Audio</span> <span class="price-badge">$349</span>
-       <h3 class="card-title">Over-Ear Headphones Pro</h3>
-       <div class="rating">
-        <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span> <span class="star">★</span>
-       </div>
-       <p class="card-text">Studio-quality sound for audio professionals and enthusiasts. Comfort and quality combined.</p><a href="https://amzn.to/4ud1BoF" target="_blank" rel="noopener noreferrer" class="affiliate-link">Buy Now</a>
-      </div>
-     </div>
-    </div>
-   </section><!-- Comparison Section -->
-   <section id="comparisons" class="section" style="background: #f9f9f9;">
-    <h2>Product Comparisons</h2>
-    <h3>Wireless Earbuds Comparison</h3>
-    <table class="comparison-table">
-     <thead>
-      <tr>
-       <th>Model</th>
-       <th>Price</th>
-       <th>Battery Life</th>
-       <th>ANC</th>
-       <th>IP Rating</th>
-       <th>Recommendation</th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td><strong>Wireless Earbuds Pro</strong></td>
-       <td>$199</td>
-       <td>30 hours</td>
-       <td><span class="checkmark">✓</span></td>
-       <td>IPX4</td>
-       <td><span class="checkmark">✓ Best</span></td>
-      </tr>
-      <tr>
-       <td><strong>Budget Plus Earbuds</strong></td>
-       <td>$99</td>
-       <td>20 hours</td>
-       <td><span class="cross">✗</span></td>
-       <td>IPX2</td>
-       <td>Good Value</td>
-      </tr>
-      <tr>
-       <td><strong>Premium Max Earbuds</strong></td>
-       <td>$349</td>
-       <td>40 hours</td>
-       <td><span class="checkmark">✓</span></td>
-       <td>IPX5</td>
-       <td>Most Premium</td>
-      </tr>
-      <tr>
-       <td><strong>Sports Edition Earbuds</strong></td>
-       <td>$149</td>
-       <td>25 hours</td>
-       <td><span class="checkmark">✓</span></td>
-       <td>IPX7</td>
-       <td>Best for Sports</td>
-      </tr>
-     </tbody>
-    </table>
-    <h3 style="margin-top: 40px;">Smartwatch Comparison</h3>
-    <table class="comparison-table">
-     <thead>
-      <tr>
-       <th>Model</th>
-       <th>Price</th>
-       <th>Display</th>
-       <th>Battery</th>
-       <th>Health Features</th>
-       <th>Rating</th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td><strong>Smartwatch Elite</strong></td>
-       <td>$299</td>
-       <td>AMOLED</td>
-       <td>7 days</td>
-       <td><span class="checkmark">✓</span> Complete</td>
-       <td>★★★★☆</td>
-      </tr>
-      <tr>
-       <td><strong>Budget Smartwatch</strong></td>
-       <td>$129</td>
-       <td>LCD</td>
-       <td>5 days</td>
-       <td><span class="checkmark">✓</span> Basic</td>
-       <td>★★★★☆</td>
-      </tr>
-      <tr>
-       <td><strong>Pro Smartwatch Max</strong></td>
-       <td>$499</td>
-       <td>AMOLED</td>
-       <td>14 days</td>
-       <td><span class="checkmark">✓</span> Advanced</td>
-       <td>★★★★★</td>
-      </tr>
-     </tbody>
-    </table>
-   </section><!-- Blog Section -->
-   <section id="blog" class="section">
-    <h2>Blog &amp; Guides</h2>
-    <div class="grid-2">
-     <div class="card">
-      <div class="card-header">
-       📝
-      </div>
-      <div class="card-content">
-       <h3 class="card-title">Guide: How to Choose the Right Earbuds</h3>
-       <p class="card-text">Read our comprehensive guide to understand important specifications and what to look for when choosing audio equipment.</p><a href="#" class="affiliate-link" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Read Article</a>
-      </div>
-     </div>
-     <div class="card">
-      <div class="card-header">
-       🔧
-      </div>
-      <div class="card-content">
-       <h3 class="card-title">Tips: Maximize Battery Life on Devices</h3>
-       <p class="card-text">Practical tips to get longer battery life on your electronic devices and gadgets for extended use.</p><a href="#" class="affiliate-link" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Read Article</a>
-      </div>
-     </div>
-     <div class="card">
-      <div class="card-header">
-       🏆
-      </div>
-      <div class="card-content">
-       <h3 class="card-title">Best Products of 2026 by Experts</h3>
-       <p class="card-text">Discover which products stood out this year according to our comprehensive review and testing process.</p><a href="#" class="affiliate-link" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Read Article</a>
-      </div>
-     </div>
-     <div class="card">
-      <div class="card-header">
-       💡
-      </div>
-      <div class="card-content">
-       <h3 class="card-title">Trend: The Future of Smart Devices</h3>
-       <p class="card-text">What's next in smart homes and wearables? A deep analysis of emerging technologies and innovations.</p><a href="#" class="affiliate-link" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Read Article</a>
-      </div>
-     </div>
-     <div class="card">
-      <div class="card-header">
-       🎯
-      </div>
-      <div class="card-content">
-       <h3 class="card-title">Tech Buying Guide 2026</h3>
-       <p class="card-text">Everything you need to know before buying tech products. Budget considerations and performance metrics explained.</p><a href="#" class="affiliate-link" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Read Article</a>
-      </div>
-     </div>
-     <div class="card">
-      <div class="card-header">
-       📊
-      </div>
-      <div class="card-content">
-       <h3 class="card-title">Product Comparison Methodology</h3>
-       <p class="card-text">Learn how we test and evaluate products. Our transparent process ensures honest and accurate reviews.</p><a href="#" class="affiliate-link" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Read Article</a>
-      </div>
-     </div>
-    </div>
-   </section><!-- Footer -->
-   <footer>
-    <div class="footer-content">
-     <div class="footer-links">
-      <a href="#home">Home</a> <a href="#reviews">Reviews</a> <a href="#comparisons">Comparisons</a> <a href="#blog">Blog</a> <a href="#">Contact</a> <a href="#">Privacy Policy</a>
-     </div>
-     <p class="footer-text">© 2026 SmartAffiliate. All product links are affiliate links. We earn a commission if you purchase through our links at no extra cost to you.</p>
-    </div>
-   </footer>
-  </div>
-  <script>
-    window.elementSdk.init({
-      defaultConfig: {
-        site_title: "SmartAffiliate",
-        tagline: "Expert reviews, honest comparisons, smart choices",
-        cta_button_text: "Discover Best Deals"
-      },
-      onConfigChange: async (config) => {
-        const titleEl = document.getElementById('hero-title');
-        const taglineEl = document.getElementById('hero-tagline');
-        const ctaEl = document.getElementById('cta-text');
+});
 
-        if (titleEl) titleEl.textContent = config.site_title || "SmartAffiliate";
-        if (taglineEl) taglineEl.textContent = config.tagline || "Expert reviews, honest comparisons, smart choices";
-        if (ctaEl) ctaEl.textContent = config.cta_button_text || "Discover Best Deals";
-      },
-      mapToCapabilities: (config) => ({
-        recolorables: [],
-        borderables: [],
-        fontEditable: undefined,
-        fontSizeable: undefined
-      }),
-      mapToEditPanelValues: (config) => new Map([
-        ["site_title", config.site_title || "SmartAffiliate"],
-        ["tagline", config.tagline || "Expert reviews, honest comparisons, smart choices"],
-        ["cta_button_text", config.cta_button_text || "Discover Best Deals"]
-      ])
-    });
+}
 
-    // Smooth scrolling for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-          this.classList.add('active');
-        }
-      });
-    });
+searchInput.addEventListener("input",filterProducts);
+categoryFilter.addEventListener("change",filterProducts);
+priceFilter.addEventListener("change",filterProducts);
 
-    // Update active nav link on scroll
-    window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section[id]');
-      let current = '';
+</script>
 
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d9ad6f895a49ade',t:'MTc3MzA2NzI3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
