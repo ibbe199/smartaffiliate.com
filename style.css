@@ -1,119 +1,246 @@
-body{
-font-family:Arial,sans-serif;
-margin:0;
-background:#f5f6fa;
-}
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartAffiliate</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-slate-50 m-0 overflow-auto">
+  <nav id="navbar" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-4 shadow-lg">
+   <div class="max-w-6xl mx-auto flex items-center gap-3"><span class="text-2xl">⚡</span> <span id="siteTitle" class="text-xl font-bold tracking-tight">SmartAffiliate</span>
+   </div>
+  </nav>
+  <div class="max-w-6xl mx-auto px-6 py-8">
+   <h2 id="sectionHeading" class="text-3xl font-bold text-slate-800 mb-2">Expert Tech Reviews: The Best Gadgets of 2024</h2>
+   <p class="text-slate-600 mb-6 text-sm">📊 Handpicked products tested for quality, performance &amp; value</p>
+   <div class="flex flex-wrap gap-3 mb-8">
+    <div class="relative">
+     <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+     </svg><input type="text" id="searchInput" placeholder="Search products..." class="pl-10 pr-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white shadow-sm w-64">
+    </div><select id="categoryFilter" class="px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white shadow-sm cursor-pointer"> <option value="all">All Categories</option> <option value="audio">🎧 Audio</option> <option value="electronics">📱 Electronics</option> <option value="accessories">🔌 Accessories</option> </select> <select id="priceFilter" class="px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white shadow-sm cursor-pointer"> <option value="all">All Prices</option> <option value="100">Under $100</option> <option value="300">Under $300</option> <option value="1000">Under $1000</option> </select>
+   </div>
+   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="productGrid">
+    <div class="card product bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group" data-category="audio" data-price="199">
+     <div class="h-32 bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center relative"><span class="text-5xl group-hover:scale-110 transition-transform duration-300">🎧</span> <span class="absolute top-2 right-2 bg-indigo-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">🏆 Top Pick</span>
+     </div>
+     <div class="p-5">
+      <div class="flex items-center justify-between mb-2"><span class="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full">Audio</span> <span class="text-sm font-semibold text-indigo-600">⭐⭐⭐⭐⭐ 4.8</span>
+      </div>
+      <h3 class="card-title text-lg font-bold text-slate-800 mb-2">Wireless Earbuds</h3>
+      <div class="space-y-2 mb-4 text-sm text-slate-700">
+       <div class="flex items-start gap-2"><span class="text-green-600 font-bold">✓</span> <span><strong>Active noise cancellation</strong> reduces ambient noise by 99%</span>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-green-600 font-bold">✓</span> <span><strong>24-hour battery life</strong> on single charge</span>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-red-600 font-bold">✗</span> <span>Premium pricing compared to alternatives</span>
+       </div>
+      </div>
+      <div class="flex items-center justify-between"><span class="text-2xl font-bold text-indigo-600">$199</span> <a id="earbudsLink" href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors" target="_blank" rel="noopener noreferrer">Check Price →</a>
+      </div>
+     </div>
+    </div>
+    <div class="card product bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group" data-category="electronics" data-price="299">
+     <div class="h-32 bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center relative"><span class="text-5xl group-hover:scale-110 transition-transform duration-300">⌚</span> <span class="absolute top-2 right-2 bg-emerald-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">🥇 Best Value</span>
+     </div>
+     <div class="p-5">
+      <div class="flex items-center justify-between mb-2"><span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">Electronics</span> <span class="text-sm font-semibold text-emerald-600">⭐⭐⭐⭐⭐ 4.9</span>
+      </div>
+      <h3 class="card-title text-lg font-bold text-slate-800 mb-2">Smartwatch Elite</h3>
+      <div class="space-y-2 mb-4 text-sm text-slate-700">
+       <div class="flex items-start gap-2"><span class="text-green-600 font-bold">✓</span> <span><strong>ECG &amp; blood oxygen monitoring</strong> for health tracking</span>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-green-600 font-bold">✓</span> <span><strong>7-day battery life</strong> on single charge</span>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-red-600 font-bold">✗</span> <span>Limited app ecosystem compared to smartphones</span>
+       </div>
+      </div>
+      <div class="flex items-center justify-between"><span class="text-2xl font-bold text-emerald-600">$299</span> <a id="smartwatchLink" href="#" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors" target="_blank" rel="noopener noreferrer">View Today's Deal →</a>
+      </div>
+     </div>
+    </div>
+    <div class="card product bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group" data-category="electronics" data-price="249">
+     <div class="h-32 bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center"><span class="text-5xl group-hover:scale-110 transition-transform duration-300">💾</span>
+     </div>
+     <div class="p-5">
+      <div class="flex items-center justify-between mb-2"><span class="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">Electronics</span> <span class="text-sm font-semibold text-blue-600">⭐⭐⭐⭐☆ 4.7</span>
+      </div>
+      <h3 class="card-title text-lg font-bold text-slate-800 mb-2">Portable SSD</h3>
+      <div class="space-y-2 mb-4 text-sm text-slate-700">
+       <div class="flex items-start gap-2"><span class="text-green-600 font-bold">✓</span> <span><strong>Read speeds up to 1050MB/s</strong> for fast file transfers</span>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-green-600 font-bold">✓</span> <span><strong>2TB capacity</strong> at competitive price</span>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-red-600 font-bold">✗</span> <span>Requires USB-C cable (sold separately)</span>
+       </div>
+      </div>
+      <div class="flex items-center justify-between"><span class="text-2xl font-bold text-blue-600">$249</span> <a id="ssdLink" href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors" target="_blank" rel="noopener noreferrer">Check Price on Amazon →</a>
+      </div>
+     </div>
+    </div>
+    <div class="card product bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group" data-category="audio" data-price="349">
+     <div class="h-32 bg-gradient-to-br from-rose-100 to-pink-100 flex items-center justify-center"><span class="text-5xl group-hover:scale-110 transition-transform duration-300">🎧</span>
+     </div>
+     <div class="p-5">
+      <div class="flex items-center justify-between mb-2"><span class="text-xs font-medium text-rose-600 bg-rose-50 px-2 py-1 rounded-full">Audio</span> <span class="text-sm font-semibold text-rose-600">⭐⭐⭐⭐⭐ 4.9</span>
+      </div>
+      <h3 class="card-title text-lg font-bold text-slate-800 mb-2">Over Ear Headphones</h3>
+      <div class="space-y-2 mb-4 text-sm text-slate-700">
+       <div class="flex items-start gap-2"><span class="text-green-600 font-bold">✓</span> <span><strong>Premium leather cushions</strong> for all-day comfort</span>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-green-600 font-bold">✓</span> <span><strong>40-hour battery</strong> outlasts most competitors</span>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-red-600 font-bold">✗</span> <span>Heavy at 250g, may feel bulky</span>
+       </div>
+      </div>
+      <div class="flex items-center justify-between"><span class="text-2xl font-bold text-rose-600">$349</span> <a id="headphonesLink" href="#" class="bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors" target="_blank" rel="noopener noreferrer">Check Price on Amazon →</a>
+      </div>
+     </div>
+    </div>
+    <div class="card product bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group" data-category="accessories" data-price="49">
+     <div class="h-32 bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center"><span class="text-5xl group-hover:scale-110 transition-transform duration-300">🔋</span>
+     </div>
+     <div class="p-5">
+      <div class="flex items-center justify-between mb-2"><span class="text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded-full">Accessories</span> <span class="text-sm font-semibold text-amber-600">⭐⭐⭐⭐☆ 4.6</span>
+      </div>
+      <h3 class="card-title text-lg font-bold text-slate-800 mb-2">Power Bank</h3>
+      <div class="space-y-2 mb-4 text-sm text-slate-700">
+       <div class="flex items-start gap-2"><span class="text-green-600 font-bold">✓</span> <span><strong>20,000mAh capacity</strong> charges phones 5+ times</span>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-green-600 font-bold">✓</span> <span><strong>Fast charging</strong> support with dual USB ports</span>
+       </div>
+       <div class="flex items-start gap-2"><span class="text-red-600 font-bold">✗</span> <span>Heavier than smaller 10,000mAh alternatives</span>
+       </div>
+      </div>
+      <div class="flex items-center justify-between"><span class="text-2xl font-bold text-amber-600">$49</span> <a id="powerbankLink" href="#" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors" target="_blank" rel="noopener noreferrer">Check Price on Amazon →</a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="noResults" class="hidden text-center py-12"><span class="text-6xl mb-4 block">🔍</span>
+    <p class="text-slate-600 text-lg">No products found matching your criteria.</p><button onclick="resetFilters()" class="mt-4 text-indigo-600 hover:text-indigo-700 font-medium">Clear filters</button>
+   </div>
+  </div>
+  <footer class="bg-slate-900 text-slate-300 py-8 mt-12 border-t border-slate-700">
+   <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+     <div>
+      <h4 class="text-white font-semibold mb-2">📢 Important Disclosure</h4>
+      <p id="disclosureText" class="text-sm leading-relaxed">SmartAffiliate is a participant in the Amazon Associates Program. As an affiliate, we earn commissions from qualifying purchases made through our links at no extra cost to you.</p>
+     </div>
+     <div>
+      <h4 class="text-white font-semibold mb-2">✨ Why You Can Trust Us</h4>
+      <ul class="text-sm space-y-1">
+       <li>✓ Products personally tested &amp; reviewed</li>
+       <li>✓ Honest pros &amp; cons listed</li>
+       <li>✓ Real customer ratings included</li>
+       <li>✓ Affiliate transparency guaranteed</li>
+      </ul>
+     </div>
+    </div>
+    <div class="border-t border-slate-700 pt-4 text-center text-xs text-slate-400">
+     <p>⚡ SmartAffiliate © 2024 • Helping you find the best products</p>
+    </div>
+   </div>
+  </footer>
+  <script>
+    const defaultConfig = {
+      site_title: "SmartAffiliate",
+      section_heading: "Expert Tech Reviews: The Best Gadgets of 2026",
+      disclosure_text: "SmartAffiliate is a participant in the Amazon Associates Program. As an affiliate, we earn commissions from qualifying purchases made through our links at no extra cost to you."
+    };
 
-nav{
-background:white;
-padding:20px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-display:flex;
-justify-content:space-between;
-}
+    const links = {
+      earbuds: "https://amzn.to/4lh1nZr",
+      smartwatch: "https://amzn.to/4d7byxw",
+      ssd: "https://amzn.to/40T35qo",
+      headphones: "https://amzn.to/4ud1BoF",
+      powerbank: "https://amzn.to/46M2FFY"
+    };
 
-.logo{
-font-size:20px;
-font-weight:bold;
-color:#0052cc;
-}
+    document.getElementById("earbudsLink").href = links.earbuds;
+    document.getElementById("smartwatchLink").href = links.smartwatch;
+    document.getElementById("ssdLink").href = links.ssd;
+    document.getElementById("headphonesLink").href = links.headphones;
+    document.getElementById("powerbankLink").href = links.powerbank;
 
-.hero{
-background:linear-gradient(135deg,#0052cc,#003a99);
-color:white;
-text-align:center;
-padding:80px 20px;
-}
+    const searchInput = document.getElementById("searchInput");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const priceFilter = document.getElementById("priceFilter");
+    const products = document.querySelectorAll(".product");
+    const productGrid = document.getElementById("productGrid");
+    const noResults = document.getElementById("noResults");
 
-.hero h1{
-font-size:40px;
-margin:0;
-}
+    function filterProducts() {
+      const search = searchInput.value.toLowerCase();
+      const category = categoryFilter.value;
+      const maxPrice = priceFilter.value === "all" ? Infinity : parseInt(priceFilter.value);
 
-.section{
-max-width:1200px;
-margin:auto;
-padding:50px 20px;
-}
+      let visibleCount = 0;
 
-.filters{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-margin-bottom:30px;
-}
+      products.forEach(product => {
+        const title = product.querySelector(".card-title").textContent.toLowerCase();
+        const productCategory = product.dataset.category;
+        const productPrice = parseInt(product.dataset.price);
 
-.filters input,
-.filters select{
-padding:10px;
-border-radius:6px;
-border:1px solid #ddd;
-}
+        const matchesSearch = title.includes(search);
+        const matchesCategory = category === "all" || productCategory === category;
+        const matchesPrice = productPrice <= maxPrice;
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
+        if (matchesSearch && matchesCategory && matchesPrice) {
+          product.style.display = "block";
+          visibleCount++;
+        } else {
+          product.style.display = "none";
+        }
+      });
 
-.card{
-background:white;
-border-radius:10px;
-padding:20px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-transition:.3s;
-}
+      noResults.classList.toggle("hidden", visibleCount > 0);
+    }
 
-.card:hover{
-transform:translateY(-5px);
-}
+    function resetFilters() {
+      searchInput.value = "";
+      categoryFilter.value = "all";
+      priceFilter.value = "all";
+      filterProducts();
+    }
 
-.card-header{
-font-size:40px;
-text-align:center;
-}
+    searchInput.addEventListener("input", filterProducts);
+    categoryFilter.addEventListener("change", filterProducts);
+    priceFilter.addEventListener("change", filterProducts);
 
-.price{
-background:#0052cc;
-color:white;
-padding:4px 10px;
-border-radius:20px;
-font-size:12px;
-display:inline-block;
-margin-bottom:10px;
-}
+    async function onConfigChange(config) {
+      document.getElementById("siteTitle").textContent = config.site_title || defaultConfig.site_title;
+      document.getElementById("sectionHeading").textContent = config.section_heading || defaultConfig.section_heading;
+      document.getElementById("disclosureText").textContent = config.disclosure_text || defaultConfig.disclosure_text;
+    }
 
-.rating{
-color:#ffc107;
-}
-
-.btn{
-display:block;
-margin-top:15px;
-background:#0052cc;
-color:white;
-text-align:center;
-padding:10px;
-border-radius:6px;
-text-decoration:none;
-}
-
-footer{
-background:#111;
-color:#aaa;
-text-align:center;
-padding:30px;
-margin-top:40px;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:30px;
-}
-
-.filters{
-flex-direction:column;
-}
-
-}
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["site_title", config.site_title || defaultConfig.site_title],
+          ["section_heading", config.section_heading || defaultConfig.section_heading],
+          ["disclosure_text", config.disclosure_text || defaultConfig.disclosure_text]
+        ])
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d9d2dd513e9b9db',t:'MTc3MzA5MTgwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
