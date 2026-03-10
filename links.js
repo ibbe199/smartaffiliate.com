@@ -8,7 +8,7 @@ speaker: "https://amzn.to/40SpLXM",
 webcam: "https://amzn.to/3Nc6Tjs",
 powerbank: "https://amzn.to/46M2FFY",
 smarthub: "https://amzn.to/47kGcQm",
-controller: "https://amzn.to/4renAZn"
+controller: https://www.amazon.com/mh?_encoding=UTF8&s=B0FRLJ3YVM%2CB0D7VG4754&pd_rd_w=DtXQc&content-id=amzn1.sym.53d12ada-4284-4a8d-a949-9ac105c857ab%3Aamzn1.symc.0f9275f4-0db9-41b1-8798-6db32f75748e&pf_rd_p=53d12ada-4284-4a8d-a949-9ac105c857ab&pf_rd_r=4CEP1S9ZKYN0PBR8H5VB&pd_rd_wg=PyvUB&pd_rd_r=b466ab61-0a82-4c12-a24f-30c5c661599f&linkCode=ll2&tag=no05c2b-20&linkId=e2c381c36b6e85295e38b056c1c5d81e&language=en_US&ref_=as_li_ss_tl
 https://www.amazon.com/mh?_encoding=UTF8&s=B0G4SWDNBB%2CB0DPJMTH4N%2CB0DP3CP2SY&pd_rd_w=zuMUw&content-id=amzn1.sym.53d12ada-4284-4a8d-a949-9ac105c857ab%3Aamzn1.symc.0f9275f4-0db9-41b1-8798-6db32f75748e&pf_rd_p=53d12ada-4284-4a8d-a949-9ac105c857ab&pf_rd_r=AK1ZPBEKHVJ7ACQ0PEY5&pd_rd_wg=xBAyC&pd_rd_r=a325fc96-5a5e-4d9d-9005-33e60dfc1aed&linkCode=ll2&tag=no05c2b-20&linkId=50da1dc51223f6d321f64e5f59a8f493&language=en_US&ref_=as_li_ss_tl
 https://www.amazon.com/Display-Processor-Graphics-Windows-AG15-32P-39R2/dp/B0DT7FC9B7?psc=1&linkCode=ll2&tag=no05c2b-20&linkId=677966a9a69fb7586b2d5f266cc9a722&language=en_US&ref_=as_li_ss_tl
 };
