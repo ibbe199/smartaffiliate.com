@@ -1,136 +1,834 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Amazon Deals</title>
-
-<style>
-body{
-font-family: Arial;
-background:#f5f5f5;
-text-align:center;
-}
-
-h1{
-margin-top:20px;
-}
-
-.products{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-padding:20px;
-}
-
-.card{
-background:white;
-padding:15px;
-border-radius:10px;
-width:220px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-.card img{
-width:100%;
-border-radius:8px;
-}
-
-.card a{
-display:block;
-margin-top:10px;
-background:#ff9900;
-color:white;
-padding:10px;
-text-decoration:none;
-border-radius:6px;
-font-weight:bold;
-}
-
-.card a:hover{
-background:#e68a00;
-}
-</style>
-
-</head>
-<body>
-
-<h1>🔥 Amazon Best Deals</h1>
-
-<div class="products" id="products"></div>
-
-<script>
-
-const products = [
-
-{
-name:"Wireless Earbuds",
-img:"https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
-link:"https://amzn.to/4lh1nZr"
-},
-
-{
-name:"Smart Watch",
-img:"https://m.media-amazon.com/images/I/61ZjlBOp+rL._AC_SL1500_.jpg",
-link:"https://amzn.to/4d7byxw"
-},
-
-{
-name:"SSD Drive",
-img:"https://m.media-amazon.com/images/I/81mS1j5nqBL._AC_SL1500_.jpg",
-link:"https://amzn.to/40T35qo"
-},
-
-{
-name:"Bluetooth Headphones",
-img:"https://m.media-amazon.com/images/I/71QKQ9mwV7L._AC_SL1500_.jpg",
-link:"https://amzn.to/4ud1BoF"
-},
-
-{
-name:"Speaker",
-img:"https://m.media-amazon.com/images/I/71l2q6v1D+L._AC_SL1500_.jpg",
-link:"https://amzn.to/40SpLXM"
-},
-
-{
-name:"Webcam",
-img:"https://m.media-amazon.com/images/I/61UxfXTUyvL._AC_SL1500_.jpg",
-link:"https://amzn.to/3Nc6Tjs"
-},
-
-{
-name:"Power Bank",
-img:"https://m.media-amazon.com/images/I/71eO8m8s0BL._AC_SL1500_.jpg",
-link:"https://amzn.to/46M2FFY"
-},
-
-{
-name:"Smart Hub",
-img:"https://m.media-amazon.com/images/I/61EXU8BuGZL._AC_SL1500_.jpg",
-link:"https://amzn.to/47kGcQm"
-}
-
-];
-
-const container = document.getElementById("products");
-
-products.forEach(product => {
-
-const card = document.createElement("div");
-card.className = "card";
-
-card.innerHTML = `
-<img src="${product.img}">
-<h3>${product.name}</h3>
-<a href="${product.link}" target="_blank">Buy on Amazon</a>
-`;
-
-container.appendChild(card);
-
-});
-
-</script>
-
-</body>
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartAffiliate - High-Converting Product Reviews &amp; Deals</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --surface: #141419;
+      --text-primary: #f4f4f5;
+      --accent-primary: #f97316;
+      --accent-secondary: #3b82f6;
+    }
+    
+    * { box-sizing: border-box; }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    
+    /* Animated gradient background */
+    .hero-gradient {
+      background: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(249, 115, 22, 0.15), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(59, 130, 246, 0.1), transparent),
+        var(--bg-primary);
+    }
+    
+    /* Glass morphism effect */
+    .glass {
+      background: rgba(20, 20, 25, 0.8);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    /* Product image hotspot */
+    .hotspot {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+      cursor: pointer;
+      animation: pulse-ring 2s ease-out infinite;
+    }
+    
+    .hotspot::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      background: white;
+      border-radius: 50%;
+    }
+    
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(249, 115, 22, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+    }
+    
+    /* CTA Button animation */
+    .cta-btn {
+      background: linear-gradient(135deg, var(--accent-primary), #ea580c);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .cta-btn:hover::before {
+      left: 100%;
+    }
+    
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px -10px rgba(249, 115, 22, 0.4);
+    }
+    
+    /* Score circle animation */
+    .score-ring {
+      stroke-dasharray: 283;
+      stroke-dashoffset: 283;
+      animation: score-fill 1.5s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+    
+    @keyframes score-fill {
+      to { stroke-dashoffset: 28; }
+    }
+    
+    /* Floating social bar */
+    .social-float {
+      position: fixed;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 50;
+    }
+    
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      color: var(--text-primary);
+      transition: all 0.3s ease;
+      margin-bottom: 8px;
+    }
+    
+    .social-btn:hover {
+      background: var(--accent-primary);
+      transform: translateX(4px);
+    }
+    
+    /* Thumbnail slider */
+    .thumb-active {
+      border-color: var(--accent-primary) !important;
+    }
+    
+    /* Pros/Cons styling */
+    .pro-item::before {
+      content: '✓';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+    
+    .con-item::before {
+      content: '✕';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background: rgba(239, 68, 68, 0.2);
+      color: #ef4444;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+    
+    /* Price tag animation */
+    .price-tag {
+      animation: price-pop 0.5s ease-out;
+    }
+    
+    @keyframes price-pop {
+      0% { transform: scale(0.8); opacity: 0; }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+    
+    /* Nav link hover */
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    /* Tooltip */
+    .tooltip {
+      position: absolute;
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 100;
+      pointer-events: none;
+    }
+    
+    .hotspot:hover .tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-4px);
+    }
+    
+    /* Staggered animation */
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+    
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-up {
+      animation: fade-up 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    
+    /* Stock badge pulse */
+    .stock-badge {
+      animation: stock-pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes stock-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .social-float { display: none; }
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app-wrapper" class="min-h-full hero-gradient overflow-auto">
+   <!-- Floating Social Bar -->
+   <div class="social-float hidden md:block">
+    <button class="social-btn" title="Share on Twitter">
+     <svg width="18" height="18" viewbox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+     </svg></button> <button class="social-btn" title="Share on Facebook">
+     <svg width="18" height="18" viewbox="0 0 24 24" fill="currentColor">
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+     </svg></button> <button class="social-btn" title="Share on LinkedIn">
+     <svg width="18" height="18" viewbox="0 0 24 24" fill="currentColor">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+     </svg></button> <button class="social-btn" title="Copy Link">
+     <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /> <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+     </svg></button>
+   </div><!-- Header -->
+   <header class="glass sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+        <svg width="24" height="24" viewbox="0 0 24 24" fill="white">
+         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+       </div>
+       <div>
+        <h1 id="site-name" class="text-lg font-bold text-white">SmartAffiliate</h1>
+        <p id="tagline" class="text-xs text-zinc-400">High-Converting Product Reviews &amp; Deals</p>
+       </div>
+      </div><!-- Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+       <a href="#" class="nav-link text-sm font-medium text-zinc-300 hover:text-white transition-colors">Best Picks</a> <a href="#" class="nav-link text-sm font-medium text-zinc-300 hover:text-white transition-colors">Reviews</a> <a href="#" class="nav-link text-sm font-medium text-zinc-300 hover:text-white transition-colors">Guides</a> <a href="#" class="nav-link text-sm font-medium text-zinc-300 hover:text-white transition-colors">Deals</a>
+      </nav><!-- Search -->
+      <div class="flex items-center gap-4">
+       <div class="relative hidden sm:block">
+        <input type="text" placeholder="Search products..." class="w-48 lg:w-64 px-4 py-2 pl-10 bg-zinc-800/50 border border-zinc-700/50 rounded-xl text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-orange-500/50 transition-colors">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+         <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
+        </svg>
+       </div><button class="md:hidden p-2 text-zinc-400 hover:text-white">
+        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+         <line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" />
+        </svg></button>
+      </div>
+     </div>
+    </div><!-- Affiliate Disclosure Banner -->
+    <div class="bg-zinc-900/50 border-t border-zinc-800/50 py-2">
+     <p class="text-center text-xs text-zinc-500"><span class="text-orange-500">ⓘ</span> Affiliate Disclosure: As an Amazon Associate, we earn from qualifying purchases. <a href="#" class="underline hover:text-zinc-300 transition-colors">Learn more</a></p>
+    </div>
+   </header>
+   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-zinc-500 mb-6 animate-fade-up">
+     <a href="#" class="hover:text-orange-500 transition-colors">Home</a> <span>/</span> <a href="#" class="hover:text-orange-500 transition-colors">Laptops</a> <span>/</span> <span class="text-zinc-300">MacBook Pro M3 Max</span>
+    </nav><!-- Product Hero Section -->
+    <div class="grid lg:grid-cols-2 gap-8 mb-12">
+     <!-- Product Images -->
+     <div class="animate-fade-up stagger-1">
+      <!-- Main Image Container -->
+      <div class="relative glass rounded-2xl p-6 mb-4">
+       <!-- Award Badge -->
+       <div class="absolute top-4 left-4 z-10 flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 px-3 py-1.5 rounded-full">
+        <span class="text-lg">🏆</span> <span class="text-xs font-bold text-white uppercase tracking-wide">Editor's Choice</span>
+       </div><!-- Main Product Image (SVG Illustration) -->
+       <div id="main-product-image" class="relative aspect-square flex items-center justify-center">
+        <svg viewbox="0 0 400 300" class="w-full max-w-md">
+         <!-- Laptop Base --> <defs>
+          <lineargradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+           <stop offset="0%" style="stop-color:#1e1e2e" />
+           <stop offset="100%" style="stop-color:#2d2d3f" />
+          </lineargradient>
+          <lineargradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+           <stop offset="0%" style="stop-color:#c0c0c0" />
+           <stop offset="100%" style="stop-color:#8a8a8a" />
+          </lineargradient>
+         </defs> <!-- Shadow --> <ellipse cx="200" cy="280" rx="140" ry="15" fill="rgba(0,0,0,0.3)" /> <!-- Laptop Screen Back --> <path d="M60 40 L340 40 L340 200 L60 200 Z" fill="url(#bodyGrad)" rx="8" /> <!-- Screen Bezel --> <rect x="70" y="50" width="260" height="140" rx="4" fill="#1a1a2e" /> <!-- Screen --> <rect x="78" y="58" width="244" height="124" rx="2" fill="url(#screenGrad)" /> <!-- Screen Content - Code Editor Look --> <rect x="85" y="65" width="60" height="8" rx="1" fill="#f97316" opacity="0.8" /> <rect x="150" y="65" width="40" height="8" rx="1" fill="#3b82f6" opacity="0.6" /> <rect x="85" y="80" width="100" height="6" rx="1" fill="#4ade80" opacity="0.5" /> <rect x="85" y="92" width="80" height="6" rx="1" fill="#ffffff" opacity="0.3" /> <rect x="85" y="104" width="120" height="6" rx="1" fill="#ffffff" opacity="0.2" /> <rect x="85" y="116" width="90" height="6" rx="1" fill="#f97316" opacity="0.4" /> <rect x="85" y="128" width="110" height="6" rx="1" fill="#3b82f6" opacity="0.3" /> <rect x="85" y="140" width="70" height="6" rx="1" fill="#ffffff" opacity="0.2" /> <rect x="85" y="152" width="130" height="6" rx="1" fill="#4ade80" opacity="0.4" /> <rect x="85" y="164" width="50" height="6" rx="1" fill="#ffffff" opacity="0.3" /> <!-- Webcam --> <circle cx="200" cy="54" r="3" fill="#2d2d3f" /> <circle cx="200" cy="54" r="1.5" fill="#4ade80" /> <!-- Keyboard Base --> <path d="M40 200 L360 200 L380 260 L20 260 Z" fill="url(#bodyGrad)" /> <!-- Keyboard Area --> <rect x="60" y="210" width="280" height="35" rx="2" fill="#2d2d3f" /> <!-- Trackpad --> <rect x="150" y="248" width="100" height="8" rx="2" fill="#1a1a2e" /> <!-- Apple Logo --> <text x="200" y="135" text-anchor="middle" fill="#ffffff" opacity="0.1" font-size="40"></text>
+        </svg><!-- Hotspots -->
+        <div class="hotspot" style="top: 15%; left: 75%;">
+         <div class="tooltip" style="top: -40px; left: 50%; transform: translateX(-50%);">
+          Liquid Retina XDR Display
+         </div>
+        </div>
+        <div class="hotspot" style="top: 60%; left: 20%;">
+         <div class="tooltip" style="top: -40px; left: 50%; transform: translateX(-50%);">
+          M3 Max Chip Inside
+         </div>
+        </div>
+        <div class="hotspot" style="top: 80%; left: 85%;">
+         <div class="tooltip" style="top: -40px; left: 50%; transform: translateX(-50%);">
+          MagSafe 3 Charging
+         </div>
+        </div>
+       </div>
+      </div><!-- Thumbnail Slider -->
+      <div class="flex gap-3 overflow-x-auto pb-2">
+       <button class="thumb-active flex-shrink-0 w-20 h-20 glass rounded-xl border-2 border-transparent hover:border-orange-500/50 transition-all p-2 flex items-center justify-center">
+        <svg viewbox="0 0 60 50" class="w-full h-full">
+         <rect x="5" y="5" width="50" height="30" rx="2" fill="#8a8a8a" /> <rect x="8" y="8" width="44" height="24" rx="1" fill="#1a1a2e" /> <path d="M0 35 L60 35 L62 45 L-2 45 Z" fill="#c0c0c0" />
+        </svg></button> <button class="flex-shrink-0 w-20 h-20 glass rounded-xl border-2 border-transparent hover:border-orange-500/50 transition-all p-2 flex items-center justify-center">
+        <svg viewbox="0 0 60 50" class="w-full h-full">
+         <rect x="5" y="10" width="50" height="30" rx="2" fill="#8a8a8a" transform="rotate(-15 30 25)" />
+        </svg></button> <button class="flex-shrink-0 w-20 h-20 glass rounded-xl border-2 border-transparent hover:border-orange-500/50 transition-all p-2 flex items-center justify-center">
+        <svg viewbox="0 0 60 50" class="w-full h-full">
+         <rect x="15" y="5" width="30" height="40" rx="2" fill="#8a8a8a" /> <circle cx="30" cy="15" r="3" fill="#1a1a2e" /> <rect x="18" y="20" width="24" height="3" rx="1" fill="#c0c0c0" /> <rect x="18" y="25" width="24" height="3" rx="1" fill="#c0c0c0" /> <rect x="18" y="30" width="24" height="3" rx="1" fill="#c0c0c0" />
+        </svg></button> <button class="flex-shrink-0 w-20 h-20 glass rounded-xl border-2 border-transparent hover:border-orange-500/50 transition-all p-2 flex items-center justify-center">
+        <svg viewbox="0 0 60 50" class="w-full h-full">
+         <rect x="0" y="20" width="60" height="10" rx="2" fill="#8a8a8a" /> <rect x="5" y="22" width="4" height="6" rx="1" fill="#1a1a2e" /> <rect x="12" y="22" width="4" height="6" rx="1" fill="#1a1a2e" /> <rect x="19" y="22" width="8" height="6" rx="1" fill="#1a1a2e" /> <rect x="30" y="22" width="4" height="6" rx="1" fill="#f97316" />
+        </svg></button>
+      </div>
+     </div><!-- Product Info -->
+     <div class="animate-fade-up stagger-2">
+      <!-- At a Glance Box -->
+      <div class="glass rounded-2xl p-6 mb-6">
+       <div class="flex items-start justify-between mb-4">
+        <div>
+         <p class="text-sm text-orange-500 font-semibold uppercase tracking-wide mb-1">Top Pick 2024</p>
+         <h2 id="product-name" class="text-2xl sm:text-3xl font-bold text-white mb-1">MacBook Pro M3 Max</h2>
+         <p id="product-tagline" class="text-zinc-400">The Ultimate Creative Powerhouse</p>
+        </div><!-- Score Circle -->
+        <div class="relative w-20 h-20 flex-shrink-0">
+         <svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#27272a" stroke-width="8" /> <circle cx="50" cy="50" r="45" fill="none" stroke="url(#scoreGradient)" stroke-width="8" class="score-ring" stroke-linecap="round" /> <defs>
+           <lineargradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#f97316" />
+            <stop offset="100%" stop-color="#eab308" />
+           </lineargradient>
+          </defs>
+         </svg>
+         <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <span class="text-xl font-bold text-white">9.2</span> <span class="text-xs text-zinc-500">/10</span>
+         </div>
+        </div>
+       </div><!-- Quick Features -->
+       <div class="space-y-2 mb-6">
+        <div class="pro-item flex items-center text-sm text-zinc-300">
+         Unmatched speed for video editing &amp; 3D rendering
+        </div>
+        <div class="pro-item flex items-center text-sm text-zinc-300">
+         Liquid Retina XDR display with ProMotion (120Hz)
+        </div>
+        <div class="pro-item flex items-center text-sm text-zinc-300">
+         Exceptional 22-hour battery life
+        </div>
+        <div class="pro-item flex items-center text-sm text-zinc-300">
+         Advanced thermal system - silent operation
+        </div>
+       </div><!-- Price & CTA -->
+       <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div class="price-tag">
+         <div class="flex items-baseline gap-2">
+          <span id="product-price" class="text-3xl font-bold text-white">$3,499</span> <span class="text-lg text-zinc-500 line-through">$3,999</span>
+         </div>
+         <div class="flex items-center gap-2 mt-1">
+          <span id="discount-badge" class="bg-green-500/20 text-green-400 text-xs font-semibold px-2 py-0.5 rounded">15% OFF TODAY</span> <span class="stock-badge flex items-center gap-1 text-xs text-green-400"> <span class="w-2 h-2 bg-green-500 rounded-full"></span> In Stock </span>
+         </div>
+        </div><button id="cta-button" class="cta-btn w-full sm:w-auto px-8 py-4 rounded-xl text-white font-semibold text-lg flex items-center justify-center gap-2">
+         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" /> <line x1="3" y1="6" x2="21" y2="6" /> <path d="M16 10a4 4 0 0 1-8 0" />
+         </svg><span id="cta-text">Check Price on Amazon</span> </button>
+       </div>
+       <p class="text-xs text-zinc-500 mt-3 flex items-center gap-1">
+        <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+         <circle cx="12" cy="12" r="10" /><polyline points="12,6 12,12 16,14" />
+        </svg> Price updated 2 hours ago • Ships free with Prime</p>
+      </div><!-- Technical Specs Table -->
+      <div class="glass rounded-2xl p-6">
+       <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+        <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+         <rect x="4" y="4" width="16" height="16" rx="2" /><line x1="4" y1="10" x2="20" y2="10" /><line x1="10" y1="4" x2="10" y2="20" />
+        </svg> Technical Specifications</h3>
+       <div class="space-y-3">
+        <div class="flex justify-between py-2 border-b border-zinc-800">
+         <span class="text-zinc-400 text-sm">Processor</span> <span class="text-white text-sm font-medium">Apple M3 Max (14-core CPU)</span>
+        </div>
+        <div class="flex justify-between py-2 border-b border-zinc-800">
+         <span class="text-zinc-400 text-sm">GPU</span> <span class="text-white text-sm font-medium">30-core GPU</span>
+        </div>
+        <div class="flex justify-between py-2 border-b border-zinc-800">
+         <span class="text-zinc-400 text-sm">Memory</span> <span class="text-white text-sm font-medium">36GB Unified Memory</span>
+        </div>
+        <div class="flex justify-between py-2 border-b border-zinc-800">
+         <span class="text-zinc-400 text-sm">Storage</span> <span class="text-white text-sm font-medium">1TB SSD</span>
+        </div>
+        <div class="flex justify-between py-2 border-b border-zinc-800">
+         <span class="text-zinc-400 text-sm">Display</span> <span class="text-white text-sm font-medium">16.2" Liquid Retina XDR</span>
+        </div>
+        <div class="flex justify-between py-2 border-b border-zinc-800">
+         <span class="text-zinc-400 text-sm">Battery</span> <span class="text-white text-sm font-medium">Up to 22 hours</span>
+        </div>
+        <div class="flex justify-between py-2">
+         <span class="text-zinc-400 text-sm">Warranty</span> <span class="text-white text-sm font-medium">1-Year Apple Limited</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Detailed Review Section -->
+    <div class="grid lg:grid-cols-3 gap-8 mb-12">
+     <!-- Main Content -->
+     <div class="lg:col-span-2 space-y-8 animate-fade-up stagger-3">
+      <!-- Pros & Cons -->
+      <div class="glass rounded-2xl p-6">
+       <h3 class="text-xl font-bold text-white mb-6">Pros &amp; Cons</h3>
+       <div class="grid md:grid-cols-2 gap-6">
+        <!-- Pros -->
+        <div class="bg-green-500/5 rounded-xl p-5 border border-green-500/20">
+         <h4 class="text-green-400 font-semibold mb-4 flex items-center gap-2">
+          <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+           <polyline points="20,6 9,17 4,12" />
+          </svg> What We Love</h4>
+         <ul class="space-y-3 text-sm text-zinc-300">
+          <li class="pro-item">Blazing fast M3 Max performance</li>
+          <li class="pro-item">Stunning XDR display quality</li>
+          <li class="pro-item">Best-in-class battery life</li>
+          <li class="pro-item">Premium build quality</li>
+          <li class="pro-item">Excellent speaker system</li>
+         </ul>
+        </div><!-- Cons -->
+        <div class="bg-red-500/5 rounded-xl p-5 border border-red-500/20">
+         <h4 class="text-red-400 font-semibold mb-4 flex items-center gap-2">
+          <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+           <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+          </svg> Room for Improvement</h4>
+         <ul class="space-y-3 text-sm text-zinc-300">
+          <li class="con-item">Premium price point</li>
+          <li class="con-item">No touchscreen option</li>
+          <li class="con-item">Limited gaming compatibility</li>
+          <li class="con-item">Notch takes screen space</li>
+         </ul>
+        </div>
+       </div>
+      </div><!-- Expert Verdict -->
+      <div class="glass rounded-2xl p-6">
+       <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2"><span class="text-2xl">🎯</span> Expert Verdict</h3>
+       <p class="text-zinc-300 leading-relaxed mb-6">The MacBook Pro M3 Max represents the pinnacle of laptop engineering. With unprecedented performance that rivals desktop workstations, an industry-leading display, and all-day battery life, it's the ultimate tool for creative professionals who demand the best. While the price is steep, the investment pays dividends in productivity and longevity.</p>
+       <div class="bg-zinc-800/50 rounded-xl p-5">
+        <h4 class="text-orange-500 font-semibold mb-3">Who Should Buy This?</h4>
+        <ul class="text-sm text-zinc-300 space-y-2">
+         <li class="flex items-start gap-2"><span class="text-orange-500 mt-0.5">→</span> <span>Video editors working with 4K/8K footage</span></li>
+         <li class="flex items-start gap-2"><span class="text-orange-500 mt-0.5">→</span> <span>3D artists and motion designers</span></li>
+         <li class="flex items-start gap-2"><span class="text-orange-500 mt-0.5">→</span> <span>Software developers with complex workflows</span></li>
+         <li class="flex items-start gap-2"><span class="text-orange-500 mt-0.5">→</span> <span>Music producers running heavy DAW sessions</span></li>
+        </ul>
+       </div>
+      </div><!-- Video Embed Section -->
+      <div class="glass rounded-2xl p-6">
+       <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+         <polygon points="5,3 19,12 5,21" />
+        </svg> Unboxing &amp; First Look</h3>
+       <div class="aspect-video bg-zinc-800 rounded-xl flex items-center justify-center relative overflow-hidden group cursor-pointer">
+        <div class="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-blue-500/20"></div>
+        <div class="relative z-10 w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-white/20 transition-all group-hover:scale-110">
+         <svg width="32" height="32" viewbox="0 0 24 24" fill="white">
+          <polygon points="5,3 19,12 5,21" />
+         </svg>
+        </div>
+        <p class="absolute bottom-4 left-4 text-sm text-zinc-300 bg-black/50 px-3 py-1 rounded-full">📺 3:42 • HD Quality</p>
+       </div>
+      </div>
+     </div><!-- Sidebar -->
+     <div class="space-y-6 animate-fade-up stagger-4">
+      <!-- Deal Alert Box -->
+      <div class="glass rounded-2xl p-6 border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-transparent">
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
+         <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /> <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+         </svg>
+        </div>
+        <div>
+         <h4 class="font-bold text-white">Deal Alerts</h4>
+         <p class="text-xs text-zinc-400">Never miss a price drop</p>
+        </div>
+       </div>
+       <p class="text-sm text-zinc-300 mb-4">Get instant notifications when this product goes on sale.</p>
+       <div class="flex gap-2">
+        <button class="flex-1 bg-orange-500/20 hover:bg-orange-500/30 text-orange-400 font-medium py-2.5 px-4 rounded-lg text-sm transition-colors flex items-center justify-center gap-2">
+         <svg width="16" height="16" viewbox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+         </svg> Telegram </button> <button class="flex-1 bg-green-500/20 hover:bg-green-500/30 text-green-400 font-medium py-2.5 px-4 rounded-lg text-sm transition-colors flex items-center justify-center gap-2">
+         <svg width="16" height="16" viewbox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+         </svg> WhatsApp </button>
+       </div>
+      </div><!-- Community Section -->
+      <div class="glass rounded-2xl p-6">
+       <h4 class="font-bold text-white mb-4 flex items-center gap-2"><span class="text-xl">💬</span> What the Community Says</h4>
+       <div class="space-y-4">
+        <!-- Tweet 1 -->
+        <div class="bg-zinc-800/50 rounded-xl p-4">
+         <div class="flex items-center gap-2 mb-2">
+          <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-xs font-bold text-white">
+           JD
+          </div>
+          <div>
+           <p class="text-sm font-medium text-white">@johndoe_tech</p>
+           <p class="text-xs text-zinc-500">Verified Buyer</p>
+          </div>
+         </div>
+         <p class="text-sm text-zinc-300">"The M3 Max is absolutely insane. Rendered a 30min 4K video in under 10 minutes. Worth every penny! 🔥"</p>
+         <div class="flex items-center gap-4 mt-2 text-xs text-zinc-500">
+          <span>❤️ 423</span> <span>🔁 89</span>
+         </div>
+        </div><!-- Tweet 2 -->
+        <div class="bg-zinc-800/50 rounded-xl p-4">
+         <div class="flex items-center gap-2 mb-2">
+          <div class="w-8 h-8 bg-gradient-to-br from-orange-500 to-pink-500 rounded-full flex items-center justify-center text-xs font-bold text-white">
+           SC
+          </div>
+          <div>
+           <p class="text-sm font-medium text-white">@sarahcreates</p>
+           <p class="text-xs text-zinc-500">Designer</p>
+          </div>
+         </div>
+         <p class="text-sm text-zinc-300">"Finally a laptop that can handle my Figma + After Effects workflow without breaking a sweat 💪"</p>
+         <div class="flex items-center gap-4 mt-2 text-xs text-zinc-500">
+          <span>❤️ 312</span> <span>🔁 56</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Related Products -->
+      <div class="glass rounded-2xl p-6">
+       <h4 class="font-bold text-white mb-4">You Might Also Like</h4>
+       <div class="space-y-4">
+        <a href="#" class="flex items-center gap-3 p-3 bg-zinc-800/50 rounded-xl hover:bg-zinc-800 transition-colors group">
+         <div class="w-14 h-14 bg-zinc-700 rounded-lg flex items-center justify-center flex-shrink-0">
+          <svg viewbox="0 0 40 40" class="w-10 h-10">
+           <rect x="5" y="8" width="30" height="20" rx="2" fill="#8a8a8a" /> <rect x="8" y="10" width="24" height="16" fill="#1a1a2e" />
+          </svg>
+         </div>
+         <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium text-white truncate group-hover:text-orange-400 transition-colors">MacBook Air M3</p>
+          <p class="text-xs text-zinc-500">From $1,099</p>
+         </div>
+         <svg class="w-4 h-4 text-zinc-500 group-hover:text-orange-400 transition-colors" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9,18 15,12 9,6" />
+         </svg></a> <a href="#" class="flex items-center gap-3 p-3 bg-zinc-800/50 rounded-xl hover:bg-zinc-800 transition-colors group">
+         <div class="w-14 h-14 bg-zinc-700 rounded-lg flex items-center justify-center flex-shrink-0">
+          <svg viewbox="0 0 40 40" class="w-10 h-10">
+           <rect x="10" y="5" width="20" height="30" rx="2" fill="#8a8a8a" /> <rect x="12" y="8" width="16" height="20" fill="#1a1a2e" />
+          </svg>
+         </div>
+         <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium text-white truncate group-hover:text-orange-400 transition-colors">iPad Pro M4</p>
+          <p class="text-xs text-zinc-500">From $999</p>
+         </div>
+         <svg class="w-4 h-4 text-zinc-500 group-hover:text-orange-400 transition-colors" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9,18 15,12 9,6" />
+         </svg></a> <a href="#" class="flex items-center gap-3 p-3 bg-zinc-800/50 rounded-xl hover:bg-zinc-800 transition-colors group">
+         <div class="w-14 h-14 bg-zinc-700 rounded-lg flex items-center justify-center flex-shrink-0">
+          <svg viewbox="0 0 40 40" class="w-10 h-10">
+           <rect x="5" y="15" width="30" height="10" rx="2" fill="#8a8a8a" /> <rect x="8" y="17" width="24" height="6" rx="1" fill="#1a1a2e" />
+          </svg>
+         </div>
+         <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium text-white truncate group-hover:text-orange-400 transition-colors">Magic Keyboard</p>
+          <p class="text-xs text-zinc-500">From $299</p>
+         </div>
+         <svg class="w-4 h-4 text-zinc-500 group-hover:text-orange-400 transition-colors" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9,18 15,12 9,6" />
+         </svg></a>
+       </div>
+      </div>
+     </div>
+    </div><!-- Mobile Share Bar -->
+    <div class="fixed bottom-0 left-0 right-0 md:hidden glass border-t border-zinc-800 p-4 z-50">
+     <div class="flex items-center gap-3">
+      <button class="flex-1 cta-btn py-3 rounded-xl text-white font-semibold flex items-center justify-center gap-2">
+       <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" /> <line x1="3" y1="6" x2="21" y2="6" /> <path d="M16 10a4 4 0 0 1-8 0" />
+       </svg> Buy Now </button> <button class="w-12 h-12 flex items-center justify-center bg-zinc-800 rounded-xl text-zinc-400 hover:text-white transition-colors">
+       <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /> <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+       </svg></button> <button class="w-12 h-12 flex items-center justify-center bg-zinc-800 rounded-xl text-zinc-400 hover:text-white transition-colors">
+       <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+       </svg></button>
+     </div>
+    </div>
+   </main><!-- Footer -->
+   <footer class="glass border-t border-zinc-800 mt-12 pb-24 md:pb-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+     <div class="grid md:grid-cols-4 gap-8">
+      <div>
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+         <svg width="24" height="24" viewbox="0 0 24 24" fill="white">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+         </svg>
+        </div><span class="text-lg font-bold text-white">SmartAffiliate</span>
+       </div>
+       <p class="text-sm text-zinc-400">High-converting product reviews, expert guides, and exclusive deals to maximize your affiliate earnings.</p>
+      </div>
+      <div>
+       <h5 class="font-semibold text-white mb-4">Categories</h5>
+       <ul class="space-y-2 text-sm text-zinc-400">
+        <li><a href="#" class="hover:text-orange-500 transition-colors">Laptops</a></li>
+        <li><a href="#" class="hover:text-orange-500 transition-colors">Smartphones</a></li>
+        <li><a href="#" class="hover:text-orange-500 transition-colors">Audio</a></li>
+        <li><a href="#" class="hover:text-orange-500 transition-colors">Accessories</a></li>
+       </ul>
+      </div>
+      <div>
+       <h5 class="font-semibold text-white mb-4">Resources</h5>
+       <ul class="space-y-2 text-sm text-zinc-400">
+        <li><a href="#" class="hover:text-orange-500 transition-colors">Buying Guides</a></li>
+        <li><a href="#" class="hover:text-orange-500 transition-colors">How-To Articles</a></li>
+        <li><a href="#" class="hover:text-orange-500 transition-colors">Deal Alerts</a></li>
+        <li><a href="#" class="hover:text-orange-500 transition-colors">Newsletter</a></li>
+       </ul>
+      </div>
+      <div>
+       <h5 class="font-semibold text-white mb-4">Legal</h5>
+       <ul class="space-y-2 text-sm text-zinc-400">
+        <li><a href="#" class="hover:text-orange-500 transition-colors">Privacy Policy</a></li>
+        <li><a href="#" class="hover:text-orange-500 transition-colors">Terms of Service</a></li>
+        <li><a href="#" class="hover:text-orange-500 transition-colors">Affiliate Disclosure</a></li>
+        <li><a href="#" class="hover:text-orange-500 transition-colors">Contact Us</a></li>
+       </ul>
+      </div>
+     </div>
+     <div class="border-t border-zinc-800 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-zinc-500">© 2024 SmartAffiliate. All rights reserved.</p>
+      <p class="text-xs text-zinc-600">As an Amazon Associate, we earn from qualifying purchases.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      site_name: 'SmartAffiliate',
+      tagline: 'High-Converting Product Reviews & Deals',
+      product_name: 'MacBook Pro M3 Max',
+      product_tagline: 'The Ultimate Creative Powerhouse',
+      product_price: '$3,499',
+      cta_button_text: 'Check Price on Amazon',
+      discount_text: '15% OFF TODAY',
+      background_color: '#0a0a0f',
+      surface_color: '#141419',
+      text_color: '#f4f4f5',
+      accent_primary: '#f97316',
+      accent_secondary: '#3b82f6'
+    };
+    
+    // Apply configuration to DOM
+    async function onConfigChange(config) {
+      // Site header
+      const siteName = document.getElementById('site-name');
+      if (siteName) siteName.textContent = config.site_name || defaultConfig.site_name;
+      
+      const tagline = document.getElementById('tagline');
+      if (tagline) tagline.textContent = config.tagline || defaultConfig.tagline;
+      
+      // Product info
+      const productName = document.getElementById('product-name');
+      if (productName) productName.textContent = config.product_name || defaultConfig.product_name;
+      
+      const productTagline = document.getElementById('product-tagline');
+      if (productTagline) productTagline.textContent = config.product_tagline || defaultConfig.product_tagline;
+      
+      const productPrice = document.getElementById('product-price');
+      if (productPrice) productPrice.textContent = config.product_price || defaultConfig.product_price;
+      
+      // CTA
+      const ctaText = document.getElementById('cta-text');
+      if (ctaText) ctaText.textContent = config.cta_button_text || defaultConfig.cta_button_text;
+      
+      const discountBadge = document.getElementById('discount-badge');
+      if (discountBadge) discountBadge.textContent = config.discount_text || defaultConfig.discount_text;
+      
+      // Apply colors
+      const root = document.documentElement;
+      root.style.setProperty('--bg-primary', config.background_color || defaultConfig.background_color);
+      root.style.setProperty('--surface', config.surface_color || defaultConfig.surface_color);
+      root.style.setProperty('--text-primary', config.text_color || defaultConfig.text_color);
+      root.style.setProperty('--accent-primary', config.accent_primary || defaultConfig.accent_primary);
+      root.style.setProperty('--accent-secondary', config.accent_secondary || defaultConfig.accent_secondary);
+    }
+    
+    // Map to capabilities for Canva editing
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              config.surface_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ surface_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.accent_primary || defaultConfig.accent_primary,
+            set: (value) => {
+              config.accent_primary = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ accent_primary: value });
+            }
+          },
+          {
+            get: () => config.accent_secondary || defaultConfig.accent_secondary,
+            set: (value) => {
+              config.accent_secondary = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ accent_secondary: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+    
+    // Map to edit panel values
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['site_name', config.site_name || defaultConfig.site_name],
+        ['tagline', config.tagline || defaultConfig.tagline],
+        ['product_name', config.product_name || defaultConfig.product_name],
+        ['product_tagline', config.product_tagline || defaultConfig.product_tagline],
+        ['product_price', config.product_price || defaultConfig.product_price],
+        ['cta_button_text', config.cta_button_text || defaultConfig.cta_button_text],
+        ['discount_text', config.discount_text || defaultConfig.discount_text]
+      ]);
+    }
+    
+    // Initialize SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    } else {
+      onConfigChange(defaultConfig);
+    }
+    
+    // Thumbnail interaction
+    document.querySelectorAll('.glass.rounded-xl.border-2').forEach((thumb, index) => {
+      thumb.addEventListener('click', function() {
+        document.querySelectorAll('.glass.rounded-xl.border-2').forEach(t => t.classList.remove('thumb-active'));
+        this.classList.add('thumb-active');
+      });
+    });
+    
+    // CTA button click tracking
+    document.getElementById('cta-button')?.addEventListener('click', function() {
+      // In a real implementation, this would redirect to the affiliate link
+      console.log('CTA clicked - would redirect to: yourdomain.com/go/macbook-pro-m3-max');
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9da3c61a26d4bc80',t:'MTc3MzE2MDk1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
