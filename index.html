@@ -2,148 +2,128 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amazon Deals</title>
 
 <style>
-
 body{
 font-family: Arial;
-margin:0;
-background:#f3f3f3;
+background:#f5f5f5;
+text-align:center;
 }
 
-header{
-background:#232f3e;
-color:white;
-padding:20px;
-text-align:center;
-font-size:24px;
+h1{
+margin-top:20px;
 }
 
 .products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 gap:20px;
-padding:30px;
+padding:20px;
 }
 
 .card{
 background:white;
 padding:15px;
 border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-text-align:center;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
+width:220px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .card img{
 width:100%;
-height:200px;
-object-fit:contain;
+border-radius:8px;
 }
 
-.card h3{
-font-size:18px;
-margin:10px 0;
-}
-
-.buy{
-display:inline-block;
+.card a{
+display:block;
+margin-top:10px;
 background:#ff9900;
 color:white;
-padding:10px 15px;
-border-radius:6px;
+padding:10px;
 text-decoration:none;
+border-radius:6px;
 font-weight:bold;
 }
 
-.buy:hover{
+.card a:hover{
 background:#e68a00;
 }
-
-footer{
-text-align:center;
-padding:20px;
-background:#232f3e;
-color:white;
-}
-
 </style>
-</head>
 
+</head>
 <body>
 
-<header>
-🔥 Amazon Best Deals
-</header>
+<h1>🔥 Amazon Best Deals</h1>
 
 <div class="products" id="products"></div>
-
-<footer>
-Amazon Affiliate Store
-</footer>
 
 <script>
 
 const products = [
 
 {
-name:"Bluetooth Earbuds",
-img:"https://m.media-amazon.com/images/I/71QKQ9mwV7L._AC_SL1500_.jpg",
-link:"https://www.amazon.com/dp/B09DT48V16/?tag=no05c2b-20"
-},
-
-{
-name:"SSD Drive",
-img:"https://m.media-amazon.com/images/I/81mS1j5nqBL._AC_SL1500_.jpg",
-link:"https://www.amazon.com/dp/B08N5WRWNW/?tag=no05c2b-20"
+name:"Wireless Earbuds",
+img:"https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
+link:"https://amzn.to/4lh1nZr"
 },
 
 {
 name:"Smart Watch",
 img:"https://m.media-amazon.com/images/I/61ZjlBOp+rL._AC_SL1500_.jpg",
-link:"https://www.amazon.com/dp/B08H8X23ZB/?tag=no05c2b-20"
+link:"https://amzn.to/4d7byxw"
 },
 
 {
-name:"Wireless Headphones",
+name:"SSD Drive",
+img:"https://m.media-amazon.com/images/I/81mS1j5nqBL._AC_SL1500_.jpg",
+link:"https://amzn.to/40T35qo"
+},
+
+{
+name:"Bluetooth Headphones",
+img:"https://m.media-amazon.com/images/I/71QKQ9mwV7L._AC_SL1500_.jpg",
+link:"https://amzn.to/4ud1BoF"
+},
+
+{
+name:"Speaker",
 img:"https://m.media-amazon.com/images/I/71l2q6v1D+L._AC_SL1500_.jpg",
-link:"https://www.amazon.com/dp/B09DT48V16/?tag=no05c2b-20"
+link:"https://amzn.to/40SpLXM"
+},
+
+{
+name:"Webcam",
+img:"https://m.media-amazon.com/images/I/61UxfXTUyvL._AC_SL1500_.jpg",
+link:"https://amzn.to/3Nc6Tjs"
 },
 
 {
 name:"Power Bank",
 img:"https://m.media-amazon.com/images/I/71eO8m8s0BL._AC_SL1500_.jpg",
-link:"https://www.amazon.com/dp/B0B4W9LQ3G/?tag=no05c2b-20"
+link:"https://amzn.to/46M2FFY"
 },
 
 {
-name:"HD Webcam",
-img:"https://m.media-amazon.com/images/I/61UxfXTUyvL._AC_SL1500_.jpg",
-link:"https://www.amazon.com/dp/B085TFF7M1/?tag=no05c2b-20"
+name:"Smart Hub",
+img:"https://m.media-amazon.com/images/I/61EXU8BuGZL._AC_SL1500_.jpg",
+link:"https://amzn.to/47kGcQm"
 }
 
 ];
 
 const container = document.getElementById("products");
 
-products.forEach(product=>{
+products.forEach(product => {
 
 const card = document.createElement("div");
+card.className = "card";
 
-card.className="card";
-
-card.innerHTML=`
-
+card.innerHTML = `
 <img src="${product.img}">
 <h3>${product.name}</h3>
-<a class="buy" href="${product.link}" target="_blank">Buy on Amazon</a>
-
+<a href="${product.link}" target="_blank">Buy on Amazon</a>
 `;
 
 container.appendChild(card);
