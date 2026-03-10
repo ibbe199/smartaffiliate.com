@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Amazon Deals</title>
+  <title>smartaffiliate</title>
   <style>
 body{
 font-family: Arial;
