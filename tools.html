@@ -1,164 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات الذكاء الاصطناعي | SmartAffiliate</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; text-align: center; }
+        header { background: #1a1a1a; color: white; padding: 1.5rem; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        
+        /* تصميم شبكة الأدوات */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        /* تصميم الكارت tool-card */
+        .tool-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+            position: relative;
+        }
 
-<title>AI Tools - Smart Affiliate</title>
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+            border-color: #007bff;
+        }
 
-<style>
+        .tag {
+            background: #e7f3ff;
+            color: #007bff;
+            font-size: 12px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
 
-body{
-font-family:Arial;
-margin:0;
-background:#f5f5f5;
-}
+        .tool-card h3 { margin: 10px 0; font-size: 22px; color: #1a1a1a; }
+        .tool-card p { font-size: 15px; color: #666; line-height: 1.5; margin-bottom: 20px; }
 
-header{
-background:#111;
-color:white;
-text-align:center;
-padding:20px;
-}
+        .btn-visit {
+            display: block;
+            background: #007bff;
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
 
-nav{
-background:#222;
-padding:10px;
-text-align:center;
-}
+        .btn-visit:hover { background: #0056b3; }
 
-nav a{
-color:white;
-margin:15px;
-text-decoration:none;
-font-weight:bold;
-}
-
-nav a:hover{
-color:#00bfff;
-}
-
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px;
-}
-
-.tool{
-background:white;
-padding:20px;
-margin-bottom:20px;
-border-radius:8px;
-}
-
-button{
-background:#0077ff;
-color:white;
-border:none;
-padding:10px 15px;
-border-radius:5px;
-cursor:pointer;
-}
-
-button:hover{
-background:#0056cc;
-}
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
-}
-
-</style>
-
+        footer { background: #1a1a1a; color: white; padding: 20px; margin-top: 50px; }
+    </style>
 </head>
-
 <body>
 
-<header>
-<h1>Best AI Tools</h1>
-<p>Discover powerful AI tools to work faster</p>
-</header>
+    <header>
+        <h1>SmartAffiliate Tools</h1>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="tools.html">الأدوات</a>
+            <a href="blog.html">المدونة</a>
+        </nav>
+    </header>
 
-<nav>
-<a href="/">Home</a>
-<a href="tools.html">Tools</a>
-<a href="blog.html">Blog</a>
-</nav>
+    <div class="container">
+        <h2>دليل أدوات الذكاء الاصطناعي الشامل</h2>
+        <p>اكتشف أفضل الأدوات المختارة بعناية لتطوير عملك.</p>
 
-<div class="container">
+        <div class="tool-grid">
+            
+            <div class="tool-card">
+                <span class="tag">كتابة ومحتوى</span>
+                <h3>ChatGPT</h3>
+                <p>أداة ذكاء اصطناعي ثورية تساعدك في كتابة المقالات، البرمجة، والبحث عن المعلومات بسرعة فائقة.</p>
+                <a href="رابط-الأفلييت-هنا" target="_blank" rel="sponsored noopener" class="btn-visit">زيارة الأداة</a>
+            </div>
 
-<h2>Top AI Tools</h2>
+            <div class="tool-card">
+                <span class="tag">تصميم وجرافيك</span>
+                <h3>Canva AI</h3>
+                <p>حول أفكارك إلى تصاميم احترافية ومنشورات سوشيال ميديا بضغطة زر واحدة باستخدام سحر الذكاء الاصطناعي.</p>
+                <a href="رابط-الأفلييت-هنا" target="_blank" rel="sponsored noopener" class="btn-visit">زيارة الأداة</a>
+            </div>
 
-<div class="tool">
-<h3>ChatGPT</h3>
-<p>AI assistant for writing, coding and research.</p>
-<a href="https://chat.openai.com" target="_blank"><button>Visit Tool</button></a>
-</div>
+            <div class="tool-card">
+                <span class="tag">توليد صور</span>
+                <h3>Midjourney</h3>
+                <p>المحرك الأقوى في العالم لتوليد الصور الفنية والواقعية من خلال الأوامر النصية البسيطة.</p>
+                <a href="رابط-الأفلييت-هنا" target="_blank" rel="sponsored noopener" class="btn-visit">زيارة الأداة</a>
+            </div>
 
-<div class="tool">
-<h3>Canva</h3>
-<p>Create designs and graphics with AI.</p>
-<a href="https://www.canva.com" target="_blank"><button>Visit Tool</button></a>
-</div>
+            <div class="tool-card">
+                <span class="tag">تحسين محركات البحث</span>
+                <h3>Jasper AI</h3>
+                <p>رفيقك في كتابة المحتوى التسويقي المتوافق مع الـ SEO لزيادة ترتيب موقعك في محركات البحث.</p>
+                <a href="رابط-الأفلييت-هنا" target="_blank" rel="sponsored noopener" class="btn-visit">زيارة الأداة</a>
+            </div>
 
-<div class="tool">
-<h3>Notion AI</h3>
-<p>Smart workspace for notes and productivity.</p>
-<a href="https://www.notion.so" target="_blank"><button>Visit Tool</button></a>
-</div>
+        </div>
+    </div>
 
-<div class="tool">
-<h3>Grammarly</h3>
-<p>AI writing assistant for better grammar.</p>
-<a href="https://www.grammarly.com" target="_blank"><button>Visit Tool</button></a>
-</div>
-
-<div class="tool">
-<h3>Jasper AI</h3>
-<p>AI copywriting tool for marketing.</p>
-<a href="https://www.jasper.ai" target="_blank"><button>Visit Tool</button></a>
-</div>
-
-<div class="tool">
-<h3>Copy.ai</h3>
-<p>Create marketing content using AI.</p>
-<a href="https://www.copy.ai" target="_blank"><button>Visit Tool</button></a>
-</div>
-
-<div class="tool">
-<h3>Midjourney</h3>
-<p>Create amazing AI generated images.</p>
-<a href="https://www.midjourney.com" target="_blank"><button>Visit Tool</button></a>
-</div>
-
-<div class="tool">
-<h3>Runway ML</h3>
-<p>AI video generation and editing.</p>
-<a href="https://runwayml.com" target="_blank"><button>Visit Tool</button></a>
-</div>
-
-<div class="tool">
-<h3>Descript</h3>
-<p>Edit audio and video using AI.</p>
-<a href="https://www.descript.com" target="_blank"><button>Visit Tool</button></a>
-</div>
-
-<div class="tool">
-<h3>Pictory</h3>
-<p>Convert text into videos automatically.</p>
-<a href="https://pictory.ai" target="_blank"><button>Visit Tool</button></a>
-</div>
-
-</div>
-
-<footer>
-<p>© 2026 Smart Affiliate</p>
-</footer>
+    <footer>
+        <p>&copy; 2026 SmartAffiliate.com - All Rights Reserved</p>
+    </footer>
 
 </body>
 </html>
