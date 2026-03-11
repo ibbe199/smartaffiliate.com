@@ -3,65 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أفضل 5 أدوات للمبتدئين | SmartAffiliate</title>
+    <title>SmartAffiliate</title>
     <style>
-        :root { --primary: #007bff; --dark: #1a1a1a; --light: #f8f9fa; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--light); margin: 0; padding: 20px; color: var(--dark); }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        /* إعدادات الألوان والخطوط الأساسية */
+        body { font-family: sans-serif; background-color: #fdfdfd; margin: 0; padding: 0; text-align: center; }
         
-        /* جعل العنوان يتماشى مع الـ Index */
-        h1 { color: var(--primary); text-align: center; border-bottom: 2px solid #eee; padding-bottom: 15px; }
-        
-        .tool-section { margin-top: 30px; border-right: 5px solid var(--primary); padding-right: 15px; }
-        h3 { color: var(--primary); margin-bottom: 10px; }
-        p { line-height: 1.8; font-size: 17px; }
-        
-        .btn-link { display: inline-block; padding: 12px 25px; background: #28a745; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 10px; }
-        .back-link { display: block; text-align: center; margin-bottom: 20px; text-decoration: none; color: var(--primary); font-weight: bold; }
+        /* زر العودة للرئيسية */
+        .back-nav { padding: 15px; }
+        .back-nav a { text-decoration: none; color: #007bff; font-weight: bold; font-size: 16px; }
+
+        /* الشعار: حجم صغير ومتحرك (صعود وهبوط خفيف) */
+        .logo { 
+            font-size: 22px; 
+            font-weight: bold; 
+            color: #007bff; 
+            margin: 10px 0;
+            display: inline-block;
+            animation: pulse 3s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* الحاوية الرئيسية للمقالات */
+        .container { max-width: 450px; margin: auto; padding: 10px; }
+
+        /* الكارت الخاص بكل مقال - صف كامل */
+        .card { 
+            background: #fff; 
+            border-radius: 15px; 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-right: 5px solid #007bff;
+            text-align: right; /* محاذاة النص لليمين */
+        }
+
+        /* العناوين الزرقاء - تم تصغيرها لتناسب الموبايل */
+        .card h2 { color: #007bff; font-size: 22px; margin: 0 0 15px 0; }
+        .card p { color: #555; font-size: 15px; line-height: 1.6; }
+
+        /* الزر الأخضر */
+        .btn { 
+            display: inline-block; 
+            background-color: #28a745; 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <a href="index.html" class="back-link">🏠 العودة للرئيسية</a>
-
-    <div class="container">
-        <h1>أفضل 5 أدوات ذكاء اصطناعي للمبتدئين</h1>
-        <p>هذا المقال هو دليلك الشامل لتبدأ رحلتك في عالم الذكاء الاصطناعي بذكاء واحترافية.</p>
-
-        <div class="tool-section">
-            <h3>1. ChatGPT</h3>
-            <p>الأداة الأقوى للمحادثة، كتابة المحتوى، وحل المشكلات المعقدة في ثوانٍ.</p>
-            <a href="https://chatgpt.com" target="_blank" class="btn-link">جرب ChatGPT الآن</a>
-        </div>
-
-        <div class="tool-section">
-            <h3>2. Canva</h3>
-            <p>أداة التصميم التي لا تحتاج لخبرة سابقة. حول أفكارك لتصاميم مبهرة بلمسة واحدة.</p>
-            <a href="https://www.canva.com" target="_blank" class="btn-link">ابدأ التصميم مجاناً</a>
-        </div>
-
-        <div class="tool-section">
-            <h3>3. Perplexity</h3>
-            <p>بديل جوجل الحديث، يعطيك إجابات مباشرة موثقة بالمصادر والروابط.</p>
-            <a href="https://www.perplexity.ai" target="_blank" class="btn-link">استخدم البحث الذكي</a>
-        </div>
-
-        <div class="tool-section">
-            <h3>4. Quillbot</h3>
-            <p>لتحسين أسلوب الكتابة وإعادة صياغة النصوص باحترافية عالية.</p>
-            <a href="https://quillbot.com" target="_blank" class="btn-link">حسن كتابتك الآن</a>
-        </div>
-
-        <div class="tool-section">
-            <h3>5. ElevenLabs</h3>
-            <p>لتحويل النصوص إلى أصوات بشرية طبيعية جداً لمقاطع الفيديو الخاصة بك.</p>
-            <a href="https://elevenlabs.io" target="_blank" class="btn-link">تجربة الصوت الواقعي</a>
-        </div>
+    <div class="back-nav">
+        <a href="index.html">🏠 العودة للرئيسية</a>
     </div>
 
-    <footer style="text-align: center; margin-top: 30px; color: #888;">
-        &copy; 2026 SmartAffiliate
-    </footer>
+    <div class="logo">SmartAffiliate</div>
+
+    <div class="container">
+        <div class="card">
+            <h2>أفضل 5 أدوات ذكاء اصطناعي للمبتدئين</h2>
+            <p>هذا المقال هو دليلك الشامل لتبدأ رحلتك في عالم الذكاء الاصطناعي بذكاء واحترافية.</p>
+            <a href="https://chatgpt.com" class="btn">جرب ChatGPT الآن</a>
+        </div>
+
+        <div class="card">
+            <h2>مستقبل الفيديو مع Sora</h2>
+            <p>اكتشف كيف يمكنك تحويل النص إلى فيديو سينمائي مذهل في ثوانٍ معدودة.</p>
+            <a href="https://runwayml.com" class="btn">جرب Runway</a>
+        </div>
+    </div>
 
 </body>
 </html>
