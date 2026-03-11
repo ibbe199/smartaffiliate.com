@@ -3,114 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المدونة | SmartAffiliate 2026</title>
+    <title>SmartAffiliate | دليل أدوات الذكاء الاصطناعي</title>
+    <meta name="description" content="أفضل أدوات الذكاء الاصطناعي لزيادة الإنتاجية والربح من التسويق بالعمولة.">
+    
     <style>
-        :root { --primary: #007bff; --success: #28a745; --bg: #f4f7f6; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); margin: 0; padding: 0; }
+        :root { --primary: #007bff; --success: #28a745; --dark: #1a1a1a; --light: #f8f9fa; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
+        header { background: #fff; padding: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: center; gap: 20px; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
+        .hero { background: linear-gradient(45deg, #007bff, #00c4cc); color: white; text-align: center; padding: 60px 20px; }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .section-title { text-align: center; margin: 40px 0; font-size: 2rem; color: var(--dark); }
         
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        .blog-header { text-align: center; margin-bottom: 50px; }
-        
-        /* هذا الجزء هو المسؤول عن جعل المقالات في صف كامل */
-        .articles-list { display: flex; flex-direction: column; gap: 30px; }
-        
-        .article-card { 
-            background: white; 
-            border-radius: 12px; 
-            padding: 30px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
-            border-right: 10px solid var(--primary); 
-            transition: 0.3s;
-            display: block; /* لضمان أخذ الصف كامل */
-        }
-        
-        .article-card:hover { transform: translateX(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        
-        .tag { background: #e1f0ff; color: var(--primary); padding: 5px 15px; border-radius: 50px; font-size: 13px; font-weight: bold; }
-        h2 { color: #222; margin: 20px 0 10px 0; font-size: 24px; }
-        p { color: #555; line-height: 1.8; font-size: 17px; margin-bottom: 20px; }
-        
-        .buttons-group { display: flex; gap: 15px; flex-wrap: wrap; }
-        
-        .btn { 
-            display: inline-block; 
-            padding: 12px 25px; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            transition: 0.3s; 
-        }
-        .btn-read { background: var(--primary); color: white; }
-        .btn-tool { background: var(--success); color: white; }
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+        /* تصميم كروت الأدوات */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; }
+        .btn-link { display: inline-block; padding: 12px 25px; background: var(--success); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 15px; transition: 0.3s; }
+        .btn-link:hover { background: #218838; transform: scale(1.05); }
 
-        @media (max-width: 600px) {
-            .btn { width: 100%; text-align: center; }
-        }
+        /* تصميم قسم المقالات */
+        .article-box { background: white; border-right: 6px solid var(--primary); padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: 0.3s; }
+        .article-box:hover { background: #f0f7ff; }
+        .read-more { color: var(--primary); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px; }
+
+        footer { background: var(--dark); color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
     </style>
 </head>
 <body>
 
+<header>
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="blog.html">المدونة</a>
+        <a href="#tools">أدوات AI</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>SmartAffiliate</h1>
+    <p>دليلك الشامل لأدوات الذكاء الاصطناعي والربح من الأفلييت</p>
+</section>
+
 <div class="container">
-    <div class="blog-header">
-        <h1>مستقبل الذكاء الاصطناعي 2026</h1>
-        <p>تصفح أحدث المقالات والأدوات التي اخترناها لك بعناية</p>
+    
+    <h2 id="tools" class="section-title">أدوات ذكاء اصطناعي نرشحها لك</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>ChatGPT</h3>
+            <p>أشهر مساعد ذكي لكتابة المحتوى، البرمجة، وتلخيص الكتب.</p>
+            <a href="https://chatgpt.com" target="_blank" rel="noopener" class="btn-link">زيارة الموقع الرسمي</a>
+        </div>
+
+        <div class="card">
+            <h3>Canva AI</h3>
+            <p>حوّل نصوصك إلى تصاميم احترافية وفيديوهات بضغطة زر.</p>
+            <a href="https://www.canva.com/ai-image-generator/" target="_blank" rel="noopener" class="btn-link">جرب التصميم الآن</a>
+        </div>
+
+        <div class="card">
+            <h3>Jasper AI</h3>
+            <p>الأداة المفضلة لكتاب محتوى التسويق والـ SEO المتقدم.</p>
+            <a href="https://www.jasper.ai" target="_blank" rel="noopener" class="btn-link">ابدأ تجربة Jasper</a>
+        </div>
     </div>
 
-    <div class="articles-list">
-        
-        <div class="article-card">
-            <span class="tag">الجيل الجديد</span>
-            <h2>1. عصر الوكلاء المستقلين (AI Agents)</h2>
-            <p>تعرف على كيفية استخدام الوكلاء الأذكياء لإدارة مهامك اليومية وحجز المواعيد وتحليل البيانات دون تدخل منك. تقنية O1 من OpenAI تغير قواعد اللعبة تماماً.</p>
-            <div class="buttons-group">
-                <a href="article1.html" class="btn btn-read">إقرأ المقال كاملاً</a>
-                <a href="https://openai.com" target="_blank" class="btn btn-tool">تجربة الأداة الآن</a>
-            </div>
+    <h2 class="section-title">آخر مقالات المدونة</h2>
+    <div class="grid">
+        <div class="article-box">
+            <h3>أفضل 5 أدوات ذكاء اصطناعي لعام 2026</h3>
+            <p>اكتشف القائمة المحدثة لأدوات الذكاء الاصطناعي التي ستغير طريقة عملك هذا العام...</p>
+            <a href="article1.html" class="read-more">إقرأ المقال كاملاً ←</a>
         </div>
 
-        <div class="article-card">
-            <span class="tag">فيديو AI</span>
-            <h2>2. كيف تصنع فيديوهات سينمائية بالأوامر النصية؟</h2>
-            <p>باستخدام Sora و Runway، أصبح بإمكانك إنتاج محتوى مرئي بجودة عالمية في دقائق. اكتشف كيف توفر آلاف الدولارات وتزيد من إنتاجيتك في اليوتيوب وتيك توك.</p>
-            <div class="buttons-group">
-                <a href="article2.html" class="btn btn-read">إقرأ المقال كاملاً</a>
-                <a href="https://runwayml.com" target="_blank" class="btn btn-tool">فتح Runway</a>
-            </div>
+        <div class="article-box">
+            <h3>دليل المبتدئين للربح من الأفلييت</h3>
+            <p>كيف تبني موقعاً ناجحاً وتبدأ في كسب العمولات باستخدام أدوات بسيطة...</p>
+            <a href="blog.html" class="read-more">تصفح جميع المقالات ←</a>
         </div>
-
-        <div class="article-card">
-            <span class="tag">بدون برمجة</span>
-            <h2>3. بناء التطبيقات والمواقع باستخدام No-Code AI</h2>
-            <p>لا تحتاج لتعلم لغات البرمجة بعد الآن. أدوات مثل Framer و Bubble تتيح لك تحويل فكرتك إلى واقع ملموس بمجرد وصفها باللغة العربية للذكاء الاصطناعي.</p>
-            <div class="buttons-group">
-                <a href="article3.html" class="btn btn-read">إقرأ المقال كاملاً</a>
-                <a href="https://www.framer.com" target="_blank" class="btn btn-tool">زيارة الموقع</a>
-            </div>
-        </div>
-
-        <div class="article-card">
-            <span class="tag">تصميم</span>
-            <h2>4. احتراف التصميم مع Canva Magic Studio</h2>
-            <p>اكتشف القوة الحقيقية لأدوات التصميم الذكية التي تقوم بتعديل الصور، إزالة الخلفيات، وإنشاء منشورات كاملة للسوشيال ميديا في ثوانٍ معدودة.</p>
-            <div class="buttons-group">
-                <a href="article4.html" class="btn btn-read">إقرأ المقال كاملاً</a>
-                <a href="https://www.canva.com" target="_blank" class="btn btn-tool">فتح Canva</a>
-            </div>
-        </div>
-
-        <div class="article-card">
-            <span class="tag">إنتاجية</span>
-            <h2>5. لماذا Perplexity هو مستقبل البحث؟</h2>
-            <p>وداعاً لنتائج البحث التقليدية المليئة بالإعلانات. Perplexity يعطيك إجابات مباشرة وموثقة بالمصادر، مما يجعله المحرك الأقوى للطلاب والمسوقين في 2026.</p>
-            <div class="buttons-group">
-                <a href="article5.html" class="btn btn-read">إقرأ المقال كاملاً</a>
-                <a href="https://www.perplexity.ai" target="_blank" class="btn btn-tool">جرب البحث الذكي</a>
-            </div>
-        </div>
-
     </div>
+
 </div>
+
+<footer>
+    <p>&copy; 2026 SmartAffiliate.com | جميع الحقوق محفوظة</p>
+    <p style="font-size: 13px; color: #888; margin-top: 10px;">إخلاء مسؤولية: قد نحصل على عمولة عند الشراء من خلال بعض الروابط أعلاه.</p>
+</footer>
 
 </body>
 </html>
