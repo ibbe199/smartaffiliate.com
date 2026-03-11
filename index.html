@@ -40,7 +40,36 @@
         <a href="#tools">أدوات AI</a>
     </nav>
 </header>
+<style>
+    /* ... الأكواد القديمة ... */
 
+    /* تعديل تنسيق الشعار ليكون أكبر ومتحركاً */
+    header h1 {
+        font-size: 3rem; /* حجم الخط (أكبر) */
+        font-weight: bold;
+        background: linear-gradient(135deg, #007bff, #00c4cc); /* تدرج ألوان */
+        -webkit-background-clip: text; /* لقص التدرج على النص فقط */
+        -webkit-text-fill-color: transparent; /* جعل لون النص شفافاً لإظهار التدرج */
+        margin: 0;
+        animation: pulse 2s infinite; /* تشغيل الأنيميشن */
+    }
+
+    /* تعريف أنيميشن "النبض" (pulse) */
+    @keyframes pulse {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.1); opacity: 0.8; } /* تكبير طفيف وتقليل الشفافية */
+        100% { transform: scale(1); opacity: 1; }
+    }
+</style>
+
+<header>
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="blog.html">المدونة</a>
+        <a href="#tools">أدوات AI</a>
+    </nav>
+    <h1 style="display: block; width: fit-content; margin: 10px auto;">SmartAffiliate</h1>
+</header>
 <section class="hero">
     <h1>SmartAffiliate</h1>
     <p>دليلك الشامل لأدوات الذكاء الاصطناعي والربح من الأفلييت</p>
