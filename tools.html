@@ -6,11 +6,26 @@
     <title>أدوات الذكاء الاصطناعي | SmartAffiliate</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; text-align: center; }
-        header { background: #1a1a1a; color: white; padding: 1.5rem; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        header { background: #1a1a1a; color: white; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: #007bff; }
         
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         
+        /* شريط البحث */
+        .search-container { margin-bottom: 40px; }
+        #toolSearch {
+            padding: 12px 20px;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 25px;
+            border: 2px solid #ddd;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+        #toolSearch:focus { border-color: #007bff; box-shadow: 0 0 8px rgba(0,123,255,0.2); }
+
         /* تصميم شبكة الأدوات */
         .tool-grid {
             display: grid;
@@ -27,7 +42,9 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid #eee;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .tool-card:hover {
@@ -45,10 +62,11 @@
             font-weight: bold;
             display: inline-block;
             margin-bottom: 10px;
+            align-self: flex-start;
         }
 
         .tool-card h3 { margin: 10px 0; font-size: 22px; color: #1a1a1a; }
-        .tool-card p { font-size: 15px; color: #666; line-height: 1.5; margin-bottom: 20px; }
+        .tool-card p { font-size: 15px; color: #666; line-height: 1.5; margin-bottom: 20px; flex-grow: 1; }
 
         .btn-visit {
             display: block;
@@ -63,7 +81,7 @@
 
         .btn-visit:hover { background: #0056b3; }
 
-        footer { background: #1a1a1a; color: white; padding: 20px; margin-top: 50px; }
+        footer { background: #1a1a1a; color: white; padding: 30px; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -79,36 +97,48 @@
 
     <div class="container">
         <h2>دليل أدوات الذكاء الاصطناعي الشامل</h2>
-        <p>اكتشف أفضل الأدوات المختارة بعناية لتطوير عملك.</p>
+        <p>استكشف أفضل الأدوات التي ستساعدك على التطور في عام 2026.</p>
 
-        <div class="tool-grid">
+        <div class="search-container">
+            <input type="text" id="toolSearch" onkeyup="filterTools()" placeholder="ابحث عن أداة (مثال: تصميم، كتابة)...">
+        </div>
+
+        <div class="tool-grid" id="toolGrid">
             
             <div class="tool-card">
-                <span class="tag">كتابة ومحتوى</span>
-                <h3>ChatGPT</h3>
-                <p>أداة ذكاء اصطناعي ثورية تساعدك في كتابة المقالات، البرمجة، والبحث عن المعلومات بسرعة فائقة.</p>
-                <a href="رابط-الأفلييت-هنا" target="_blank" rel="sponsored noopener" class="btn-visit">زيارة الأداة</a>
+                <div>
+                    <span class="tag">كتابة ومحتوى</span>
+                    <h3>ChatGPT</h3>
+                    <p>أداة ذكاء اصطناعي ثورية تساعدك في كتابة المقالات، البرمجة، والبحث عن المعلومات بسرعة فائقة.</p>
+                </div>
+                <a href="#" target="_blank" rel="sponsored noopener" class="btn-visit">زيارة الأداة</a>
             </div>
 
             <div class="tool-card">
-                <span class="tag">تصميم وجرافيك</span>
-                <h3>Canva AI</h3>
-                <p>حول أفكارك إلى تصاميم احترافية ومنشورات سوشيال ميديا بضغطة زر واحدة باستخدام سحر الذكاء الاصطناعي.</p>
-                <a href="رابط-الأفلييت-هنا" target="_blank" rel="sponsored noopener" class="btn-visit">زيارة الأداة</a>
+                <div>
+                    <span class="tag">تصميم وجرافيك</span>
+                    <h3>Canva AI</h3>
+                    <p>حول أفكارك إلى تصاميم احترافية ومنشورات سوشيال ميديا بضغطة زر واحدة باستخدام سحر الذكاء الاصطناعي.</p>
+                </div>
+                <a href="#" target="_blank" rel="sponsored noopener" class="btn-visit">زيارة الأداة</a>
             </div>
 
             <div class="tool-card">
-                <span class="tag">توليد صور</span>
-                <h3>Midjourney</h3>
-                <p>المحرك الأقوى في العالم لتوليد الصور الفنية والواقعية من خلال الأوامر النصية البسيطة.</p>
-                <a href="رابط-الأفلييت-هنا" target="_blank" rel="sponsored noopener" class="btn-visit">زيارة الأداة</a>
+                <div>
+                    <span class="tag">توليد صور</span>
+                    <h3>Midjourney</h3>
+                    <p>المحرك الأقوى في العالم لتوليد الصور الفنية والواقعية من خلال الأوامر النصية البسيطة.</p>
+                </div>
+                <a href="#" target="_blank" rel="sponsored noopener" class="btn-visit">زيارة الأداة</a>
             </div>
 
             <div class="tool-card">
-                <span class="tag">تحسين محركات البحث</span>
-                <h3>Jasper AI</h3>
-                <p>رفيقك في كتابة المحتوى التسويقي المتوافق مع الـ SEO لزيادة ترتيب موقعك في محركات البحث.</p>
-                <a href="رابط-الأفلييت-هنا" target="_blank" rel="sponsored noopener" class="btn-visit">زيارة الأداة</a>
+                <div>
+                    <span class="tag">تحسين محركات البحث</span>
+                    <h3>Jasper AI</h3>
+                    <p>رفيقك في كتابة المحتوى التسويقي المتوافق مع الـ SEO لزيادة ترتيب موقعك في محركات البحث.</p>
+                </div>
+                <a href="#" target="_blank" rel="sponsored noopener" class="btn-visit">زيارة الأداة</a>
             </div>
 
         </div>
@@ -116,7 +146,25 @@
 
     <footer>
         <p>&copy; 2026 SmartAffiliate.com - All Rights Reserved</p>
+        <p style="font-size: 12px; color: #888; margin-top: 10px;">إخلاء مسؤولية: قد نحصل على عمولة عند الشراء من خلال روابطنا.</p>
     </footer>
+
+    <script>
+        function filterTools() {
+            let input = document.getElementById('toolSearch').value.toLowerCase();
+            let cards = document.getElementsByClassName('tool-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                let tag = cards[i].getElementsByClassName('tag')[0].innerText.toLowerCase();
+                if (title.includes(input) || tag.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
