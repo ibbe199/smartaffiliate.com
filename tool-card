@@ -1,0 +1,54 @@
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.tool-card {
+    background: white;
+    border: 1px solid #eaeaea;
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: #007bff;
+}
+
+.tool-card h3 {
+    margin: 15px 0 10px;
+    color: #1a1a1a;
+}
+
+.tool-card p {
+    font-size: 14px;
+    color: #666;
+    height: 40px; /* لتوحيد حجم الكروت */
+}
+
+.btn-affiliate {
+    display: inline-block;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 15px;
+    width: 80%;
+}
+
+.tag {
+    background: #e7f3ff;
+    color: #007bff;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
