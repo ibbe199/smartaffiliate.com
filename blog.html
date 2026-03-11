@@ -2,26 +2,86 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>المدونة | SmartAffiliate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المدونة | SmartAffiliate - أحدث أخبار وأدوات الذكاء الاصطناعي</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
-        .container { max-width: 900px; margin: 50px auto; padding: 20px; background: white; border-radius: 10px; }
-        .post { border-bottom: 1px solid #eee; padding: 20px 0; }
-        .post h2 { color: #007bff; }
-        .post p { color: #555; line-height: 1.6; }
-        .read-more { color: #d9534f; text-decoration: none; font-weight: bold; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; margin: 0; padding: 0; color: #333; }
+        
+        /* الهيدر المتناسق مع بقية الموقع */
+        header { background: #1a1a1a; color: white; padding: 1.5rem; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: #007bff; }
+
+        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
+        
+        h1 { text-align: center; color: #1a1a1a; margin-bottom: 40px; }
+
+        /* تصميم كروت المقالات */
+        .post { 
+            background: white; 
+            border-radius: 12px; 
+            padding: 30px; 
+            margin-bottom: 30px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+        .post:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        
+        .post h2 { color: #007bff; margin-top: 0; font-size: 24px; }
+        .post p { color: #555; line-height: 1.8; font-size: 16px; }
+        
+        .post-meta { font-size: 13px; color: #999; margin-bottom: 10px; display: block; }
+
+        .read-more { 
+            display: inline-block;
+            margin-top: 15px;
+            color: #d9534f; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border: 2px solid #d9534f;
+            padding: 8px 20px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+        .read-more:hover { background: #d9534f; color: white; }
+
+        footer { background: #1a1a1a; color: white; padding: 30px; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>مدونة الذكاء الاصطناعي</h1>
-        
-        <div class="post">
-            <h2>أفضل 5 أدوات ذكاء اصطناعي لعام 2026</h2>
-            <p>اكتشف كيف يمكن للأدوات الحديثة مثل ChatGPT وMidjourney أن تغير طريقة عملك بالكامل وتوفر لك ساعات من الوقت...</p>
-            <a href="article1.html" class="read-more">اقرأ المقال كاملاً ←</a>
-        </div>
 
-        </div>
+    <header>
+        <h1>SmartAffiliate Blog</h1>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="tools.html">الأدوات</a>
+            <a href="blog.html">المدونة</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>مقالات تعليمية في الذكاء الاصطناعي</h1>
+        
+        <article class="post">
+            <span class="post-meta">تاريخ النشر: 11 مارس 2026</span>
+            <h2>أفضل 5 أدوات ذكاء اصطناعي لعام 2026</h2>
+            <p>اكتشف كيف يمكن للأدوات الحديثة مثل ChatGPT وMidjourney أن تغير طريقة عملك بالكامل وتوفر لك ساعات من الوقت المهدور يومياً عبر أتمتة المهام الروتينية...</p>
+            <a href="article1.html" class="read-more">اقرأ المقال كاملاً ←</a>
+        </article>
+
+        <article class="post">
+            <span class="post-meta">تاريخ النشر: 10 مارس 2026</span>
+            <h2>كيف تبدأ في الربح من التسويق بالعمولة (Affiliate)</h2>
+            <p>دليل المبتدئين الشامل لدخول عالم التسويق بالعمولة باستخدام أدوات الذكاء الاصطناعي لتحليل المنتجات وكتابة المراجعات المقنعة...</p>
+            <a href="article2.html" class="read-more">اقرأ المقال كاملاً ←</a>
+        </article>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SmartAffiliate.com - جميع الحقوق محفوظة</p>
+    </footer>
+
 </body>
 </html>
