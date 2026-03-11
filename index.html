@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartAffiliate | دليل أدوات الذكاء الاصطناعي</title>
+    <title>SmartAffiliate | دليل أدوات الذكاء الاصطناعي 2026</title>
     
     <style>
         :root {
@@ -22,35 +22,11 @@
             line-height: 1.6;
         }
 
-        /* الشعار الكبير والمتحرك */
-        .logo-container {
-            text-align: center;
-            padding: 40px 20px;
-            background: white;
-        }
-
-        .main-logo {
-            font-size: 4rem; /* حجم كبير */
-            font-weight: 900;
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            animation: moveLogo 3s ease-in-out infinite; /* حركة احترافية */
-        }
-
-        @keyframes moveLogo {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-10px) scale(1.05); }
-        }
-
+        /* الهيدر والقائمة */
         header {
             background: white;
             padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -62,56 +38,91 @@
             text-decoration: none;
             color: var(--dark);
             font-weight: bold;
-            font-size: 1.1rem;
+            transition: 0.3s;
         }
 
         nav a:hover { color: var(--primary); }
 
+        /* الشعار: حجم متناسق ومتحرك */
+        .logo-container {
+            text-align: center;
+            padding: 20px 0;
+            background: white;
+        }
+
+        .main-logo {
+            font-size: 2.5rem; /* حجم متناسق */
+            font-weight: 800;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            text-transform: uppercase;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* قسم البطولات (Hero) */
         .hero {
-            padding: 60px 20px;
+            padding: 40px 20px;
             text-align: center;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
         }
 
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* المقالات في صف كامل (Full Row) */
+        .articles-column {
+            display: flex;
+            flex-direction: column;
             gap: 25px;
             margin-top: 40px;
         }
 
-        .card {
+        .article-card {
             background: white;
             padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-right: 6px solid var(--primary);
             transition: 0.3s;
-            border: 1px solid #eee;
         }
 
-        .card:hover { transform: translateY(-10px); }
+        .article-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .article-card h3 { margin-top: 0; color: var(--primary); }
+
+        /* الأزرار */
+        .btn-group { display: flex; gap: 10px; margin-top: 15px; }
 
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--success);
-            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
             text-decoration: none;
-            border-radius: 8px;
             font-weight: bold;
-            margin-top: 20px;
+            font-size: 14px;
+            transition: 0.3s;
         }
+
+        .btn-main { background: var(--primary); color: white; }
+        .btn-success { background: var(--success); color: white; }
+        .btn:hover { opacity: 0.8; }
 
         footer {
             background: var(--dark);
             color: white;
             text-align: center;
-            padding: 40px;
-            margin-top: 60px;
+            padding: 30px;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -120,8 +131,8 @@
 <header>
     <nav>
         <a href="index.html">الرئيسية</a>
-        <a href="blog.html">المدونة (المقالات)</a>
-        <a href="#tools">أدوات AI</a>
+        <a href="blog.html">المدونة</a>
+        <a href="#articles">أحدث المقالات</a>
     </nav>
 </header>
 
@@ -130,45 +141,46 @@
 </div>
 
 <section class="hero">
-    <h2>مستقبل الذكاء الاصطناعي بين يديك</h2>
-    <p>نراجع لك أفضل الأدوات لزيادة إنتاجيتك وأرباحك في 2026</p>
+    <h2>بوابتك لأدوات الذكاء الاصطناعي 2026</h2>
+    <p>شروحات حصرية، روابط مباشرة، وطرق حقيقية للربح من الأفلييت.</p>
 </section>
 
-<div class="container">
+<div class="container" id="articles">
     
-    <h2 id="tools" style="text-align: center; margin-top: 40px;">أدوات مرشحة لك</h2>
-    
-    <div class="grid">
-        <div class="card">
-            <h3>ChatGPT - OpenAI</h3>
-            <p>المساعد الأذكى لكتابة المحتوى والبرمجة وتحليل البيانات فورياً.</p>
-            <a href="https://chatgpt.com" target="_blank" class="btn">جرب الأداة الآن</a>
+    <div class="articles-column">
+        
+        <div class="article-card">
+            <h3>1. عصر الوكلاء المستقلين (AI Agents)</h3>
+            <p>اكتشف كيف تقوم تقنية OpenAI O1 الجديدة بإدارة المهام بدلاً منك. لم يعد الأمر مجرد شات، بل موظف رقمي متكامل.</p>
+            <div class="btn-group">
+                <a href="blog.html" class="btn btn-main">اقرأ المقال</a>
+                <a href="https://openai.com" target="_blank" class="btn btn-success">زيارة الموقع الرسمي</a>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Canva AI Design</h3>
-            <p>حول أفكارك النصية إلى تصاميم بصرية وفيديوهات سينمائية بضغطة زر.</p>
-            <a href="https://www.canva.com" target="_blank" class="btn">ابدأ التصميم مجاناً</a>
+        <div class="article-card">
+            <h3>2. تصميم الفيديوهات بـ Sora و Runway</h3>
+            <p>حول النص إلى مقاطع فيديو سينمائية في ثوانٍ. مراجعة شاملة لأفضل أدوات الفيديو في 2026.</p>
+            <div class="btn-group">
+                <a href="blog.html" class="btn btn-main">اقرأ المقال</a>
+                <a href="https://runwayml.com" target="_blank" class="btn btn-success">جرب الأداة</a>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Perplexity AI</h3>
-            <p>مستقبل البحث الذكي الذي يعطيك إجابات دقيقة موثقة بالمصادر.</p>
-            <a href="https://www.perplexity.ai" target="_blank" class="btn">استخدم البحث الذكي</a>
+        <div class="article-card">
+            <h3>3. احتراف Canva Magic Studio</h3>
+            <p>كيف تستخدم الذكاء الاصطناعي في كانفا لتصميم منشورات السوشيال ميديا بضغطة زر واحدة.</p>
+            <div class="btn-group">
+                <a href="blog.html" class="btn btn-main">اقرأ المقال</a>
+                <a href="https://www.canva.com" target="_blank" class="btn btn-success">ابدأ التصميم</a>
+            </div>
         </div>
+
     </div>
-
-    <div style="text-align: center; margin-top: 60px;">
-        <h2 style="color: var(--primary);">هل تريد قراءة أحدث المقالات؟</h2>
-        <p>اكتشف شروحات تفصيلية لأقوى 5 تقنيات في 2026</p>
-        <a href="blog.html" style="font-size: 1.5rem; font-weight: bold; color: var(--accent); text-decoration: none; border-bottom: 2px solid;">انتقل لصفحة المدونة والمقالات ←</a>
-    </div>
-
 </div>
 
 <footer>
-    <p>&copy; 2026 SmartAffiliate.com - جميع الحقوق محفوظة</p>
-    <p style="font-size: 12px; color: #888;">نحن نستخدم روابط أفلييت لدعم استمرار الموقع وتوفير أفضل المحتويات.</p>
+    <p>&copy; 2026 SmartAffiliate - دليل أدواتك الذكية</p>
 </footer>
 
 </body>
