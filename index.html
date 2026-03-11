@@ -3,126 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>SmartAffiliate | Discover The Best AI Tools</title>
-    <meta name="description" content="اكتشف أفضل أدوات الذكاء الاصطناعي لزيادة الإنتاجية، التصميم، التسويق والكتابة في مكان واحد.">
+    <title>SmartAffiliate | دليل أدوات الذكاء الاصطناعي</title>
+    <meta name="description" content="أفضل أدوات الذكاء الاصطناعي لزيادة الإنتاجية والربح من التسويق بالعمولة.">
     
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; margin: 0; padding: 0; text-align: center; color: #333; background-color: #fcfcfc; }
-        header { background: #1a1a1a; color: white; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        nav a { color: white; margin: 0 12px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        nav a:hover { color: #007bff; }
+        :root { --primary: #007bff; --success: #28a745; --dark: #1a1a1a; --light: #f8f9fa; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
+        header { background: #fff; padding: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: center; gap: 20px; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
+        .hero { background: linear-gradient(45deg, #007bff, #00c4cc); color: white; text-align: center; padding: 60px 20px; }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .section-title { text-align: center; margin: 40px 0; font-size: 2rem; color: var(--dark); }
         
-        .container { padding: 40px 20px; max-width: 1200px; margin: auto; }
-        
-        /* تنسيق شبكة الأدوات */
-        .tool-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
+        /* تصميم كروت الأدوات */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; }
+        .btn-link { display: inline-block; padding: 12px 25px; background: var(--success); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 15px; transition: 0.3s; }
+        .btn-link:hover { background: #218838; transform: scale(1.05); }
 
-        .tool-card {
-            background: white;
-            border: 1px solid #eee;
-            padding: 25px;
-            border-radius: 15px;
-            transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+        /* تصميم قسم المقالات */
+        .article-box { background: white; border-right: 6px solid var(--primary); padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: 0.3s; }
+        .article-box:hover { background: #f0f7ff; }
+        .read-more { color: var(--primary); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px; }
 
-        .tool-card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: #007bff; }
-        
-        .tag { background: #e7f3ff; color: #007bff; font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: bold; align-self: center; margin-bottom: 10px; }
-        
-        .btn-affiliate { background: #007bff; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 15px; transition: 0.3s; }
-        .btn-affiliate:hover { background: #0056b3; }
-
-        .article-section { background: #f9f9f9; padding: 50px 20px; text-align: right; direction: rtl; margin-top: 60px; border-radius: 20px; border: 1px solid #eee; }
-        
-        footer { background: #1a1a1a; color: white; padding: 30px; margin-top: 60px; font-size: 14px; }
-        .amazon-link { color: #ff9900 !important; } /* تمييز رابط أمازون باللون البرتقالي */
+        footer { background: var(--dark); color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>SmartAffiliate</h1>
-        <p>دليلك الذكي لأقوى أدوات الذكاء الاصطناعي</p>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="tools.html">Tools</a>
-            <a href="amazon.html" class="amazon-link">Amazon Deals 🔥</a>
-            <a href="blog.html">Blog</a>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="blog.html">المدونة</a>
+        <a href="#tools">أدوات AI</a>
+    </nav>
+</header>
 
-    <main class="container">
-        <section>
-            <h2>Find powerful AI tools to boost productivity</h2>
-            <p>نجمع لك أقوى منصات الذكاء الاصطناعي في مكان واحد لمساعدتك على النمو بسرعة.</p>
-        </section>
+<section class="hero">
+    <h1>SmartAffiliate</h1>
+    <p>دليلك الشامل لأدوات الذكاء الاصطناعي والربح من الأفلييت</p>
+</section>
 
-        <section class="tool-grid">
-            
-            <div class="tool-card">
-                <span class="tag">AI Writing</span>
-                <h3>ChatGPT</h3>
-                <p>أفضل مساعد ذكاء اصطناعي للكتابة والبرمجة وتوليد الأفكار الإبداعية.</p>
-                <a href="https://chatgpt.com" target="_blank" rel="sponsored noopener" class="btn-affiliate">Visit Tool</a>
-            </div>
+<div class="container">
+    
+    <h2 id="tools" class="section-title">أدوات ذكاء اصطناعي نرشحها لك</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>ChatGPT</h3>
+            <p>أشهر مساعد ذكي لكتابة المحتوى، البرمجة، وتلخيص الكتب.</p>
+            <a href="https://chatgpt.com" target="_blank" rel="noopener" class="btn-link">زيارة الموقع الرسمي</a>
+        </div>
 
-            <div class="tool-card">
-                <span class="tag">AI Design</span>
-                <h3>Canva AI</h3>
-                <p>صمم صوراً احترافية ومنشورات سوشيال ميديا مذهلة في ثوانٍ باستخدام الذكاء الاصطناعي.</p>
-                <a href="https://canva.com" target="_blank" rel="sponsored noopener" class="btn-affiliate">Visit Tool</a>
-            </div>
+        <div class="card">
+            <h3>Canva AI</h3>
+            <p>حوّل نصوصك إلى تصاميم احترافية وفيديوهات بضغطة زر.</p>
+            <a href="https://www.canva.com/ai-image-generator/" target="_blank" rel="noopener" class="btn-link">جرب التصميم الآن</a>
+        </div>
 
-            <div class="tool-card">
-                <span class="tag">AI Images</span>
-                <h3>Midjourney</h3>
-                <p>توليد صور فنية واقعية وعالية الجودة من النصوص فقط لإبهار عملائك.</p>
-                <a href="https://midjourney.com" target="_blank" rel="sponsored noopener" class="btn-affiliate">Visit Tool</a>
-            </div>
+        <div class="card">
+            <h3>Jasper AI</h3>
+            <p>الأداة المفضلة لكتاب محتوى التسويق والـ SEO المتقدم.</p>
+            <a href="https://www.jasper.ai" target="_blank" rel="noopener" class="btn-link">ابدأ تجربة Jasper</a>
+        </div>
+    </div>
 
-        </section>
+    <h2 class="section-title">آخر مقالات المدونة</h2>
+    <div class="grid">
+        <div class="article-box">
+            <h3>أفضل 5 أدوات ذكاء اصطناعي لعام 2026</h3>
+            <p>اكتشف القائمة المحدثة لأدوات الذكاء الاصطناعي التي ستغير طريقة عملك هذا العام...</p>
+            <a href="article1.html" class="read-more">إقرأ المقال كاملاً ←</a>
+        </div>
 
-        <section class="article-section">
-            <div style="max-width: 800px; margin: auto;">
-                <h2 style="color: #333; font-size: 28px; border-bottom: 3px solid #007bff; display: inline-block; padding-bottom: 10px;">أفضل 5 أدوات ذكاء اصطناعي ستغير طريقة عملك في 2026</h2>
-                
-                <p style="font-size: 18px; color: #555; line-height: 1.8; margin-top: 20px;">
-                    في ظل التطور المتسارع، أصبح الذكاء الاصطناعي المحرك الأساسي للإبداع. إليكم أهم الأدوات التي اخترناها لكم في <strong>SmartAffiliate</strong>:
-                </p>
+        <div class="article-box">
+            <h3>دليل المبتدئين للربح من الأفلييت</h3>
+            <p>كيف تبني موقعاً ناجحاً وتبدأ في كسب العمولات باستخدام أدوات بسيطة...</p>
+            <a href="blog.html" class="read-more">تصفح جميع المقالات ←</a>
+        </div>
+    </div>
 
-                <ul style="list-style: none; padding: 0;">
-                    <li style="background: white; padding: 15px; margin-bottom: 10px; border-right: 5px solid #007bff; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                        <strong>1. ChatGPT:</strong> المساعد الشخصي الأكثر ذكاءً لكتابة المحتوى والبرمجة.
-                    </li>
-                    <li style="background: white; padding: 15px; margin-bottom: 10px; border-right: 5px solid #007bff; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                        <strong>2. Canva AI:</strong> لتحويل أفكارك إلى تصاميم بصرية مذهلة بضغطة زر.
-                    </li>
-                </ul>
+</div>
 
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="article1.html" style="background: #d9534f; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-left: 10px;">إقرأ المقال كاملاً ←</a>
-                    <a href="blog.html" style="color: #007bff; text-decoration: underline;">زيارة المدونة</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 SmartAffiliate.com - All Rights Reserved</p>
-        <p style="font-size: 12px; color: #777; max-width: 600px; margin: auto; padding-top: 10px;">
-            إخلاء مسؤولية: نستخدم روابط أفلييت في هذا الموقع، مما يعني أننا قد نحصل على عمولة عند الشراء من خلالنا دون أي تكلفة إضافية عليك.
-        </p>
-    </footer>
+<footer>
+    <p>&copy; 2026 SmartAffiliate.com | جميع الحقوق محفوظة</p>
+    <p style="font-size: 13px; color: #888; margin-top: 10px;">إخلاء مسؤولية: قد نحصل على عمولة عند الشراء من خلال بعض الروابط أعلاه.</p>
+</footer>
 
 </body>
 </html>
