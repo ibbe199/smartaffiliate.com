@@ -1,21 +1,95 @@
 <footer class="site-footer">
     <div class="container">
-        <div class="footer-content">
-            <div class="footer-info">
-                <p>&copy; 2026 <strong>SmartAffiliate</strong>. All rights reserved.</p>
-                <p class="tagline">Your Guide to the Best AI Marketing Tools.</p>
+        <!-- الشعار ووصف الموقع -->
+        <div class="footer-brand">
+            <svg class="footer-logo" width="140" height="50" viewBox="0 0 140 50">
+                <path d="M15 25 L30 15 L45 25 L30 35 L15 25Z" fill="#00d2ff" opacity="0.8"/>
+                <circle cx="65" cy="25" r="10" fill="#9d50bb" opacity="0.8"/>
+                <path d="M100 20 L115 25 L100 30 L85 25 L100 20Z" fill="#00d2ff" opacity="0.8"/>
+                <text x="60" y="45" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">SMARTAFFILIATE</text>
+            </svg>
+            <p class="footer-tagline">منصتك العربية الموثوقة لأدوات التسويق بالذكاء الاصطناعي</p>
+        </div>
+
+        <!-- شبكة الروابط الرئيسية (4 أعمدة) -->
+        <div class="footer-grid">
+            <!-- العمود 1: المحتوى -->
+            <div class="footer-col">
+                <h4 class="footer-title"><i class="fas fa-newspaper"></i> المحتوى</h4>
+                <ul class="footer-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="articles/ai-writing-tools.html"><i class="fas fa-robot"></i> أحدث المقالات</a></li>
+                    <li><a href="blog.html"><i class="fas fa-blog"></i> المدونة</a></li>
+                    <li><a href="tools.html"><i class="fas fa-tools"></i> أدوات مجانية</a></li>
+                </ul>
             </div>
-            
-            <div class="footer-links">
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="disclosure.html">Affiliate Disclosure</a>
+
+            <!-- العمود 2: الشركة -->
+            <div class="footer-col">
+                <h4 class="footer-title"><i class="fas fa-building"></i> عن الموقع</h4>
+                <ul class="footer-menu">
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                    <li><a href="team.html"><i class="fas fa-users"></i> فريق العمل</a></li>
+                    <li><a href="careers.html"><i class="fas fa-briefcase"></i> وظائف</a></li>
+                </ul>
+            </div>
+
+            <!-- العمود 3: سياسات -->
+            <div class="footer-col">
+                <h4 class="footer-title"><i class="fas fa-scale-balanced"></i> السياسات</h4>
+                <ul class="footer-menu">
+                    <li><a href="privacy.html"><i class="fas fa-lock"></i> سياسة الخصوصية</a></li>
+                    <li><a href="terms.html"><i class="fas fa-file-contract"></i> شروط الاستخدام</a></li>
+                    <li><a href="disclosure.html" class="highlight-link"><i class="fas fa-hand-holding-heart"></i> الإفصاح التسويقي</a></li>
+                    <li><a href="cookies.html"><i class="fas fa-cookie-bite"></i> سياسة الكوكيز</a></li>
+                </ul>
+            </div>
+
+            <!-- العمود 4: تواصل اجتماعي -->
+            <div class="footer-col">
+                <h4 class="footer-title"><i class="fas fa-share-alt"></i> تابعنا</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter" aria-label="تويتر"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-link linkedin" aria-label="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link youtube" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link tiktok" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-link instagram" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <!-- نموذج اشتراك بريد سريع -->
+                <div class="footer-newsletter">
+                    <h5><i class="fas fa-envelope-open-text"></i> النشرة البريدية</h5>
+                    <form class="footer-form" onsubmit="event.preventDefault(); alert('شكراً لاشتراكك!');">
+                        <input type="email" placeholder="بريدك الإلكتروني" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
         </div>
-        
-        <div class="disclosure-box">
-            <p><strong>Affiliate Disclosure:</strong> SmartAffiliate is a review site that receives compensation from the companies whose products we review. We test each product thoroughly and give high marks to only the very best.</p>
+
+        <!-- صندوق الإفصاح التسويقي (مطور) -->
+        <div class="disclosure-enhanced">
+            <div class="disclosure-icon">
+                <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <div class="disclosure-text">
+                <strong>⚡ إفصاح تسويقي مهم:</strong> SmartAffiliate موقع متخصص في مراجعات أدوات التسويق. قد نحصل على عمولة عند شرائك من خلال الروابط الموجودة في الموقع، وهذا لا يزيد السعر عليك أبداً. جميع المراجعات نزيهة ومبنية على تجربة فعلية.
+            </div>
+        </div>
+
+        <!-- السطر الأخير مع الشهادات -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                <i class="far fa-copyright"></i> 2026 <strong>SmartAffiliate.cm</strong> - جميع الحقوق محفوظة.
+                <span class="badge">مدعوم بالذكاء الاصطناعي</span>
+            </div>
+            <div class="trust-badges">
+                <span><i class="fas fa-shield-alt"></i> خصوصية آمنة</span>
+                <span><i class="fas fa-credit-card"></i> دفع آمن</span>
+                <span><i class="fas fa-robot"></i> تقييمات AI</span>
+            </div>
         </div>
     </div>
 </footer>
