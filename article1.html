@@ -1,225 +1,107 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات كتابة المحتوى | SmartAffiliate</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.8);
+            --text: #f8fafc;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0; padding: 20px; line-height: 1.8;
+        }
 
-<title>SmartAffiliate | مدونة الذكاء الاصطناعي</title>
+        .container { max-width: 700px; margin: 40px auto; }
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+        /* الهيدر الخاص بالمقال */
+        .post-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-<style>
+        .post-header h1 {
+            font-size: 28px;
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-body{
-font-family:'Cairo', sans-serif;
-background:#f4f7f6;
-margin:0;
-}
+        /* المحتوى الزجاجي */
+        .content-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
-}
+        .tool-highlight {
+            border-right: 4px solid var(--primary);
+            padding: 15px;
+            margin: 20px 0;
+            background: rgba(255,255,255,0.03);
+            border-radius: 0 15px 15px 0;
+        }
 
-.blog-header{
-text-align:center;
-margin-bottom:40px;
-}
+        h3 { color: #818cf8; margin-top: 0; }
 
-.articles-list{
-display:flex;
-flex-direction:column;
-gap:25px;
-}
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-back:hover { color: var(--primary); }
 
-.article-card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,0.05);
-border-right:8px solid #007bff;
-transition:0.3s;
-}
-
-.article-card:hover{
-transform:translateY(-5px);
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-}
-
-.tag{
-background:#e7f1ff;
-color:#007bff;
-padding:5px 12px;
-border-radius:20px;
-font-size:13px;
-font-weight:bold;
-}
-
-.buttons-group{
-margin-top:15px;
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.btn{
-text-decoration:none;
-padding:10px 18px;
-border-radius:8px;
-font-weight:bold;
-}
-
-.btn-read{
-background:#007bff;
-color:white;
-}
-
-.btn-tool{
-background:#28a745;
-color:white;
-}
-
-</style>
-
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
-
-<div class="blog-header">
-
-<h1>مستقبل الذكاء الاصطناعي 2026</h1>
-
-<p>أفضل المقالات والأدوات الرقمية</p>
-
-</div>
-
-
-<div class="articles-list">
-
-
-<!-- المقال 1 -->
-
-<div class="article-card">
-
-<span class="tag">AI كتابة</span>
-
-<h2>أفضل أدوات كتابة المحتوى بالذكاء الاصطناعي</h2>
-
-<p>
-تعرف على أدوات كتابة المقالات باستخدام الذكاء الاصطناعي مثل Jasper و Copy.ai.
-</p>
-
-<div class="buttons-group">
-
-<a href="article1.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://www.jasper.ai" target="_blank" class="btn btn-tool">🔥 تجربة Jasper</a>
-
-</div>
-
-</div>
-
-
-<!-- المقال 2 -->
-
-<div class="article-card">
-
-<span class="tag">صور AI</span>
-
-<h2>إنشاء صور احترافية باستخدام Midjourney</h2>
-
-<p>
-تعلم كيفية إنشاء صور مذهلة باستخدام Midjourney للتصميم والتسويق.
-</p>
-
-<div class="buttons-group">
-
-<a href="article2.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://www.midjourney.com" target="_blank" class="btn btn-tool">🎨 تجربة Midjourney</a>
-
-</div>
-
-</div>
-
-
-<!-- المقال 3 -->
-
-<div class="article-card">
-
-<span class="tag">تعلم</span>
-
-<h2>أفضل مواقع تعلم الذكاء الاصطناعي مجاناً</h2>
-
-<p>
-هذه أفضل المنصات التي تقدم دورات تعليم الذكاء الاصطناعي.
-</p>
-
-<div class="buttons-group">
-
-<a href="article3.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://www.coursera.org" target="_blank" class="btn btn-tool">🎓 زيارة Coursera</a>
-
-</div>
-
-</div>
-
-
-<!-- المقال 4 -->
-
-<div class="article-card">
-
-<span class="tag">برمجة</span>
-
-<h2>كيف يساعدك GitHub Copilot في البرمجة</h2>
-
-<p>
-مساعد برمجي ذكي يساعد المطورين في كتابة الكود بسرعة.
-</p>
-
-<div class="buttons-group">
-
-<a href="article4.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://github.com/features/copilot" target="_blank" class="btn btn-tool">💻 تجربة Copilot</a>
-
-</div>
-
-</div>
-
-
-<!-- المقال 5 -->
-
-<div class="article-card">
-
-<span class="tag">صوت AI</span>
-
-<h2>تحويل النص إلى صوت باستخدام ElevenLabs</h2>
-
-<p>
-أنشئ تعليق صوتي احترافي للفيديوهات باستخدام الذكاء الاصطناعي.
-</p>
-
-<div class="buttons-group">
-
-<a href="article5.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://elevenlabs.io" target="_blank" class="btn btn-tool">🎙️ تجربة الأداة</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
+    <div class="container">
+        <a href="index.html" class="btn-back">← العودة للرئيسية</a>
+
+        <div class="post-header">
+            <h1>أفضل أدوات كتابة المحتوى بالذكاء الاصطناعي</h1>
+            <p style="color: #94a3b8;">دليلك الشامل لعام 2026</p>
+        </div>
+
+        <div class="content-box">
+            <p>في هذا العصر، لم تعد الكتابة مجرد رص كلمات، بل أصبحت فناً يدعمه الذكاء الاصطناعي لزيادة السرعة والجودة.</p>
+
+            <div class="tool-highlight">
+                <h3>1. أداة Jasper AI</h3>
+                <p>تعتبر Jasper الرائدة في كتابة المقالات الطويلة والمحتوى التسويقي الذي يجذب الزوار ويحولهم لعملاء.</p>
+                <a href="https://www.jasper.ai" target="_blank" class="cta-button">جرب Jasper الآن</a>
+            </div>
+
+            <div class="tool-highlight">
+                <h3>2. أداة Copy.ai</h3>
+                <p>مثالية لكتابة محتوى السوشيال ميديا والعناوين الجذابة بضغطة زر واحدة.</p>
+            </div>
+
+            <p>استخدام هذه الأدوات بشكل صحيح يمكن أن يضاعف إنتاجيتك 10 مرات في عام 2026.</p>
+        </div>
+    </div>
 
 </body>
 </html>
