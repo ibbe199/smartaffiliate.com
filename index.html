@@ -22,6 +22,10 @@
             --text-muted: #b0b3c5;
             --text-bright: #ffffff;
             --card-radius: 32px;
+            --facebook: #1877f2;
+            --tiktok: #000000;
+            --tiktok-pink: #ff0050;
+            --tiktok-blue: #00f2ea;
         }
 
         body {
@@ -193,7 +197,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             backdrop-filter: blur(10px);
             z-index: 2000;
             justify-content: center;
@@ -238,20 +242,71 @@
             color: #fff;
         }
 
-        .modal-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-glow);
-        }
-
-        .modal-body {
-            color: #b0b3c5;
+        /* صفحة إخلاء المسؤولية */
+        .disclaimer-page {
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--primary-glow);
+            border-radius: var(--card-radius);
+            padding: 3rem;
+            margin: 2rem 0;
             line-height: 1.8;
-            font-size: 1.1rem;
         }
 
-        .modal-body p {
+        .disclaimer-page h1 {
+            font-size: 2.5rem;
+            color: var(--primary-glow);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .disclaimer-page h2 {
+            color: #fff;
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        .disclaimer-page p {
+            color: #b0b3c5;
             margin-bottom: 1.5rem;
+        }
+
+        .disclaimer-page ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .disclaimer-page li {
+            margin-bottom: 1rem;
+            padding-right: 1.5rem;
+            position: relative;
+            color: #b0b3c5;
+        }
+
+        .disclaimer-page li:before {
+            content: "•";
+            color: var(--primary-glow);
+            font-size: 1.5rem;
+            position: absolute;
+            right: 0;
+            top: -5px;
+        }
+
+        .warning-box {
+            background: rgba(255, 165, 0, 0.1);
+            border: 1px solid orange;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .warning-box i {
+            font-size: 3rem;
+            color: orange;
+            margin-bottom: 1rem;
         }
 
         /* التذييل */
@@ -267,18 +322,66 @@
             justify-content: center;
             gap: 2rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         .social-ring a {
             color: #8a8fb0;
-            font-size: 1.8rem;
+            font-size: 2rem;
             transition: 0.3s;
             text-decoration: none;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
         }
 
         .social-ring a:hover {
-            color: var(--primary-glow);
             transform: translateY(-5px);
+        }
+
+        /* ألوان خاصة لكل منصة */
+        .social-ring a[aria-label="Facebook"]:hover {
+            background: var(--facebook);
+            color: white;
+        }
+
+        .social-ring a[aria-label="TikTok"]:hover {
+            background: linear-gradient(45deg, var(--tiktok-pink), var(--tiktok-blue));
+            color: white;
+        }
+
+        .social-ring a[aria-label="X"]:hover {
+            background: #000;
+            color: white;
+        }
+
+        .social-ring a[aria-label="LinkedIn"]:hover {
+            background: #0077b5;
+            color: white;
+        }
+
+        .social-ring a[aria-label="YouTube"]:hover {
+            background: #ff0000;
+            color: white;
+        }
+
+        .footer-links {
+            margin: 1.5rem 0;
+        }
+
+        .footer-links a {
+            color: #5f6380;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-glow);
         }
 
         @media (max-width: 768px) {
@@ -286,11 +389,11 @@
                 grid-template-columns: 1fr;
             }
             
-            .modal-content {
-                padding: 2rem;
+            .disclaimer-page {
+                padding: 1.5rem;
             }
             
-            .modal-title {
+            .disclaimer-page h1 {
                 font-size: 1.8rem;
             }
         }
@@ -302,7 +405,7 @@
         <div class="nav-container">
             <a href="#" onclick="showHome(event)" class="active"><i class="fas fa-home"></i> الرئيسية</a>
             <a href="#" onclick="showAllArticles(event)"><i class="fas fa-newspaper"></i> المقالات</a>
-            <a href="#" onclick="showBlog(event)"><i class="fas fa-blog"></i> المدونة</a>
+            <a href="#" onclick="showDisclaimer(event)"><i class="fas fa-shield-alt"></i> إخلاء المسؤولية</a>
             <a href="#" onclick="showNewsletter(event)"><i class="fas fa-envelope"></i> النشرة</a>
         </div>
     </header>
@@ -329,7 +432,7 @@
     </div>
 
     <main class="main-container" id="main-content">
-        <!-- هنا يتم تحميل المحتوى ديناميكياً -->
+        <!-- يتم تحميل المحتوى هنا عبر JavaScript -->
     </main>
 
     <!-- نافذة عرض المقال -->
@@ -343,16 +446,29 @@
 
     <footer>
         <div class="social-ring">
-            <a href="#" onclick="openSocial('twitter')"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" onclick="openSocial('linkedin')"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" onclick="openSocial('youtube')"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#" onclick="openSocial('discord')"><i class="fa-brands fa-discord"></i></a>
+            <a href="#" onclick="openSocial('facebook')" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" onclick="openSocial('tiktok')" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" onclick="openSocial('twitter')" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" onclick="openSocial('linkedin')" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" onclick="openSocial('youtube')" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" onclick="openSocial('discord')" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
         </div>
-        <div style="color: #4a4f6e;">© 2026 SmartAffiliate - جميع المقالات مفعلة</div>
+        
+        <div class="footer-links">
+            <a href="#" onclick="showHome(event)">الرئيسية</a>
+            <a href="#" onclick="showAllArticles(event)">المقالات</a>
+            <a href="#" onclick="showDisclaimer(event)">إخلاء المسؤولية</a>
+            <a href="#" onclick="showNewsletter(event)">النشرة البريدية</a>
+            <a href="#" onclick="showPrivacy(event)">سياسة الخصوصية</a>
+        </div>
+
+        <div style="color: #4a4f6e; font-size: 0.9rem;">
+            © 2026 SmartAffiliate - جميع الحقوق محفوظة
+        </div>
     </footer>
 
     <script>
-        // بيانات المقالات (قاعدة بيانات مؤقتة)
+        // بيانات المقالات
         const articles = [
             {
                 id: 1,
@@ -361,28 +477,10 @@
                 date: '15 مارس 2026',
                 readTime: '8 دقائق',
                 views: '2.5k',
-                excerpt: 'اكتشف كيف تغير منصة Perplexity قواعد اللعبة في البحث الرقمي. تحليل شامل للميزات الجديدة وتأثيرها على استراتيجيات المحتوى.',
-                content: `
-                    <p>في عالم يتسارع فيه التطور التكنولوجي، تبرز منصة Perplexity AI كأحد أبرز الحلول الثورية في مجال البحث الرقمي. تعتمد المنصة على تقنيات الذكاء الاصطناعي التوليدي لتقديم إجابات دقيقة وموثقة بدلاً من قوائم الروابط التقليدية.</p>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">لماذا Perplexity مختلفة؟</h3>
-                    <p>تدمج Perplexity بين قوة نماذج اللغة الكبيرة وقدرتها على الوصول إلى المعلومات الحديثة عبر الإنترنت. النتائج؟ إجابات شاملة مع مصادر موثقة في الوقت الفعلي.</p>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">الميزات الرئيسية:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 1rem;">✓ <strong>الإجابات الموثقة:</strong> كل معلومة مدعومة بمصادر يمكن التحقق منها</li>
-                        <li style="margin-bottom: 1rem;">✓ <strong>الأسئلة المتابعة:</strong> يمكنك التعمق في الموضوع بطرح أسئلة متتالية</li>
-                        <li style="margin-bottom: 1rem;">✓ <strong>تعدد المصادر:</strong> تجمع المعلومات من مئات المواقع في رد واحد منظم</li>
-                        <li style="margin-bottom: 1rem;">✓ <strong>مجاناً بالكامل:</strong> بدون أي رسوم أو اشتراكات</li>
-                    </ul>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">التأثير على المسوقين</h3>
-                    <p>بالنسبة للمسوقين الرقميين، تمثل Perplexity نقلة نوعية في أبحاث الكلمات المفتاحية وتحليل المنافسين وفهم اتجاهات السوق. يمكنك الآن الحصول على تحليلات متعمقة في ثوانٍ.</p>
-                    
-                    <div style="background: rgba(0,210,255,0.1); padding: 1.5rem; border-radius: 20px; margin: 2rem 0;">
-                        <p style="margin: 0;"><strong>خلاصة:</strong> Perplexity ليست مجرد محرك بحث، بل مساعد بحثي متكامل سيعيد تشكيل طريقة تفاعلنا مع المعلومات.</p>
-                    </div>
-                `
+                excerpt: 'اكتشف كيف تغير منصة Perplexity قواعد اللعبة في البحث الرقمي.',
+                content: `<p>في عالم يتسارع فيه التطور التكنولوجي، تبرز منصة Perplexity AI كأحد أبرز الحلول الثورية في مجال البحث الرقمي. تعتمد المنصة على تقنيات الذكاء الاصطناعي التوليدي لتقديم إجابات دقيقة وموثقة بدلاً من قوائم الروابط التقليدية.</p>
+                    <h3 style="color: #00d2ff;">لماذا Perplexity مختلفة؟</h3>
+                    <p>تدمج Perplexity بين قوة نماذج اللغة الكبيرة وقدرتها على الوصول إلى المعلومات الحديثة عبر الإنترنت.</p>`
             },
             {
                 id: 2,
@@ -391,24 +489,8 @@
                 date: '10 مارس 2026',
                 readTime: '12 دقيقة',
                 views: '3.8k',
-                excerpt: 'دليل متقدم لبناء نظام وكلاء ذكيين يعمل 24/7. استراتيجيات مثبتة من كبرى الشركات التقنية.',
-                content: `
-                    <p>يشهد عالم الأعمال تحولاً جذرياً بفضل الوكلاء الذكيين (AI Agents) القادرين على تنفيذ مهام معقدة بشكل مستقل. هؤلاء الوكلاء ليسوا مجرد روبوتات دردشة، بل أنظمة متكاملة تستطيع التخطيط والتنفيذ والتعلم من النتائج.</p>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">ما هي الوكلاء الذكيين؟</h3>
-                    <p>الوكيل الذكي هو برنامج مدعوم بالذكاء الاصطناعي يمكنه أداء مهام محددة نيابة عنك: تحليل البيانات، إدارة الحملات التسويقية، الرد على العملاء، وحتى التفاوض مع موردين.</p>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">مجالات التطبيق:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 1rem;">🤖 <strong>خدمة العملاء:</strong> وكلاء متخصصون في الرد على الاستفسارات وحل المشكلات</li>
-                        <li style="margin-bottom: 1rem;">📊 <strong>تحليل البيانات:</strong> وكلاء يراقبون الأداء ويقدمون تقارير وتوصيات</li>
-                        <li style="margin-bottom: 1rem;">📧 <strong>التسويق:</strong> وكلاء يديرون حملات البريد الإلكتروني والتسويق عبر وسائل التواصل</li>
-                        <li style="margin-bottom: 1rem;">💰 <strong>المبيعات:</strong> وكلاء يتفاعلون مع العملاء المحتملين ويؤهلونهم</li>
-                    </ul>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">كيف تبدأ؟</h3>
-                    <p>البداية بسيطة: حدد المهام المتكررة في عملك، اختر أداة مناسبة (مثل AutoGPT أو BabyAGI)، درب الوكيل على سير العمل، ثم دعه يعمل.</p>
-                `
+                excerpt: 'دليل متقدم لبناء نظام وكلاء ذكيين يعمل 24/7.',
+                content: `<p>يشهد عالم الأعمال تحولاً جذرياً بفضل الوكلاء الذكيين (AI Agents) القادرين على تنفيذ مهام معقدة بشكل مستقل.</p>`
             },
             {
                 id: 3,
@@ -417,113 +499,25 @@
                 date: '5 مارس 2026',
                 readTime: '10 دقائق',
                 views: '4.1k',
-                excerpt: 'توقعات المنصات والعوائد. دليل شامل مع أمثلة عملية ونماذج نجاح من أسواق المنطقة.',
-                content: `
-                    <p>يشهد التسويق بالعمولة تحولاً كبيراً بفضل الذكاء الاصطناعي والتقنيات الجديدة. عام 2026 يحمل فرصاً غير مسبوقة للمسوقين الطموحين.</p>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">أبرز التوجهات لعام 2026:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 1rem;">1️⃣ <strong>العمولة الذكية:</strong> أنظمة تتبع متطورة تمنح عمولات أعلى للجودة وليس فقط للمبيعات</li>
-                        <li style="margin-bottom: 1rem;">2️⃣ <strong>محتوى AI:</strong> استخدام الذكاء الاصطناعي لتخصيص المحتوى لكل زائر</li>
-                        <li style="margin-bottom: 1rem;">3️⃣ <strong>الأسواق الناشئة:</strong> فرص كبيرة في منطقة الشرق الأوسط وشمال أفريقيا</li>
-                        <li style="margin-bottom: 1rem;">4️⃣ <strong>التكامل المتقدم:</strong> ربط منصات التسويق بالعمولة مع أنظمة إدارة العلاقات</li>
-                    </ul>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">استراتيجيات النجاح:</h3>
-                    <p>المسوقون الناجحون في 2026 هم من يجمعون بين المحتوى القيم وتحليلات البيانات والتخصيص الذكي. لم يعد كافياً نشر روابط، بل يجب بناء تجربة متكاملة.</p>
-                `
-            },
-            {
-                id: 4,
-                title: 'الذكاء الاصطناعي التوليدي في التسويق',
-                icon: 'fa-brain',
-                date: '28 فبراير 2026',
-                readTime: '7 دقائق',
-                views: '3.2k',
-                excerpt: 'كيف تستخدم أدوات الذكاء الاصطناعي لإنشاء محتوى تسويقي متكامل؟ دراسة تطبيقية.',
-                content: `
-                    <p>أحدث الذكاء الاصطناعي التوليدي ثورة في عالم إنشاء المحتوى. من كتابة المقالات إلى تصميم الصور والفيديو، يمكنك الآن إنتاج محتوى احترافي بجزء بسيط من التكلفة والوقت.</p>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">أهم الأدوات المستخدمة:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 1rem;">✍️ <strong>ChatGPT / Claude:</strong> لكتابة المحتوى النصي</li>
-                        <li style="margin-bottom: 1rem;">🎨 <strong>Midjourney / DALL-E:</strong> لإنشاء الصور والتصاميم</li>
-                        <li style="margin-bottom: 1rem;">🎬 <strong>Runway / Pika:</strong> لصناعة الفيديو بالذكاء الاصطناعي</li>
-                        <li style="margin-bottom: 1rem;">🔊 <strong>ElevenLabs:</strong> لتوليد الصوت والتعليق الصوتي</li>
-                    </ul>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">كيف تبني استراتيجية محتوى متكاملة؟</h3>
-                    <p>السر ليس في استخدام أداة واحدة، بل في دمج عدة أدوات معاً. استخدم ChatGPT لكتابة السيناريو، Midjourney لإنشاء الصور، وRunway لتحويلها إلى فيديو كامل.</p>
-                `
-            },
-            {
-                id: 5,
-                title: 'روبوتات الدردشة للمبيعات',
-                icon: 'fa-robot',
-                date: '20 فبراير 2026',
-                readTime: '6 دقائق',
-                views: '1.9k',
-                excerpt: 'تصميم روبوتات محادثة تحول الزوار إلى عملاء. استراتيجيات وتطبيقات عملية.',
-                content: `
-                    <p>روبوتات الدردشة لم تعد مجرد أدوات لخدمة العملاء، بل تحولت إلى قنوات مبيعات فعالة. الروبوتات الحديثة قادرة على فهم نية العميل وتقديم المنتج المناسب في الوقت المناسب.</p>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">أنواع روبوتات المبيعات:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 1rem;">🛍️ <strong>روبوتات التوصية:</strong> تقترح منتجات بناءً على تفضيلات العميل</li>
-                        <li style="margin-bottom: 1rem;">💬 <strong>روبوتات التأهيل:</strong> تسأل أسئلة ذكية لتحديد العملاء المحتملين</li>
-                        <li style="margin-bottom: 1rem;">🔄 <strong>روبوتات المتابعة:</strong> تذكر العملاء بالعربات المتروكة وتعرض خصومات</li>
-                        <li style="margin-bottom: 1rem;">📅 <strong>روبوتات الحجز:</strong> تنظم مواعيد المبيعات مع الفريق البشري</li>
-                    </ul>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">أفضل الممارسات:</h3>
-                    <p>اجعل روبوتك ودوداً وليس آلياً. استخدم لغة طبيعية، قدم خيارات واضحة، وتذكر دائماً أن الهدف النهائي هو مساعدة العميل وليس فقط إتمام البيع.</p>
-                `
-            },
-            {
-                id: 6,
-                title: 'أفضل أدوات الذكاء الاصطناعي 2026',
-                icon: 'fa-tools',
-                date: '15 فبراير 2026',
-                readTime: '15 دقيقة',
-                views: '5.6k',
-                excerpt: 'تجميعة شاملة لأهم 50 أداة AI للعام الجديد مع تقييمات وتجارب حقيقية.',
-                content: `
-                    <p>مع تزايد أدوات الذكاء الاصطناعي يومياً، يصعب اختيار الأنسب. هذه قائمة بأفضل الأدوات حسب التصنيف:</p>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">🏆 أفضل أدوات الكتابة:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 1rem;">• Jasper AI - الأفضل للتسويق</li>
-                        <li style="margin-bottom: 1rem;">• Copy.ai - للمحتوى القصير</li>
-                        <li style="margin-bottom: 1rem;">• Writesonic - متعدد الاستخدامات</li>
-                    </ul>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">🎨 أفضل أدوات التصميم:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 1rem;">• Midjourney - أجود الصور</li>
-                        <li style="margin-bottom: 1rem;">• Leonardo.ai - مجاني وقوي</li>
-                        <li style="margin-bottom: 1rem;">• Canva AI - للمبتدئين</li>
-                    </ul>
-                    
-                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">📊 أفضل أدوات التحليل:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 1rem;">• Julius AI - تحليل البيانات باللغة العربية</li>
-                        <li style="margin-bottom: 1rem;">• Tableau AI - تصور متقدم</li>
-                        <li style="margin-bottom: 1rem;">• Polymer - تحويل البيانات إلى عروض</li>
-                    </ul>
-                `
+                excerpt: 'توقعات المنصات والعوائد. دليل شامل مع أمثلة عملية.',
+                content: `<p>يشهد التسويق بالعمولة تحولاً كبيراً بفضل الذكاء الاصطناعي والتقنيات الجديدة.</p>`
             }
         ];
+
+        // عرض الصفحة الرئيسية
+        function showHome(e) {
+            e.preventDefault();
+            displayArticles();
+            setActiveLink('الرئيسية');
+        }
 
         // عرض جميع المقالات
         function displayArticles() {
             const container = document.getElementById('main-content');
             let html = `
-                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">
                     <i class="fas fa-fire" style="color: var(--primary-glow);"></i> 
                     أحدث المقالات
-                    <span style="font-size: 0.9rem; color: #00ff88; background: rgba(0,255,0,0.1); padding: 0.3rem 1rem; border-radius: 30px;">
-                        <i class="fas fa-check-circle"></i> ${articles.length} مقالات مفعلة
-                    </span>
                 </h2>
                 <div class="articles-grid">
             `;
@@ -549,7 +543,110 @@
             container.innerHTML = html;
         }
 
-        // فتح المقال في نافذة منبثقة
+        // عرض صفحة إخلاء المسؤولية
+        function showDisclaimer(e) {
+            e.preventDefault();
+            const container = document.getElementById('main-content');
+            container.innerHTML = `
+                <div class="disclaimer-page">
+                    <h1><i class="fas fa-shield-alt" style="color: var(--primary-glow);"></i> إخلاء المسؤولية</h1>
+                    
+                    <div class="warning-box">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3 style="color: orange; margin-bottom: 1rem;">تنبيه هام</h3>
+                        <p style="color: #fff;">الرجاء قراءة إخلاء المسؤولية هذا بعناية قبل استخدام الموقع</p>
+                    </div>
+
+                    <h2>١. معلومات عامة</h2>
+                    <p>موقع SmartAffiliate هو منصة تعليمية وتوعوية تهدف إلى نشر المعرفة حول الذكاء الاصطناعي والتسويق الرقمي. جميع المعلومات المقدمة على هذا الموقع هي لأغراض تعليمية فقط.</p>
+
+                    <h2>٢. عدم تقديم نصائح مالية</h2>
+                    <p>المحتوى المقدم على هذا الموقع لا يشكل نصيحة مالية أو استثمارية. يجب عليك استشارة مستشار مالي مؤهل قبل اتخاذ أي قرارات استثمارية.</p>
+                    
+                    <ul>
+                        <li>النتائج المالية السابقة لا تضمن نتائج مستقبلية</li>
+                        <li>التسويق بالعمولة ينطوي على مخاطر مالية</li>
+                        <li>مسؤولية قراراتك المالية تقع عليك وحدك</li>
+                    </ul>
+
+                    <h2>٣. الروابط الخارجية</h2>
+                    <p>قد يحتوي موقعنا على روابط لمواقع خارجية. نحن لا نتحمل مسؤولية محتوى أو ممارسات هذه المواقع.</p>
+
+                    <h2>٤. دقة المعلومات</h2>
+                    <p>نحن نبذل قصارى جهدنا لضمان دقة المعلومات، ولكن:</p>
+                    <ul>
+                        <li>قد تحتوي بعض المقالات على أخطاء غير مقصودة</li>
+                        <li>المعلومات قابلة للتغيير دون إشعار مسبق</li>
+                        <li>ننصح بالتحقق من المعلومات من مصادر متعددة</li>
+                    </ul>
+
+                    <h2>٥. الإعلانات والروابط التابعة</h2>
+                    <p>قد يحتوي الموقع على روابط تابعة (Affiliate Links). إذا قمت بالشراء من خلال هذه الروابط، قد نحصل على عمولة بدون تكلفة إضافية عليك.</p>
+
+                    <h2>٦. تحديثات إخلاء المسؤولية</h2>
+                    <p>نحتفظ بالحق في تحديث أو تعديل إخلاء المسؤولية هذا في أي وقت دون إشعار مسبق. استمرارك في استخدام الموقع يعني موافقتك على التحديثات.</p>
+
+                    <div style="background: rgba(0,210,255,0.05); padding: 2rem; border-radius: 20px; margin-top: 2rem;">
+                        <p style="color: #fff; margin: 0;"><i class="fas fa-calendar-alt" style="color: var(--primary-glow); margin-left: 10px;"></i> آخر تحديث: 15 مارس 2026</p>
+                    </div>
+                </div>
+            `;
+            setActiveLink('إخلاء المسؤولية');
+        }
+
+        // عرض سياسة الخصوصية
+        function showPrivacy(e) {
+            e.preventDefault();
+            const container = document.getElementById('main-content');
+            container.innerHTML = `
+                <div class="disclaimer-page">
+                    <h1><i class="fas fa-lock" style="color: var(--primary-glow);"></i> سياسة الخصوصية</h1>
+                    <p>نحن نلتزم بحماية خصوصية زوارنا. هذه السياسة تشرح كيفية جمع واستخدام معلوماتك.</p>
+                    
+                    <h2>المعلومات التي نجمعها</h2>
+                    <ul>
+                        <li>الاسم والبريد الإلكتروني (عند الاشتراك)</li>
+                        <li>بيانات الاستخدام مثل الصفحات التي تزورها</li>
+                        <li>معلومات التقنية مثل نوع المتصفح</li>
+                    </ul>
+
+                    <h2>كيف نستخدم معلوماتك</h2>
+                    <ul>
+                        <li>لتحسين تجربتك في الموقع</li>
+                        <li>لإرسال النشرات البريدية (بموافقتك)</li>
+                        <li>لتحليل أداء الموقع</li>
+                    </ul>
+                </div>
+            `;
+            setActiveLink('سياسة الخصوصية');
+        }
+
+        // عرض النشرة البريدية
+        function showNewsletter(e) {
+            e.preventDefault();
+            const container = document.getElementById('main-content');
+            container.innerHTML = `
+                <div style="text-align: center; padding: 4rem; background: var(--glass-bg); border-radius: var(--card-radius);">
+                    <i class="fas fa-envelope" style="font-size: 4rem; color: var(--primary-glow); margin-bottom: 1rem;"></i>
+                    <h2 style="font-size: 2.5rem;">النشرة البريدية</h2>
+                    <p style="color: #b0b3c5; font-size: 1.2rem;">انضم إلى أكثر من 5,000 مشترك</p>
+                    <form onsubmit="event.preventDefault(); alert('✅ تم الاشتراك بنجاح!');" style="max-width: 500px; margin: 2rem auto;">
+                        <input type="email" placeholder="بريدك الإلكتروني" style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--primary-glow); border-radius: 50px; color: white; margin-bottom: 1rem;">
+                        <button type="submit" style="width: 100%; padding: 1rem; background: var(--primary-glow); border: none; border-radius: 50px; font-weight: 800; cursor: pointer;">اشترك الآن</button>
+                    </form>
+                </div>
+            `;
+            setActiveLink('النشرة');
+        }
+
+        // عرض جميع المقالات
+        function showAllArticles(e) {
+            e.preventDefault();
+            displayArticles();
+            setActiveLink('المقالات');
+        }
+
+        // فتح المقال
         function openArticle(articleId) {
             event.preventDefault();
             const article = articles.find(a => a.id === articleId);
@@ -560,59 +657,30 @@
             }
         }
 
-        // إغلاق النافذة المنبثقة
+        // إغلاق النافذة
         function closeModal() {
             document.getElementById('article-modal').style.display = 'none';
         }
 
-        // دوال التنقل
-        function showHome(e) {
-            e.preventDefault();
-            displayArticles();
-            setActiveLink('الرئيسية');
+        // فتح روابط التواصل الاجتماعي
+        function openSocial(platform) {
+            const urls = {
+                facebook: 'https://facebook.com/smartaffiliate',
+                tiktok: 'https://tiktok.com/@smartaffiliate',
+                twitter: 'https://twitter.com/smartaffiliate',
+                linkedin: 'https://linkedin.com/company/smartaffiliate',
+                youtube: 'https://youtube.com/@smartaffiliate',
+                discord: 'https://discord.gg/smartaffiliate'
+            };
+            
+            if (urls[platform]) {
+                window.open(urls[platform], '_blank');
+            } else {
+                alert(`سيتم فتح صفحة ${platform} قريباً`);
+            }
         }
 
-        function showAllArticles(e) {
-            e.preventDefault();
-            displayArticles();
-            setActiveLink('المقالات');
-        }
-
-        function showBlog(e) {
-            e.preventDefault();
-            const container = document.getElementById('main-content');
-            container.innerHTML = `
-                <div style="text-align: center; padding: 4rem; background: var(--glass-bg); border-radius: var(--card-radius);">
-                    <i class="fas fa-blog" style="font-size: 4rem; color: var(--primary-glow); margin-bottom: 1rem;"></i>
-                    <h2 style="font-size: 2.5rem;">مدونة SmartAffiliate</h2>
-                    <p style="color: #b0b3c5; font-size: 1.2rem; margin: 1rem 0;">قريباً: أكثر من 200 مقال حصري</p>
-                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
-                        <span style="background: rgba(0,210,255,0.1); padding: 0.5rem 1.5rem; border-radius: 30px;">📝 85 مقال</span>
-                        <span style="background: rgba(157,80,187,0.1); padding: 0.5rem 1.5rem; border-radius: 30px;">🤖 62 مقال</span>
-                        <span style="background: rgba(0,255,0,0.1); padding: 0.5rem 1.5rem; border-radius: 30px;">📊 43 مقال</span>
-                    </div>
-                </div>
-            `;
-            setActiveLink('المدونة');
-        }
-
-        function showNewsletter(e) {
-            e.preventDefault();
-            const container = document.getElementById('main-content');
-            container.innerHTML = `
-                <div style="text-align: center; padding: 4rem; background: linear-gradient(145deg, rgba(0,210,255,0.1), rgba(157,80,187,0.1)); border-radius: var(--card-radius);">
-                    <i class="fas fa-envelope" style="font-size: 4rem; color: var(--primary-glow); margin-bottom: 1rem;"></i>
-                    <h2 style="font-size: 2.5rem;">النشرة البريدية</h2>
-                    <p style="color: #b0b3c5; font-size: 1.2rem; margin: 1rem 0;">انضم إلى أكثر من 5,000 مشترك</p>
-                    <form onsubmit="event.preventDefault(); alert('تم الاشتراك بنجاح!');" style="max-width: 500px; margin: 2rem auto;">
-                        <input type="email" placeholder="بريدك الإلكتروني" style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--primary-glow); border-radius: 50px; color: white; margin-bottom: 1rem;">
-                        <button type="submit" style="width: 100%; padding: 1rem; background: var(--primary-glow); border: none; border-radius: 50px; font-weight: 800; cursor: pointer;">اشترك الآن</button>
-                    </form>
-                </div>
-            `;
-            setActiveLink('النشرة');
-        }
-
+        // تفعيل الرابط النشط
         function setActiveLink(text) {
             document.querySelectorAll('.nav-container a').forEach(link => {
                 link.classList.remove('active');
@@ -620,16 +688,6 @@
                     link.classList.add('active');
                 }
             });
-        }
-
-        function openSocial(platform) {
-            const urls = {
-                twitter: 'https://twitter.com/smartaffiliate',
-                linkedin: 'https://linkedin.com/company/smartaffiliate',
-                youtube: 'https://youtube.com/@smartaffiliate',
-                discord: 'https://discord.gg/smartaffiliate'
-            };
-            window.open(urls[platform], '_blank');
         }
 
         // تحميل الصفحة الرئيسية
