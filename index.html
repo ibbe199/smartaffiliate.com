@@ -14,15 +14,18 @@
             --border: rgba(255, 255, 255, 0.1);
         }
 
+        /* تحسين التمرير */
+        html { scroll-behavior: smooth; }
+
         body {
             background: var(--bg);
+            background-image: radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.05) 0%, transparent 50%);
             color: #fff;
             font-family: 'Segoe UI', Tahoma, sans-serif;
             margin: 0; padding: 0;
             overflow-x: hidden;
         }
 
-        /* نافبار مطور */
         header {
             backdrop-filter: blur(15px);
             background: rgba(5, 8, 22, 0.9);
@@ -33,7 +36,7 @@
 
         nav { display: flex; justify-content: center; gap: 30px; }
         nav a { color: #b4b4b4; text-decoration: none; font-weight: 600; transition: 0.3s; font-size: 14px; }
-        nav a:hover { color: var(--primary); }
+        nav a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
 
         .brand-box { text-align: center; padding: 60px 20px; }
         .brand-logo {
@@ -43,6 +46,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: floating 4s ease-in-out infinite;
+            cursor: pointer;
         }
 
         @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
@@ -51,66 +55,68 @@
 
         .card-premium {
             background: var(--glass);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--border);
             border-radius: 25px;
             padding: 30px;
             margin-bottom: 25px;
-            transition: 0.4s;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: right;
         }
 
-        .card-premium:hover { transform: scale(1.02); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2); }
+        .card-premium:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 40px rgba(0, 210, 255, 0.15); }
 
-        h2 i { color: var(--primary); margin-left: 12px; }
+        h2 i { color: var(--primary); margin-left: 12px; font-size: 24px; }
         h2 { font-size: 22px; margin-bottom: 15px; display: flex; align-items: center; }
         p { color: #b4b4b4; font-size: 15px; line-height: 1.7; }
 
-        /* صندوق القائمة البريدية (Newsletter) */
         .newsletter-section {
-            background: linear-gradient(135deg, rgba(0, 210, 255, 0.1), rgba(157, 80, 187, 0.1));
+            background: linear-gradient(135deg, rgba(0, 210, 255, 0.05), rgba(157, 80, 187, 0.05));
             padding: 50px 20px;
             text-align: center;
             border-radius: 30px;
             margin: 40px auto;
             max-width: 660px;
             border: 1px solid var(--border);
+            backdrop-filter: blur(5px);
         }
 
-        .newsletter-section h3 { font-size: 24px; margin-bottom: 10px; }
-        .subscribe-form { display: flex; gap: 10px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+        .subscribe-form { display: flex; gap: 10px; justify-content: center; margin-top: 25px; flex-wrap: wrap; }
         
         .subscribe-form input {
-            padding: 12px 20px;
+            padding: 14px 20px;
             border-radius: 12px;
             border: 1px solid var(--border);
             background: rgba(255,255,255,0.05);
             color: white;
             outline: none;
-            width: 250px;
+            width: 280px;
+            transition: 0.3s;
         }
 
+        .subscribe-form input:focus { border-color: var(--primary); background: rgba(255,255,255,0.1); }
+
         .btn-subscribe {
-            padding: 12px 25px;
+            padding: 14px 30px;
             border-radius: 12px;
             background: var(--primary);
             color: #000;
-            font-weight: bold;
+            font-weight: 800;
             border: none;
             cursor: pointer;
             transition: 0.3s;
         }
 
-        .btn-subscribe:hover { transform: scale(1.05); background: #fff; }
+        .btn-subscribe:hover { transform: scale(1.05) translateY(-2px); box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4); }
 
-        /* الفوتر وأيقونات التواصل */
-        footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--border); }
-        .social-icons { margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; }
-        .social-icons a { color: #fff; font-size: 20px; transition: 0.3s; }
-        .social-icons a:hover { color: var(--primary); transform: translateY(-3px); }
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--border); margin-top: 50px; }
+        .social-icons { margin-bottom: 25px; display: flex; justify-content: center; gap: 25px; }
+        .social-icons a { color: #888; font-size: 22px; transition: 0.3s; }
+        .social-icons a:hover { color: var(--primary); transform: translateY(-5px); }
 
-        .footer-text { color: #555; font-size: 13px; }
+        .footer-text { color: #444; font-size: 13px; letter-spacing: 1px; }
 
-        @media (max-width: 600px) { .subscribe-form input { width: 100%; } }
+        @media (max-width: 600px) { .subscribe-form input { width: 100%; } .btn-subscribe { width: 100%; } }
     </style>
 </head>
 <body>
@@ -124,28 +130,28 @@
     </header>
 
     <div class="brand-box">
-        <div class="brand-logo">SmartAffiliate</div>
-        <p style="color: #666;">بوابتك الحصرية لأدوات المستقبل</p>
+        <div class="brand-logo" onclick="window.location.reload()">SmartAffiliate</div>
+        <p style="color: #444; font-weight: 500; letter-spacing: 2px; margin-top: 10px;">FUTURE OF DIGITAL PROFITS</p>
     </div>
 
     <div class="main-grid">
         <div class="card-premium">
-            <h2><i class="fas fa-brain"></i> مستقبل البحث مع Perplexity</h2>
-            <p>اكتشف لماذا يتخلى المحترفون عن محركات البحث التقليدية لصالح الإجابات الذكية الموثقة.</p>
-            <a href="article5.html" style="color: var(--primary); text-decoration: none; font-weight: bold; display: block; margin-top: 15px;">إقرأ المزيد ←</a>
+            <h2><i class="fas fa-microchip"></i> مستقبل البحث مع Perplexity</h2>
+            <p>اكتشف لماذا يتخلى المحترفون عن محركات البحث التقليدية لصالح الإجابات الذكية الموثقة والمباشرة.</p>
+            <a href="article5.html" style="color: var(--primary); text-decoration: none; font-weight: bold; display: block; margin-top: 15px;">إقرأ المقال كاملاً ←</a>
         </div>
 
         <div class="card-premium">
-            <h2><i class="fas fa-bolt"></i> أتمتة الأعمال بالوكلاء الذكيين</h2>
-            <p>كيف تبني نظام عمل يعمل من أجلك 24/7 دون تدخل بشري باستخدام تقنية OpenAI O1.</p>
-            <a href="article2.html" style="color: var(--primary); text-decoration: none; font-weight: bold; display: block; margin-top: 15px;">إقرأ المزيد ←</a>
+            <h2><i class="fas fa-project-diagram"></i> أتمتة الأعمال بالوكلاء الذكيين</h2>
+            <p>كيف تبني نظام عمل يعمل من أجلك 24/7 دون تدخل بشري باستخدام أحدث تقنيات الوكلاء المستقلين.</p>
+            <a href="article2.html" style="color: var(--primary); text-decoration: none; font-weight: bold; display: block; margin-top: 15px;">إقرأ المقال كاملاً ←</a>
         </div>
 
         <div class="newsletter-section" id="newsletter">
-            <h3>انضم إلى النخبة الرقمية 🚀</h3>
-            <p style="color: #aaa;">كن أول من يعرف عن أدوات الذكاء الاصطناعي الجديدة قبل الجميع.</p>
-            <form class="subscribe-form">
-                <input type="email" placeholder="بريدك الإلكتروني" required>
+            <h3 style="margin:0">انضم إلى النخبة الرقمية 🚀</h3>
+            <p style="color: #666; font-size: 14px; margin-top: 8px;">كن أول من يقتنص فرص الذكاء الاصطناعي 2026</p>
+            <form class="subscribe-form" onsubmit="alert('شكراً لانضمامك! ستصلك أول رسالة قريباً.'); return false;">
+                <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
                 <button type="submit" class="btn-subscribe">اشترك الآن</button>
             </form>
         </div>
@@ -153,13 +159,13 @@
 
     <footer>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
         </div>
         <div class="footer-text">
-            &copy; 2026 SmartAffiliate.com | جميع الحقوق محفوظة لخبراء الأفلييت الذكي
+            &copy; 2026 SMARTAFFILIATE.COM | مـنـصـة الأقـوياء رقـمـيـاً
         </div>
     </footer>
 
