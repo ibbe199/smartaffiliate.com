@@ -3,24 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الوكلاء المستقلون | SmartAffiliate</title>
+    <title>دليل إنشاء متجر إلكتروني | SmartAffiliate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        :root { --primary: #00d2ff; --bg: #050816; --card: rgba(17, 25, 40, 0.75); }
-        body { background: var(--bg); color: white; font-family: sans-serif; line-height: 1.8; padding: 20px; }
-        .container { max-width: 700px; margin: auto; background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
-        h1 { color: var(--primary); }
-        .btn { display: inline-block; padding: 10px 20px; background: var(--primary); color: #000; text-decoration: none; border-radius: 10px; font-weight: bold; margin-top: 20px; }
+        /* نفس التنسيقات من المقالة الأولى */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-deep: #050816;
+            --primary-glow: #00d2ff;
+            --secondary-glow: #9d50bb;
+            --glass-bg: rgba(20, 30, 45, 0.85);
+            --text-muted: #b0b3c5;
+            --card-radius: 24px;
+        }
+        body {
+            background: var(--bg-deep);
+            background-image: radial-gradient(circle at 30% 10%, rgba(0,210,255,0.08) 0%, transparent 40%);
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        .article {
+            background: var(--glass-bg); backdrop-filter: blur(10px);
+            border: 2px solid var(--primary-glow); border-radius: var(--card-radius);
+            padding: 3rem; margin: 2rem 0;
+        }
+        .article h1 { color: var(--primary-glow); font-size: 2.5rem; margin-bottom: 1rem; }
+        .article h2 { color: var(--primary-glow); margin: 2rem 0 1rem; font-size: 1.8rem; }
+        .article h3 { color: #fff; margin: 1.5rem 0 1rem; }
+        .article p { margin-bottom: 1.5rem; color: #e0e0e0; }
+        .article ul, .article ol { margin: 1.5rem 0; padding-right: 2rem; color: #e0e0e0; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 10px;
+            color: var(--primary-glow); text-decoration: none; font-size: 1.2rem; margin-bottom: 2rem;
+        }
+        .back-link:hover { gap: 15px; }
+        .meta {
+            display: flex; gap: 2rem; color: #8a8fb0;
+            margin-bottom: 2rem; padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        footer { text-align: center; margin-top: 3rem; padding: 2rem; color: #4a4f6e; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" style="color: #aaa; text-decoration: none;">← العودة للرئيسية</a>
-        <h1>عصر الوكلاء المستقلين (AI Agents)</h1>
-        <p>في 2026، انتقلنا من مرحلة "اسأل الذكاء الاصطناعي" إلى مرحلة "دعه ينفذ". الوكلاء هم برامج ذكية يمكنها حجز رحلاتك، إدارة بريدك، وحتى كتابة الأكواد وتصحيحها بشكل مستقل.</p>
-        <div style="background: rgba(0,210,255,0.1); padding: 15px; border-radius: 10px;">
-            <strong>لماذا يهمك هذا؟</strong> لأنه يتيح لك بناء مشروع تجاري كامل يديره وكيل ذكي بينما تركز أنت على الاستراتيجية.
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-right"></i> العودة للرئيسية
+        </a>
+        
+        <div class="article">
+            <h1><i class="fas fa-cart-shopping" style="color: var(--primary-glow);"></i> دليل المبتدئين لإنشاء متجر إلكتروني ناجح</h1>
+            
+            <div class="meta">
+                <span><i class="far fa-calendar"></i> 8 مارس 2026</span>
+                <span><i class="far fa-clock"></i> 10 دقائق قراءة</span>
+                <span><i class="fas fa-tag"></i> تجارة إلكترونية</span>
+            </div>
+            
+            <h2>مقدمة: لماذا التجارة الإلكترونية؟</h2>
+            <p>سوق التجارة الإلكترونية ينمو باستمرار. في 2026، من المتوقع أن تصل مبيعات التجارة الإلكترونية إلى 8 تريليون دولار عالمياً. الفرصة متاحة للجميع.</p>
+            
+            <h2>الخطوة 1: اختيار المنتج المناسب</h2>
+            <p>أنواع المنتجات التي تنجح عادة:</p>
+            <ul>
+                <li>منتجات تحل مشكلة معينة</li>
+                <li>منتجات في مجال تهتم به شخصياً</li>
+                <li>منتجات رقمية (دورات، كتب إلكترونية) - هامش ربح عالي</li>
+                <li>منتجات قابلة للشحن بسهولة</li>
+            </ul>
+            
+            <h2>الخطوة 2: اختيار منصة المتجر</h2>
+            <p>أشهر المنصات:</p>
+            <ul>
+                <li><strong>Shopify:</strong> الأسهل والأشهر، مناسب للمبتدئين</li>
+                <li><strong>WooCommerce:</strong> مجاني، يحتاج ووردبريس، تحكم كامل</li>
+                <li><strong>Wix:</strong> بسيط جداً، لكن أقل مرونة</li>
+                <li><strong>OpenCart:</strong> مجاني، مناسب للمتاجر الكبيرة</li>
+            </ul>
+            
+            <h2>الخطوة 3: تصميم المتجر</h2>
+            <ul>
+                <li>اختر قالباً نظيفاً وسريعاً</li>
+                <li>صور عالية الجودة للمنتجات</li>
+                <li>أوصاف مقنعة تركز على الفوائد</li>
+                <li>سهولة التصفح والبحث</li>
+            </ul>
+            
+            <h2>الخطوة 4: طرق الدفع والشحن</h2>
+            <ul>
+                <li><strong>طرق الدفع:</strong> بطاقة ائتمان، باي بال، مدى، Apple Pay</li>
+                <li><strong>الشحن:</strong> شركات مثل أرامكس، DHL، أو الشحن المجاني للطلبات الكبيرة</li>
+            </ul>
+            
+            <h2>الخطوة 5: جلب الزوار</h2>
+            <ul>
+                <li><strong>إعلانات فيسبوك وانستغرام:</strong> أسرع طريقة</li>
+                <li><strong>SEO:</strong> محتوى يجذب زواراً مجانيين</li>
+                <li><strong>التسويق بالعمولة:</strong>让别人 يروجون لك مقابل عمولة</li>
+                <li><strong>وسائل التواصل:</strong> ابنِ متابعين وشارك منتجاتك</li>
+            </ul>
+            
+            <h2>الخطوة 6: تحسين المتجر باستمرار</h2>
+            <ul>
+                <li>حلل سلوك الزوار (Google Analytics)</li>
+                <li>اسأل عملاءك عن تجربتهم</li>
+                <li>طور المنتجات بناء على الاقتراحات</li>
+                <li>جرب عروضاً وتخفيضات مختلفة</li>
+            </ul>
+            
+            <h2>الخلاصة</h2>
+            <p>أول مبيع هو الأصعب، لكنه يفتح الباب للثقة والاستمرارية. ابدأ صغيراً، تعلم بسرعة، وطور متجرك باستمرار.</p>
         </div>
-        <a href="https://openai.com/index/o1/" target="_blank" class="btn">اكتشف نموذج OpenAI O1</a>
+        
+        <footer>
+            <p>© 2026 smartafiliate.com - جميع الحقوق محفوظة</p>
+        </footer>
     </div>
 </body>
 </html>
