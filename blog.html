@@ -1,225 +1,113 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAffiliate 2026 | الصفحة الرئيسية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; background: #f4f7f6; margin: 0; color: #333; }
+        
+        /* شريط التنقل العلوي (المفقود) */
+        header { background: white; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; position: sticky; top: 0; z-index: 1000; }
+        header nav a { margin: 0 15px; text-decoration: none; color: #007bff; font-weight: bold; }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        /* اسم الموقع المتحرك */
+        .logo-section { text-align: center; padding: 20px 0; background: white; }
+        .site-logo { 
+            font-size: 28px; 
+            font-weight: 800; 
+            color: #007bff; 
+            display: inline-block; 
+            text-decoration: none;
+            animation: floatLogo 3s infinite ease-in-out;
+        }
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-7px); }
+        }
 
-<title>SmartAffiliate | مدونة الذكاء الاصطناعي</title>
+        .container { max-width: 900px; margin: auto; padding: 20px; }
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+        .header { text-align: center; margin-bottom: 30px; }
+        .header h1 { font-size: 30px; font-weight: 700; margin-bottom: 5px; }
+        .header p { font-size: 16px; color: #555; }
 
-<style>
+        /* الأقسام */
+        .sections { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 30px; }
+        .section-btn { padding: 8px 18px; background: #007bff; color: white; text-decoration: none; border-radius: 25px; font-size: 14px; font-weight: bold; transition: 0.3s; }
+        .section-btn:hover { background: #0056b3; }
 
-body{
-font-family:'Cairo', sans-serif;
-background:#f4f7f6;
-margin:0;
-}
+        /* قائمة المقالات */
+        .articles-list { display: flex; flex-direction: column; gap: 20px; }
+        .article-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-right: 6px solid #007bff; text-align: right; }
+        .article-card .tag { display: inline-block; background: #e7f1ff; color: #007bff; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+        .article-card h2 { margin: 10px 0; font-size: 20px; }
+        .article-card p { color: #555; line-height: 1.6; font-size: 15px; }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
-}
+        .buttons-group { margin-top: 15px; display: flex; gap: 10px; }
+        .btn { text-decoration: none; padding: 10px 15px; border-radius: 8px; font-weight: bold; font-size: 14px; }
+        .btn-read { background: #007bff; color: white; }
+        .btn-tool { background: #28a745; color: white; }
 
-.blog-header{
-text-align:center;
-margin-bottom:40px;
-}
-
-.articles-list{
-display:flex;
-flex-direction:column;
-gap:25px;
-}
-
-.article-card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,0.05);
-border-right:8px solid #007bff;
-transition:0.3s;
-}
-
-.article-card:hover{
-transform:translateY(-5px);
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-}
-
-.tag{
-background:#e7f1ff;
-color:#007bff;
-padding:5px 12px;
-border-radius:20px;
-font-size:13px;
-font-weight:bold;
-}
-
-.buttons-group{
-margin-top:15px;
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.btn{
-text-decoration:none;
-padding:10px 18px;
-border-radius:8px;
-font-weight:bold;
-}
-
-.btn-read{
-background:#007bff;
-color:white;
-}
-
-.btn-tool{
-background:#28a745;
-color:white;
-}
-
-</style>
-
+        @media(max-width:600px){ .sections { flex-direction: row; } .section-btn { font-size: 12px; } }
+    </style>
 </head>
-
 <body>
+
+<header>
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="blog.html">المدونة</a>
+    </nav>
+</header>
+
+<div class="logo-section">
+    <a href="index.html" class="site-logo">SmartAffiliate</a>
+</div>
 
 <div class="container">
 
-<div class="blog-header">
+    <div class="header">
+        <h1>مستقبل الذكاء الاصطناعي 2026</h1>
+        <p>أفضل المقالات والأدوات الرقمية</p>
+    </div>
 
-<h1>مستقبل الذكاء الاصطناعي 2026</h1>
+    <div class="sections">
+        <a href="#ai-writing" class="section-btn">كتابة AI</a>
+        <a href="#ai-images" class="section-btn">صور AI</a>
+        <a href="#learning" class="section-btn">تعلم AI</a>
+    </div>
 
-<p>أفضل المقالات والأدوات الرقمية</p>
+    <div class="articles-list">
 
-</div>
+        <div class="article-card" id="ai-writing">
+            <span class="tag">AI كتابة</span>
+            <h2>أفضل أدوات كتابة المحتوى بالذكاء الاصطناعي</h2>
+            <p>تعلم كيف تنتج مقالات احترافية باستخدام تقنيات Jasper و Copy.ai المتطورة.</p>
+            <div class="buttons-group">
+                <a href="article1.html" class="btn btn-read">📖 اقرأ المقال</a>
+                <a href="https://www.jasper.ai" target="_blank" class="btn btn-tool">🔥 تجربة Jasper</a>
+            </div>
+        </div>
 
+        <div class="article-card" id="ai-images">
+            <span class="tag">صور AI</span>
+            <h2>إنشاء صور احترافية باستخدام Midjourney</h2>
+            <p>دليلك العملي لإنتاج تصاميم بصرية مذهلة قادرة على لفت الأنظار في 2026.</p>
+            <div class="buttons-group">
+                <a href="article2.html" class="btn btn-read">📖 اقرأ المقال</a>
+                <a href="https://www.midjourney.com" target="_blank" class="btn btn-tool">🎨 تجربة Midjourney</a>
+            </div>
+        </div>
 
-<div class="articles-list">
-
-
-<!-- المقال 1 -->
-
-<div class="article-card">
-
-<span class="tag">AI كتابة</span>
-
-<h2>أفضل أدوات كتابة المحتوى بالذكاء الاصطناعي</h2>
-
-<p>
-تعرف على أدوات كتابة المقالات باستخدام الذكاء الاصطناعي مثل Jasper و Copy.ai.
-</p>
-
-<div class="buttons-group">
-
-<a href="article1.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://www.jasper.ai" target="_blank" class="btn btn-tool">🔥 تجربة Jasper</a>
-
-</div>
-
-</div>
-
-
-<!-- المقال 2 -->
-
-<div class="article-card">
-
-<span class="tag">صور AI</span>
-
-<h2>إنشاء صور احترافية باستخدام Midjourney</h2>
-
-<p>
-تعلم كيفية إنشاء صور مذهلة باستخدام Midjourney للتصميم والتسويق.
-</p>
-
-<div class="buttons-group">
-
-<a href="article2.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://www.midjourney.com" target="_blank" class="btn btn-tool">🎨 تجربة Midjourney</a>
+    </div> 
 
 </div>
 
-</div>
-
-
-<!-- المقال 3 -->
-
-<div class="article-card">
-
-<span class="tag">تعلم</span>
-
-<h2>أفضل مواقع تعلم الذكاء الاصطناعي مجاناً</h2>
-
-<p>
-هذه أفضل المنصات التي تقدم دورات تعليم الذكاء الاصطناعي.
-</p>
-
-<div class="buttons-group">
-
-<a href="article3.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://www.coursera.org" target="_blank" class="btn btn-tool">🎓 زيارة Coursera</a>
-
-</div>
-
-</div>
-
-
-<!-- المقال 4 -->
-
-<div class="article-card">
-
-<span class="tag">برمجة</span>
-
-<h2>كيف يساعدك GitHub Copilot في البرمجة</h2>
-
-<p>
-مساعد برمجي ذكي يساعد المطورين في كتابة الكود بسرعة.
-</p>
-
-<div class="buttons-group">
-
-<a href="article4.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://github.com/features/copilot" target="_blank" class="btn btn-tool">💻 تجربة Copilot</a>
-
-</div>
-
-</div>
-
-
-<!-- المقال 5 -->
-
-<div class="article-card">
-
-<span class="tag">صوت AI</span>
-
-<h2>تحويل النص إلى صوت باستخدام ElevenLabs</h2>
-
-<p>
-أنشئ تعليق صوتي احترافي للفيديوهات باستخدام الذكاء الاصطناعي.
-</p>
-
-<div class="buttons-group">
-
-<a href="article5.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://elevenlabs.io" target="_blank" class="btn btn-tool">🎙️ تجربة الأداة</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
+<footer style="text-align: center; padding: 20px; color: #888; font-size: 12px;">
+    &copy; 2026 SmartAffiliate.com
+</footer>
 
 </body>
 </html>
