@@ -24,10 +24,6 @@
             --card-radius: 32px;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             background: var(--bg-deep);
             background-image: 
@@ -36,7 +32,6 @@
             color: var(--text-bright);
             font-family: 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
-            min-height: 100vh;
         }
 
         /* شريط التنقل */
@@ -48,7 +43,6 @@
             top: 0;
             z-index: 1000;
             padding: 0.8rem 0;
-            box-shadow: 0 4px 20px rgba(0,210,255,0.1);
         }
 
         .nav-container {
@@ -56,7 +50,7 @@
             margin: 0 auto;
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
             padding: 0 1.5rem;
         }
@@ -65,8 +59,7 @@
             color: #fff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 30px;
             transition: 0.3s;
             display: flex;
@@ -78,35 +71,19 @@
         .nav-container a.active {
             background: rgba(0, 210, 255, 0.15);
             color: var(--primary-glow);
-            transform: translateY(-2px);
-        }
-
-        .nav-container a i {
-            font-size: 1.1rem;
         }
 
         /* الشعار */
         .brand-zone {
             text-align: center;
-            padding: 2rem 1.5rem 1.5rem;
-        }
-
-        .logo-link {
-            display: inline-block;
-            cursor: pointer;
-            text-decoration: none;
+            padding: 2rem 1.5rem;
         }
 
         .logo-svg {
             height: 100px;
             filter: drop-shadow(0 0 18px rgba(0, 210, 255, 0.5));
             animation: floatSmart 4.2s ease-in-out infinite;
-            transition: all 0.35s;
-        }
-
-        .logo-svg:hover {
-            transform: scale(1.07);
-            filter: drop-shadow(0 0 28px var(--primary-glow));
+            cursor: pointer;
         }
 
         @keyframes floatSmart {
@@ -119,7 +96,6 @@
             letter-spacing: 4px;
             font-size: 0.85rem;
             margin-top: 0.8rem;
-            text-transform: uppercase;
             font-weight: 600;
         }
 
@@ -130,12 +106,12 @@
             padding: 0 2rem;
         }
 
-        /* بطاقات المقالات */
+        /* شبكة المقالات */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin: 2rem 0 3rem;
+            margin: 2rem 0;
         }
 
         .article-card {
@@ -146,27 +122,7 @@
             padding: 2rem;
             transition: 0.4s;
             text-align: right;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
-            transform: scaleX(0);
-            transition: transform 0.4s;
-        }
-
-        .article-card:hover::before {
-            transform: scaleX(1);
+            cursor: pointer;
         }
 
         .article-card:hover {
@@ -198,20 +154,13 @@
             margin-bottom: 1rem;
             display: flex;
             gap: 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
             padding-bottom: 0.8rem;
-        }
-
-        .article-meta span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .article-card p {
             color: var(--text-muted);
             margin-bottom: 1.5rem;
-            flex-grow: 1;
             line-height: 1.7;
         }
 
@@ -226,7 +175,6 @@
             background: rgba(0,210,255,0.05);
             border-radius: 30px;
             transition: 0.3s;
-            margin-top: auto;
             border: 1px solid rgba(0,210,255,0.2);
             width: fit-content;
         }
@@ -235,175 +183,75 @@
             background: var(--primary-glow);
             color: #050816;
             gap: 15px;
-            border-color: var(--primary-glow);
         }
 
-        .article-link i {
-            font-size: 0.9rem;
-        }
-
-        /* إشارة الروابط المفعلة */
-        .active-badge {
-            display: inline-flex;
+        /* نافذة المقال المنبثقة */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            justify-content: center;
             align-items: center;
-            gap: 5px;
-            background: rgba(0,255,0,0.1);
-            color: #00ff88;
-            padding: 0.3rem 0.8rem;
-            border-radius: 30px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            border: 1px solid rgba(0,255,0,0.3);
-            margin-bottom: 0.8rem;
-            width: fit-content;
+            padding: 2rem;
         }
 
-        .active-badge i {
-            font-size: 0.6rem;
-            color: #00ff88;
-        }
-
-        /* روابط خارجية */
-        .external-link {
-            background: rgba(157,80,187,0.05);
-            border-color: rgba(157,80,187,0.3);
-        }
-
-        .external-link:hover {
-            background: var(--secondary-glow);
-            color: white;
-        }
-
-        /* قسم المدونة */
-        .blog-section {
-            background: linear-gradient(145deg, rgba(0,210,255,0.05), rgba(157,80,187,0.05));
+        .modal-content {
+            background: var(--glass-bg);
+            border: 2px solid var(--primary-glow);
             border-radius: var(--card-radius);
             padding: 3rem;
-            margin: 3rem 0;
-            border: 1px solid rgba(0,210,255,0.2);
-            text-align: center;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            color: #fff;
+            box-shadow: 0 0 50px rgba(0,210,255,0.3);
         }
 
-        .blog-section h3 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #00d2ff, #9d50bb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .blog-stats {
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(255,0,0,0.2);
+            color: #ff4444;
+            border: 1px solid #ff4444;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: 0.3s;
         }
 
-        .stat-item {
-            text-align: center;
+        .close-modal:hover {
+            background: #ff4444;
+            color: #fff;
         }
 
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
+        .modal-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             color: var(--primary-glow);
         }
 
-        .stat-label {
-            color: #8a8fb0;
-            font-size: 0.9rem;
+        .modal-body {
+            color: #b0b3c5;
+            line-height: 1.8;
+            font-size: 1.1rem;
         }
 
-        .blog-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-blog {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(145deg, #00d2ff, #0099cc);
-            color: #050816;
-            text-decoration: none;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .btn-blog:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 30px rgba(0,210,255,0.3);
-        }
-
-        .btn-blog.purple {
-            background: linear-gradient(145deg, #9d50bb, #6a4e9b);
-        }
-
-        /* النشرة البريدية */
-        .newsletter-block {
-            background: linear-gradient(145deg, rgba(20,30,50,0.8), rgba(8,12,28,0.95));
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--primary-glow);
-            border-radius: 48px;
-            padding: 3rem 2rem;
-            margin: 3rem auto;
-            text-align: center;
-            box-shadow: 0 0 30px rgba(0,210,255,0.1);
-        }
-
-        .newsletter-block h3 {
-            font-size: 2rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-news {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 2rem auto;
-            max-width: 600px;
-        }
-
-        .form-news input {
-            direction: rtl;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid #2a2f4a;
-            border-radius: 50px;
-            padding: 1rem 2rem;
-            width: 300px;
-            color: white;
-            outline: none;
-            font-size: 1rem;
-        }
-
-        .form-news input:focus {
-            border-color: var(--primary-glow);
-            box-shadow: 0 0 20px rgba(0,210,255,0.2);
-        }
-
-        .btn-primary {
-            background: linear-gradient(145deg, #00d2ff, #0099cc);
-            border: none;
-            border-radius: 50px;
-            padding: 1rem 2.5rem;
-            font-weight: 800;
-            color: #050816;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 1rem;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0,210,255,0.4);
+        .modal-body p {
+            margin-bottom: 1.5rem;
         }
 
         /* التذييل */
@@ -430,27 +278,7 @@
 
         .social-ring a:hover {
             color: var(--primary-glow);
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        .footer-links {
-            margin: 1.5rem 0;
-        }
-
-        .footer-links a {
-            color: #5f6380;
-            text-decoration: none;
-            margin: 0 1rem;
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-glow);
-        }
-
-        .copyright {
-            color: #4a4f6e;
-            font-size: 0.9rem;
+            transform: translateY(-5px);
         }
 
         @media (max-width: 768px) {
@@ -458,13 +286,12 @@
                 grid-template-columns: 1fr;
             }
             
-            .nav-container {
-                gap: 1rem;
+            .modal-content {
+                padding: 2rem;
             }
             
-            .nav-container a {
-                font-size: 0.9rem;
-                padding: 0.4rem 0.8rem;
+            .modal-title {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -473,331 +300,348 @@
 
     <header class="glass-header">
         <div class="nav-container">
-            <a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a>
-            <a href="#articles"><i class="fas fa-newspaper"></i> المقالات</a>
-            <a href="#blog"><i class="fas fa-blog"></i> المدونة</a>
-            <a href="#newsletter"><i class="fas fa-envelope"></i> النشرة البريدية</a>
-            <a href="https://twitter.com/smartaffiliate" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://linkedin.com/company/smartaffiliate" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://youtube.com/@smartaffiliate" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#" onclick="showHome(event)" class="active"><i class="fas fa-home"></i> الرئيسية</a>
+            <a href="#" onclick="showAllArticles(event)"><i class="fas fa-newspaper"></i> المقالات</a>
+            <a href="#" onclick="showBlog(event)"><i class="fas fa-blog"></i> المدونة</a>
+            <a href="#" onclick="showNewsletter(event)"><i class="fas fa-envelope"></i> النشرة</a>
         </div>
     </header>
 
-    <div id="home" class="brand-zone">
-        <a href="#home" class="logo-link">
-            <svg class="logo-svg" width="220" height="100" viewBox="0 0 220 100">
-                <path d="M30 50 L60 25 L90 50 L60 75 L30 50Z" fill="url(#grad1)" stroke="#00d2ff" stroke-width="2.5"/>
-                <circle cx="110" cy="50" r="25" fill="url(#grad2)" stroke="#9d50bb" stroke-width="2.5"/>
-                <path d="M165 30 L185 50 L165 70 L145 50 L165 30Z" fill="url(#grad3)" stroke="#00d2ff" stroke-width="2.5"/>
-                <text x="130" y="90" font-family="Segoe UI" font-weight="bold" font-size="14" fill="#fff" text-anchor="middle">SMARTAFF</text>
-                <defs>
-                    <linearGradient id="grad1" x1="30" y1="50" x2="90" y2="50">
-                        <stop stop-color="#00d2ff"/><stop offset="1" stop-color="#9d50bb"/>
-                    </linearGradient>
-                    <linearGradient id="grad2" x1="85" y1="25" x2="135" y2="75">
-                        <stop stop-color="#9d50bb"/><stop offset="1" stop-color="#00d2ff"/>
-                    </linearGradient>
-                    <linearGradient id="grad3" x1="145" y1="50" x2="185" y2="50">
-                        <stop stop-color="#00d2ff"/><stop offset="1" stop-color="#6a4e9b"/>
-                    </linearGradient>
-                </defs>
-            </svg>
-        </a>
-        <div class="brand-tagline">المنصة الرقمية الأكثر تطوراً 2026</div>
+    <div class="brand-zone" id="home-section">
+        <svg class="logo-svg" width="220" height="100" viewBox="0 0 220 100" onclick="showHome(event)">
+            <path d="M30 50 L60 25 L90 50 L60 75 L30 50Z" fill="url(#grad1)" stroke="#00d2ff" stroke-width="2.5"/>
+            <circle cx="110" cy="50" r="25" fill="url(#grad2)" stroke="#9d50bb" stroke-width="2.5"/>
+            <path d="M165 30 L185 50 L165 70 L145 50 L165 30Z" fill="url(#grad3)" stroke="#00d2ff" stroke-width="2.5"/>
+            <text x="130" y="90" font-family="Segoe UI" font-weight="bold" font-size="14" fill="#fff" text-anchor="middle">SMARTAFF</text>
+            <defs>
+                <linearGradient id="grad1" x1="30" y1="50" x2="90" y2="50">
+                    <stop stop-color="#00d2ff"/><stop offset="1" stop-color="#9d50bb"/>
+                </linearGradient>
+                <linearGradient id="grad2" x1="85" y1="25" x2="135" y2="75">
+                    <stop stop-color="#9d50bb"/><stop offset="1" stop-color="#00d2ff"/>
+                </linearGradient>
+                <linearGradient id="grad3" x1="145" y1="50" x2="185" y2="50">
+                    <stop stop-color="#00d2ff"/><stop offset="1" stop-color="#6a4e9b"/>
+                </linearGradient>
+            </defs>
+        </svg>
+        <div class="brand-tagline">منصة المحتوى الرقمي المتطور</div>
     </div>
 
-    <main class="main-container">
-        <!-- المقالات مع إشارة الروابط المفعلة -->
-        <h2 style="font-size: 2rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;" id="articles">
-            <i class="fas fa-fire" style="color: var(--primary-glow);"></i> أحدث المقالات
-            <span style="font-size: 0.9rem; color: #00ff88; background: rgba(0,255,0,0.1); padding: 0.3rem 1rem; border-radius: 30px;">
-                <i class="fas fa-check-circle"></i> 6 روابط مفعلة
-            </span>
-        </h2>
-
-        <div class="articles-grid">
-            <!-- المقال 1: رابط داخلي مفعل -->
-            <article class="article-card">
-                <div class="active-badge"><i class="fas fa-link"></i> رابط داخلي مفعل</div>
-                <h2><i class="fas fa-microchip"></i> مستقبل البحث مع Perplexity</h2>
-                <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 15 مارس 2026</span>
-                    <span><i class="far fa-clock"></i> 8 دقائق</span>
-                    <span><i class="fas fa-eye"></i> 2.5k قراءة</span>
-                </div>
-                <p>اكتشف كيف تغير منصة Perplexity قواعد اللعبة في البحث الرقمي. تحليل شامل للميزات الجديدة وتأثيرها على استراتيجيات المحتوى.</p>
-                <a href="#article-perplexity" onclick="showArticle('perplexity')" class="article-link">
-                    <span>قراءة المقال</span> <i class="fas fa-arrow-left"></i>
-                </a>
-            </article>
-
-            <!-- المقال 2: رابط خارجي مفعل -->
-            <article class="article-card">
-                <div class="active-badge"><i class="fas fa-external-link-alt"></i> رابط خارجي (Forbes)</div>
-                <h2><i class="fas fa-project-diagram"></i> أتمتة الأعمال بالوكلاء الذكيين</h2>
-                <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 10 مارس 2026</span>
-                    <span><i class="far fa-clock"></i> 12 دقيقة</span>
-                    <span><i class="fas fa-eye"></i> 3.8k قراءة</span>
-                </div>
-                <p>دليل متقدم لبناء نظام وكلاء ذكيين يعمل 24/7. استراتيجيات مثبتة من كبرى الشركات التقنية.</p>
-                <a href="https://www.forbes.com/sites/ai-automation" target="_blank" rel="noopener" class="article-link external-link">
-                    <span>قراءة على Forbes</span> <i class="fas fa-external-link-alt"></i>
-                </a>
-            </article>
-
-            <!-- المقال 3: رابط داخلي للمدونة -->
-            <article class="article-card">
-                <div class="active-badge"><i class="fas fa-link"></i> رابط المدونة</div>
-                <h2><i class="fas fa-chart-line"></i> احتراف التسويق بالعمولة 2026</h2>
-                <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 5 مارس 2026</span>
-                    <span><i class="far fa-clock"></i> 10 دقائق</span>
-                    <span><i class="fas fa-eye"></i> 4.1k قراءة</span>
-                </div>
-                <p>توقعات المنصات والعوائد. دليل شامل مع أمثلة عملية ونماذج نجاح من أسواق المنطقة.</p>
-                <a href="#blog-affiliate" onclick="showBlogPost('affiliate-2026')" class="article-link">
-                    <span>قراءة في المدونة</span> <i class="fas fa-arrow-left"></i>
-                </a>
-            </article>
-
-            <!-- المقال 4: رابط خارجي (MIT) -->
-            <article class="article-card">
-                <div class="active-badge"><i class="fas fa-external-link-alt"></i> رابط خارجي (MIT)</div>
-                <h2><i class="fas fa-brain"></i> الذكاء الاصطناعي التوليدي في التسويق</h2>
-                <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 28 فبراير 2026</span>
-                    <span><i class="far fa-clock"></i> 7 دقائق</span>
-                    <span><i class="fas fa-eye"></i> 3.2k قراءة</span>
-                </div>
-                <p>كيف تستخدم أدوات الذكاء الاصطناعي لإنشاء محتوى تسويقي متكامل؟ دراسة من معهد ماساتشوستس.</p>
-                <a href="https://www.technologyreview.com/ai-marketing" target="_blank" rel="noopener" class="article-link external-link">
-                    <span>قراءة على MIT</span> <i class="fas fa-external-link-alt"></i>
-                </a>
-            </article>
-
-            <!-- المقال 5: رابط داخلي لمقال سابق -->
-            <article class="article-card">
-                <div class="active-badge"><i class="fas fa-link"></i> رابط داخلي مفعل</div>
-                <h2><i class="fas fa-robot"></i> روبوتات الدردشة للمبيعات</h2>
-                <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 20 فبراير 2026</span>
-                    <span><i class="far fa-clock"></i> 6 دقائق</span>
-                    <span><i class="fas fa-eye"></i> 1.9k قراءة</span>
-                </div>
-                <p>تصميم روبوتات محادثة تحول الزوار إلى عملاء. استراتيجيات وتطبيقات عملية مع أمثلة حية.</p>
-                <a href="#article-chatbots" onclick="showArticle('chatbots')" class="article-link">
-                    <span>قراءة المقال</span> <i class="fas fa-arrow-left"></i>
-                </a>
-            </article>
-
-            <!-- المقال 6: رابط خارجي (Product Hunt) -->
-            <article class="article-card">
-                <div class="active-badge"><i class="fas fa-external-link-alt"></i> رابط خارجي</div>
-                <h2><i class="fas fa-tools"></i> أفضل أدوات الذكاء الاصطناعي 2026</h2>
-                <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 15 فبراير 2026</span>
-                    <span><i class="far fa-clock"></i> 15 دقيقة</span>
-                    <span><i class="fas fa-eye"></i> 5.6k قراءة</span>
-                </div>
-                <p>تجميعة شاملة لأهم 50 أداة AI للعام الجديد مع تقييمات وتجارب حقيقية.</p>
-                <a href="https://www.producthunt.com/topics/ai" target="_blank" rel="noopener" class="article-link external-link">
-                    <span>استعرض الأدوات</span> <i class="fas fa-external-link-alt"></i>
-                </a>
-            </article>
-        </div>
-
-        <!-- قسم المدونة المفعل -->
-        <div id="blog" class="blog-section">
-            <h3>📚 مدونة SmartAffiliate</h3>
-            <p style="color: #b0b3c5; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">أكثر من 200 مقال حصري في الذكاء الاصطناعي والتسويق الرقمي</p>
-            
-            <div class="blog-stats">
-                <div class="stat-item">
-                    <div class="stat-number">247</div>
-                    <div class="stat-label">مقالة منشورة</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">15.8k</div>
-                    <div class="stat-label">مشترك في المدونة</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">8</div>
-                    <div class="stat-label">أقسام رئيسية</div>
-                </div>
-            </div>
-
-            <div class="blog-buttons">
-                <a href="#blog-archive" onclick="showBlogArchive()" class="btn-blog">
-                    <i class="fas fa-archive"></i> أرشيف المدونة
-                </a>
-                <a href="#blog-latest" onclick="showLatestPosts()" class="btn-blog purple">
-                    <i class="fas fa-newspaper"></i> أحدث المقالات
-                </a>
-                <a href="#blog-categories" onclick="showCategories()" class="btn-blog" style="background: transparent; border: 1px solid var(--primary-glow); color: var(--primary-glow);">
-                    <i class="fas fa-tags"></i> التصنيفات
-                </a>
-            </div>
-        </div>
-
-        <!-- قسم النشرة البريدية -->
-        <div class="newsletter-block" id="newsletter">
-            <h3>🚀 انضم إلى النخبة الرقمية</h3>
-            <p style="color: #8a8fb0;">أول من يعرف بفرص الذكاء الاصطناعي 2026</p>
-            
-            <form class="form-news" id="subscribeForm" onsubmit="handleSubscribe(event)">
-                <input type="email" id="emailInput" placeholder="أدخل بريدك الإلكتروني" required>
-                <button type="submit" class="btn-primary">اشترك مجاناً</button>
-            </form>
-            
-            <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; color: #5f6380;">
-                <span><i class="fas fa-check-circle" style="color: #00ff88;"></i> 5,200+ مشترك</span>
-                <span><i class="fas fa-shield-alt" style="color: var(--primary-glow);"></i> بريد آمن</span>
-                <span><i class="fas fa-clock"></i> مرة واحدة أسبوعياً</span>
-            </div>
-        </div>
+    <main class="main-container" id="main-content">
+        <!-- هنا يتم تحميل المحتوى ديناميكياً -->
     </main>
+
+    <!-- نافذة عرض المقال -->
+    <div class="modal-overlay" id="article-modal">
+        <div class="modal-content">
+            <div class="close-modal" onclick="closeModal()">✕</div>
+            <h2 class="modal-title" id="modal-title"></h2>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
 
     <footer>
         <div class="social-ring">
-            <a href="https://twitter.com/smartaffiliate" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://linkedin.com/company/smartaffiliate" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://youtube.com/@smartaffiliate" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://discord.gg/smartaffiliate" target="_blank"><i class="fa-brands fa-discord"></i></a>
-            <a href="https://github.com/smartaffiliate" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://t.me/smartaffiliate" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" onclick="openSocial('twitter')"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" onclick="openSocial('linkedin')"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" onclick="openSocial('youtube')"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" onclick="openSocial('discord')"><i class="fa-brands fa-discord"></i></a>
         </div>
-        
-        <div class="footer-links">
-            <a href="#home">الرئيسية</a>
-            <a href="#articles">المقالات</a>
-            <a href="#blog">المدونة</a>
-            <a href="#newsletter">النشرة البريدية</a>
-            <a href="privacy.html" onclick="showPage('privacy')">سياسة الخصوصية</a>
-            <a href="contact.html" onclick="showPage('contact')">اتصل بنا</a>
-        </div>
-
-        <div class="copyright">
-            <p>© 2026 SmartAffiliate.com | جميع الحقوق محفوظة</p>
-            <p style="margin-top: 0.5rem; font-size: 0.8rem;">منصة الذكاء الاصطناعي والتسويق الرقمي الأولى في المنطقة</p>
-        </div>
+        <div style="color: #4a4f6e;">© 2026 SmartAffiliate - جميع المقالات مفعلة</div>
     </footer>
 
     <script>
-        // معالجة جميع الروابط بشكل ديناميكي
-        document.addEventListener('DOMContentLoaded', function() {
-            // تفعيل الرابط النشط
-            const sections = ['home', 'articles', 'blog', 'newsletter'];
-            
-            window.addEventListener('scroll', function() {
-                let current = '';
-                
-                sections.forEach(section => {
-                    const element = document.getElementById(section);
-                    if (element) {
-                        const rect = element.getBoundingClientRect();
-                        if (rect.top <= 100 && rect.bottom >= 100) {
-                            current = section;
-                        }
-                    }
-                });
-                
-                document.querySelectorAll('.nav-container a').forEach(link => {
-                    link.classList.remove('active');
-                    const href = link.getAttribute('href');
-                    if (href === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-        });
+        // بيانات المقالات (قاعدة بيانات مؤقتة)
+        const articles = [
+            {
+                id: 1,
+                title: 'مستقبل البحث مع Perplexity',
+                icon: 'fa-microchip',
+                date: '15 مارس 2026',
+                readTime: '8 دقائق',
+                views: '2.5k',
+                excerpt: 'اكتشف كيف تغير منصة Perplexity قواعد اللعبة في البحث الرقمي. تحليل شامل للميزات الجديدة وتأثيرها على استراتيجيات المحتوى.',
+                content: `
+                    <p>في عالم يتسارع فيه التطور التكنولوجي، تبرز منصة Perplexity AI كأحد أبرز الحلول الثورية في مجال البحث الرقمي. تعتمد المنصة على تقنيات الذكاء الاصطناعي التوليدي لتقديم إجابات دقيقة وموثقة بدلاً من قوائم الروابط التقليدية.</p>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">لماذا Perplexity مختلفة؟</h3>
+                    <p>تدمج Perplexity بين قوة نماذج اللغة الكبيرة وقدرتها على الوصول إلى المعلومات الحديثة عبر الإنترنت. النتائج؟ إجابات شاملة مع مصادر موثقة في الوقت الفعلي.</p>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">الميزات الرئيسية:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">✓ <strong>الإجابات الموثقة:</strong> كل معلومة مدعومة بمصادر يمكن التحقق منها</li>
+                        <li style="margin-bottom: 1rem;">✓ <strong>الأسئلة المتابعة:</strong> يمكنك التعمق في الموضوع بطرح أسئلة متتالية</li>
+                        <li style="margin-bottom: 1rem;">✓ <strong>تعدد المصادر:</strong> تجمع المعلومات من مئات المواقع في رد واحد منظم</li>
+                        <li style="margin-bottom: 1rem;">✓ <strong>مجاناً بالكامل:</strong> بدون أي رسوم أو اشتراكات</li>
+                    </ul>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">التأثير على المسوقين</h3>
+                    <p>بالنسبة للمسوقين الرقميين، تمثل Perplexity نقلة نوعية في أبحاث الكلمات المفتاحية وتحليل المنافسين وفهم اتجاهات السوق. يمكنك الآن الحصول على تحليلات متعمقة في ثوانٍ.</p>
+                    
+                    <div style="background: rgba(0,210,255,0.1); padding: 1.5rem; border-radius: 20px; margin: 2rem 0;">
+                        <p style="margin: 0;"><strong>خلاصة:</strong> Perplexity ليست مجرد محرك بحث، بل مساعد بحثي متكامل سيعيد تشكيل طريقة تفاعلنا مع المعلومات.</p>
+                    </div>
+                `
+            },
+            {
+                id: 2,
+                title: 'أتمتة الأعمال بالوكلاء الذكيين',
+                icon: 'fa-project-diagram',
+                date: '10 مارس 2026',
+                readTime: '12 دقيقة',
+                views: '3.8k',
+                excerpt: 'دليل متقدم لبناء نظام وكلاء ذكيين يعمل 24/7. استراتيجيات مثبتة من كبرى الشركات التقنية.',
+                content: `
+                    <p>يشهد عالم الأعمال تحولاً جذرياً بفضل الوكلاء الذكيين (AI Agents) القادرين على تنفيذ مهام معقدة بشكل مستقل. هؤلاء الوكلاء ليسوا مجرد روبوتات دردشة، بل أنظمة متكاملة تستطيع التخطيط والتنفيذ والتعلم من النتائج.</p>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">ما هي الوكلاء الذكيين؟</h3>
+                    <p>الوكيل الذكي هو برنامج مدعوم بالذكاء الاصطناعي يمكنه أداء مهام محددة نيابة عنك: تحليل البيانات، إدارة الحملات التسويقية، الرد على العملاء، وحتى التفاوض مع موردين.</p>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">مجالات التطبيق:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">🤖 <strong>خدمة العملاء:</strong> وكلاء متخصصون في الرد على الاستفسارات وحل المشكلات</li>
+                        <li style="margin-bottom: 1rem;">📊 <strong>تحليل البيانات:</strong> وكلاء يراقبون الأداء ويقدمون تقارير وتوصيات</li>
+                        <li style="margin-bottom: 1rem;">📧 <strong>التسويق:</strong> وكلاء يديرون حملات البريد الإلكتروني والتسويق عبر وسائل التواصل</li>
+                        <li style="margin-bottom: 1rem;">💰 <strong>المبيعات:</strong> وكلاء يتفاعلون مع العملاء المحتملين ويؤهلونهم</li>
+                    </ul>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">كيف تبدأ؟</h3>
+                    <p>البداية بسيطة: حدد المهام المتكررة في عملك، اختر أداة مناسبة (مثل AutoGPT أو BabyAGI)، درب الوكيل على سير العمل، ثم دعه يعمل.</p>
+                `
+            },
+            {
+                id: 3,
+                title: 'احتراف التسويق بالعمولة 2026',
+                icon: 'fa-chart-line',
+                date: '5 مارس 2026',
+                readTime: '10 دقائق',
+                views: '4.1k',
+                excerpt: 'توقعات المنصات والعوائد. دليل شامل مع أمثلة عملية ونماذج نجاح من أسواق المنطقة.',
+                content: `
+                    <p>يشهد التسويق بالعمولة تحولاً كبيراً بفضل الذكاء الاصطناعي والتقنيات الجديدة. عام 2026 يحمل فرصاً غير مسبوقة للمسوقين الطموحين.</p>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">أبرز التوجهات لعام 2026:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">1️⃣ <strong>العمولة الذكية:</strong> أنظمة تتبع متطورة تمنح عمولات أعلى للجودة وليس فقط للمبيعات</li>
+                        <li style="margin-bottom: 1rem;">2️⃣ <strong>محتوى AI:</strong> استخدام الذكاء الاصطناعي لتخصيص المحتوى لكل زائر</li>
+                        <li style="margin-bottom: 1rem;">3️⃣ <strong>الأسواق الناشئة:</strong> فرص كبيرة في منطقة الشرق الأوسط وشمال أفريقيا</li>
+                        <li style="margin-bottom: 1rem;">4️⃣ <strong>التكامل المتقدم:</strong> ربط منصات التسويق بالعمولة مع أنظمة إدارة العلاقات</li>
+                    </ul>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">استراتيجيات النجاح:</h3>
+                    <p>المسوقون الناجحون في 2026 هم من يجمعون بين المحتوى القيم وتحليلات البيانات والتخصيص الذكي. لم يعد كافياً نشر روابط، بل يجب بناء تجربة متكاملة.</p>
+                `
+            },
+            {
+                id: 4,
+                title: 'الذكاء الاصطناعي التوليدي في التسويق',
+                icon: 'fa-brain',
+                date: '28 فبراير 2026',
+                readTime: '7 دقائق',
+                views: '3.2k',
+                excerpt: 'كيف تستخدم أدوات الذكاء الاصطناعي لإنشاء محتوى تسويقي متكامل؟ دراسة تطبيقية.',
+                content: `
+                    <p>أحدث الذكاء الاصطناعي التوليدي ثورة في عالم إنشاء المحتوى. من كتابة المقالات إلى تصميم الصور والفيديو، يمكنك الآن إنتاج محتوى احترافي بجزء بسيط من التكلفة والوقت.</p>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">أهم الأدوات المستخدمة:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">✍️ <strong>ChatGPT / Claude:</strong> لكتابة المحتوى النصي</li>
+                        <li style="margin-bottom: 1rem;">🎨 <strong>Midjourney / DALL-E:</strong> لإنشاء الصور والتصاميم</li>
+                        <li style="margin-bottom: 1rem;">🎬 <strong>Runway / Pika:</strong> لصناعة الفيديو بالذكاء الاصطناعي</li>
+                        <li style="margin-bottom: 1rem;">🔊 <strong>ElevenLabs:</strong> لتوليد الصوت والتعليق الصوتي</li>
+                    </ul>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">كيف تبني استراتيجية محتوى متكاملة؟</h3>
+                    <p>السر ليس في استخدام أداة واحدة، بل في دمج عدة أدوات معاً. استخدم ChatGPT لكتابة السيناريو، Midjourney لإنشاء الصور، وRunway لتحويلها إلى فيديو كامل.</p>
+                `
+            },
+            {
+                id: 5,
+                title: 'روبوتات الدردشة للمبيعات',
+                icon: 'fa-robot',
+                date: '20 فبراير 2026',
+                readTime: '6 دقائق',
+                views: '1.9k',
+                excerpt: 'تصميم روبوتات محادثة تحول الزوار إلى عملاء. استراتيجيات وتطبيقات عملية.',
+                content: `
+                    <p>روبوتات الدردشة لم تعد مجرد أدوات لخدمة العملاء، بل تحولت إلى قنوات مبيعات فعالة. الروبوتات الحديثة قادرة على فهم نية العميل وتقديم المنتج المناسب في الوقت المناسب.</p>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">أنواع روبوتات المبيعات:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">🛍️ <strong>روبوتات التوصية:</strong> تقترح منتجات بناءً على تفضيلات العميل</li>
+                        <li style="margin-bottom: 1rem;">💬 <strong>روبوتات التأهيل:</strong> تسأل أسئلة ذكية لتحديد العملاء المحتملين</li>
+                        <li style="margin-bottom: 1rem;">🔄 <strong>روبوتات المتابعة:</strong> تذكر العملاء بالعربات المتروكة وتعرض خصومات</li>
+                        <li style="margin-bottom: 1rem;">📅 <strong>روبوتات الحجز:</strong> تنظم مواعيد المبيعات مع الفريق البشري</li>
+                    </ul>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">أفضل الممارسات:</h3>
+                    <p>اجعل روبوتك ودوداً وليس آلياً. استخدم لغة طبيعية، قدم خيارات واضحة، وتذكر دائماً أن الهدف النهائي هو مساعدة العميل وليس فقط إتمام البيع.</p>
+                `
+            },
+            {
+                id: 6,
+                title: 'أفضل أدوات الذكاء الاصطناعي 2026',
+                icon: 'fa-tools',
+                date: '15 فبراير 2026',
+                readTime: '15 دقيقة',
+                views: '5.6k',
+                excerpt: 'تجميعة شاملة لأهم 50 أداة AI للعام الجديد مع تقييمات وتجارب حقيقية.',
+                content: `
+                    <p>مع تزايد أدوات الذكاء الاصطناعي يومياً، يصعب اختيار الأنسب. هذه قائمة بأفضل الأدوات حسب التصنيف:</p>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">🏆 أفضل أدوات الكتابة:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">• Jasper AI - الأفضل للتسويق</li>
+                        <li style="margin-bottom: 1rem;">• Copy.ai - للمحتوى القصير</li>
+                        <li style="margin-bottom: 1rem;">• Writesonic - متعدد الاستخدامات</li>
+                    </ul>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">🎨 أفضل أدوات التصميم:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">• Midjourney - أجود الصور</li>
+                        <li style="margin-bottom: 1rem;">• Leonardo.ai - مجاني وقوي</li>
+                        <li style="margin-bottom: 1rem;">• Canva AI - للمبتدئين</li>
+                    </ul>
+                    
+                    <h3 style="color: #00d2ff; margin: 1.5rem 0;">📊 أفضل أدوات التحليل:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">• Julius AI - تحليل البيانات باللغة العربية</li>
+                        <li style="margin-bottom: 1rem;">• Tableau AI - تصور متقدم</li>
+                        <li style="margin-bottom: 1rem;">• Polymer - تحويل البيانات إلى عروض</li>
+                    </ul>
+                `
+            }
+        ];
 
-        // دالة لعرض المقالات الداخلية
-        function showArticle(articleId) {
-            event.preventDefault();
-            const articles = {
-                perplexity: {
-                    title: 'مستقبل البحث مع Perplexity',
-                    content: 'تحليل متعمق لكيفية تغيير Perplexity لطريقة البحث...'
-                },
-                chatbots: {
-                    title: 'روبوتات الدردشة للمبيعات',
-                    content: 'دليل تصميم روبوتات محادثة فعالة لزيادة المبيعات...'
-                }
-            };
+        // عرض جميع المقالات
+        function displayArticles() {
+            const container = document.getElementById('main-content');
+            let html = `
+                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-fire" style="color: var(--primary-glow);"></i> 
+                    أحدث المقالات
+                    <span style="font-size: 0.9rem; color: #00ff88; background: rgba(0,255,0,0.1); padding: 0.3rem 1rem; border-radius: 30px;">
+                        <i class="fas fa-check-circle"></i> ${articles.length} مقالات مفعلة
+                    </span>
+                </h2>
+                <div class="articles-grid">
+            `;
             
-            const article = articles[articleId];
+            articles.forEach(article => {
+                html += `
+                    <article class="article-card" onclick="openArticle(${article.id})">
+                        <h2><i class="fas ${article.icon}"></i> ${article.title}</h2>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> ${article.date}</span>
+                            <span><i class="far fa-clock"></i> ${article.readTime}</span>
+                            <span><i class="fas fa-eye"></i> ${article.views}</span>
+                        </div>
+                        <p>${article.excerpt}</p>
+                        <a href="#" class="article-link" onclick="event.stopPropagation(); openArticle(${article.id})">
+                            <span>قراءة المقال كاملاً</span> <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </article>
+                `;
+            });
+            
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        // فتح المقال في نافذة منبثقة
+        function openArticle(articleId) {
+            event.preventDefault();
+            const article = articles.find(a => a.id === articleId);
             if (article) {
-                alert(`🔗 رابط داخلي مفعل\n\nتم فتح المقال: ${article.title}\n\nفي الموقع الفعلي، سيتم توجيهك إلى صفحة المقال كاملة.`);
-                // هنا يمكن إضافة توجيه حقيقي
-                // window.location.href = `/articles/${articleId}.html`;
+                document.getElementById('modal-title').innerHTML = `<i class="fas ${article.icon}" style="color: var(--primary-glow); margin-left: 10px;"></i> ${article.title}`;
+                document.getElementById('modal-body').innerHTML = article.content;
+                document.getElementById('article-modal').style.display = 'flex';
             }
         }
 
-        // دالة لعرض مقالات المدونة
-        function showBlogPost(postId) {
-            event.preventDefault();
-            const posts = {
-                'affiliate-2026': {
-                    title: 'احتراف التسويق بالعمولة 2026',
-                    category: 'تسويق رقمي'
-                }
-            };
-            
-            const post = posts[postId];
-            if (post) {
-                alert(`📝 رابط مدونة مفعل\n\nالمقال: ${post.title}\nالتصنيف: ${post.category}\n\nسيتم توجيهك إلى صفحة المدونة.`);
-            }
+        // إغلاق النافذة المنبثقة
+        function closeModal() {
+            document.getElementById('article-modal').style.display = 'none';
         }
 
-        // دوال إضافية للمدونة
-        function showBlogArchive() {
-            event.preventDefault();
-            alert('📚 أرشيف المدونة - 247 مقالة متاحة');
-        }
-
-        function showLatestPosts() {
-            event.preventDefault();
-            alert('🆕 أحدث المقالات - آخر 10 مقالات منشورة');
-        }
-
-        function showCategories() {
-            event.preventDefault();
-            alert('🏷️ تصنيفات المدونة:\n• الذكاء الاصطناعي (85)\n• الأتمتة (62)\n• التسويق (43)\n• دراسات حالة (28)\n• أدوات (29)');
-        }
-
-        function showPage(page) {
-            event.preventDefault();
-            alert(`📄 جاري فتح صفحة: ${page === 'privacy' ? 'سياسة الخصوصية' : 'اتصل بنا'}`);
-        }
-
-        // معالجة النموذج
-        function handleSubscribe(e) {
+        // دوال التنقل
+        function showHome(e) {
             e.preventDefault();
-            const email = document.getElementById('emailInput').value;
-            if (email && email.includes('@')) {
-                alert(`✅ شكراً لاشتراكك ${email}!\nتم تفعيل اشتراكك في النشرة البريدية.`);
-                document.getElementById('emailInput').value = '';
-            } else {
-                alert('❌ الرجاء إدخال بريد إلكتروني صحيح');
-            }
+            displayArticles();
+            setActiveLink('الرئيسية');
         }
 
-        // تمرير سلس للأقسام
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href === '#') return;
-                
-                // إذا كان الرابط خاص بوظيفة معينة، نتجاهل التمرير
-                if (this.getAttribute('onclick')) return;
-                
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        function showAllArticles(e) {
+            e.preventDefault();
+            displayArticles();
+            setActiveLink('المقالات');
+        }
+
+        function showBlog(e) {
+            e.preventDefault();
+            const container = document.getElementById('main-content');
+            container.innerHTML = `
+                <div style="text-align: center; padding: 4rem; background: var(--glass-bg); border-radius: var(--card-radius);">
+                    <i class="fas fa-blog" style="font-size: 4rem; color: var(--primary-glow); margin-bottom: 1rem;"></i>
+                    <h2 style="font-size: 2.5rem;">مدونة SmartAffiliate</h2>
+                    <p style="color: #b0b3c5; font-size: 1.2rem; margin: 1rem 0;">قريباً: أكثر من 200 مقال حصري</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                        <span style="background: rgba(0,210,255,0.1); padding: 0.5rem 1.5rem; border-radius: 30px;">📝 85 مقال</span>
+                        <span style="background: rgba(157,80,187,0.1); padding: 0.5rem 1.5rem; border-radius: 30px;">🤖 62 مقال</span>
+                        <span style="background: rgba(0,255,0,0.1); padding: 0.5rem 1.5rem; border-radius: 30px;">📊 43 مقال</span>
+                    </div>
+                </div>
+            `;
+            setActiveLink('المدونة');
+        }
+
+        function showNewsletter(e) {
+            e.preventDefault();
+            const container = document.getElementById('main-content');
+            container.innerHTML = `
+                <div style="text-align: center; padding: 4rem; background: linear-gradient(145deg, rgba(0,210,255,0.1), rgba(157,80,187,0.1)); border-radius: var(--card-radius);">
+                    <i class="fas fa-envelope" style="font-size: 4rem; color: var(--primary-glow); margin-bottom: 1rem;"></i>
+                    <h2 style="font-size: 2.5rem;">النشرة البريدية</h2>
+                    <p style="color: #b0b3c5; font-size: 1.2rem; margin: 1rem 0;">انضم إلى أكثر من 5,000 مشترك</p>
+                    <form onsubmit="event.preventDefault(); alert('تم الاشتراك بنجاح!');" style="max-width: 500px; margin: 2rem auto;">
+                        <input type="email" placeholder="بريدك الإلكتروني" style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--primary-glow); border-radius: 50px; color: white; margin-bottom: 1rem;">
+                        <button type="submit" style="width: 100%; padding: 1rem; background: var(--primary-glow); border: none; border-radius: 50px; font-weight: 800; cursor: pointer;">اشترك الآن</button>
+                    </form>
+                </div>
+            `;
+            setActiveLink('النشرة');
+        }
+
+        function setActiveLink(text) {
+            document.querySelectorAll('.nav-container a').forEach(link => {
+                link.classList.remove('active');
+                if (link.textContent.includes(text)) {
+                    link.classList.add('active');
                 }
             });
+        }
+
+        function openSocial(platform) {
+            const urls = {
+                twitter: 'https://twitter.com/smartaffiliate',
+                linkedin: 'https://linkedin.com/company/smartaffiliate',
+                youtube: 'https://youtube.com/@smartaffiliate',
+                discord: 'https://discord.gg/smartaffiliate'
+            };
+            window.open(urls[platform], '_blank');
+        }
+
+        // تحميل الصفحة الرئيسية
+        window.onload = function() {
+            displayArticles();
+        };
+
+        // إغلاق النافذة بالضغط على ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
         });
     </script>
 </body>
