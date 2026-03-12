@@ -14,7 +14,6 @@
             --border: rgba(255, 255, 255, 0.1);
         }
 
-        /* تحسين التمرير */
         html { scroll-behavior: smooth; }
 
         body {
@@ -38,18 +37,18 @@
         nav a { color: #b4b4b4; text-decoration: none; font-weight: 600; transition: 0.3s; font-size: 14px; }
         nav a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
 
+        /* منطقة الشعار الموحدة */
         .brand-box { text-align: center; padding: 60px 20px; }
-        .brand-logo {
-            font-size: clamp(2.5rem, 10vw, 3.5rem);
-            font-weight: 900;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .logo-img {
+            height: 100px; /* زيادة الطول قليلاً للفخامة */
+            filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.4));
             animation: floating 4s ease-in-out infinite;
             cursor: pointer;
+            transition: 0.3s;
         }
+        .logo-img:hover { transform: scale(1.05); filter: drop-shadow(0 0 25px var(--primary)); }
 
-        @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 
         .main-grid { max-width: 700px; margin: 0 auto; padding: 20px; }
 
@@ -116,7 +115,7 @@
 
         .footer-text { color: #444; font-size: 13px; letter-spacing: 1px; }
 
-        @media (max-width: 600px) { .subscribe-form input { width: 100%; } .btn-subscribe { width: 100%; } }
+        @media (max-width: 600px) { .subscribe-form input { width: 100%; } .btn-subscribe { width: 100%; } .logo-img { height: 70px; } }
     </style>
 </head>
 <body>
@@ -130,13 +129,10 @@
     </header>
 
     <div class="brand-box">
-        <div class="brand-logo" onclick="window.location.reload()">SmartAffiliate</div>
-        <p style="color: #444; font-weight: 500; letter-spacing: 2px; margin-top: 10px;">FUTURE OF DIGITAL PROFITS</p>
+        <img src="logo.png" alt="SmartAffiliate Logo" class="logo-img" onclick="window.location.reload()">
+        <p style="color: #444; font-weight: 500; letter-spacing: 2px; margin-top: 15px;">FUTURE OF DIGITAL PROFITS</p>
     </div>
-<div class="brand-box">
-    <img src="logo.png" alt="SmartAffiliate Logo" style="height: 80px; filter: drop-shadow(0 0 10px var(--primary));">
-    <p style="color: #444; font-weight: 500; letter-spacing: 2px; margin-top: 10px;">FUTURE OF DIGITAL PROFITS</p>
-</div>
+
     <div class="main-grid">
         <div class="card-premium">
             <h2><i class="fas fa-microchip"></i> مستقبل البحث مع Perplexity</h2>
