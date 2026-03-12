@@ -1,281 +1,185 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>أفضل عروض أمازون | SmartAffiliate</title>
-
-<meta name="description" content="أفضل عروض أمازون التقنية المختارة بعناية من SmartAffiliate">
-
+<title>SmartAffiliate 2026 | مدونة الذكاء الاصطناعي</title>
+<meta name="description" content="أفضل المقالات والأدوات الرقمية في مجال الذكاء الاصطناعي لعام 2026">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-
-/* ===== إعدادات عامة ===== */
-
-body{
-font-family:'Segoe UI', Tahoma, sans-serif;
-background:#f4f7f6;
-margin:0;
-color:#333;
-text-align:center;
+body {
+    font-family: 'Cairo', sans-serif;
+    background: #f4f7f6;
+    margin: 0;
+    color: #333;
 }
-
-/* ===== الهيدر ===== */
-
-header{
-background:#1a1a1a;
-color:white;
-padding:20px;
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
 }
-
-nav{
-margin-top:10px;
+.header {
+    text-align: center;
+    margin-bottom: 40px;
 }
-
-nav a{
-color:white;
-margin:0 15px;
-text-decoration:none;
-font-weight:bold;
+.header h1 {
+    font-size: 36px;
+    font-weight: 700;
 }
-
-nav a:hover{
-color:#ff9900;
+.header p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
 }
-
-/* ===== العنوان ===== */
-
-h1{
-margin-top:30px;
-color:#1a1a1a;
+.sections {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
 }
-
-.subtitle{
-color:#666;
-margin-bottom:30px;
+.section-btn {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
 }
-
-/* ===== المنتجات ===== */
-
-.products{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
-padding:20px;
-max-width:1200px;
-margin:auto;
+.section-btn:hover {
+    background: #0056b3;
 }
-
-/* ===== كارت المنتج ===== */
-
-.card{
-background:white;
-padding:20px;
-border-radius:15px;
-width:240px;
-box-shadow:0 4px 15px rgba(0,0,0,0.05);
-transition:0.3s;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-border:1px solid #eee;
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+.article-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-right: 8px solid #007bff;
+    transition: 0.3s;
 }
-
-/* ===== صورة المنتج ===== */
-
-.card img{
-width:100%;
-height:180px;
-object-fit:contain;
-border-radius:8px;
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
-
-/* ===== اسم المنتج ===== */
-
-.card h3{
-font-size:18px;
-margin:15px 0;
-height:45px;
-overflow:hidden;
+.article-card .tag {
+    display: inline-block;
+    background: #e7f1ff;
+    color: #007bff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
 }
-
-/* ===== زر الشراء ===== */
-
-.card a{
-display:block;
-background:#ff9900;
-color:#111;
-padding:12px;
-text-decoration:none;
-border-radius:25px;
-font-weight:bold;
-transition:0.3s;
+.article-card h2 {
+    margin: 15px 0;
 }
-
-.card a:hover{
-background:#e68a00;
-color:white;
+.article-card p {
+    color: #555;
+    line-height: 1.7;
 }
-
-/* ===== الفوتر ===== */
-
-footer{
-background:#1a1a1a;
-color:white;
-padding:25px;
-margin-top:50px;
-font-size:14px;
+.buttons-group {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
+.btn {
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.btn-read { background: #007bff; color: white; }
+.btn-tool { background: #28a745; color: white; }
+.btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-/* ===== الهاتف ===== */
-
+/* Mobile */
 @media(max-width:600px){
-
-.products{
-gap:15px;
+    .sections { flex-direction: column; }
+    .section-btn { width: 100%; text-align: center; }
 }
-
-.card{
-width:90%;
-}
-
-}
-
 </style>
-
 </head>
-
 <body>
+<div class="container">
 
-<header>
+<!-- عنوان الموقع -->
+<div class="header">
+<h1>مستقبل الذكاء الاصطناعي 2026</h1>
+<p>أفضل المقالات والأدوات الرقمية في عالم الذكاء الاصطناعي</p>
+</div>
 
-<h1>SmartAffiliate Deals</h1>
+<!-- أقسام المقالات -->
+<div class="sections">
+<a href="#ai-writing" class="section-btn">كتابة AI</a>
+<a href="#ai-images" class="section-btn">صور AI</a>
+<a href="#learning" class="section-btn">تعلم AI</a>
+<a href="#programming" class="section-btn">برمجة AI</a>
+<a href="#voice" class="section-btn">صوت AI</a>
+</div>
 
-<nav>
-<a href="index.html">الرئيسية</a>
-<a href="tools.html">الأدوات</a>
-<a href="amazon.html">عروض أمازون</a>
-<a href="blog.html">المدونة</a>
-</nav>
+<!-- قائمة المقالات -->
+<div class="articles-list">
 
-</header>
+<!-- مثال مقال -->
+<div class="article-card" id="ai-writing">
+<span class="tag">AI كتابة</span>
+<h2>أفضل أدوات كتابة المحتوى بالذكاء الاصطناعي</h2>
+<p>تعرف على أدوات كتابة المقالات والتسويق باستخدام AI مثل Jasper و Copy.ai.</p>
+<div class="buttons-group">
+<a href="article1.html" class="btn btn-read">📖 اقرأ المقال</a>
+<a href="https://www.jasper.ai" target="_blank" class="btn btn-tool">🔥 تجربة Jasper</a>
+</div>
+</div>
 
+<div class="article-card" id="ai-images">
+<span class="tag">صور AI</span>
+<h2>إنشاء صور احترافية باستخدام Midjourney</h2>
+<p>تعلم كيفية إنشاء صور مذهلة باستخدام Midjourney للتصميم والتسويق.</p>
+<div class="buttons-group">
+<a href="article2.html" class="btn btn-read">📖 اقرأ المقال</a>
+<a href="https://www.midjourney.com" target="_blank" class="btn btn-tool">🎨 تجربة Midjourney</a>
+</div>
+</div>
 
-<h1>🔥 أحدث عروض أمازون التقنية</h1>
+<div class="article-card" id="learning">
+<span class="tag">تعلم</span>
+<h2>أفضل مواقع تعلم الذكاء الاصطناعي مجاناً</h2>
+<p>منصات تعليمية مجانية لتعلم AI من الصفر.</p>
+<div class="buttons-group">
+<a href="article3.html" class="btn btn-read">📖 اقرأ المقال</a>
+<a href="https://www.coursera.org" target="_blank" class="btn btn-tool">🎓 زيارة Coursera</a>
+</div>
+</div>
 
-<p class="subtitle">
-نختار لك أفضل المنتجات التقنية بأقل الأسعار
-</p>
+<div class="article-card" id="programming">
+<span class="tag">برمجة</span>
+<h2>كيف يساعدك GitHub Copilot في البرمجة</h2>
+<p>GitHub Copilot يساعد المطورين على كتابة الكود بسرعة ودقة.</p>
+<div class="buttons-group">
+<a href="article4.html" class="btn btn-read">📖 اقرأ المقال</a>
+<a href="https://github.com/features/copilot" target="_blank" class="btn btn-tool">💻 تجربة Copilot</a>
+</div>
+</div>
 
+<div class="article-card" id="voice">
+<span class="tag">صوت AI</span>
+<h2>تحويل النص إلى صوت باستخدام ElevenLabs</h2>
+<p>إنشاء تعليق صوتي احترافي للفيديوهات والبودكاست باستخدام الذكاء الاصطناعي.</p>
+<div class="buttons-group">
+<a href="article5.html" class="btn btn-read">📖 اقرأ المقال</a>
+<a href="https://elevenlabs.io" target="_blank" class="btn btn-tool">🎙️ تجربة الأداة</a>
+</div>
+</div>
 
-<div class="products" id="products"></div>
+</div> <!-- نهاية قائمة المقالات -->
 
-
-<footer>
-
-<p>© 2026 SmartAffiliate - جميع الحقوق محفوظة</p>
-
-<p style="font-size:12px;color:#aaa">
-كمشارك في برنامج Amazon Associates قد نربح عمولة من عمليات الشراء المؤهلة.
-</p>
-
-</footer>
-
-
-<script>
-
-/* ===== قائمة المنتجات ===== */
-
-const products = [
-
-{
-name:"Wireless Earbuds",
-img:"https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
-link:"https://amzn.to/4lh1nZr"
-},
-
-{
-name:"Smart Watch",
-img:"https://m.media-amazon.com/images/I/61ZjlBOp+rL._AC_SL1500_.jpg",
-link:"https://amzn.to/4d7byxw"
-},
-
-{
-name:"SSD Drive",
-img:"https://m.media-amazon.com/images/I/81mS1j5nqBL._AC_SL1500_.jpg",
-link:"https://amzn.to/40T35qo"
-},
-
-{
-name:"Bluetooth Headphones",
-img:"https://m.media-amazon.com/images/I/71QKQ9mwV7L._AC_SL1500_.jpg",
-link:"https://amzn.to/4ud1BoF"
-},
-
-{
-name:"Speaker",
-img:"https://m.media-amazon.com/images/I/71l2q6v1D+L._AC_SL1500_.jpg",
-link:"https://amzn.to/40SpLXM"
-},
-
-{
-name:"Webcam",
-img:"https://m.media-amazon.com/images/I/61UxfXTUyvL._AC_SL1500_.jpg",
-link:"https://amzn.to/3Nc6Tjs"
-},
-
-{
-name:"Power Bank",
-img:"https://m.media-amazon.com/images/I/71eO8m8s0BL._AC_SL1500_.jpg",
-link:"https://amzn.to/46M2FFY"
-},
-
-{
-name:"Smart Hub",
-img:"https://m.media-amazon.com/images/I/61EXU8BuGZL._AC_SL1500_.jpg",
-link:"https://amzn.to/47kGcQm"
-}
-
-];
-
-
-/* ===== إنشاء المنتجات ===== */
-
-const container = document.getElementById("products");
-
-products.forEach(product => {
-
-const card = document.createElement("div");
-
-card.className="card";
-
-card.innerHTML=`
-
-<img src="${product.img}" loading="lazy" alt="${product.name}">
-
-<h3>${product.name}</h3>
-
-<a href="${product.link}" target="_blank" rel="sponsored noopener noreferrer">
-
-اشتري من أمازون
-
-</a>
-
-`;
-
-container.appendChild(card);
-
-});
-
-</script>
-
+</div>
 </body>
 </html>
