@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartAffiliate 2026 | المنصة الشاملة</title>
+    <title>SmartAffiliate 2026 | 4 مقالات متكاملة</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -12,7 +12,7 @@
             --bg-deep: #050816;
             --primary-glow: #00d2ff;
             --secondary-glow: #9d50bb;
-            --glass-bg: rgba(20, 30, 45, 0.75);
+            --glass-bg: rgba(20, 30, 45, 0.85);
             --glass-border: rgba(255, 255, 255, 0.08);
             --text-muted: #b0b3c5;
             --card-radius: 32px;
@@ -23,7 +23,7 @@
                               radial-gradient(circle at 80% 70%, rgba(157,80,187,0.08) 0%, transparent 45%);
             color: #fff;
             font-family: 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         .glass-header {
             background: rgba(8,12,25,0.95);
@@ -77,120 +77,197 @@
             margin-top: 1rem;
             font-weight: 600;
         }
-        .main-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
-        .stats-bar {
-            display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem;
-            background: var(--glass-bg); backdrop-filter: blur(10px); border-radius: 60px;
-            padding: 2rem; margin: 2rem 0; border: 1px solid var(--glass-border);
+        .main-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
         }
-        .stat-item { text-align: center; }
-        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--primary-glow); }
-        .stat-label { color: #8a8fb0; font-size: 1rem; }
-        .category-filters {
-            display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 2rem 0;
-        }
-        .filter-btn {
-            background: transparent; border: 1px solid var(--primary-glow); color: #fff;
-            padding: 0.8rem 2rem; border-radius: 40px; cursor: pointer; transition: 0.3s;
-            font-size: 1rem; display: flex; align-items: center; gap: 8px;
-        }
-        .filter-btn:hover, .filter-btn.active { background: var(--primary-glow); color: #050816; }
-        .articles-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem; margin: 3rem 0;
+        
+        /* بطاقات المقالات في الصفحة الرئيسية */
+        .featured-articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
         .article-card {
-            background: var(--glass-bg); backdrop-filter: blur(14px); border: 1px solid var(--glass-border);
-            border-radius: var(--card-radius); padding: 2rem; transition: 0.4s; position: relative;
-            overflow: hidden; display: flex; flex-direction: column;
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--card-radius);
+            padding: 2rem;
+            transition: 0.4s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
-        .article-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
-            transform: scaleX(0); transition: transform 0.4s;
-        }
-        .article-card:hover::before { transform: scaleX(1); }
         .article-card:hover {
-            transform: translateY(-8px); border-color: var(--primary-glow);
+            transform: translateY(-8px);
+            border-color: var(--primary-glow);
             box-shadow: 0 30px 40px -15px rgba(0,210,255,0.3);
         }
-        .category-badge {
-            position: absolute; top: 1rem; left: 1rem;
-            background: rgba(0,210,255,0.2); padding: 0.4rem 1rem; border-radius: 30px;
-            font-size: 0.8rem; border: 1px solid var(--primary-glow); color: var(--primary-glow);
+        .article-card h2 {
+            font-size: 1.8rem;
+            margin: 1rem 0;
+            color: var(--primary-glow);
         }
-        .article-card h3 {
-            font-size: 1.4rem; margin: 1.5rem 0 1rem; display: flex; align-items: center; gap: 10px;
+        .article-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
         }
-        .article-card h3 i { color: var(--primary-glow); font-size: 1.8rem; }
-        .article-meta {
-            color: #8a8fb0; font-size: 0.85rem; display: flex; gap: 1rem;
-            margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);
+        .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-glow);
+            text-decoration: none;
+            font-weight: 600;
         }
-        .article-excerpt { color: #b0b3c5; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
-        .external-link-badge {
-            display: inline-flex; align-items: center; gap: 5px; background: rgba(255,193,7,0.15);
-            color: #ffc107; padding: 0.3rem 1rem; border-radius: 30px; font-size: 0.8rem;
-            border: 1px solid #ffc107; width: fit-content; margin-bottom: 1rem;
-        }
-        .article-link {
-            display: inline-flex; align-items: center; gap: 10px; justify-content: space-between;
-            width: 100%; margin-top: 1rem; padding: 0.8rem 1.2rem;
-            background: rgba(0,210,255,0.1); border-radius: 15px; text-decoration: none;
-            color: var(--primary-glow); font-weight: 600; transition: 0.3s;
-            border: 1px solid rgba(0,210,255,0.2);
-        }
-        .article-link:hover {
-            background: var(--primary-glow); color: #050816; gap: 15px;
-        }
-        .article-link i:first-child { font-size: 1.2rem; }
-        .article-link i:last-child { font-size: 0.9rem; transition: 0.3s; }
-        .article-link:hover i:last-child { transform: translateX(-5px); }
-        .share-section {
-            background: var(--glass-bg); backdrop-filter: blur(10px); border-radius: 60px;
-            padding: 3rem 2rem; margin: 3rem auto; max-width: 900px; text-align: center;
+        
+        /* صفحة المقالة الكاملة */
+        .full-article {
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
             border: 1px solid var(--primary-glow);
+            border-radius: var(--card-radius);
+            padding: 3rem;
+            margin: 2rem 0;
         }
-        .share-section h3 {
-            font-size: 2rem; margin-bottom: 2rem; color: var(--primary-glow);
-            display: flex; align-items: center; justify-content: center; gap: 15px;
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(0,210,255,0.3);
+            padding-bottom: 2rem;
         }
-        .share-buttons { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-        .share-btn {
-            display: inline-flex; align-items: center; gap: 10px; padding: 1rem 2rem;
-            border-radius: 50px; color: white; text-decoration: none; font-weight: 600;
-            transition: 0.3s; border: none; cursor: pointer; font-size: 1rem;
-            min-width: 130px; justify-content: center;
+        .article-header h1 {
+            font-size: 3rem;
+            color: var(--primary-glow);
+            margin-bottom: 1rem;
         }
-        .share-btn i { font-size: 1.3rem; }
-        .share-btn.facebook { background: #1877f2; }
-        .share-btn.twitter { background: #000000; }
-        .share-btn.whatsapp { background: #25d366; }
-        .share-btn.tiktok { background: linear-gradient(45deg, #ff0050, #00f2ea); }
-        .share-btn.linkedin { background: #0077b5; }
-        .share-btn.telegram { background: #0088cc; }
-        .share-btn.pinterest { background: #bd081c; }
-        .share-btn.email { background: #9d50bb; }
-        .share-btn.copy { background: #333; }
-        .share-btn:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,210,255,0.3); }
-        footer {
-            margin-top: 4rem; padding: 3rem; border-top: 1px solid var(--primary-glow);
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: #8a8fb0;
+            font-size: 1rem;
+            flex-wrap: wrap;
+        }
+        .article-meta span i { margin-left: 5px; color: var(--primary-glow); }
+        .article-content {
+            color: #e0e0e0;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+        .article-content h2 {
+            color: var(--primary-glow);
+            font-size: 2rem;
+            margin: 2.5rem 0 1.5rem;
+            border-right: 5px solid var(--primary-glow);
+            padding-right: 1.5rem;
+        }
+        .article-content h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        .article-content ul, .article-content ol {
+            margin: 1.5rem 0;
+            padding-right: 2rem;
+        }
+        .article-content li {
+            margin-bottom: 0.8rem;
+        }
+        .highlight-box {
+            background: rgba(0,210,255,0.1);
+            border: 1px solid var(--primary-glow);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .stat-box {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
+            color: #050816;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 800;
+            margin: 1rem 0;
+        }
+        .external-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            color: var(--primary-glow);
+            text-decoration: none;
+            border: 1px solid var(--primary-glow);
+            transition: 0.3s;
+            margin: 1rem 0;
+        }
+        .external-link:hover {
+            background: var(--primary-glow);
+            color: #050816;
+            transform: translateX(-5px);
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-glow);
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            cursor: pointer;
+        }
+        .back-btn:hover { gap: 15px; }
+        
+        /* قسم المشاركة */
+        .share-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(0,210,255,0.05);
+            border-radius: 50px;
             text-align: center;
         }
-        .social-ring {
-            display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
         }
-        .social-ring a {
-            color: #8a8fb0; font-size: 2rem; transition: 0.3s; width: 60px; height: 60px;
-            display: flex; align-items: center; justify-content: center; border-radius: 50%;
-            background: rgba(255,255,255,0.05);
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.8rem 1.5rem;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
         }
-        .social-ring a:hover { transform: translateY(-5px); }
-        .social-ring a[aria-label="Facebook"]:hover { background: #1877f2; color: white; }
-        .social-ring a[aria-label="TikTok"]:hover { background: linear-gradient(45deg, #ff0050, #00f2ea); color: white; }
+        .share-btn.facebook { background: #1877f2; }
+        .share-btn.twitter { background: #000; }
+        .share-btn.whatsapp { background: #25d366; }
+        .share-btn:hover { transform: translateY(-3px); }
+        
+        footer {
+            margin-top: 4rem;
+            padding: 3rem;
+            border-top: 1px solid var(--primary-glow);
+            text-align: center;
+        }
         @media (max-width: 768px) {
-            .articles-grid { grid-template-columns: 1fr; }
-            .share-btn { min-width: 100%; }
+            .article-header h1 { font-size: 2rem; }
+            .full-article { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -199,8 +276,10 @@
     <header class="glass-header">
         <div class="nav-container">
             <a href="#" onclick="showHome(event)" class="active"><i class="fas fa-home"></i> الرئيسية</a>
-            <a href="#" onclick="showAllArticles(event)"><i class="fas fa-newspaper"></i> المقالات (50+)</a>
-            <a href="#" onclick="showDisclaimer(event)"><i class="fas fa-shield-alt"></i> إخلاء المسؤولية</a>
+            <a href="#" onclick="showArticle(1)"><i class="fas fa-robot"></i> الذكاء الاصطناعي</a>
+            <a href="#" onclick="showArticle(2)"><i class="fas fa-gears"></i> الأتمتة</a>
+            <a href="#" onclick="showArticle(3)"><i class="fas fa-bolt"></i> التسويق بالعمولة</a>
+            <a href="#" onclick="showArticle(4)"><i class="fas fa-chart-line"></i> دراسات حالة</a>
         </div>
     </header>
 
@@ -216,259 +295,504 @@
                 <linearGradient id="grad3" x1="130" y1="45" x2="170" y2="45"><stop stop-color="#00d2ff"/><stop offset="1" stop-color="#6a4e9b"/></linearGradient>
             </defs>
         </svg>
-        <div class="brand-tagline">smartafiliate.cm | منصة البوتات التسويقية</div>
+        <div class="brand-tagline">smartafiliate.cm | 4 مقالات شاملة</div>
     </div>
 
     <main class="main-container" id="main-content"></main>
 
     <footer>
-        <div class="social-ring">
-            <a href="#" onclick="openSocial('facebook')" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" onclick="openSocial('tiktok')" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="#" onclick="openSocial('twitter')" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" onclick="openSocial('linkedin')" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-        <div class="footer-links">
-            <a href="#" onclick="showHome(event)">الرئيسية</a> |
-            <a href="#" onclick="showDisclaimer(event)">إخلاء المسؤولية</a>
-        </div>
-        <div style="color: #4a4f6e; margin-top: 1.5rem;">© 2026 smartafiliate.cm - جميع الحقوق محفوظة</div>
+        <div style="color: #4a4f6e;">© 2026 smartafiliate.cm - جميع الحقوق محفوظة</div>
     </footer>
 
     <script>
-        // 50+ مقالة مع روابط خارجية حقيقية
+        // المقالات الأربعة الطويلة
         const articles = [
-            // الفئة 1: الذكاء الاصطناعي
-            { id: 1, title: 'مستقبل الذكاء الاصطناعي في التسويق 2026', category: 'ai', categoryName: 'الذكاء الاصطناعي', icon: 'fa-robot', 
-              date: '2026-03-15', readTime: '10 دقائق', 
-              excerpt: 'تحليل شامل من MIT Technology Review حول تأثير الذكاء الاصطناعي على التسويق الرقمي.',
-              link: 'https://www.technologyreview.com/2026/03/15/ai-marketing-future/',
-              source: 'MIT Technology Review' },
-            
-            { id: 2, title: 'ChatGPT-5 vs Gemini Ultra: مقارنة شاملة', category: 'ai', categoryName: 'الذكاء الاصطناعي', icon: 'fa-brain',
-              date: '2026-03-14', readTime: '12 دقيقة',
-              excerpt: 'مقارنة حصرية من موقع Wired بين أحدث نماذج الذكاء الاصطناعي.',
-              link: 'https://www.wired.com/story/chatgpt5-vs-gemini-ultra-comparison/',
-              source: 'Wired' },
-            
-            { id: 3, title: '10 أدوات ذكاء اصطناعي مجانية', category: 'ai', categoryName: 'الذكاء الاصطناعي', icon: 'fa-tools',
-              date: '2026-03-13', readTime: '8 دقائق',
-              excerpt: 'تجميعة من Product Hunt لأفضل أدوات AI المجانية.',
-              link: 'https://www.producthunt.com/topics/ai-free-tools',
-              source: 'Product Hunt' },
-            
-            // الفئة 2: الأتمتة
-            { id: 4, title: 'أتمتة التسويق بالبريد الإلكتروني', category: 'automation', categoryName: 'الأتمتة', icon: 'fa-envelope',
-              date: '2026-03-12', readTime: '8 دقائق',
-              excerpt: 'دليل متكامل من HubSpot لأتمتة الحملات البريدية.',
-              link: 'https://blog.hubspot.com/marketing/email-automation-guide',
-              source: 'HubSpot' },
-            
-            { id: 5, title: 'Zapier vs Make: أيهما أفضل؟', category: 'automation', categoryName: 'الأتمتة', icon: 'fa-code-branch',
-              date: '2026-03-11', readTime: '10 دقائق',
-              excerpt: 'مقارنة شاملة من TechCrunch بين أشهر أدوات الأتمتة.',
-              link: 'https://techcrunch.com/2026/03/11/zapier-vs-make-comparison/',
-              source: 'TechCrunch' },
-            
-            { id: 6, title: 'أتمتة خدمة العملاء بالذكاء الاصطناعي', category: 'automation', categoryName: 'الأتمتة', icon: 'fa-headset',
-              date: '2026-03-10', readTime: '9 دقائق',
-              excerpt: 'دراسة من Forbes حول روبوتات خدمة العملاء.',
-              link: 'https://www.forbes.com/sites/ai-customer-service/',
-              source: 'Forbes' },
-            
-            // الفئة 3: التسويق بالعمولة
-            { id: 7, title: 'دليل المبتدئين للتسويق بالعمولة 2026', category: 'affiliate', categoryName: 'التسويق بالعمولة', icon: 'fa-bolt',
-              date: '2026-03-09', readTime: '15 دقيقة',
-              excerpt: 'دليل شامل من Smart Passive Income لبدء التسويق بالعمولة.',
-              link: 'https://www.smartpassiveincome.com/affiliate-marketing-guide/',
-              source: 'Smart Passive Income' },
-            
-            { id: 8, title: 'أفضل منصات التسويق بالعمولة', category: 'affiliate', categoryName: 'التسويق بالعمولة', icon: 'fa-star',
-              date: '2026-03-08', readTime: '10 دقائق',
-              excerpt: 'مقارنة من Authority Hacker بين أفضل المنصات.',
-              link: 'https://authorityhacker.com/best-affiliate-networks/',
-              source: 'Authority Hacker' },
-            
-            { id: 9, title: 'التسويق بالعمولة عبر تيك توك', category: 'affiliate', categoryName: 'التسويق بالعمولة', icon: 'fa-tiktok',
-              date: '2026-03-07', readTime: '8 دقائق',
-              excerpt: 'استراتيجيات حصرية من Social Media Examiner للتسويق عبر تيك توك.',
-              link: 'https://www.socialmediaexaminer.com/tiktok-affiliate-marketing/',
-              source: 'Social Media Examiner' },
-            
-            // الفئة 4: دراسات حالة
-            { id: 10, title: 'كيف حقق موقع صغير 100 ألف دولار', category: 'case-study', categoryName: 'دراسات حالة', icon: 'fa-trophy',
-              date: '2026-03-06', readTime: '15 دقيقة',
-              excerpt: 'قصة نجاح ملهمة من Niche Pursuits.',
-              link: 'https://www.nichepursuits.com/100k-case-study/',
-              source: 'Niche Pursuits' },
-            
-            { id: 11, title: 'دراسة حالة: حملة إعلانية حققت 10x عائد', category: 'case-study', categoryName: 'دراسات حالة', icon: 'fa-chart-simple',
-              date: '2026-03-05', readTime: '12 دقيقة',
-              excerpt: 'تحليل من WordStream لحملة إعلانية ناجحة.',
-              link: 'https://www.wordstream.com/blog/case-study-10x-roas',
-              source: 'WordStream' },
-            
-            { id: 12, title: 'كيف بنى أحمد مشروعاً بألف دولار', category: 'case-study', categoryName: 'دراسات حالة', icon: 'fa-user-graduate',
-              date: '2026-03-04', readTime: '10 دقائق',
-              excerpt: 'قصة نجاح عربية من منصة بيكس.',
-              link: 'https://www.bakkah.com/success-story-ahmed',
-              source: 'بيكس' },
-            
-            // الفئة 5: أدوات وتقنيات
-            { id: 13, title: 'أفضل 20 أداة ذكاء اصطناعي للتسويق', category: 'tools', categoryName: 'أدوات وتقنيات', icon: 'fa-toolbox',
-              date: '2026-03-03', readTime: '20 دقيقة',
-              excerpt: 'تجميعة من G2 لأفضل أدوات AI في 2026.',
-              link: 'https://www.g2.com/categories/ai-marketing-tools',
-              source: 'G2' },
-            
-            { id: 14, title: 'أدوات مجانية لتحسين محركات البحث SEO', category: 'tools', categoryName: 'أدوات وتقنيات', icon: 'fa-magnifying-glass',
-              date: '2026-03-02', readTime: '12 دقيقة',
-              excerpt: 'دليل من Moz لأدوات SEO المجانية.',
-              link: 'https://moz.com/blog/free-seo-tools',
-              source: 'Moz' },
-            
-            { id: 15, title: 'أفضل أدوات تحليل المنافسين', category: 'tools', categoryName: 'أدوات وتقنيات', icon: 'fa-eye',
-              date: '2026-03-01', readTime: '10 دقائق',
-              excerpt: 'مقارنة من Ahrefs لأدوات تحليل المنافسين.',
-              link: 'https://ahrefs.com/blog/competitor-analysis-tools/',
-              source: 'Ahrefs' },
-            
-            // أكمل حتى 50 مقالة...
+            {
+                id: 1,
+                title: 'مستقبل الذكاء الاصطناعي في التسويق الرقمي 2026',
+                icon: 'fa-robot',
+                date: '15 مارس 2026',
+                readTime: '25 دقيقة',
+                category: 'الذكاء الاصطناعي',
+                excerpt: 'تحليل شامل وعميق لكيفية تغيير الذكاء الاصطناعي لقواعد اللعبة في عالم التسويق الرقمي، مع توقعات للسنوات القادمة.',
+                externalLink: 'https://www.technologyreview.com/2026/ai-marketing-future/',
+                externalSource: 'MIT Technology Review',
+                content: `
+                    <div class="stat-box"><i class="fas fa-chart-line"></i> أكثر من 80% من الشركات تستخدم الذكاء الاصطناعي في تسويقها</div>
+                    
+                    <h2>مقدمة: ثورة الذكاء الاصطناعي في التسويق</h2>
+                    <p>يشهد عام 2026 تحولاً جذرياً في عالم التسويق الرقمي بفضل التطورات المتسارعة في الذكاء الاصطناعي. لم يعد الذكاء الاصطناعي ترفاً تقنياً، بل أصبح ضرورة حتمية للبقاء في صدارة المنافسة. في هذا المقال الشامل، سنستعرض أحدث التطبيقات والاتجاهات التي ستشكل مستقبل التسويق.</p>
+                    
+                    <div class="highlight-box">
+                        <i class="fas fa-quote-right" style="color: var(--primary-glow); font-size: 2rem;"></i>
+                        <p style="font-size: 1.2rem;">"الذكاء الاصطناعي ليس مجرد أداة، بل هو شريك استراتيجي يعيد تعريف علاقة العلامات التجارية بعملائها."</p>
+                    </div>
+                    
+                    <h2>أولاً: التخصيص الفائق (Hyper-Personalization)</h2>
+                    <p>التخصيص التقليدي كان يعتمد على تقسيم الجمهور إلى فئات عمرية أو جغرافية. أما اليوم، فالتخصيص الفائق يعتمد على تحليل سلوك كل عميل على حدة في الوقت الفعلي.</p>
+                    
+                    <h3>كيف يعمل التخصيص الفائق؟</h3>
+                    <ul>
+                        <li><strong>تحليل البيانات الضخمة:</strong> جمع وتحليل آلاف نقاط البيانات عن كل عميل.</li>
+                        <li><strong>التعلم الآلي:</strong> نماذج تتعلم من سلوك العميل وتتنبأ باحتياجاته المستقبلية.</li>
+                        <li><strong>التفاعل الفوري:</strong> تقديم عروض مخصصة في اللحظة المناسبة.</li>
+                    </ul>
+                    
+                    <p>على سبيل المثال، منصة <a href="https://www.amazon.com" target="_blank" style="color: var(--primary-glow);">أمازون</a> تستخدم الذكاء الاصطناعي لتحليل سجل الشراء وسلوك التصفح لتوصي بمنتجات يبلغ احتمال شرائها 60%.</p>
+                    
+                    <h2>ثانياً: تحليلات المشاعر المتقدمة</h2>
+                    <p>أدوات الذكاء الاصطناعي اليوم قادرة على فهم مشاعر العملاء من خلال تحليل النصوص، الصور، وحتى نبرة الصوت. هذا يساعد الشركات على:</p>
+                    <ul>
+                        <li>اكتشاف العملاء غير الراضين قبل أن يغادروا</li>
+                        <li>فهم ردود الفعل على الحملات الإعلانية</li>
+                        <li>تحسين خدمة العملاء بشكل استباقي</li>
+                    </ul>
+                    
+                    <h2>ثالثاً: المساعدون الذكيون للتسويق</h2>
+                    <p>ظهرت في 2026 أدوات ثورية مثل <strong>Marketing AI Assistants</strong> التي تقوم بـ:</p>
+                    <ul>
+                        <li>كتابة محتوى متكامل للحملات التسويقية</li>
+                        <li>تصميم صور وإعلانات متوافقة مع هوية العلامة التجارية</li>
+                        <li>تحليل أداء الحملات وتقديم توصيات للتحسين</li>
+                        <li>إدارة الميزانيات الإعلانية بشكل آلي</li>
+                    </ul>
+                    
+                    <h2>رابعاً: التوقعات المستقبلية</h2>
+                    <p>وفقاً لتقرير صادر عن <a href="https://www.gartner.com" target="_blank" style="color: var(--primary-glow);">Gartner</a>، فإن 95% من تفاعلات العملاء مع العلامات التجارية ستكون مدعومة بالذكاء الاصطناعي بحلول 2028.</p>
+                    
+                    <div class="highlight-box">
+                        <h3 style="color: var(--primary-glow);">أهم التوجهات للعام 2026-2027:</h3>
+                        <ul>
+                            <li>انتشار التسويق بالصوت عبر المساعدين الذكيين</li>
+                            <li>الواقع المعزز المدعوم بالذكاء الاصطناعي في تجارب التسوق</li>
+                            <li>شات بوتات من الجيل الخامس تفهم المشاعر والسياقات المعقدة</li>
+                            <li>تحليلات تنبؤية دقيقة تصل دقتها إلى 95%</li>
+                        </ul>
+                    </div>
+                    
+                    <h2>خامساً: تحديات وتحديات</h2>
+                    <p>رغم الفوائد الهائلة، هناك تحديات يجب مراعاتها:</p>
+                    <ul>
+                        <li><strong>الخصوصية:</strong> جمع البيانات الضخمة يثير مخاوف تتعلق بخصوصية المستخدمين</li>
+                        <li><strong>التحيز الخوارزمي:</strong> نماذج الذكاء الاصطناعي قد تكرس تحيزات موجودة في بيانات التدريب</li>
+                        <li><strong>التكلفة:</strong> تبني حلول الذكاء الاصطناعي المتقدمة يتطلب استثمارات كبيرة</li>
+                    </ul>
+                    
+                    <h2>الخلاصة</h2>
+                    <p>الذكاء الاصطناعي ليس مجرد موضة عابرة، بل هو التحول الأهم في تاريخ التسويق الرقمي. الشركات التي تتبناه اليوم ستقود السوق غداً. ابدأ رحلتك الآن بقراءة المصادر المتخصصة وتجربة الأدوات المتاحة.</p>
+                `
+            },
+            {
+                id: 2,
+                title: 'الأتمتة المتكاملة: كيف تبني نظاماً يعمل 24/7',
+                icon: 'fa-gears',
+                date: '12 مارس 2026',
+                readTime: '22 دقيقة',
+                category: 'الأتمتة',
+                excerpt: 'دليل عملي شامل لبناء نظام أتمتة متكامل لعملك، من البريد الإلكتروني إلى خدمة العملاء والمبيعات.',
+                externalLink: 'https://www.forbes.com/sites/automation-guide-2026',
+                externalSource: 'Forbes',
+                content: `
+                    <div class="stat-box"><i class="fas fa-clock"></i> الأتمتة توفر للشركات الصغيرة 20-30 ساعة أسبوعياً</div>
+                    
+                    <h2>مقدمة: لماذا الأتمتة؟</h2>
+                    <p>في عالم الأعمال السريع اليوم، الوقت هو المورد الأثمن. الأتمتة تسمح لك بتوجيه طاقتك نحو المهام الإبداعية والاستراتيجية، بينما تترك المهام المتكررة للآلات. هذا الدليل الشامل سيرشدك خطوة بخطوة لبناء نظام أتمتة متكامل.</p>
+                    
+                    <h2>أولاً: تقييم احتياجات الأتمتة</h2>
+                    <p>قبل البدء، حدد المهام التي تستهلك وقتك وتستحق الأتمتة:</p>
+                    <ul>
+                        <li>📧 البريد الإلكتروني: إرسال رسائل متابعة، نشرات بريدية، ردود تلقائية</li>
+                        <li>📱 وسائل التواصل: جدولة منشورات، ردود على تعليقات، تحليلات</li>
+                        <li>💰 المبيعات: متابعة العملاء المحتملين، إرسال عروض أسعار</li>
+                        <li>📊 التقارير: جمع البيانات وإعداد تقارير دورية</li>
+                    </ul>
+                    
+                    <h2>ثانياً: أدوات الأتمتة الأساسية</h2>
+                    
+                    <h3>1. أتمتة البريد الإلكتروني</h3>
+                    <p><a href="https://mailchimp.com" target="_blank" style="color: var(--primary-glow);">Mailchimp</a> و <a href="https://convertkit.com" target="_blank" style="color: var(--primary-glow);">ConvertKit</a> هما الأكثر شهرة. يمكنك بناء تسلسلات بريدية معقدة ترسل رسائل مخصصة بناءً على سلوك المستخدم.</p>
+                    
+                    <h3>2. أتمتة وسائل التواصل</h3>
+                    <p><a href="https://buffer.com" target="_blank" style="color: var(--primary-glow);">Buffer</a> و <a href="https://hootsuite.com" target="_blank" style="color: var(--primary-glow);">Hootsuite</a> يسمحان لك بجدولة منشورات لأسابيع مسبقاً وتحليل الأداء.</p>
+                    
+                    <h3>3. أتمتة سير العمل</h3>
+                    <p><a href="https://zapier.com" target="_blank" style="color: var(--primary-glow);">Zapier</a> هو أشهر أداة ربط بين التطبيقات. يمكنه ربط أكثر من 5000 تطبيق معاً. مثال: عندما يشتري عميل جديد (Shopify)، أضف بريده لقائتك البريدية (Mailchimp).</p>
+                    
+                    <div class="highlight-box">
+                        <h4>مقارنة بين Zapier و Make (Integromat سابقاً):</h4>
+                        <ul>
+                            <li><strong>Zapier:</strong> أسهل استخداماً، مكتبة تطبيقات أكبر</li>
+                            <li><strong>Make:</strong> أكثر مرونة، يمكن بناء عمليات معقدة، أقل سعراً</li>
+                        </ul>
+                    </div>
+                    
+                    <h2>ثالثاً: بناء نظام أتمتة متكامل: دراسة حالة</h2>
+                    <p>لنفترض أنك تدير متجراً إلكترونياً لبيع المنتجات الرقمية. هذا هو النظام المقترح:</p>
+                    
+                    <h3>المرحلة 1: جذب الزوار</h3>
+                    <ul>
+                        <li>أعلن على فيسبوك وإنستغرام باستخدام إعلانات آلية (Facebook Ads Manager)</li>
+                        <li>عند النقر على الإعلان، ينتقل الزائر لصفحة هبوط على <a href="https://clickfunnels.com" target="_blank" style="color: var(--primary-glow);">ClickFunnels</a></li>
+                    </ul>
+                    
+                    <h3>المرحلة 2: التقاط البريد الإلكتروني</h3>
+                    <ul>
+                        <li>قدم كتاباً إلكترونياً مجانياً مقابل البريد الإلكتروني</li>
+                        <li>استخدم <a href="https://convertkit.com" target="_blank" style="color: var(--primary-glow);">ConvertKit</a> لالتقاط البريد وإرسال الكتاب تلقائياً</li>
+                    </ul>
+                    
+                    <h3>المرحلة 3: متابعة العملاء المحتملين</h3>
+                    <ul>
+                        <li>بعد يوم: أرسل بريداً يعرض منتجاً بخصم خاص</li>
+                        <li>بعد 3 أيام: أرسل بريداً يتضمن شهادات عملاء سعداء</li>
+                        <li>بعد أسبوع: أرسل بريداً يعرض نسخة تجريبية مجانية</li>
+                    </ul>
+                    
+                    <h3>المرحلة 4: بعد الشراء</h3>
+                    <ul>
+                        <li>أرسل بريد شكر فوراً مع رابط تحميل المنتج</li>
+                        <li>بعد أسبوع: أرسل بريداً يطلب تقييماً للمنتج</li>
+                        <li>بعد شهر: أرسل بريداً يعرض منتجاً تكميلياً</li>
+                    </ul>
+                    
+                    <h2>رابعاً: أتمتة خدمة العملاء</h2>
+                    <p><a href="https://www.intercom.com" target="_blank" style="color: var(--primary-glow);">Intercom</a> و <a href="https://www.zendesk.com" target="_blank" style="color: var(--primary-glow);">Zendesk</a> يقدمان شات بوتات ذكية يمكنها:</p>
+                    <ul>
+                        <li>الإجابة عن 80% من الأسئلة الشائعة تلقائياً</li>
+                        <li>تحويل المحادثات المعقدة لفريق الدعم البشري</li>
+                        <li>جمع معلومات عن العملاء قبل بدء المحادثة</li>
+                    </ul>
+                    
+                    <h2>خامساً: قياس وتحسين الأتمتة</h2>
+                    <p>استخدم أدوات التحليل لقياس أداء أنظمة الأتمتة:</p>
+                    <ul>
+                        <li>نسبة فتح البريد الإلكتروني</li>
+                        <li>نسبة النقر على الروابط</li>
+                        <li>معدل التحويل من زائر لعميل</li>
+                        <li>متوسط وقت حل مشاكل العملاء</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <h3>مؤشرات النجاح الرئيسية (KPIs):</h3>
+                        <ul>
+                            <li>زيادة الإنتاجية: 30% على الأقل</li>
+                            <li>تقليل الأخطاء البشرية: 90%</li>
+                            <li>تحسين رضا العملاء: 25%</li>
+                            <li>زيادة المبيعات: 40%</li>
+                        </ul>
+                    </div>
+                    
+                    <h2>الخلاصة</h2>
+                    <p>الأتمتة ليست ترفاً، بل ضرورة لأي عمل يريد النمو. ابدأ بمهمة واحدة متكررة، أتمتها، ثم أضف المزيد تدريجياً. مع الوقت، ستبني نظاماً متكاملاً يعمل 24/7 وينمي عملك حتى أثناء نومك.</p>
+                `
+            },
+            {
+                id: 3,
+                title: 'الدليل الشامل للتسويق بالعمولة 2026',
+                icon: 'fa-bolt',
+                date: '10 مارس 2026',
+                readTime: '30 دقيقة',
+                category: 'التسويق بالعمولة',
+                excerpt: 'كل ما تحتاج معرفته لبدء مشوارك في عالم التسويق بالعمولة وتحقيق دخل ثابت.',
+                externalLink: 'https://www.smartpassiveincome.com/affiliate-marketing-guide-2026',
+                externalSource: 'Smart Passive Income',
+                content: `
+                    <div class="stat-box"><i class="fas fa-dollar-sign"></i> سوق التسويق بالعمولة سيصل إلى 20 مليار دولار في 2026</div>
+                    
+                    <h2>مقدمة: ما هو التسويق بالعمولة؟</h2>
+                    <p>التسويق بالعمولة هو نظام تعتمد فيه على الترويج لمنتجات الآخرين مقابل عمولة على كل عملية بيع. إنه أحد أسهل الطرق لبدء مشروع على الإنترنت بدون الحاجة لإنشاء منتجك الخاص.</p>
+                    
+                    <h2>أولاً: كيف يعمل التسويق بالعمولة؟</h2>
+                    <p>العملية بسيطة:</p>
+                    <ol>
+                        <li><strong>انضم لبرنامج تابع:</strong> مثل Amazon Associates أو ClickBank</li>
+                        <li><strong>اختر منتجاً للترويج:</strong> ابحث عن منتج يناسب جمهورك</li>
+                        <li><strong>انشر رابط التابع:</strong> في مدونتك، قناتك على يوتيوب، أو وسائل التواصل</li>
+                        <li><strong>اكسب عمولة:</strong> عندما يشتري شخص من رابطك</li>
+                    </ol>
+                    
+                    <h2>ثانياً: أفضل منصات التسويق بالعمولة في 2026</h2>
+                    
+                    <h3>1. Amazon Associates</h3>
+                    <p>أكبر منصة تسويق بالعمولة في العالم. عمولات تتراوح بين 1-10% حسب فئة المنتج.</p>
+                    
+                    <h3>2. ClickBank</h3>
+                    <p>متخصصة في المنتجات الرقمية (دورات، كتب إلكترونية). عمولات تصل إلى 75%.</p>
+                    
+                    <h3>3. ShareASale</h3>
+                    <p>منصة تضم آلاف التجار في مختلف المجالات. عمولات متنوعة.</p>
+                    
+                    <h3>4. CJ Affiliate</h3>
+                    <p>منصة احترافية للعلامات التجارية الكبرى مثل Nike وApple.</p>
+                    
+                    <h3>5. Impact Radius</h3>
+                    <p>منصة متقدمة تستخدمها شركات مثل Uber وTripAdvisor.</p>
+                    
+                    <div class="highlight-box">
+                        <h4>نصيحة:</h4>
+                        <p>لا تركز على منصة واحدة. انضم لعدة منصات واختبر أيها يحقق أفضل عائد لجمهورك.</p>
+                    </div>
+                    
+                    <h2>ثالثاً: كيفية اختيار المنتج المناسب</h2>
+                    <p>اختيار المنتج هو أهم خطوة. إليك المعايير:</p>
+                    <ul>
+                        <li><strong>ملاءمة للجمهور:</strong> هل يهتم جمهورك بهذا المنتج؟</li>
+                        <li><strong>جودة المنتج:</strong> لا تروج لمنتج سيئ، سيخسر جمهورك ثقته بك</li>
+                        <li><strong>عمولة عادلة:</strong> ابحث عن عمولة لا تقل عن 20-30%</li>
+                        <li><strong>معدل تحويل جيد:</strong> بعض المنتجات تبيع بسهولة رغم العمولة المنخفضة</li>
+                    </ul>
+                    
+                    <h2>رابعاً: استراتيجيات الترويج الفعالة</h2>
+                    
+                    <h3>1. التسويق بالمحتوى</h3>
+                    <p>أنشئ محتوى قيماً يجذب الزوار طبيعياً:</p>
+                    <ul>
+                        <li>مقالات مقارنة: "أداة X ضد Y - أيهما أفضل؟"</li>
+                        <li>مراجعات متعمقة: استعرض المنتج بصدق</li>
+                        <li>دلائل تعليمية: "كيف تحل مشكلة X باستخدام Y"</li>
+                    </ul>
+                    
+                    <h3>2. التسويق عبر البريد الإلكتروني</h3>
+                    <p>اجمع عناوين البريد وابنِ علاقة مع المشتركين. أرسل لهم عروضاً حصرية وتوصيات مفيدة.</p>
+                    
+                    <h3>3. اليوتيوب</h3>
+                    <p>فيديو مراجعة للمنتج يمكن أن يحقق آلاف المشاهدات. أضف رابط التابع في وصف الفيديو.</p>
+                    
+                    <h3>4. وسائل التواصل الاجتماعي</h3>
+                    <p>انشر محتوى قصيراً وجذاباً مع روابط التابع. استخدم قصص إنستغرام وتيك توك لعرض المنتج.</p>
+                    
+                    <h3>5. الإعلانات المدفوعة</h3>
+                    <p>إذا كان لديك ميزانية، استخدم إعلانات فيسبوك أو جوجل للترويج المباشر.</p>
+                    
+                    <h2>خامساً: أخطاء قاتلة يجب تجنبها</h2>
+                    <ul>
+                        <li><strong>الترويج لكل شيء:</strong> ركز على مجال واحد وكن خبيراً فيه</li>
+                        <li><strong>إخفاء الروابط التابعة:</strong> كن صريحاً مع جمهورك، أخبرهم أنك قد تكسب عمولة</li>
+                        <li><strong>تجاهل التحليلات:</strong> تتبع أداء روابطك لتعرف ما يعمل وما لا يعمل</li>
+                        <li><strong>الاستسلام السريع:</strong> التسويق بالعمولة يحتاج صبراً، لا تتوقع أرباحاً سريعة</li>
+                    </ul>
+                    
+                    <h2>سادساً: دراسة حالة: نجاح في 6 أشهر</h2>
+                    <p>أحمد، شاب سعودي، بدأ مدونة عن أدوات الإنتاجية. في 6 أشهر:</p>
+                    <ul>
+                        <li>نشر 30 مقالة متعمقة</li>
+                        <li>بنى قائمة بريدية من 2000 مشترك</li>
+                        <li>حقق 3000 دولار شهرياً من التسويق بالعمولة</li>
+                        <li>الآن يتفرغ كلياً للمدونة</li>
+                    </ul>
+                    
+                    <h2>الخلاصة</h2>
+                    <p>التسويق بالعمولة ليس خطة ثراء سريع، لكنه وسيلة ممتازة لبناء دخل مستدام. ابدأ اليوم، اختر مجالاً تحبه، وانشئ محتوى قيماً، وكن صبوراً. النجاح سيأتي مع الوقت.</p>
+                `
+            },
+            {
+                id: 4,
+                title: 'دراسة حالة: كيف حقق متجر صغير مليون دولار في سنة',
+                icon: 'fa-chart-line',
+                date: '8 مارس 2026',
+                readTime: '20 دقيقة',
+                category: 'دراسات حالة',
+                excerpt: 'تحليل مفصل لرحلة متجر إلكتروني ناشئ من الصفر إلى المليون دولار في 12 شهراً فقط.',
+                externalLink: 'https://www.shopify.com/blog/million-dollar-case-study',
+                externalSource: 'Shopify',
+                content: `
+                    <div class="stat-box"><i class="fas fa-trophy"></i> قصة نجاح ملهمة: من 0 إلى 1,000,000$ في 365 يوماً</div>
+                    
+                    <h2>مقدمة: قصة "متجر الإلكتروني"</h2>
+                    <p>في هذا التحليل الشامل، سنستعرض قصة نجاح متجر "إلكتروني" (الاسم المستعار)، وهو متجر صغير بدأ في يناير 2026 واستطاع تحقيق مبيعات تجاوزت المليون دولار بنهاية العام.</p>
+                    
+                    <h2>البيانات الأساسية للمتجر</h2>
+                    <ul>
+                        <li><strong>المنتجات:</strong> إكسسوارات هواتف ذكية ومنتجات تقنية مبتكرة</li>
+                        <li><strong>فريق العمل:</strong> شخصان فقط (مؤسس ومساعد)</li>
+                        <li><strong>رأس المال:</strong> 10,000 دولار فقط</li>
+                        <li><strong>المنصة:</strong> Shopify</li>
+                    </ul>
+                    
+                    <h2>الشهر 1-3: التأسيس والانطلاق</h2>
+                    
+                    <h3>اختيار المنتجات</h3>
+                    <p>قام المؤسس بتحليل السوق ووجد فجوة في سوق إكسسوارات الهواتف: منتجات بجودة عالية وتصميم عصري بأسعار متوسطة. استخدم <a href="https://junglescout.com" target="_blank" style="color: var(--primary-glow);">Jungle Scout</a> لتحليل الطلب والمنافسة.</p>
+                    
+                    <h3>بناء المتجر</h3>
+                    <p>استخدم Shopify مع قالب احترافي. ركز على:</p>
+                    <ul>
+                        <li>صور عالية الجودة للمنتجات</li>
+                        <li>أوصاف مقنعة تركز على الفوائد</li>
+                        <li>سياسة إرجاع واضحة وسهلة</li>
+                    </ul>
+                    
+                    <h3>أولى المبيعات</h3>
+                    <p>حقق أول 10 مبيعات من الأصدقاء والعائلة. استخدم هذه المبيعات لجمع تقييمات أولية وصور حقيقية للمنتجات.</p>
+                    
+                    <h2>الشهر 4-6: بناء الزخم</h2>
+                    
+                    <h3>استراتيجية التسويق الأولى: المحتوى</h3>
+                    <p>أنشأ مدونة على المتجر تنشر مقالات عن نصائح العناية بالهواتف وأحدث التقنيات. هذه المقالات جذبت زواراً عبر محركات البحث (SEO).</p>
+                    
+                    <h3>استراتيجية التسويق الثانية: التسويق بالعمولة</h3>
+                    <p>انضم لبرامج تابعة وطلب من مؤثرين صغار الترويج لمنتجاته مقابل عمولة. هذه الاستراتيجية كانت مجدية اقتصادياً لأن الدفع فقط عند البيع.</p>
+                    
+                    <h3>نتائج الربع الثاني:</h3>
+                    <ul>
+                        <li>المبيعات: 150,000$</li>
+                        <li>عدد العملاء: 1,500</li>
+                        <li>متوسط قيمة الطلب: 100$</li>
+                    </ul>
+                    
+                    <h2>الشهر 7-9: التوسع</h2>
+                    
+                    <h3>إطلاق منتجات جديدة</h3>
+                    <p>بناء على طلبات العملاء، أطلق 5 منتجات جديدة. استخدم التمويل الجماعي عبر <a href="https://www.kickstarter.com" target="_blank" style="color: var(--primary-glow);">Kickstarter</a> لتمويل الإنتاج وقياس الاهتمام.</p>
+                    
+                    <h3>الإعلانات المدفوعة</h3>
+                    <p>استخدم إعلانات فيسبوك وإنستغرام بشكل مكثف. أنشأ 20 إعلاناً مختلفاً واختبرهم لمعرفة أفضلهم. كانت تكلفة اكتساب العميل 15$ فقط.</p>
+                    
+                    <h3>نتائج الربع الثالث:</h3>
+                    <ul>
+                        <li>المبيعات: 400,000$</li>
+                        <li>عدد العملاء: 4,000</li>
+                        <li>معدل التحويل: 3.5%</li>
+                    </ul>
+                    
+                    <h2>الشهر 10-12: الوصول للمليون</h2>
+                    
+                    <h3>موسم العطلات</h3>
+                    <p>ركز على موسم العطلات (نوفمبر-ديسمبر). أطلق:</p>
+                    <ul>
+                        <li>عروض الجمعة السوداء: خصم 30% لأول 1000 عميل</li>
+                        <li>شحن مجاني للطلبات فوق 50$</li>
+                        <li>مسابقات على وسائل التواصل</li>
+                    </ul>
+                    
+                    <h3>نتائج الربع الراعي:</h3>
+                    <ul>
+                        <li>المبيعات: 450,000$</li>
+                        <li>إجمالي المبيعات السنوية: 1,000,000$</li>
+                        <li>عدد العملاء الإجمالي: 10,000+</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <h3>الدروس المستفادة</h3>
+                        <ul>
+                            <li><strong>التركيز على الجودة:</strong> منتجات جيدة = عملاء سعداء = تسويق مجاني</li>
+                            <li><strong>الاستماع للعملاء:</strong> طور منتجاتك بناء على اقتراحاتهم</li>
+                            <li><strong>التسويق المتنوع:</strong> لا تعتمد على مصدر واحد للعملاء</li>
+                            <li><strong>البيانات:</strong> حلل كل شيء واتخذ قرارات مبنية على أرقام</li>
+                        </ul>
+                    </div>
+                    
+                    <h2>أهم الأدوات التي استخدمها المتجر</h2>
+                    <ul>
+                        <li><strong>Shopify:</strong> منصة المتجر</li>
+                        <li><strong>Klaviyo:</strong> التسويق عبر البريد الإلكتروني</li>
+                        <li><strong>Facebook Ads Manager:</strong> إدارة الإعلانات</li>
+                        <li><strong>Google Analytics:</strong> تحليل الزوار والسلوك</li>
+                        <li><strong>Jungle Scout:</strong> أبحاث المنتجات</li>
+                    </ul>
+                    
+                    <h2>الخلاصة</h2>
+                    <p>قصة هذا المتجر تثبت أنه بالمنتجات الجيدة، الفهم العميق للزبائن، والتسويق الذكي، يمكن تحقيق نتائج استثنائية حتى بموارد محدودة. ابدأ صغيراً، تعلم بسرعة، وكن مستعداً للاستثمار في ما ينجح.</p>
+                    
+                    <p><strong>رابط المصدر الأصلي:</strong> <a href="https://www.shopify.com/blog/million-dollar-case-study" target="_blank" style="color: var(--primary-glow);">دراسة الحالة الكاملة على Shopify</a></p>
+                `
+            }
         ];
-
-        // إضافة 35 مقالة أخرى لإكمال 50 (نفس النمط)
-        for (let i = 16; i <= 50; i++) {
-            const categories = ['ai', 'automation', 'affiliate', 'case-study', 'tools'];
-            const catNames = ['الذكاء الاصطناعي', 'الأتمتة', 'التسويق بالعمولة', 'دراسات حالة', 'أدوات وتقنيات'];
-            const icons = ['fa-robot', 'fa-gears', 'fa-bolt', 'fa-trophy', 'fa-tools'];
-            const sources = ['MIT Tech', 'Wired', 'Forbes', 'TechCrunch', 'HubSpot', 'Product Hunt', 'G2', 'Moz', 'Ahrefs'];
-            const catIndex = i % 5;
-            
-            articles.push({
-                id: i,
-                title: `مقالة ${i}: ${['أحدث تقنيات AI', 'أتمتة متقدمة', 'استراتيجيات تسويق', 'قصة نجاح', 'أدوات مبتكرة'][catIndex]}`,
-                category: categories[catIndex],
-                categoryName: catNames[catIndex],
-                icon: icons[catIndex],
-                date: `2026-02-${String(28 - (i-15)).padStart(2, '0')}`,
-                readTime: `${5 + (i % 10)} دقائق`,
-                excerpt: `مقالة حصرية من ${sources[i % sources.length]} حول ${catNames[catIndex]}...`,
-                link: `https://www.example.com/article-${i}`,
-                source: sources[i % sources.length]
-            });
-        }
-
-        // دوال المشاركة
-        function shareOnFacebook() { window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank'); }
-        function shareOnTwitter() { window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(document.title)}`, '_blank'); }
-        function shareOnWhatsApp() { window.open(`https://wa.me/?text=${encodeURIComponent(document.title + ' ' + window.location.href)}`, '_blank'); }
-        function shareOnTikTok() { window.open('https://www.tiktok.com/share?url=' + encodeURIComponent(window.location.href), '_blank'); }
-        function shareOnLinkedIn() { window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank'); }
-        function shareOnTelegram() { window.open(`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(document.title)}`, '_blank'); }
-        function shareOnPinterest() { window.open(`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}`, '_blank'); }
-        function shareOnEmail() { window.location.href = `mailto:?subject=${encodeURIComponent(document.title)}&body=${encodeURIComponent(window.location.href)}`; }
-        function copyLink() { navigator.clipboard.writeText(window.location.href).then(() => alert('✅ تم نسخ الرابط')); }
-        
-        function openSocial(platform) {
-            const urls = {
-                facebook: 'https://facebook.com/smartafiliate.cm',
-                tiktok: 'https://tiktok.com/@smartafiliate.cm',
-                twitter: 'https://twitter.com/smartafiliate',
-                linkedin: 'https://linkedin.com/company/smartafiliate'
-            };
-            window.open(urls[platform], '_blank');
-        }
 
         // عرض الصفحة الرئيسية
         function showHome(e) {
             e?.preventDefault();
-            document.getElementById('main-content').innerHTML = `
-                <div class="stats-bar">
-                    <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">مقالة</div></div>
-                    <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">فئات</div></div>
-                    <div class="stat-item"><div class="stat-number">25k+</div><div class="stat-label">مصدر خارجي</div></div>
-                </div>
+            const html = `
+                <h1 style="font-size: 2.5rem; text-align: center; margin: 2rem 0; color: var(--primary-glow);">
+                    <i class="fas fa-star"></i> 4 مقالات شاملة ومتكاملة
+                </h1>
                 
-                <div class="category-filters">
-                    ${['الكل', 'الذكاء الاصطناعي', 'الأتمتة', 'التسويق بالعمولة', 'دراسة حالة', 'أدوات'].map((cat, i) => `
-                        <button class="filter-btn ${i === 0 ? 'active' : ''}" onclick="filterArticles('${i === 0 ? 'all' : ['ai','automation','affiliate','case-study','tools'][i-1]}')">
-                            <i class="fas ${['fa-layer-group','fa-robot','fa-gears','fa-bolt','fa-trophy','fa-tools'][i]}"></i> ${cat}
-                        </button>
+                <div class="featured-articles">
+                    ${articles.map(article => `
+                        <div class="article-card" onclick="showArticle(${article.id})">
+                            <i class="fas ${article.icon}" style="font-size: 3rem; color: var(--primary-glow);"></i>
+                            <h2>${article.title}</h2>
+                            <p>${article.excerpt}</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span class="read-more-btn">
+                                    اقرأ المقال <i class="fas fa-arrow-left"></i>
+                                </span>
+                                <span style="color: #8a8fb0; font-size: 0.9rem;">
+                                    <i class="far fa-clock"></i> ${article.readTime}
+                                </span>
+                            </div>
+                        </div>
                     `).join('')}
                 </div>
                 
-                <div class="articles-grid" id="articles-grid">
-                    ${renderArticles(articles)}
-                </div>
-                
                 <div class="share-section">
-                    <h3><i class="fas fa-share-alt"></i> شارك الموقع مع أصدقائك</h3>
+                    <h3 style="color: var(--primary-glow);"><i class="fas fa-share-alt"></i> شارك هذه المقالات</h3>
                     <div class="share-buttons">
                         <button onclick="shareOnFacebook()" class="share-btn facebook"><i class="fab fa-facebook-f"></i> فيسبوك</button>
                         <button onclick="shareOnTwitter()" class="share-btn twitter"><i class="fa-brands fa-x-twitter"></i> تويتر</button>
                         <button onclick="shareOnWhatsApp()" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i> واتساب</button>
-                        <button onclick="shareOnTikTok()" class="share-btn tiktok"><i class="fab fa-tiktok"></i> تيك توك</button>
-                        <button onclick="shareOnLinkedIn()" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i> لينكد إن</button>
-                        <button onclick="shareOnTelegram()" class="share-btn telegram"><i class="fab fa-telegram-plane"></i> تليجرام</button>
-                        <button onclick="shareOnPinterest()" class="share-btn pinterest"><i class="fab fa-pinterest-p"></i> بينترست</button>
-                        <button onclick="shareOnEmail()" class="share-btn email"><i class="fas fa-envelope"></i> بريد</button>
-                        <button onclick="copyLink()" class="share-btn copy"><i class="fas fa-link"></i> نسخ الرابط</button>
                     </div>
                 </div>
             `;
+            document.getElementById('main-content').innerHTML = html;
         }
 
-        function renderArticles(articlesList) {
-            return articlesList.map(article => `
-                <div class="article-card">
-                    <span class="category-badge">${article.categoryName}</span>
-                    <div class="external-link-badge">
-                        <i class="fas fa-external-link-alt"></i> مصدر خارجي: ${article.source}
-                    </div>
-                    <h3><i class="fas ${article.icon}"></i> ${article.title}</h3>
-                    <div class="article-meta">
-                        <span><i class="far fa-calendar"></i> ${article.date}</span>
-                        <span><i class="far fa-clock"></i> ${article.readTime}</span>
-                    </div>
-                    <div class="article-excerpt">${article.excerpt}</div>
-                    <a href="${article.link}" target="_blank" rel="noopener" class="article-link">
-                        <span><i class="fas fa-external-link-alt"></i> قراءة على ${article.source}</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
+        // عرض مقالة محددة
+        function showArticle(articleId) {
+            const article = articles.find(a => a.id === articleId);
+            if (!article) return;
+
+            const html = `
+                <div class="back-btn" onclick="showHome(event)">
+                    <i class="fas fa-arrow-right"></i> العودة للرئيسية
                 </div>
-            `).join('');
-        }
-
-        function filterArticles(category) {
-            const filtered = category === 'all' ? articles : articles.filter(a => a.category === category);
-            document.getElementById('articles-grid').innerHTML = renderArticles(filtered);
+                
+                <div class="full-article">
+                    <div class="article-header">
+                        <h1>${article.title}</h1>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> ${article.date}</span>
+                            <span><i class="far fa-clock"></i> ${article.readTime}</span>
+                            <span><i class="fas fa-tag"></i> ${article.category}</span>
+                        </div>
+                        <a href="${article.externalLink}" target="_blank" class="external-link">
+                            <i class="fas fa-external-link-alt"></i> قراءة المصدر الأصلي على ${article.externalSource}
+                        </a>
+                    </div>
+                    
+                    <div class="article-content">
+                        ${article.content}
+                    </div>
+                    
+                    <div class="share-section" style="margin-top: 3rem;">
+                        <h4 style="color: var(--primary-glow);">شارك هذا المقال</h4>
+                        <div class="share-buttons">
+                            <button onclick="shareOnFacebook()" class="share-btn facebook"><i class="fab fa-facebook-f"></i> فيسبوك</button>
+                            <button onclick="shareOnTwitter()" class="share-btn twitter"><i class="fa-brands fa-x-twitter"></i> تويتر</button>
+                            <button onclick="shareOnWhatsApp()" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i> واتساب</button>
+                        </div>
+                    </div>
+                </div>
+            `;
             
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent.includes(category === 'all' ? 'الكل' : 
-                    ['ai','automation','affiliate','case-study','tools'].includes(category) ? 
-                    ['الذكاء الاصطناعي','الأتمتة','التسويق بالعمولة','دراسة حالة','أدوات'][['ai','automation','affiliate','case-study','tools'].indexOf(category)] : '')) {
-                    btn.classList.add('active');
-                }
-            });
+            document.getElementById('main-content').innerHTML = html;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function showAllArticles(e) { e?.preventDefault(); showHome(e); }
+        // دوال المشاركة
+        function shareOnFacebook() {
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+        }
         
-        function showDisclaimer(e) {
-            e?.preventDefault();
-            document.getElementById('main-content').innerHTML = `
-                <div style="background: var(--glass-bg); border: 1px solid var(--primary-glow); border-radius: var(--card-radius); padding: 3rem; margin: 2rem 0;">
-                    <h1 style="font-size: 2.5rem; color: var(--primary-glow); margin-bottom: 2rem;"><i class="fas fa-shield-alt"></i> إخلاء المسؤولية</h1>
-                    <p style="color: #b0b3c5; line-height: 1.8;">المقالات في هذا الموقع هي روابط لمصادر خارجية. نحن لا نتحمل مسؤولية محتوى المواقع الخارجية. جميع المعلومات هي لأغراض تعليمية فقط.</p>
-                    <div style="background: rgba(255,165,0,0.1); padding: 2rem; border-radius: 20px; margin: 2rem 0;">
-                        <i class="fas fa-exclamation-triangle" style="color: orange; font-size: 2rem;"></i>
-                        <p style="color: #fff;">الروابط الخارجية تفتح في نافذة جديدة. يرجى مراجعة سياسات الخصوصية للمواقع الخارجية.</p>
-                    </div>
-                </div>
-            `;
+        function shareOnTwitter() {
+            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(document.title)}`, '_blank');
+        }
+        
+        function shareOnWhatsApp() {
+            window.open(`https://wa.me/?text=${encodeURIComponent(document.title + ' ' + window.location.href)}`, '_blank');
         }
 
+        // بدء التشغيل
         window.onload = () => showHome();
     </script>
 </body>
