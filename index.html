@@ -3,92 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المدونة | SmartAffiliate</title>
+    <title>مدونة SmartAffiliate | 2026</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --bg-dark: #050816;
-            --card-bg: rgba(17, 25, 40, 0.85);
+            --bg: #050816;
             --primary: #00d2ff;
             --secondary: #9d50bb;
-            --text-main: #ffffff;
-            --text-dim: #b4b4b4;
+            --glass: rgba(17, 25, 40, 0.85);
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         body {
-            background: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: var(--bg);
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0; padding: 0;
+            overflow-x: hidden;
         }
 
-        /* نافبار شفاف */
+        /* نافبار فائق النعومة */
         header {
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             background: rgba(5, 8, 22, 0.9);
-            padding: 15px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
             position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
 
         nav { display: flex; justify-content: center; gap: 30px; }
-        nav a { color: var(--text-dim); text-decoration: none; font-weight: bold; font-size: 15px; }
+        nav a { color: #b4b4b4; text-decoration: none; font-weight: 600; transition: 0.3s; font-size: 14px; }
         nav a:hover { color: var(--primary); }
 
-        /* عنوان المدونة */
-        .blog-header {
-            text-align: center; padding: 60px 20px;
-            background: linear-gradient(to bottom, rgba(0, 210, 255, 0.1), transparent);
+        /* منطقة البحث */
+        .search-container {
+            text-align: center;
+            padding: 50px 20px;
+            background: radial-gradient(circle at center, rgba(0, 210, 255, 0.1) 0%, transparent 70%);
         }
-        .blog-header h1 { font-size: 35px; margin: 0; background: linear-gradient(90deg, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 45px 15px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            background: var(--glass);
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-box input:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(0, 210, 255, 0.3); }
+
+        .search-box i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+        }
 
         /* شبكة المقالات */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        .blog-wrapper {
             max-width: 1100px;
-            margin: 0 auto 50px;
+            margin: 0 auto 100px;
             padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
 
-        /* كارت المدونة المطور */
-        .blog-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 25px;
-            transition: 0.3s;
+        .article-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            padding: 30px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
-        .blog-card:hover {
+        .article-card:hover {
             transform: translateY(-10px);
             border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
-        .blog-card i { font-size: 30px; color: var(--primary); margin-bottom: 15px; }
-        .blog-card h2 { font-size: 20px; margin: 0 0 15px 0; color: #fff; }
-        .blog-card p { color: var(--text-dim); font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+        .article-card .icon-circle {
+            width: 60px; height: 60px;
+            background: rgba(0, 210, 255, 0.1);
+            border-radius: 15px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
+        }
 
-        .read-more {
-            text-align: center;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            color: var(--primary);
+        .article-card i { font-size: 25px; color: var(--primary); }
+        .article-card h2 { font-size: 22px; margin: 0 0 15px 0; color: #fff; }
+        .article-card p { color: #b4b4b4; font-size: 15px; line-height: 1.7; flex-grow: 1; }
+
+        .btn-read {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 12px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: #000;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            border: 1px solid rgba(0, 210, 255, 0.2);
+            font-weight: 800;
+            text-align: center;
             transition: 0.3s;
         }
 
-        .read-more:hover { background: var(--primary); color: #000; }
+        .btn-read:hover { transform: scale(1.03); filter: brightness(1.2); }
 
-        footer { text-align: center; padding: 50px; color: #444; font-size: 12px; }
+        footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid var(--border); }
     </style>
 </head>
 <body>
@@ -100,53 +135,67 @@
         </nav>
     </header>
 
-    <div class="blog-header">
-        <h1>مكتبة المعرفة الذكية</h1>
-        <p style="color: var(--text-dim);">اكتشف أحدث شروحات الذكاء الاصطناعي 2026</p>
+    <div class="search-container">
+        <h1 style="font-size: 35px;">استكشف عالم الـ AI</h1>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="ابحث عن أداة أو مقال..." onkeyup="searchBlog()">
+        </div>
     </div>
 
-    <div class="blog-grid">
+    <div class="blog-wrapper" id="blogGrid">
         
-        <div class="blog-card">
-            <i class="fas fa-pen-fancy"></i>
-            <h2>كتابة المحتوى بالـ AI</h2>
-            <p>دليل شامل لاستخدام أدوات الكتابة الذكية لإنشاء محتوى يتصدر جوجل.</p>
-            <a href="article1.html" class="read-more">إقرأ المقال بالكامل</a>
+        <div class="article-card">
+            <div class="icon-circle"><i class="fas fa-robot"></i></div>
+            <h2>الوكلاء الأذكياء 2026</h2>
+            <p>تعلم كيف توظف الذكاء الاصطناعي ليدير أعمالك بشكل تلقائي بالكامل.</p>
+            <a href="article2.html" class="btn-read">اقرأ الشرح الكامل</a>
         </div>
 
-        <div class="blog-card">
-            <i class="fas fa-user-robot"></i>
-            <h2>الوكلاء المستقلون O1</h2>
-            <p>كيف تحول الذكاء الاصطناعي من مجرد دردشة إلى موظف رقمي حقيقي.</p>
-            <a href="article2.html" class="read-more">إقرأ المقال بالكامل</a>
+        <div class="article-card">
+            <div class="icon-circle"><i class="fas fa-film"></i></div>
+            <h2>توليد الفيديو بـ Sora</h2>
+            <p>دليل تحويل الكلمات إلى مقاطع فيديو سينمائية احترافية في ثوانٍ.</p>
+            <a href="article3.html" class="btn-read">اقرأ الشرح الكامل</a>
         </div>
 
-        <div class="blog-card">
-            <i class="fas fa-film"></i>
-            <h2>ثورة الفيديو بـ Sora</h2>
-            <p>مستقبل صناعة الأفلام والمحتوى المرئي باستخدام تقنيات OpenAI.</p>
-            <a href="article3.html" class="read-more">إقرأ المقال بالكامل</a>
+        <div class="article-card">
+            <div class="icon-circle"><i class="fas fa-magic"></i></div>
+            <h2>احتراف Canva Magic</h2>
+            <p>أسرار التصميم السريع وتوليد الصور باستخدام أدوات كانفا السحرية.</p>
+            <a href="article4.html" class="btn-read">اقرأ الشرح الكامل</a>
         </div>
 
-        <div class="blog-card">
-            <i class="fas fa-palette"></i>
-            <h2>سحر Canva الذكي</h2>
-            <p>كيف تصمم هويتك البصرية بالكامل دون الحاجة لمصمم جرافيك.</p>
-            <a href="article4.html" class="read-more">إقرأ المقال بالكامل</a>
-        </div>
-
-        <div class="blog-card">
-            <i class="fas fa-bolt"></i>
-            <h2>محرك Perplexity</h2>
-            <p>لماذا ترك الملايين البحث التقليدي وانتقلوا للبحث الذكي الموثق؟</p>
-            <a href="article5.html" class="read-more">إقرأ المقال بالكامل</a>
+        <div class="article-card">
+            <div class="icon-circle"><i class="fas fa-search-plus"></i></div>
+            <h2>بدائل جوجل الحديثة</h2>
+            <p>لماذا يتصدر Perplexity AI المشهد في عمليات البحث الذكية حالياً؟</p>
+            <a href="article5.html" class="btn-read">اقرأ الشرح الكامل</a>
         </div>
 
     </div>
 
     <footer>
-        &copy; 2026 SMARTAFFILIATE | ALL RIGHTS RESERVED
+        &copy; 2026 SmartAffiliate | تم التطوير للأداء الأقصى
     </footer>
+
+    <script>
+        function searchBlog() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('article-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+                let desc = cards[i].getElementsByTagName('p')[0].innerText.toLowerCase();
+                
+                if (title.includes(input) || desc.includes(input)) {
+                    cards[i].style.display = "flex";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
