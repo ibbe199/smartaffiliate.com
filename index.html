@@ -3,106 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartAffiliate | تجربة مستقبلية</title>
+    <title>SmartAffiliate 2026 | القمة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* إعدادات الألوان المتطورة */
         :root {
-            --glass: rgba(255, 255, 255, 0.95);
-            --primary: #6366f1; /* لون بنفسجي عصري */
-            --accent: #a855f7;
-            --bg: #0f172a; /* خلفية داكنة فخمة */
-            --text: #f8fafc;
+            --bg-dark: #050816;
+            --card-bg: rgba(17, 25, 40, 0.75);
+            --primary: #00d2ff;
+            --secondary: #9d50bb;
+            --text-main: #ffffff;
+            --text-dim: #b4b4b4;
         }
 
         body {
-            background-color: var(--bg);
-            background-image: radial-gradient(circle at top right, #1e1b4b, #0f172a);
-            color: var(--text);
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg-dark);
+            background-image: radial-gradient(circle at 20% 20%, rgba(0, 210, 255, 0.05) 0%, transparent 40%);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             margin: 0; padding: 0; min-height: 100vh;
         }
 
-        /* هيدر شفاف عصري */
         header {
-            backdrop-filter: blur(10px);
-            background: rgba(15, 23, 42, 0.8);
             position: sticky; top: 0; z-index: 1000;
-            padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            background: rgba(5, 8, 22, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
         }
 
-        nav { display: flex; justify-content: center; gap: 25px; }
-        nav a { color: #cbd5e1; text-decoration: none; font-weight: 500; font-size: 15px; transition: 0.3s; }
-        nav a:hover { color: var(--primary); }
+        nav { display: flex; justify-content: center; gap: 30px; }
+        nav a { color: var(--text-dim); text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s; }
+        nav a:hover { color: var(--primary); text-shadow: 0 0 8px var(--primary); }
 
-        /* الشعار المتوهج والمتحرك */
-        .logo-container { text-align: center; padding: 40px 20px; }
-        .smart-logo {
-            font-size: 32px; font-weight: 900;
-            background: linear-gradient(to right, #818cf8, #c084fc);
+        .brand-box { text-align: center; padding: 40px 20px; }
+        .brand-logo {
+            font-size: clamp(2rem, 8vw, 3rem);
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            animation: glow 3s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% { filter: drop-shadow(0 0 5px rgba(99, 102, 241, 0.5)); transform: scale(1); }
-            50% { filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.8)); transform: scale(1.02); }
-        }
-
-        /* الحاوية الرئيسية */
-        .main-content { max-width: 600px; margin: 0 auto; padding: 20px; }
-
-        /* كروت المقالات الزجاجية (Glass Cards) */
-        .premium-card {
-            background: rgba(30, 41, 59, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
-            backdrop-filter: blur(5px);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .premium-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .category-tag {
-            background: rgba(99, 102, 241, 0.2);
-            color: #818cf8;
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: bold;
             display: inline-block;
-            margin-bottom: 12px;
+            animation: floatingLogo 4s ease-in-out infinite;
         }
 
-        h2 { font-size: 22px; margin: 0 0 12px 0; color: #fff; }
-        p { color: #94a3b8; font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+        @keyframes floatingLogo { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-        /* الأزرار المتطورة */
-        .btn-group { display: flex; gap: 12px; }
+        .main-grid { max-width: 700px; margin: 0 auto; padding: 20px; }
+
+        .card-premium {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: 0.4s;
+            position: relative;
+            text-align: right;
+        }
+
+        .card-premium:hover { transform: translateY(-5px); border-color: var(--primary); }
+
+        /* تنسيق الأيقونات بجانب العناوين */
+        h2 i { color: var(--primary); margin-left: 10px; font-size: 22px; }
+
+        h2 { font-size: 22px; margin: 0 0 15px 0; display: flex; align-items: center; }
+        p { color: var(--text-dim); font-size: 15px; line-height: 1.7; margin-bottom: 25px; }
+
+        .btn-wrapper { display: flex; gap: 12px; flex-wrap: wrap; }
         .p-btn {
-            flex: 1;
-            padding: 12px;
-            border-radius: 12px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            transition: 0.3s;
+            flex: 1; padding: 12px; border-radius: 12px; font-weight: bold;
+            text-decoration: none; font-size: 13px; text-align: center; transition: 0.3s;
         }
-        .btn-read { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); }
-        .btn-tool { background: #1e293b; color: #fff; border: 1px solid rgba(255,255,255,0.1); }
-        
-        .p-btn:hover { opacity: 0.9; transform: scale(1.05); }
+        .btn-glow { background: var(--primary); color: #000; }
+        .btn-outline { border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; }
+        .p-btn:hover { opacity: 0.8; }
 
-        footer { text-align: center; padding: 40px; color: #475569; font-size: 13px; }
+        @media (max-width: 600px) { .p-btn { flex: none; width: 100%; } }
     </style>
 </head>
 <body>
@@ -111,40 +88,64 @@
         <nav>
             <a href="index.html">الرئيسية</a>
             <a href="blog.html">المدونة</a>
-            <a href="#about">عن الموقع</a>
         </nav>
     </header>
 
-    <div class="logo-container">
-        <div class="smart-logo">SmartAffiliate</div>
-        <p style="color: #64748b; margin-top: 10px; font-size: 14px;">مستقبلك يبدأ هنا - 2026</p>
+    <div class="brand-box">
+        <div class="brand-logo">SmartAffiliate</div>
     </div>
 
-    <div class="main-content">
+    <div class="main-grid">
         
-        <div class="premium-card">
-            <span class="category-tag">ذكاء اصطناعي</span>
-            <h2>ثورة كتابة المحتوى الرقمي</h2>
-            <p>كيف تستخدم Jasper و Copy.ai لبناء إمبراطورية محتوى في دقائق معدودة وباحترافية عالمية.</p>
-            <div class="btn-group">
-                <a href="article1.html" class="btn-read p-btn">📖 اقرأ المزيد</a>
-                <a href="https://www.jasper.ai" target="_blank" class="btn-tool p-btn">🚀 جرب Jasper</a>
+        <div class="card-premium">
+            <h2><i class="fas fa-pen-nib"></i> كتابة المحتوى بالذكاء الاصطناعي</h2>
+            <p>كيف تستخدم Jasper و Copy.ai لإنتاج مقالات احترافية تتصدر نتائج البحث.</p>
+            <div class="btn-wrapper">
+                <a href="article1.html" class="p-btn btn-glow">📖 اقرأ المقال</a>
+                <a href="https://www.jasper.ai" target="_blank" class="p-btn btn-outline">🚀 تجربة Jasper</a>
             </div>
         </div>
 
-        <div class="premium-card">
-            <span class="category-tag">إنتاجية</span>
-            <h2>عصر الوكلاء المستقلين O1</h2>
-            <p>تعرف على الجيل الجديد من OpenAI الذي لا يجيب فقط، بل ينفذ المهام الصعبة بشكل مستقل تماماً.</p>
-            <div class="btn-group">
-                <a href="article2.html" class="btn-read p-btn">📖 اقرأ المقال</a>
+        <div class="card-premium">
+            <h2><i class="fas fa-robot"></i> عصر الوكلاء المستقلين</h2>
+            <p>اكتشف كيف سيقوم الذكاء الاصطناعي بإدارة أعمالك التجارية بالكامل قريباً.</p>
+            <div class="btn-wrapper">
+                <a href="article2.html" class="p-btn btn-glow">📖 اقرأ المقال</a>
+                <a href="https://openai.com" target="_blank" class="p-btn btn-outline">🌐 OpenAI</a>
+            </div>
+        </div>
+
+        <div class="card-premium">
+            <h2><i class="fas fa-video"></i> صناعة الفيديو السينمائي</h2>
+            <p>حول نصوصك إلى مقاطع فيديو مذهلة باستخدام تقنيات Sora و Runway.</p>
+            <div class="btn-wrapper">
+                <a href="article3.html" class="p-btn btn-glow">📖 اقرأ المقال</a>
+                <a href="https://runwayml.com" target="_blank" class="p-btn btn-outline">🎬 جرب Runway</a>
+            </div>
+        </div>
+
+        <div class="card-premium">
+            <h2><i class="fas fa-magic"></i> تصميم Canva السحري</h2>
+            <p>احترف أدوات التصميم الذكي لإنشاء هويات بصرية مبهرة في ثوانٍ.</p>
+            <div class="btn-wrapper">
+                <a href="article4.html" class="p-btn btn-glow">📖 اقرأ المقال</a>
+                <a href="https://www.canva.com" target="_blank" class="p-btn btn-outline">🎨 فتح Canva</a>
+            </div>
+        </div>
+
+        <div class="card-premium">
+            <h2><i class="fas fa-search"></i> مستقبل البحث الذكي</h2>
+            <p>لماذا يعتبر Perplexity AI هو القاتل الحقيقي لمحركات البحث التقليدية؟</p>
+            <div class="btn-wrapper">
+                <a href="article5.html" class="p-btn btn-glow">📖 اقرأ المقال</a>
+                <a href="https://www.perplexity.ai" target="_blank" class="p-btn btn-outline">🔍 جرب البحث</a>
             </div>
         </div>
 
     </div>
 
-    <footer>
-        &copy; 2026 SmartAffiliate Premium. جميع الحقوق محفوظة.
+    <footer style="text-align: center; padding: 40px; color: #444; font-size: 11px;">
+        &copy; 2026 SMARTAFFILIATE - FUTURE OF AI
     </footer>
 
 </body>
