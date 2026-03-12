@@ -1,225 +1,109 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAffiliate | 2026</title>
+    <style>
+        /* إعدادات الخطوط والألوان الأساسية */
+        body { font-family: sans-serif; background-color: #f7f9fc; margin: 0; padding: 0; }
+        
+        /* الهيدر العلوي */
+        header { background: #fff; padding: 10px 0; border-bottom: 1px solid #eee; text-align: center; }
+        .nav-links a { margin: 0 12px; text-decoration: none; color: #007bff; font-weight: bold; font-size: 15px; }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        /* الشعار المتحرك (حجم معقول) */
+        .logo-section { text-align: center; padding: 20px 0; background: #fff; }
+        .site-name { 
+            font-size: 26px; 
+            font-weight: 800; 
+            color: #007bff; 
+            text-decoration: none;
+            display: inline-block;
+            animation: floatLogo 3s infinite ease-in-out;
+        }
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
 
-<title>SmartAffiliate | مدونة الذكاء الاصطناعي</title>
+        /* عنوان الصفحة الرئيسي (تم تصغيره ليلائم الموبايل) */
+        .hero { text-align: center; padding: 25px 15px; }
+        .hero h1 { font-size: 22px; color: #333; margin: 0; }
+        .hero p { color: #777; font-size: 14px; margin-top: 5px; }
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+        /* حاوية المقالات */
+        .main-container { max-width: 480px; margin: auto; padding: 10px; }
 
-<style>
+        /* كرت المقال (تصميم نظيف بصف كامل) */
+        .article-card { 
+            background: #fff; 
+            border-radius: 12px; 
+            padding: 20px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-right: 5px solid #007bff;
+            text-align: right;
+        }
+        .article-card h2 { font-size: 19px; color: #333; margin: 0 0 10px 0; line-height: 1.4; }
+        .article-card p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 15px; }
 
-body{
-font-family:'Cairo', sans-serif;
-background:#f4f7f6;
-margin:0;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
-}
-
-.blog-header{
-text-align:center;
-margin-bottom:40px;
-}
-
-.articles-list{
-display:flex;
-flex-direction:column;
-gap:25px;
-}
-
-.article-card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,0.05);
-border-right:8px solid #007bff;
-transition:0.3s;
-}
-
-.article-card:hover{
-transform:translateY(-5px);
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-}
-
-.tag{
-background:#e7f1ff;
-color:#007bff;
-padding:5px 12px;
-border-radius:20px;
-font-size:13px;
-font-weight:bold;
-}
-
-.buttons-group{
-margin-top:15px;
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.btn{
-text-decoration:none;
-padding:10px 18px;
-border-radius:8px;
-font-weight:bold;
-}
-
-.btn-read{
-background:#007bff;
-color:white;
-}
-
-.btn-tool{
-background:#28a745;
-color:white;
-}
-
-</style>
-
+        /* الأزرار */
+        .btn-box { display: flex; flex-direction: column; gap: 10px; }
+        .btn { 
+            padding: 10px; 
+            border-radius: 6px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            text-align: center; 
+            font-size: 14px; 
+        }
+        .btn-blue { background: #007bff; color: white; }
+        .btn-green { background: #28a745; color: white; }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
-
-<div class="blog-header">
-
-<h1>مستقبل الذكاء الاصطناعي 2026</h1>
-
-<p>أفضل المقالات والأدوات الرقمية</p>
-
-</div>
-
-
-<div class="articles-list">
-
-
-<!-- المقال 1 -->
-
-<div class="article-card">
-
-<span class="tag">AI كتابة</span>
-
-<h2>أفضل أدوات كتابة المحتوى بالذكاء الاصطناعي</h2>
-
-<p>
-تعرف على أدوات كتابة المقالات باستخدام الذكاء الاصطناعي مثل Jasper و Copy.ai.
-</p>
-
-<div class="buttons-group">
-
-<a href="article1.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://www.jasper.ai" target="_blank" class="btn btn-tool">🔥 تجربة Jasper</a>
-
-</div>
-
-</div>
-
-
-<!-- المقال 2 -->
-
-<div class="article-card">
-
-<span class="tag">صور AI</span>
-
-<h2>إنشاء صور احترافية باستخدام Midjourney</h2>
-
-<p>
-تعلم كيفية إنشاء صور مذهلة باستخدام Midjourney للتصميم والتسويق.
-</p>
-
-<div class="buttons-group">
-
-<a href="article2.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://www.midjourney.com" target="_blank" class="btn btn-tool">🎨 تجربة Midjourney</a>
-
-</div>
-
-</div>
-
-
-<!-- المقال 3 -->
-
-<div class="article-card">
-
-<span class="tag">تعلم</span>
-
-<h2>أفضل مواقع تعلم الذكاء الاصطناعي مجاناً</h2>
-
-<p>
-هذه أفضل المنصات التي تقدم دورات تعليم الذكاء الاصطناعي.
-</p>
-
-<div class="buttons-group">
-
-<a href="article3.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://www.coursera.org" target="_blank" class="btn btn-tool">🎓 زيارة Coursera</a>
-
-</div>
-
-</div>
-
-
-<!-- المقال 4 -->
-
-<div class="article-card">
-
-<span class="tag">برمجة</span>
-
-<h2>كيف يساعدك GitHub Copilot في البرمجة</h2>
-
-<p>
-مساعد برمجي ذكي يساعد المطورين في كتابة الكود بسرعة.
-</p>
-
-<div class="buttons-group">
-
-<a href="article4.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://github.com/features/copilot" target="_blank" class="btn btn-tool">💻 تجربة Copilot</a>
-
-</div>
-
-</div>
-
-
-<!-- المقال 5 -->
-
-<div class="article-card">
-
-<span class="tag">صوت AI</span>
-
-<h2>تحويل النص إلى صوت باستخدام ElevenLabs</h2>
-
-<p>
-أنشئ تعليق صوتي احترافي للفيديوهات باستخدام الذكاء الاصطناعي.
-</p>
-
-<div class="buttons-group">
-
-<a href="article5.html" class="btn btn-read">📖 اقرأ المقال</a>
-
-<a href="https://elevenlabs.io" target="_blank" class="btn btn-tool">🎙️ تجربة الأداة</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
+    <header>
+        <nav class="nav-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="blog.html">المدونة</a>
+        </nav>
+    </header>
+
+    <div class="logo-section">
+        <a href="index.html" class="site-name">SmartAffiliate</a>
+    </div>
+
+    <section class="hero">
+        <h1>مستقبل الذكاء الاصطناعي 2026</h1>
+        <p>أفضل المقالات والأدوات الرقمية</p>
+    </section>
+
+    <div class="main-container">
+        
+        <div class="article-card">
+            <h2>أفضل أدوات كتابة المحتوى بالذكاء الاصطناعي</h2>
+            <p>تعرف على الأدوات التي تساعدك في كتابة مقالات احترافية مثل Jasper و Copy.ai.</p>
+            <div class="btn-box">
+                <a href="article1.html" class="btn btn-blue">📖 اقرأ المقال</a>
+                <a href="https://www.jasper.ai" target="_blank" class="btn btn-green">🔥 تجربة Jasper</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <h2>عصر الوكلاء المستقلين (AI Agents)</h2>
+            <p>كيف تحول الذكاء الاصطناعي إلى موظف رقمي ينفذ المهام بدلاً منك.</p>
+            <div class="btn-box">
+                <a href="article2.html" class="btn btn-blue">📖 اقرأ المقال</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer style="text-align: center; padding: 20px; color: #bbb; font-size: 11px;">
+        &copy; 2026 SmartAffiliate.com
+    </footer>
 
 </body>
 </html>
