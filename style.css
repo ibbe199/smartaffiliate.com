@@ -1,120 +1,281 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أفضل عروض أمازون | SmartAffiliate</title>
-    
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f4f7f6; margin: 0; padding: 0; text-align: center; color: #333; }
-        
-        /* الهيدر المتناسق */
-        header { background: #1a1a1a; color: white; padding: 1.5rem; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        nav a:hover { color: #ff9900; }
 
-        h1 { margin-top: 30px; color: #1a1a1a; }
-        .subtitle { color: #666; margin-bottom: 30px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
+<title>أفضل عروض أمازون | SmartAffiliate</title>
 
-        /* كارت المنتج المطور */
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            width: 240px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border: 1px solid #eee;
-        }
+<meta name="description" content="أفضل عروض أمازون التقنية المختارة بعناية من SmartAffiliate">
 
-        .card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+<style>
 
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: contain; /* لضمان عدم تشوه صور المنتجات */
-            border-radius: 8px;
-        }
+/* ===== إعدادات عامة ===== */
 
-        .card h3 { font-size: 18px; margin: 15px 0; color: #333; height: 45px; overflow: hidden; }
+body{
+font-family:'Segoe UI', Tahoma, sans-serif;
+background:#f4f7f6;
+margin:0;
+color:#333;
+text-align:center;
+}
 
-        .card a {
-            display: block;
-            background: #ff9900; /* لون أمازون الشهير */
-            color: #111;
-            padding: 12px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+/* ===== الهيدر ===== */
 
-        .card a:hover { background: #e68a00; color: white; }
+header{
+background:#1a1a1a;
+color:white;
+padding:20px;
+}
 
-        footer { background: #1a1a1a; color: white; padding: 20px; margin-top: 50px; font-size: 14px; }
-    </style>
+nav{
+margin-top:10px;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#ff9900;
+}
+
+/* ===== العنوان ===== */
+
+h1{
+margin-top:30px;
+color:#1a1a1a;
+}
+
+.subtitle{
+color:#666;
+margin-bottom:30px;
+}
+
+/* ===== المنتجات ===== */
+
+.products{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+padding:20px;
+max-width:1200px;
+margin:auto;
+}
+
+/* ===== كارت المنتج ===== */
+
+.card{
+background:white;
+padding:20px;
+border-radius:15px;
+width:240px;
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
+transition:0.3s;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+border:1px solid #eee;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ===== صورة المنتج ===== */
+
+.card img{
+width:100%;
+height:180px;
+object-fit:contain;
+border-radius:8px;
+}
+
+/* ===== اسم المنتج ===== */
+
+.card h3{
+font-size:18px;
+margin:15px 0;
+height:45px;
+overflow:hidden;
+}
+
+/* ===== زر الشراء ===== */
+
+.card a{
+display:block;
+background:#ff9900;
+color:#111;
+padding:12px;
+text-decoration:none;
+border-radius:25px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.card a:hover{
+background:#e68a00;
+color:white;
+}
+
+/* ===== الفوتر ===== */
+
+footer{
+background:#1a1a1a;
+color:white;
+padding:25px;
+margin-top:50px;
+font-size:14px;
+}
+
+/* ===== الهاتف ===== */
+
+@media(max-width:600px){
+
+.products{
+gap:15px;
+}
+
+.card{
+width:90%;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <header>
-        <h1>SmartAffiliate Deals</h1>
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="tools.html">الأدوات</a>
-            <a href="amazon.html">عروض أمازون</a>
-            <a href="blog.html">المدونة</a>
-        </nav>
-    </header>
+<header>
 
-    <h1>🔥 أحدث عروض أمازون التقنية</h1>
-    <p class="subtitle">نختار لك أفضل المنتجات التقنية بأقل الأسعار</p>
+<h1>SmartAffiliate Deals</h1>
 
-    <div class="products" id="products"></div>
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="tools.html">الأدوات</a>
+<a href="amazon.html">عروض أمازون</a>
+<a href="blog.html">المدونة</a>
+</nav>
 
-    <footer>
-        <p>&copy; 2026 SmartAffiliate - جميع الحقوق محفوظة</p>
-        <p style="font-size: 11px; color: #888;">كمشارك في برنامج أمازون أفلييت، قد نربح عمولة من عمليات الشراء المؤهلة.</p>
-    </footer>
+</header>
 
-    <script>
-        // مصفوفة المنتجات (تأكد من وضع روابطك الخاصة)
-        const products = [
-            { name: "Wireless Earbuds", img: "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg", link: "https://amzn.to/4lh1nZr" },
-            { name: "Smart Watch", img: "https://m.media-amazon.com/images/I/61ZjlBOp+rL._AC_SL1500_.jpg", link: "https://amzn.to/4d7byxw" },
-            { name: "SSD Drive", img: "https://m.media-amazon.com/images/I/81mS1j5nqBL._AC_SL1500_.jpg", link: "https://amzn.to/40T35qo" },
-            { name: "Bluetooth Headphones", img: "https://m.media-amazon.com/images/I/71QKQ9mwV7L._AC_SL1500_.jpg", link: "https://amzn.to/4ud1BoF" },
-            { name: "Speaker", img: "https://m.media-amazon.com/images/I/71l2q6v1D+L._AC_SL1500_.jpg", link: "https://amzn.to/40SpLXM" },
-            { name: "Webcam", img: "https://m.media-amazon.com/images/I/61UxfXTUyvL._AC_SL1500_.jpg", link: "https://amzn.to/3Nc6Tjs" },
-            { name: "Power Bank", img: "https://m.media-amazon.com/images/I/71eO8m8s0BL._AC_SL1500_.jpg", link: "https://amzn.to/46M2FFY" },
-            { name: "Smart Hub", img: "https://m.media-amazon.com/images/I/61EXU8BuGZL._AC_SL1500_.jpg", link: "https://amzn.to/47kGcQm" }
-        ];
 
-        const container = document.getElementById("products");
+<h1>🔥 أحدث عروض أمازون التقنية</h1>
 
-        products.forEach(product => {
-            const card = document.createElement("div");
-            card.className = "card";
-            card.innerHTML = `
-                <img src="${product.img}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <a href="${product.link}" target="_blank" rel="sponsored noopener">اشتري من أمازون</a>
-            `;
-            container.appendChild(card);
-        });
-    </script>
+<p class="subtitle">
+نختار لك أفضل المنتجات التقنية بأقل الأسعار
+</p>
+
+
+<div class="products" id="products"></div>
+
+
+<footer>
+
+<p>© 2026 SmartAffiliate - جميع الحقوق محفوظة</p>
+
+<p style="font-size:12px;color:#aaa">
+كمشارك في برنامج Amazon Associates قد نربح عمولة من عمليات الشراء المؤهلة.
+</p>
+
+</footer>
+
+
+<script>
+
+/* ===== قائمة المنتجات ===== */
+
+const products = [
+
+{
+name:"Wireless Earbuds",
+img:"https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
+link:"https://amzn.to/4lh1nZr"
+},
+
+{
+name:"Smart Watch",
+img:"https://m.media-amazon.com/images/I/61ZjlBOp+rL._AC_SL1500_.jpg",
+link:"https://amzn.to/4d7byxw"
+},
+
+{
+name:"SSD Drive",
+img:"https://m.media-amazon.com/images/I/81mS1j5nqBL._AC_SL1500_.jpg",
+link:"https://amzn.to/40T35qo"
+},
+
+{
+name:"Bluetooth Headphones",
+img:"https://m.media-amazon.com/images/I/71QKQ9mwV7L._AC_SL1500_.jpg",
+link:"https://amzn.to/4ud1BoF"
+},
+
+{
+name:"Speaker",
+img:"https://m.media-amazon.com/images/I/71l2q6v1D+L._AC_SL1500_.jpg",
+link:"https://amzn.to/40SpLXM"
+},
+
+{
+name:"Webcam",
+img:"https://m.media-amazon.com/images/I/61UxfXTUyvL._AC_SL1500_.jpg",
+link:"https://amzn.to/3Nc6Tjs"
+},
+
+{
+name:"Power Bank",
+img:"https://m.media-amazon.com/images/I/71eO8m8s0BL._AC_SL1500_.jpg",
+link:"https://amzn.to/46M2FFY"
+},
+
+{
+name:"Smart Hub",
+img:"https://m.media-amazon.com/images/I/61EXU8BuGZL._AC_SL1500_.jpg",
+link:"https://amzn.to/47kGcQm"
+}
+
+];
+
+
+/* ===== إنشاء المنتجات ===== */
+
+const container = document.getElementById("products");
+
+products.forEach(product => {
+
+const card = document.createElement("div");
+
+card.className="card";
+
+card.innerHTML=`
+
+<img src="${product.img}" loading="lazy" alt="${product.name}">
+
+<h3>${product.name}</h3>
+
+<a href="${product.link}" target="_blank" rel="sponsored noopener noreferrer">
+
+اشتري من أمازون
+
+</a>
+
+`;
+
+container.appendChild(card);
+
+});
+
+</script>
 
 </body>
 </html>
