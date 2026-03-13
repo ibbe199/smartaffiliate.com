@@ -14,7 +14,7 @@
     <!-- End Google Tag Manager -->
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartAffiliate 2026 | 9 مقالات متكاملة</title>
+    <title>SmartAffiliate 2026 | 21 مقالة متكاملة</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -90,7 +90,7 @@
             font-weight: 600;
         }
         .main-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 2rem auto;
             padding: 0 2rem;
         }
@@ -119,6 +119,31 @@
         .filter-btn:hover, .filter-btn.active {
             background: var(--primary-glow);
             color: #050816;
+        }
+        
+        /* إحصائيات سريعة */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(0,210,255,0.05);
+            border-radius: 60px;
+            border: 1px solid rgba(0,210,255,0.2);
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-glow);
+        }
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 1rem;
         }
         
         /* بطاقات المقالات */
@@ -429,6 +454,7 @@
             <a href="#" onclick="filterByCategory('affiliate')"><i class="fas fa-bolt"></i> تسويق بالعمولة</a>
             <a href="#" onclick="filterByCategory('case-study')"><i class="fas fa-chart-line"></i> دراسات حالة</a>
             <a href="#" onclick="filterByCategory('seo')"><i class="fas fa-magnifying-glass"></i> SEO</a>
+            <a href="#" onclick="filterByCategory('ecommerce')"><i class="fas fa-cart-shopping"></i> تجارة إلكترونية</a>
             <a href="#" onclick="showLinks(event)"><i class="fas fa-link"></i> الروابط</a>
         </div>
     </header>
@@ -445,7 +471,7 @@
                 <linearGradient id="grad3" x1="120" y1="40" x2="160" y2="40"><stop stop-color="#00d2ff"/><stop offset="1" stop-color="#6a4e9b"/></linearGradient>
             </defs>
         </svg>
-        <div class="brand-tagline">smartafiliate.com | 9 مقالات شاملة</div>
+        <div class="brand-tagline">smartafiliate.com | 21 مقالة شاملة</div>
     </div>
 
     <main class="main-container" id="main-content"></main>
@@ -459,12 +485,13 @@
             <a href="#" onclick="showContact(event)">اتصل بنا</a>
         </div>
         <div style="color: #4a4f6e;">© 2026 smartafiliate.com - جميع الحقوق محفوظة</div>
-        <div style="color: #4a4f6e; font-size: 0.8rem; margin-top: 10px;">Google Verified Site | GTM Installed</div>
+        <div style="color: #4a4f6e; font-size: 0.8rem; margin-top: 10px;">Google Verified Site | GTM Installed | 21 مقالة</div>
     </footer>
 
     <script>
-        // ==================== جميع المقالات (9 مقالات) ====================
+        // ==================== جميع المقالات (21 مقالة) ====================
         const articles = [
+            // ========== المقالات الأساسية (9) ==========
             {
                 id: 1,
                 title: 'مستقبل الذكاء الاصطناعي في التسويق الرقمي 2026',
@@ -702,20 +729,343 @@
                     <h2>الخطأ 5: الاستسلام السريع</h2>
                     <p>تحل بالصبر وحدد أهدافاً واقعية.</p>
                 `
+            },
+            
+            // ========== مقالات ذكاء اصطناعي إضافية (4) ==========
+            {
+                id: 10,
+                title: 'عصر الوكيل الذكي (Agentic AI): كيف ستغير الوكلاء الرقميون الأعمال في 2026',
+                icon: 'fa-robot',
+                date: '20 مارس 2026',
+                readTime: '18 دقيقة',
+                category: 'ai',
+                categoryName: 'الذكاء الاصطناعي',
+                excerpt: 'تعرف على الوكلاء الرقميين المستقلين الذين يخططون وينفذون المهام نيابة عنك دون تدخل بشري.',
+                externalLink: 'https://www.aljazeera.net/tech/2026/ai-agents',
+                externalSource: 'الجزيرة نت',
+                url: 'https://smartafiliate.com/article10.html',
+                content: `
+                    <div class="stat-box"><i class="fas fa-robot"></i> 75% من الشركات ستستخدم الوكلاء الذكيين بحلول 2027</div>
+                    
+                    <h2>ما هو الوكيل الذكي (Agentic AI)؟</h2>
+                    <p>في 2026، انتقلنا من مجرد الدردشة مع الذكاء الاصطناعي إلى تفويضه بمهام كاملة. الوكيل الذكي هو نظام يتمتع بالاستقلالية الوظيفية، يخطط، يقسم المهام، وينفذها عبر التواصل مع أنظمة أخرى.</p>
+                    
+                    <h2>تطبيقات عملية</h2>
+                    <p>الموظف اليوم لا يقضي ساعات في إعداد تقارير مالية، بل يطلب من وكيله الذكي الدخول إلى قواعد البيانات، استخلاص الأرقام، تحليل التوجهات، وتصميم عرض تقديمي، وصولاً إلى جدولة اجتماع لمناقشته.</p>
+                    
+                    <h2>الفرق بين chatbots والوكلاء</h2>
+                    <p>Chatbots ترد على أسئلتك. الوكلاء ينفذون مهام كاملة. هذا تحول جذري من "مشغل للآلة" إلى "مدير للاستراتيجية".</p>
+                `
+            },
+            {
+                id: 11,
+                title: 'الذكاء الاصطناعي الفيزيائي (Physical AI): عندما تدخل الآلة إلى العالم المادي',
+                icon: 'fa-microchip',
+                date: '18 مارس 2026',
+                readTime: '20 دقيقة',
+                category: 'ai',
+                categoryName: 'الذكاء الاصطناعي',
+                excerpt: 'كسر الذكاء الاصطناعي قيود الشاشات ليدخل الأجسام المادية في الروبوتات والسيارات ذاتية القيادة.',
+                externalLink: 'https://www.wired.com/physical-ai-2026',
+                externalSource: 'Wired',
+                url: 'https://smartafiliate.com/article11.html',
+                content: `
+                    <h2>الروبوتات الخدمية تفهم العالم المادي</h2>
+                    <p>بفضل نماذج الرؤية اللغوية (VLM)، أصبحت الروبوتات اليوم تفهم العالم المادي كما نفهمه. نراها في المستشفيات تنقل الأدوية بدقة، وفي المصانع ذات الأضواء المطفأة حيث تدير الآلات سلاسل التوريد دون تدخل بشري.</p>
+                    
+                    <h2>السيارات ذاتية القيادة</h2>
+                    <p>في 2026، تجاوزت السيارات ذاتية القيادة مرحلة الاختبار لتصبح وسيلة نقل أساسية في المدن الذكية.</p>
+                `
+            },
+            {
+                id: 12,
+                title: 'الثورة الطبية للذكاء الاصطناعي: الطب الشخصي والتصميم الحيوي',
+                icon: 'fa-heart-pulse',
+                date: '16 مارس 2026',
+                readTime: '22 دقيقة',
+                category: 'ai',
+                categoryName: 'الذكاء الاصطناعي',
+                excerpt: 'كيف ينتقل الذكاء الاصطناعي بالطب من "المتوسطات الإحصائية" إلى "العلاج الشخصي الدقيق".',
+                externalLink: 'https://www.nature.com/ai-medicine-2026',
+                externalSource: 'Nature',
+                url: 'https://smartafiliate.com/article12.html',
+                content: `
+                    <div class="stat-box"><i class="fas fa-heart"></i> دقة تشخيص تصل إلى 98% في الأمراض النادرة</div>
+                    
+                    <h2>من المتوسطات إلى الخصوصية</h2>
+                    <p>أحدث الذكاء الاصطناعي انعطافة تاريخية في المجال الصحي، إذ انتقلنا من نموذج الطب القائم على "المتوسطات الإحصائية العامة" إلى "الطب الشخصي الدقيق".</p>
+                    
+                    <h2>التحليل الجيني الفوري</h2>
+                    <p>أصبحت الأنظمة الذكية الآن قادرة على تحليل الخريطة الجينية للمريض وربطها ببياناته الحيوية اللحظية المستمدة من الأجهزة القابلة للارتداء، للتنبؤ بالأزمات الصحية قبل وقوعها بأيام.</p>
+                    
+                    <h2>التصميم الحيوي للعلاجات</h2>
+                    <p>يتم تطوير لقاحات وعلاجات مخصصة لأنواع نادرة من السرطان في فترات زمنية كانت تعد في السابق معجزات علمية.</p>
+                `
+            },
+            {
+                id: 13,
+                title: 'تنظيم الأفكار البحثية باستخدام الذكاء الاصطناعي في 2026',
+                icon: 'fa-brain',
+                date: '14 مارس 2026',
+                readTime: '15 دقيقة',
+                category: 'ai',
+                categoryName: 'الذكاء الاصطناعي',
+                excerpt: 'دليل الباحثين لاستخدام الذكاء الاصطناعي في تنظيم الأفكار وبناء الهياكل المفاهيمية.',
+                externalLink: 'https://ehsaee.com/ai-research-organization',
+                externalSource: 'إحصائي',
+                url: 'https://smartafiliate.com/article13.html',
+                content: `
+                    <h2>إعادة تعريف تنظيم الأفكار</h2>
+                    <p>أعاد الذكاء الاصطناعي تعريف مفهوم تنظيم الأفكار بوصفه عملية تفاعلية ذكية تنتقل بالباحث من العصف الذهني العشوائي إلى البناء المنهجي الدقيق.</p>
+                    
+                    <h2>أدوات عملية للباحثين</h2>
+                    <ul>
+                        <li>أدوات توليد الخرائط الذهنية الذكية</li>
+                        <li>أدوات تلخيص النصوص الأكاديمية</li>
+                        <li>أدوات تصنيف الموضوعات تلقائياً</li>
+                        <li>أدوات اقتراح الأسئلة البحثية</li>
+                    </ul>
+                    
+                    <h2>مراجعة الأدبيات بذكاء</h2>
+                    <p>يسهم الذكاء الاصطناعي في فرز الدراسات ذات الصلة بدقة، تلخيص المحتوى العلمي، وتحديد الفجوات البحثية المحتملة.</p>
+                `
+            },
+            
+            // ========== مقالات أتمتة إضافية (4) ==========
+            {
+                id: 14,
+                title: 'أتمتة المبيعات: التسجيل الآلي للقادة وتأهيل العملاء',
+                icon: 'fa-chart-simple',
+                date: '12 مارس 2026',
+                readTime: '16 دقيقة',
+                category: 'automation',
+                categoryName: 'الأتمتة',
+                excerpt: 'كيف توفر فرق المبيعات ساعات يومياً باستخدام الذكاء الاصطناعي لتسجيل وتأهيل العملاء المحتملين.',
+                externalLink: 'https://www.salesforce.com/ai-sales-automation',
+                externalSource: 'Salesforce',
+                url: 'https://smartafiliate.com/article14.html',
+                content: `
+                    <div class="stat-box"><i class="fas fa-chart-line"></i> زيادة كفاءة المبيعات بنسبة 40%</div>
+                    
+                    <h2>المشكلة: تخمين العملاء المحتملين</h2>
+                    <p>يقضي مندوبو المبيعات ساعات في تخمين العملاء المحتملين الذين يستحقون وقتهم. يلاحقون اتصالات بنية شراء قليلة بينما يفوتون فرصاً عالية الجودة.</p>
+                    
+                    <h2>الحل: التسجيل الآلي بالذكاء الاصطناعي</h2>
+                    <p>يستخدم تقييم العملاء المحتملين بيانات السلوك وإشارات التفاعل لترتيب العملاء تلقائياً. ترى فرق المبيعات فوراً من هو الأكثر احتمالاً للشراء.</p>
+                    
+                    <h2>النتيجة</h2>
+                    <p>تواصل أكثر تركيزاً، دورات صفقات أسرع، ومعدلات تحويل أعلى دون إضافة موظفين إضافيين.</p>
+                `
+            },
+            {
+                id: 15,
+                title: 'التواصل المخصص في المبيعات باستخدام الذكاء الاصطناعي',
+                icon: 'fa-message',
+                date: '10 مارس 2026',
+                readTime: '14 دقيقة',
+                category: 'automation',
+                categoryName: 'الأتمتة',
+                excerpt: 'أدوات الذكاء الاصطناعي تصمم رسائل مخصصة لكل عميل باستخدام بيانات دقيقة.',
+                externalLink: 'https://www.hubspot.com/sales-engagement-ai',
+                externalSource: 'HubSpot',
+                url: 'https://smartafiliate.com/article15.html',
+                content: `
+                    <h2>مشكلة الرسائل العامة</h2>
+                    <p>معظم رسائل المبيعات تبدو متشابهة: عامة، مصممة بشكل سيء، وسهلة التجاهل.</p>
+                    
+                    <h2>كيف يحل الذكاء الاصطناعي المشكلة</h2>
+                    <p>أدوات التواصل المدعومة بالذكاء الاصطناعي تصمم رسائل مخصصة لكل عميل، باستخدام بيانات مثل حجم الشركة، الدور، النشاط الأخير، وحتى تفضيلات النبرة.</p>
+                    
+                    <h2>النتائج</h2>
+                    <p>معدلات فتح ورد أعلى، حجز اجتماعات أسرع، ووقت أقل بكثير في إعادة كتابة التواصل.</p>
+                `
+            },
+            {
+                id: 16,
+                title: 'جدولة الاجتماعات الذكية والمتابعات الآلية',
+                icon: 'fa-calendar-check',
+                date: '8 مارس 2026',
+                readTime: '12 دقيقة',
+                category: 'automation',
+                categoryName: 'الأتمتة',
+                excerpt: 'مساعد شخصي لا ينسى أبداً: كيف توفر أدوات الجدولة الذكية وقت ثمين لفرق المبيعات.',
+                externalLink: 'https://www.calendly.com/ai-scheduling',
+                externalSource: 'Calendly',
+                url: 'https://smartafiliate.com/article16.html',
+                content: `
+                    <h2>مشكلة التوقيت</h2>
+                    <p>يخسر مندوبو المبيعات الصفقات ليس بسبب سوء العرض، بل بسبب سوء التوقيت. تنسيق الاجتماعات والمتابعة يأخذ وقتاً ثميناً.</p>
+                    
+                    <h2>الحل: الجدولة الذكية</h2>
+                    <p>تقترح أدوات الذكاء الاصطناعي أفضل أوقات الاجتماعات، تتعامل مع دعوات الجدول، وترسل تذكيرات مهذبة. بعد الاجتماع، تولد ملاحظات متابعة وتلخص النقاط الرئيسية.</p>
+                `
+            },
+            {
+                id: 17,
+                title: 'توقعات المبيعات وتحليلات خط الأنابيب بالذكاء الاصطناعي',
+                icon: 'fa-magnifying-glass-chart',
+                date: '6 مارس 2026',
+                readTime: '18 دقيقة',
+                category: 'automation',
+                categoryName: 'الأتمتة',
+                excerpt: 'تحويل التخمين إلى تخطيط دقيق باستخدام التنبؤ بالذكاء الاصطناعي.',
+                externalLink: 'https://www.clari.com/ai-forecasting',
+                externalSource: 'Clari',
+                url: 'https://smartafiliate.com/article17.html',
+                content: `
+                    <h2>مشكلة التوقعات اليدوية</h2>
+                    <p>تعتمد معظم توقعات المبيعات على الحس الداخلي أو جداول البيانات القديمة، مما يجعلها غير دقيقة أو متفائلة بشكل مفرط.</p>
+                    
+                    <h2>حل الذكاء الاصطناعي</h2>
+                    <p>تقوم أدوات التنبؤ بتحليل البيانات التاريخية، نشاط الصفقات، وأنماط التواصل للتنبؤ بالفرص التي من المرجح أن تغلق. تظهر رؤى في الوقت الحقيقي، تكشف عن الصفقات المتعثرة، أو ضعف التفاعل.</p>
+                `
+            },
+            
+            // ========== مقالات دراسات حالة إضافية (4) ==========
+            {
+                id: 18,
+                title: 'دراسة حالة: كيف حققت حملة رمضان UGC زيادة 300% في التفاعل لعلامة لانكوم',
+                icon: 'fa-star',
+                date: '4 مارس 2026',
+                readTime: '15 دقيقة',
+                category: 'case-study',
+                categoryName: 'دراسات حالة',
+                excerpt: 'تحليل حملة المحتوى الذي ينشئه المستخدمون (UGC) خلال رمضان وكيف ضاعفت التفاعل.',
+                externalLink: 'https://acquisit.io/case-studies/lancome-ramadan',
+                externalSource: 'Acquisit',
+                url: 'https://smartafiliate.com/article18.html',
+                content: `
+                    <div class="stat-box"><i class="fas fa-chart-line"></i> زيادة التفاعل بنسبة 300%</div>
+                    
+                    <h2>التحدي</h2>
+                    <p>كانت علامة لانكوم تسعى لزيادة التفاعل مع جمهورها خلال شهر رمضان في منطقة الشرق الأوسط.</p>
+                    
+                    <h2>الحل</h2>
+                    <p>حملة UGC مبتكرة شجعت المستخدمين على مشاركة تجاربهم مع منتجات لانكوم خلال رمضان، مع مسابقات وهاشتاغات مخصصة.</p>
+                    
+                    <h2>النتائج</h2>
+                    <ul>
+                        <li>زيادة التفاعل بنسبة 300%</li>
+                        <li>أكثر من 50,000 مشاركة من المستخدمين</li>
+                        <li>نمو قاعدة البيانات بنسبة 150%</li>
+                    </ul>
+                `
+            },
+            {
+                id: 19,
+                title: 'دراسة حالة: نمو CDKeys العالمي بشراكة استراتيجية مع Acquisit',
+                icon: 'fa-globe',
+                date: '2 مارس 2026',
+                readTime: '17 دقيقة',
+                category: 'case-study',
+                categoryName: 'دراسات حالة',
+                excerpt: 'كيف حققت CDKeys نمواً ملحوظاً على المستوى العالمي من خلال استراتيجيات تسويق مبتكرة.',
+                externalLink: 'https://acquisit.io/case-studies/cdkeys',
+                externalSource: 'Acquisit',
+                url: 'https://smartafiliate.com/article19.html',
+                content: `
+                    <h2>التحدي</h2>
+                    <p>كانت CDKeys، إحدى أكبر منصات بيع الألعاب الرقمية، تسعى للتوسع عالمياً وزيادة حصتها السوقية.</p>
+                    
+                    <h2>الاستراتيجية</h2>
+                    <p>حملات تسويق رقمي متكاملة مع تحسين مستمر للإعلانات واستهداف دقيق للجمهور في أسواق جديدة.</p>
+                    
+                    <h2>النتائج</h2>
+                    <ul>
+                        <li>نمو الإيرادات بنسبة 200% في سنة واحدة</li>
+                        <li>التوسع في 15 سوقاً جديداً</li>
+                        <li>زيادة الوعي بالعلامة التجارية بنسبة 180%</li>
+                    </ul>
+                `
+            },
+            {
+                id: 20,
+                title: 'دراسة حالة: خفض Kitronic تكلفة الشراء بنسبة 70% على TikTok',
+                icon: 'fa-tiktok',
+                date: '28 فبراير 2026',
+                readTime: '14 دقيقة',
+                category: 'case-study',
+                categoryName: 'دراسات حالة',
+                excerpt: 'كيف خفضت Kitronic تكلفة الشراء بنسبة 70% في حملات إعادة استهداف الجمهور على TikTok.',
+                externalLink: 'https://acquisit.io/case-studies/kitronic-tiktok',
+                externalSource: 'Acquisit',
+                url: 'https://smartafiliate.com/article20.html',
+                content: `
+                    <div class="stat-box"><i class="fas fa-chart-line"></i> خفض تكلفة الشراء 70%</div>
+                    
+                    <h2>التحدي</h2>
+                    <p>كانت Kitronic تعاني من ارتفاع تكلفة اكتساب العملاء (CPA) في حملاتها على TikTok.</p>
+                    
+                    <h2>الحل</h2>
+                    <p>استراتيجية إعادة استهداف متقدمة باستخدام إعلانات ديناميكية مخصصة للمستخدمين الذين تفاعلوا سابقاً مع العلامة التجارية.</p>
+                    
+                    <h2>النتائج</h2>
+                    <ul>
+                        <li>خفض تكلفة الشراء (CPA) بنسبة 70%</li>
+                        <li>زيادة معدل التحويل بنسبة 120%</li>
+                        <li>تحسين عائد الإنفاق الإعلاني (ROAS) بنسبة 250%</li>
+                    </ul>
+                `
+            },
+            {
+                id: 21,
+                title: 'دراسة حالة: مضاعفة عمليات تثبيت تطبيق Purpl باستخدام الأفكار المحلية',
+                icon: 'fa-mobile',
+                date: '26 فبراير 2026',
+                readTime: '16 دقيقة',
+                category: 'case-study',
+                categoryName: 'دراسات حالة',
+                excerpt: 'كيف استخدمت Purpl الأفكار المحلية والبيانات لمضاعفة عمليات تثبيت التطبيق.',
+                externalLink: 'https://acquisit.io/case-studies/purpl',
+                externalSource: 'Acquisit',
+                url: 'https://smartafiliate.com/article21.html',
+                content: `
+                    <h2>التحدي</h2>
+                    <p>كانت Purpl، منصة الاستثمار الرقمية، تواجه صعوبة في زيادة عمليات تثبيت التطبيق في السوق السعودي.</p>
+                    
+                    <h2>الحل</h2>
+                    <p>استراتيجية تسويق تعتمد على الأفكار المحلية والمحتوى المخصص للجمهور السعودي، مع فهم عميق للثقافة والاحتياجات المحلية.</p>
+                    
+                    <h2>النتائج</h2>
+                    <ul>
+                        <li>مضاعفة عمليات تثبيت التطبيق</li>
+                        <li>زيادة المستخدمين النشطين يومياً بنسبة 180%</li>
+                        <li>تحسين معدل الاحتفاظ بالمستخدمين بنسبة 60%</li>
+                    </ul>
+                `
             }
         ];
 
         // عرض الصفحة الرئيسية (جميع المقالات)
         function showHome(e) {
             e?.preventDefault();
-            renderArticles(articles);
+            
+            const stats = `
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-number">${articles.length}</div>
+                        <div class="stat-label">مقالة</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">فئات رئيسية</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-label">دقيقة قراءة</div>
+                    </div>
+                </div>
+            `;
+            
+            renderArticles(articles, stats);
             
             // إرسال حدث إلى Google Tag Manager
             if (window.dataLayer) {
                 window.dataLayer.push({
                     'event': 'page_view',
                     'page_type': 'home',
-                    'page_title': 'الرئيسية'
+                    'page_title': 'الرئيسية',
+                    'total_articles': articles.length
                 });
             }
         }
@@ -723,7 +1073,7 @@
         // عرض جميع المقالات
         function showAllArticles(e) {
             e?.preventDefault();
-            renderArticles(articles);
+            renderArticles(articles, '');
         }
 
         // عرض جميع الروابط
@@ -737,7 +1087,7 @@
                 
                 <div class="links-section">
                     <div class="links-title">
-                        <i class="fas fa-link"></i> جميع روابط المقالات (9 مقالات)
+                        <i class="fas fa-link"></i> جميع روابط المقالات (${articles.length} مقالة)
                     </div>
                     
                     <div class="links-grid">
@@ -770,19 +1120,28 @@
         // تصفية حسب التصنيف
         function filterByCategory(category) {
             const filtered = articles.filter(a => a.category === category);
-            renderArticles(filtered);
+            renderArticles(filtered, '');
+            
+            // تحديث الزر النشط
+            document.querySelectorAll('.nav-container a').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
         }
 
         // عرض المقالات في شبكة
-        function renderArticles(articlesList) {
+        function renderArticles(articlesList, extraContent = '') {
             const html = `
+                ${extraContent}
+                
                 <div class="category-filters">
                     <button class="filter-btn" onclick="showHome(event)"><i class="fas fa-layer-group"></i> الكل (${articles.length})</button>
-                    <button class="filter-btn" onclick="filterByCategory('ai')"><i class="fas fa-robot"></i> ذكاء اصطناعي</button>
-                    <button class="filter-btn" onclick="filterByCategory('automation')"><i class="fas fa-gears"></i> أتمتة</button>
-                    <button class="filter-btn" onclick="filterByCategory('affiliate')"><i class="fas fa-bolt"></i> تسويق بالعمولة</button>
-                    <button class="filter-btn" onclick="filterByCategory('case-study')"><i class="fas fa-chart-line"></i> دراسات حالة</button>
-                    <button class="filter-btn" onclick="filterByCategory('seo')"><i class="fas fa-magnifying-glass"></i> SEO</button>
+                    <button class="filter-btn" onclick="filterByCategory('ai')"><i class="fas fa-robot"></i> ذكاء اصطناعي (${articles.filter(a => a.category === 'ai').length})</button>
+                    <button class="filter-btn" onclick="filterByCategory('automation')"><i class="fas fa-gears"></i> أتمتة (${articles.filter(a => a.category === 'automation').length})</button>
+                    <button class="filter-btn" onclick="filterByCategory('affiliate')"><i class="fas fa-bolt"></i> تسويق بالعمولة (${articles.filter(a => a.category === 'affiliate').length})</button>
+                    <button class="filter-btn" onclick="filterByCategory('case-study')"><i class="fas fa-chart-line"></i> دراسات حالة (${articles.filter(a => a.category === 'case-study').length})</button>
+                    <button class="filter-btn" onclick="filterByCategory('seo')"><i class="fas fa-magnifying-glass"></i> SEO (${articles.filter(a => a.category === 'seo').length})</button>
+                    <button class="filter-btn" onclick="filterByCategory('ecommerce')"><i class="fas fa-cart-shopping"></i> تجارة إلكترونية (${articles.filter(a => a.category === 'ecommerce').length})</button>
                 </div>
                 
                 <div class="articles-grid">
@@ -888,7 +1247,6 @@
         function shareOnFacebook() {
             window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
             
-            // تتبع المشاركة
             if (window.dataLayer) {
                 window.dataLayer.push({
                     'event': 'share',
@@ -954,6 +1312,7 @@
                     <h1 style="color: var(--primary-glow);">من نحن</h1>
                     <p style="font-size: 1.2rem; margin: 2rem 0;">smartafiliate.com هي منصة متخصصة في تقديم محتوى عربي احترافي حول الذكاء الاصطناعي، الأتمتة، والتسويق الرقمي.</p>
                     <p>نهدف لتمكين المسوقين العرب بأحدث المعرفة والأدوات.</p>
+                    <p style="margin-top: 2rem;">📚 نقدم الآن <strong>21 مقالة</strong> متخصصة في مجالات: الذكاء الاصطناعي، الأتمتة، التسويق بالعمولة، دراسات حالة، SEO، والتجارة الإلكترونية.</p>
                 </div>
             `;
         }
