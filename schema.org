@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "عنوان المقالة هنا",
+  "description": "وصف المقالة هنا",
+  "image": "https://smartafiliate.com/images/article-image.jpg",
+  "datePublished": "2026-03-15",
+  "dateModified": "2026-03-15",
+  "author": {
+    "@type": "Organization",
+    "name": "SmartAffiliate",
+    "url": "https://smartafiliate.com/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SmartAffiliate",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://smartafiliate.com/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://smartafiliate.com/article1.html"
+  }
+}
+</script>
