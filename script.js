@@ -2,10 +2,47 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="7X4x5m03NWFNhlGmuoG7DfaHoNLRs5MgFDtW9nHK1co">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P96QVPT3');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- تحسين SEO -->
+    <meta name="description" content="أكثر من 50 مقالة حصرية في الذكاء الاصطناعي، الأتمتة، والتسويق بالعمولة. محتوى عربي احترافي محدث 2026.">
+    <meta name="keywords" content="ذكاء اصطناعي, أتمتة, تسويق بالعمولة, SEO, دراسات حالة, أدوات">
+    <meta name="author" content="SmartAffiliate">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="SmartAffiliate 2026 | 50+ مقالة حصرية">
+    <meta property="og:description" content="أكثر من 50 مقالة حصرية في الذكاء الاصطناعي والتسويق">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartafiliate.com">
+    <meta property="og:image" content="https://smartafiliate.com/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SmartAffiliate 2026">
+    <meta name="twitter:description" content="50+ مقالة في الذكاء الاصطناعي والتسويق">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartAffiliate 2026 | 50+ مقالة حصرية</title>
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Preload للخطوط (تحسين LCP) -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Font Awesome 6 مع تحميل متأخر -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    
     <style>
         * {
             margin: 0;
@@ -33,6 +70,7 @@
                 radial-gradient(circle at 80% 70%, rgba(157, 80, 187, 0.08) 0%, transparent 45%);
             color: #fff;
             font-family: 'Segoe UI', system-ui, sans-serif;
+            font-display: swap;
         }
 
         /* شريط التنقل */
@@ -44,6 +82,7 @@
             top: 0;
             z-index: 1000;
             padding: 1rem 0;
+            min-height: 70px;
         }
 
         .nav-container {
@@ -78,10 +117,12 @@
         .brand-zone {
             text-align: center;
             padding: 2rem;
+            min-height: 140px;
         }
 
         .logo-svg {
             height: 90px;
+            width: 200px;
             filter: drop-shadow(0 0 18px rgba(0,210,255,0.5));
             animation: floatSmart 4s ease-in-out infinite;
             cursor: pointer;
@@ -98,6 +139,7 @@
             font-size: 0.85rem;
             margin-top: 1rem;
             font-weight: 600;
+            height: 24px;
         }
 
         /* الحاوية الرئيسية */
@@ -105,6 +147,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
+            min-height: 60vh;
         }
 
         /* إحصائيات سريعة */
@@ -119,6 +162,7 @@
             padding: 2rem;
             margin: 2rem 0;
             border: 1px solid var(--glass-border);
+            min-height: 120px;
         }
 
         .stat-item {
@@ -129,6 +173,7 @@
             font-size: 2.5rem;
             font-weight: 800;
             color: var(--primary-glow);
+            line-height: 1.2;
         }
 
         .stat-label {
@@ -143,6 +188,7 @@
             gap: 1rem;
             flex-wrap: wrap;
             margin: 2rem 0;
+            min-height: 60px;
         }
 
         .filter-btn {
@@ -183,6 +229,9 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
         }
 
         .article-card::before {
@@ -217,6 +266,7 @@
             font-size: 0.8rem;
             border: 1px solid var(--primary-glow);
             color: var(--primary-glow);
+            z-index: 10;
         }
 
         .article-card h3 {
@@ -225,6 +275,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            line-height: 1.4;
         }
 
         .article-card h3 i {
@@ -246,6 +297,7 @@
             color: #b0b3c5;
             line-height: 1.6;
             margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
 
         .read-more {
@@ -306,6 +358,79 @@
             font-size: 2.5rem;
             color: var(--primary-glow);
             margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        /* قسم الروابط الشامل */
+        .links-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 30px;
+            border: 1px solid var(--primary-glow);
+            min-height: 200px;
+        }
+        
+        .links-title {
+            color: var(--primary-glow);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(0,210,255,0.3);
+            padding-bottom: 1rem;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .link-card {
+            background: rgba(0,210,255,0.05);
+            border: 1px solid rgba(0,210,255,0.2);
+            border-radius: 15px;
+            padding: 1.2rem;
+            transition: 0.3s;
+            direction: ltr;
+            text-align: left;
+            min-height: 100px;
+        }
+        
+        .link-card:hover {
+            background: rgba(0,210,255,0.1);
+            border-color: var(--primary-glow);
+            transform: translateY(-3px);
+        }
+        
+        .link-card i {
+            color: var(--primary-glow);
+            margin-left: 8px;
+        }
+        
+        .link-card a {
+            color: #fff;
+            text-decoration: none;
+            word-break: break-all;
+            font-family: monospace;
+            display: block;
+        }
+        
+        .link-card a:hover {
+            color: var(--primary-glow);
+        }
+        
+        .link-label {
+            direction: rtl;
+            text-align: right;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         /* التذييل */
@@ -314,6 +439,7 @@
             padding: 3rem;
             border-top: 1px solid rgba(0,210,255,0.2);
             text-align: center;
+            min-height: 200px;
         }
 
         .social-ring {
@@ -361,6 +487,17 @@
             color: var(--primary-glow);
         }
 
+        /* مؤشر التحميل */
+        .loader {
+            text-align: center;
+            padding: 50px;
+        }
+        
+        .loader i {
+            font-size: 3rem;
+            color: var(--primary-glow);
+        }
+
         @media (max-width: 768px) {
             .articles-grid {
                 grid-template-columns: 1fr;
@@ -369,15 +506,29 @@
             .modal-title {
                 font-size: 1.8rem;
             }
+            
+            .article-card {
+                min-height: 300px;
+            }
+            
+            .filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P96QVPT3"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <header class="glass-header">
         <div class="nav-container">
             <a href="#" onclick="showHome(event)" class="active"><i class="fas fa-home"></i> الرئيسية</a>
             <a href="#" onclick="showAllArticles(event)"><i class="fas fa-newspaper"></i> المقالات (50+)</a>
+            <a href="#" onclick="showLinks(event)"><i class="fas fa-link"></i> الروابط</a>
             <a href="#" onclick="showDisclaimer(event)"><i class="fas fa-shield-alt"></i> إخلاء المسؤولية</a>
         </div>
     </header>
@@ -404,7 +555,11 @@
     </div>
 
     <main class="main-container" id="main-content">
-        <!-- المحتوى يتحمّل هنا عبر JavaScript -->
+        <!-- مؤشر تحميل -->
+        <div class="loader">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p style="margin-top: 20px;">جاري تحميل المحتوى...</p>
+        </div>
     </main>
 
     <!-- نافذة المقال -->
@@ -429,13 +584,15 @@
         <div class="footer-links">
             <a href="#" onclick="showHome(event)">الرئيسية</a>
             <a href="#" onclick="showAllArticles(event)">المقالات</a>
+            <a href="#" onclick="showLinks(event)">الروابط</a>
             <a href="#" onclick="showDisclaimer(event)">إخلاء المسؤولية</a>
         </div>
         <div style="color: #4a4f6e; margin-top: 1.5rem;">© 2026 SmartAffiliate - جميع الحقوق محفوظة</div>
+        <div style="color: #4a4f6e; font-size: 0.8rem; margin-top: 5px;">Google Verified | GTM Installed | 50+ مقالة</div>
     </footer>
 
     <script>
-        // 50+ مقالة مقسمة على 5 فئات
+        // 50+ مقالة مقسمة على 5 فئات (نفس الكود السابق)
         const articles = [
             // ========== الفئة 1: الذكاء الاصطناعي (10 مقالات) ==========
             {
@@ -447,6 +604,7 @@
                 date: '2026-03-15',
                 readTime: '10 دقائق',
                 excerpt: 'تحليل شامل لكيفية تغيير الذكاء الاصطناعي لقواعد اللعبة في عالم التسويق الرقمي.',
+                url: 'https://smartafiliate.com/article1.html',
                 content: `<h3>الذكاء الاصطناعي يعيد تشكيل التسويق</h3>
                 <p>في عام 2026، أصبح الذكاء الاصطناعي جزءاً لا يتجزأ من استراتيجيات التسويق الناجحة. من التخصيص الفائق إلى التحليلات التنبؤية، تغيرت كل قواعد اللعبة.</p>
                 <h4>أبرز التوجهات:</h4>
@@ -466,6 +624,7 @@
                 date: '2026-03-14',
                 readTime: '12 دقيقة',
                 excerpt: 'مقارنة بين أقوى نموذجين للذكاء الاصطناعي في العالم وأيهما تختار لعملك.',
+                url: 'https://smartafiliate.com/article2.html',
                 content: `<p>مع إطلاق ChatGPT-5 وGemini Ultra، أصبح الاختيار بينهما صعباً. هذه المقارنة تساعدك على اتخاذ القرار الصحيح.</p>`
             },
             {
@@ -477,6 +636,7 @@
                 date: '2026-03-13',
                 readTime: '8 دقائق',
                 excerpt: 'مجموعة من أقوى الأدوات المجانية التي ستضاعف إنتاجيتك.',
+                url: 'https://smartafiliate.com/article3.html',
                 content: `<p>دليلك الشامل لأفضل الأدوات المجانية: من الكتابة إلى التصميم والبرمجة.</p>`
             },
             {
@@ -488,6 +648,7 @@
                 date: '2026-03-12',
                 readTime: '15 دقيقة',
                 excerpt: 'دليل خطوة بخطوة لبناء مساعد AI خاص ينظم مهامك اليومية.',
+                url: 'https://smartafiliate.com/article4.html',
                 content: `<p>تعلم كيف تصمم مساعداً ذكياً يفهم احتياجاتك وينفذ مهامك تلقائياً.</p>`
             },
             {
@@ -499,6 +660,7 @@
                 date: '2026-03-11',
                 readTime: '11 دقيقة',
                 excerpt: 'كيف تستخدم AI لتحسين ترتيب موقعك في نتائج البحث؟',
+                url: 'https://smartafiliate.com/article5.html',
                 content: `<p>استراتيجيات متقدمة لاستخدام الذكاء الاصطناعي في كتابة المحتوى وتحليل الكلمات المفتاحية.</p>`
             },
             {
@@ -510,6 +672,7 @@
                 date: '2026-03-10',
                 readTime: '9 دقائق',
                 excerpt: 'نقاش حول التحديات الأخلاقية لاستخدام AI في التسويق.',
+                url: 'https://smartafiliate.com/article6.html',
                 content: `<p>متى يكون استخدام الذكاء الاصطناعي غير أخلاقي؟ وكيف تحافظ على ثقة عملائك؟</p>`
             },
             {
@@ -521,6 +684,7 @@
                 date: '2026-03-09',
                 readTime: '10 دقائق',
                 excerpt: 'كيف تفهم عملاءك بشكل أعمق باستخدام تقنيات Machine Learning؟',
+                url: 'https://smartafiliate.com/article7.html',
                 content: `<p>تحليل متقدم لأنماط الشراء والتنبؤ بالسلوك المستقبلي.</p>`
             },
             {
@@ -532,6 +696,7 @@
                 date: '2026-03-08',
                 readTime: '7 دقائق',
                 excerpt: 'شرح مبسط للمفاهيم والمصطلحات الأساسية في عالم الذكاء الاصطناعي.',
+                url: 'https://smartafiliate.com/article8.html',
                 content: `<p>دليل المبتدئين لفهم الفروقات بين المصطلحات المتشابهة.</p>`
             },
             {
@@ -543,6 +708,7 @@
                 date: '2026-03-07',
                 readTime: '14 دقيقة',
                 excerpt: 'كيف يعمل الذكاء الاصطناعي التوليدي وأهم تطبيقاته العملية.',
+                url: 'https://smartafiliate.com/article9.html',
                 content: `<p>من ChatGPT إلى Midjourney، تعرف على التكنولوجيا التي تغير العالم.</p>`
             },
             {
@@ -554,6 +720,7 @@
                 date: '2026-03-06',
                 readTime: '12 دقيقة',
                 excerpt: 'أي الوظائف ستختفي؟ وأيها ستظهر؟ وكيف تستعد للمستقبل؟',
+                url: 'https://smartafiliate.com/article10.html',
                 content: `<p>تحليل لتأثير الذكاء الاصطناعي على سوق العمل والمهارات المطلوبة.</p>`
             },
 
@@ -567,6 +734,7 @@
                 date: '2026-03-05',
                 readTime: '8 دقائق',
                 excerpt: 'كيف تبني نظاماً آلياً للبريد الإلكتروني يحقق مبيعات أثناء نومك.',
+                url: 'https://smartafiliate.com/article11.html',
                 content: `<p>دليل متكامل لأتمتة الحملات البريدية باستخدام أحدث الأدوات.</p>`
             },
             {
@@ -578,6 +746,7 @@
                 date: '2026-03-04',
                 readTime: '7 دقائق',
                 excerpt: 'جدولة ونشر المحتوى على جميع المنصات تلقائياً.',
+                url: 'https://smartafiliate.com/article12.html',
                 content: `<p>وفر وقتك وجهدك مع أقوى أدوات الأتمتة لوسائل التواصل.</p>`
             },
             {
@@ -589,6 +758,7 @@
                 date: '2026-03-03',
                 readTime: '10 دقائق',
                 excerpt: 'مقارنة شاملة بين أشهر أدوات الأتمتة في العالم.',
+                url: 'https://smartafiliate.com/article13.html',
                 content: `<p>تحليل مفصل للمميزات والعيوب والأسعار والبدائل.</p>`
             },
             {
@@ -600,6 +770,7 @@
                 date: '2026-03-02',
                 readTime: '9 دقائق',
                 excerpt: 'كيف تبني نظام دعم آلي يخدم عملاءك 24/7؟',
+                url: 'https://smartafiliate.com/article14.html',
                 content: `<p>روبوتات الدردشة، التذاكر الذكية، والردود الآلية المتقدمة.</p>`
             },
             {
@@ -611,6 +782,7 @@
                 date: '2026-03-01',
                 readTime: '8 دقائق',
                 excerpt: 'وفر وقتك وجهدك مع أنظمة الفوترة الآلية.',
+                url: 'https://smartafiliate.com/article15.html',
                 content: `<p>من إنشاء الفواتير إلى تتبع المدفوعات، كل شيء آلي.</p>`
             },
             {
@@ -622,6 +794,7 @@
                 date: '2026-02-28',
                 readTime: '11 دقيقة',
                 excerpt: 'كيف تختار أفضل المرشحين دون عناء باستخدام الأتمتة؟',
+                url: 'https://smartafiliate.com/article16.html',
                 content: `<p>فرز السير الذاتية، إرسال اختبارات، وجدولة المقابلات تلقائياً.</p>`
             },
             {
@@ -633,6 +806,7 @@
                 date: '2026-02-27',
                 readTime: '10 دقائق',
                 excerpt: 'تقارير يومية وأسبوعية تصل لبريدك دون أي تدخل يدوي.',
+                url: 'https://smartafiliate.com/article17.html',
                 content: `<p>أدوات ذكية تجمع وتحلل البيانات وتقدم توصيات.</p>`
             },
             {
@@ -644,6 +818,7 @@
                 date: '2026-02-26',
                 readTime: '12 دقيقة',
                 excerpt: 'إدارة وتحسين إعلانات فيسبوك تلقائياً لتحقيق أفضل عائد.',
+                url: 'https://smartafiliate.com/article18.html',
                 content: `<p>استراتيجيات الأتمتة لإعلانات فيسبوك وانستغرام.</p>`
             },
             {
@@ -655,6 +830,7 @@
                 date: '2026-02-25',
                 readTime: '6 دقائق',
                 excerpt: 'ردود ذكية على تعليقات العملاء في كل المنصات.',
+                url: 'https://smartafiliate.com/article19.html',
                 content: `<p>حافظ على تفاعلك مع العملاء دون قضاء ساعات في الردود.</p>`
             },
             {
@@ -666,6 +842,7 @@
                 date: '2026-02-24',
                 readTime: '10 دقائق',
                 excerpt: 'أهم التوجهات المتوقعة في عالم الأتمتة خلال العام الجديد.',
+                url: 'https://smartafiliate.com/article20.html',
                 content: `<p>من الأتمتة الذكية إلى التكاملات المتقدمة، ما الذي ينتظرنا؟</p>`
             },
 
@@ -679,6 +856,7 @@
                 date: '2026-02-23',
                 readTime: '15 دقيقة',
                 excerpt: 'خطوة بخطوة لبدء مشوارك في عالم التسويق بالعمولة.',
+                url: 'https://smartafiliate.com/article21.html',
                 content: `<p>من اختيار المنتجات إلى جني الأرباح، كل ما يحتاجه المبتدئ.</p>`
             },
             {
@@ -690,6 +868,7 @@
                 date: '2026-02-22',
                 readTime: '10 دقائق',
                 excerpt: 'مقارنة بين أشهر المنصات: Amazon, ClickBank, ShareASale وغيرها.',
+                url: 'https://smartafiliate.com/article22.html',
                 content: `<p>تحليل شامل لأفضل المنصات حسب التخصص والمنطقة.</p>`
             },
             {
@@ -701,6 +880,7 @@
                 date: '2026-02-21',
                 readTime: '12 دقيقة',
                 excerpt: 'أسرار المحترفين لتحقيق دخل ثابت من التسويق بالعمولة.',
+                url: 'https://smartafiliate.com/article23.html',
                 content: `<p>تقنيات متقدمة لتحسين معدلات التحويل وزيادة الأرباح.</p>`
             },
             {
@@ -712,6 +892,7 @@
                 date: '2026-02-20',
                 readTime: '10 دقائق',
                 excerpt: 'كيف تربح المال من خلال قناتك على يوتيوب باستخدام الروابط التابعة.',
+                url: 'https://smartafiliate.com/article24.html',
                 content: `<p>استراتيجيات دمج الروابط التابعة في محتوى الفيديو.</p>`
             },
             {
@@ -723,6 +904,7 @@
                 date: '2026-02-19',
                 readTime: '8 دقائق',
                 excerpt: 'الفرص الهائلة في أسرع منصة نمواً في العالم.',
+                url: 'https://smartafiliate.com/article25.html',
                 content: `<p>كيف تستغل شعبية تيك توك لترويج المنتجات والحصول على عمولات.</p>`
             },
             {
@@ -734,6 +916,7 @@
                 date: '2026-02-18',
                 readTime: '9 دقائق',
                 excerpt: '10 أخطاء شائعة يقع فيها المبتدئون والمحترفون.',
+                url: 'https://smartafiliate.com/article26.html',
                 content: `<p>تعلم من أخطاء الآخرين لتتجنب خسارة الوقت والمال.</p>`
             },
             {
@@ -745,6 +928,7 @@
                 date: '2026-02-17',
                 readTime: '10 دقائق',
                 excerpt: 'كيف تبني قائمة بريدية وتحولها إلى آلة لبيع المنتجات.',
+                url: 'https://smartafiliate.com/article27.html',
                 content: `<p>بناء الثقة وزيادة المبيعات من خلال الرسائل البريدية.</p>`
             },
             {
@@ -756,6 +940,7 @@
                 date: '2026-02-16',
                 readTime: '11 دقيقة',
                 excerpt: 'كيف تدر دخلاً ثابتاً من مدونتك باستخدام الروابط التابعة.',
+                url: 'https://smartafiliate.com/article28.html',
                 content: `<p>استراتيجيات كتابة محتوى يبيع دون أن يكون إعلانياً.</p>`
             },
             {
@@ -767,6 +952,7 @@
                 date: '2026-02-15',
                 readTime: '12 دقيقة',
                 excerpt: 'تقنيات علمية لزيادة نسبة النقرات والتحويلات.',
+                url: 'https://smartafiliate.com/article29.html',
                 content: `<p>من تصميم الروابط إلى اختيار الكلمات المناسبة.</p>`
             },
             {
@@ -778,6 +964,7 @@
                 date: '2026-02-14',
                 readTime: '10 دقائق',
                 excerpt: 'كيف سيغير الذكاء الاصطناعي طريقة عمل المسوقين بالعمولة؟',
+                url: 'https://smartafiliate.com/article30.html',
                 content: `<p>توقعات وتحليلات للمستقبل القريب والبعيد.</p>`
             },
 
@@ -791,6 +978,7 @@
                 date: '2026-02-13',
                 readTime: '15 دقيقة',
                 excerpt: 'قصة نجاح ملهمة لموقع بدأ من الصفر ووصل للقمة.',
+                url: 'https://smartafiliate.com/article31.html',
                 content: `<p>تحليل كامل للاستراتيجيات التي استخدمها فريق صغير لتحقيق هذا النجاح.</p>`
             },
             {
@@ -802,6 +990,7 @@
                 date: '2026-02-12',
                 readTime: '12 دقيقة',
                 excerpt: 'تحليل حملة إعلانية ناجحة وكيف يمكنك تطبيق الدروس المستفادة.',
+                url: 'https://smartafiliate.com/article32.html',
                 content: `<p>من الاستهداف إلى الإعلان إلى التحويل، كل التفاصيل.</p>`
             },
             {
@@ -813,6 +1002,7 @@
                 date: '2026-02-11',
                 readTime: '10 دقائق',
                 excerpt: 'قصة شاب عربي بدأ بمبلغ بسيط ووصل للعالمية.',
+                url: 'https://smartafiliate.com/article33.html',
                 content: `<p>دروس ملهمة من تجربة واقعية لرائد أعمال عربي.</p>`
             },
             {
@@ -824,6 +1014,7 @@
                 date: '2026-02-10',
                 readTime: '12 دقيقة',
                 excerpt: 'نتعلم من الأخطاء أكثر مما نتعلم من النجاحات.',
+                url: 'https://smartafiliate.com/article34.html',
                 content: `<p>تحليل لأسباب فشل موقع كان يزوره ملايين المستخدمين.</p>`
             },
             {
@@ -835,6 +1026,7 @@
                 date: '2026-02-09',
                 readTime: '11 دقيقة',
                 excerpt: 'رحلة نجاح قناة عربية تجاوزت المليون مشترك.',
+                url: 'https://smartafiliate.com/article35.html',
                 content: `<p>استراتيجيات المحتوى والنمو التي استخدمتها القناة.</p>`
             },
             {
@@ -846,6 +1038,7 @@
                 date: '2026-02-08',
                 readTime: '14 دقيقة',
                 excerpt: 'تحليل استراتيجيات متجر ناشئ نجح في فترة قياسية.',
+                url: 'https://smartafiliate.com/article36.html',
                 content: `<p>من اختيار المنتجات إلى التسويق والخدمات اللوجستية.</p>`
             },
             {
@@ -857,6 +1050,7 @@
                 date: '2026-02-07',
                 readTime: '12 دقيقة',
                 excerpt: 'كيف وظفت شركة تقليدية الذكاء الاصطناعي لتحقيق قفزة نوعية.',
+                url: 'https://smartafiliate.com/article37.html',
                 content: `<p>تفاصيل التطبيق والنتائج والتحديات.</p>`
             },
             {
@@ -868,6 +1062,7 @@
                 date: '2026-02-06',
                 readTime: '10 دقائق',
                 excerpt: 'قصة نجاح مطور عربي في سوق التطبيقات العالمي.',
+                url: 'https://smartafiliate.com/article38.html',
                 content: `<p>استراتيجيات التسويق والتحسين التي استخدمها التطبيق.</p>`
             },
             {
@@ -879,6 +1074,7 @@
                 date: '2026-02-05',
                 readTime: '11 دقيقة',
                 excerpt: 'رحلة مدون عربي بدأ من الصفر ووصل للاستقلال المالي.',
+                url: 'https://smartafiliate.com/article39.html',
                 content: `<p>المراحل والتحديات والدروس المستفادة.</p>`
             },
             {
@@ -890,6 +1086,7 @@
                 date: '2026-02-04',
                 readTime: '13 دقيقة',
                 excerpt: 'تحليل استراتيجيات حملة تمويل جماعي ناجحة من الألف للياء.',
+                url: 'https://smartafiliate.com/article40.html',
                 content: `<p>كيف تبني مجتمعاً يدعم مشروعك ويؤمن بفكرتك.</p>`
             },
 
@@ -903,6 +1100,7 @@
                 date: '2026-02-03',
                 readTime: '20 دقيقة',
                 excerpt: 'تجميعة شاملة لأهم الأدوات مع تقييمات وأسعار.',
+                url: 'https://smartafiliate.com/article41.html',
                 content: `<p>من أدوات الكتابة إلى التصميم والتحليل، كل ما تحتاجه في مكان واحد.</p>`
             },
             {
@@ -914,6 +1112,7 @@
                 date: '2026-02-02',
                 readTime: '12 دقيقة',
                 excerpt: 'أدوات قوية ومجانية لتحسين ترتيب موقعك.',
+                url: 'https://smartafiliate.com/article42.html',
                 content: `<p>دليل متكامل لأدوات SEO التي تغنيك عن الأدوات المدفوعة.</p>`
             },
             {
@@ -925,6 +1124,7 @@
                 date: '2026-02-01',
                 readTime: '10 دقائق',
                 excerpt: 'اعرف كل شيء عن منافسيك باستخدام هذه الأدوات.',
+                url: 'https://smartafiliate.com/article43.html',
                 content: `<p>تحليل الكلمات المفتاحية، استراتيجيات المحتوى، وأكثر.</p>`
             },
             {
@@ -936,6 +1136,7 @@
                 date: '2026-01-31',
                 readTime: '9 دقائق',
                 excerpt: 'أفضل الأدوات لتنظيم العمل الجماعي وزيادة الإنتاجية.',
+                url: 'https://smartafiliate.com/article44.html',
                 content: `<p>مقارنة بين Trello, Asana, ClickUp وأكثر.</p>`
             },
             {
@@ -947,6 +1148,7 @@
                 date: '2026-01-30',
                 readTime: '8 دقائق',
                 excerpt: 'تصميم احترافي بدون خبرة باستخدام هذه الأدوات.',
+                url: 'https://smartafiliate.com/article45.html',
                 content: `<p>من Canva إلى Adobe Express، دليلك الشامل.</p>`
             },
             {
@@ -958,6 +1160,7 @@
                 date: '2026-01-29',
                 readTime: '10 دقائق',
                 excerpt: 'افهم جمهورك وحسن أداء موقعك بأدوات تحليل مجانية.',
+                url: 'https://smartafiliate.com/article46.html',
                 content: `<p>بدائل Google Analytics وأدوات متقدمة.</p>`
             },
             {
@@ -969,6 +1172,7 @@
                 date: '2026-01-28',
                 readTime: '11 دقيقة',
                 excerpt: 'اكتب محتوى احترافي في دقائق باستخدام أدوات AI.',
+                url: 'https://smartafiliate.com/article47.html',
                 content: `<p>مقارنة بين ChatGPT, Jasper, Copy.ai وأكثر.</p>`
             },
             {
@@ -980,6 +1184,7 @@
                 date: '2026-01-27',
                 readTime: '10 دقائق',
                 excerpt: 'أفضل منصات التسويق عبر البريد الإلكتروني للشركات الناشئة.',
+                url: 'https://smartafiliate.com/article48.html',
                 content: `<p>مقارنة بين Mailchimp, ConvertKit, GetResponse.</p>`
             },
             {
@@ -991,6 +1196,7 @@
                 date: '2026-01-26',
                 readTime: '9 دقائق',
                 excerpt: 'جدولة ونشر وتحليل أداء حساباتك في مكان واحد.',
+                url: 'https://smartafiliate.com/article49.html',
                 content: `<p>Hootsuite, Buffer, Later وغيرها الكثير.</p>`
             },
             {
@@ -1002,6 +1208,7 @@
                 date: '2026-01-25',
                 readTime: '12 دقيقة',
                 excerpt: 'ابنِ موقعاً احترافياً دون كتابة سطر برمجي واحد.',
+                url: 'https://smartafiliate.com/article50.html',
                 content: `<p>دليل شامل لمنصات مثل Wix, Webflow, Squarespace.</p>`
             }
         ];
@@ -1046,12 +1253,72 @@
             
             container.innerHTML = stats + filters + articlesHTML;
             setActiveLink('المقالات');
+            
+            // إرسال حدث إلى Google Tag Manager
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'page_view',
+                    'page_type': 'home',
+                    'total_articles': articles.length
+                });
+            }
         }
 
         // عرض جميع المقالات
         function showAllArticles(e) {
             e.preventDefault();
             showHome(e);
+        }
+
+        // عرض جميع الروابط
+        function showLinks(e) {
+            e.preventDefault();
+            
+            const container = document.getElementById('main-content');
+            
+            const html = `
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-number">${articles.length}</div>
+                        <div class="stat-label">مقالة</div>
+                    </div>
+                </div>
+                
+                <div class="links-section">
+                    <div class="links-title">
+                        <i class="fas fa-link"></i> جميع روابط المقالات (${articles.length} مقالة)
+                    </div>
+                    
+                    <div class="links-grid">
+                        ${articles.slice(0, 10).map(article => `
+                            <div class="link-card">
+                                <div class="link-label">
+                                    <i class="fas fa-file-alt"></i> مقالة ${article.id}: ${article.title.substring(0, 30)}...
+                                </div>
+                                <a href="${article.url}" target="_blank" rel="noopener">
+                                    <i class="fas ${article.icon}"></i> ${article.url}
+                                </a>
+                            </div>
+                        `).join('')}
+                        
+                        <div class="link-card">
+                            <div class="link-label">
+                                <i class="fas fa-home"></i> الصفحة الرئيسية
+                            </div>
+                            <a href="https://smartafiliate.com/index.html" target="_blank" rel="noopener">
+                                <i class="fas fa-globe"></i> https://smartafiliate.com/index.html
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; text-align: center; color: var(--text-muted);">
+                        <i class="fas fa-info-circle"></i> يتم عرض أول 10 روابط فقط. جميع الروابط متوفرة في الملفات.
+                    </div>
+                </div>
+            `;
+            
+            container.innerHTML = html;
+            setActiveLink('الروابط');
         }
 
         // تصفية المقالات حسب الفئة
@@ -1061,11 +1328,11 @@
                 : articles.filter(a => a.category === category);
             
             const container = document.getElementById('main-content');
-            const articlesHTML = renderArticles(filtered);
             
             // تحديث المحتوى مع الحفاظ على الإحصائيات والفلاتر
             const stats = document.querySelector('.stats-bar').outerHTML;
             const filters = document.querySelector('.category-filters').outerHTML;
+            const articlesHTML = renderArticles(filtered);
             
             container.innerHTML = stats + filters + articlesHTML;
             
@@ -1121,6 +1388,16 @@
                 document.getElementById('modal-title').innerHTML = `<i class="fas ${article.icon}" style="color: var(--primary-glow); margin-left: 10px;"></i> ${article.title}`;
                 document.getElementById('modal-body').innerHTML = article.content;
                 document.getElementById('article-modal').style.display = 'flex';
+                
+                // إرسال حدث مشاهدة المقال
+                if (window.dataLayer) {
+                    window.dataLayer.push({
+                        'event': 'article_view',
+                        'article_id': article.id,
+                        'article_title': article.title,
+                        'article_category': article.category
+                    });
+                }
             }
         }
 
@@ -1134,12 +1411,22 @@
             e.preventDefault();
             const container = document.getElementById('main-content');
             container.innerHTML = `
-                <div class="disclaimer-page" style="background: var(--glass-bg); padding: 3rem; border-radius: var(--card-radius);">
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-number">${articles.length}</div>
+                        <div class="stat-label">مقالة</div>
+                    </div>
+                </div>
+                
+                <div class="full-article" style="background: var(--glass-bg); padding: 3rem; border-radius: var(--card-radius);">
                     <h1 style="color: var(--primary-glow); font-size: 2.5rem; margin-bottom: 2rem;"><i class="fas fa-shield-alt"></i> إخلاء المسؤولية</h1>
-                    <p style="color: #b0b3c5; line-height: 1.8;">المحتوى المقدم في هذا الموقع هو لأغراض تعليمية فقط. لا نقدم نصائح مالية أو استثمارية. جميع المعلومات قابلة للتغيير دون إشعار مسبق.</p>
+                    <p style="color: #b0b3c5; line-height: 1.8; font-size: 1.1rem;">المحتوى المقدم في هذا الموقع هو لأغراض تعليمية فقط. لا نقدم نصائح مالية أو استثمارية. جميع المعلومات قابلة للتغيير دون إشعار مسبق.</p>
                     <div style="background: rgba(255,165,0,0.1); padding: 2rem; border-radius: 20px; margin: 2rem 0;">
                         <i class="fas fa-exclamation-triangle" style="color: orange; font-size: 2rem;"></i>
-                        <p style="color: #fff;">الروابط التابعة: قد نحصل على عمولة عند الشراء من خلال بعض الروابط في الموقع.</p>
+                        <p style="color: #fff; margin-top: 1rem;">الروابط التابعة: قد نحصل على عمولة عند الشراء من خلال بعض الروابط في الموقع.</p>
+                    </div>
+                    <div style="margin-top: 2rem; padding: 1rem; background: rgba(0,210,255,0.05); border-radius: 15px;">
+                        <p style="color: #8a8fb0;"><i class="fas fa-check-circle" style="color: #00d2ff;"></i> موقع معتمد من Google | GTM مثبت | ${articles.length} مقالة</p>
                     </div>
                 </div>
             `;
@@ -1157,24 +1444,45 @@
                 discord: 'https://discord.gg/smartaffiliate'
             };
             window.open(urls[platform], '_blank');
+            
+            // تتبع النقر على وسائل التواصل
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'social_click',
+                    'social_platform': platform
+                });
+            }
         }
 
         // تفعيل الرابط النشط
         function setActiveLink(text) {
             document.querySelectorAll('.nav-container a').forEach(link => {
                 link.classList.remove('active');
-                if (link.textContent.includes(text)) {
+                if (link.textContent.includes(text) || 
+                    (text === 'المقالات' && link.textContent.includes('المقالات')) ||
+                    (text === 'الروابط' && link.textContent.includes('الروابط'))) {
                     link.classList.add('active');
                 }
             });
         }
 
         // تحميل الصفحة الرئيسية
-        window.onload = () => showHome(event);
+        window.onload = () => {
+            setTimeout(() => {
+                showHome(event);
+            }, 100);
+        };
 
         // إغلاق النافذة بالضغط على ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModal();
+        });
+        
+        // النقر خارج النافذة لإغلاقها
+        document.getElementById('article-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
         });
     </script>
 </body>
