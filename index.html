@@ -2,6 +2,26 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    
+    <!-- تحسين SEO -->
+    <title>SmartAffiliate 2026 | 21 مقالة في الذكاء الاصطناعي والأتمتة</title>
+    <meta name="description" content="smartafiliate.com - منصة عربية متخصصة في الذكاء الاصطناعي، الأتمتة، والتسويق بالعمولة. 21 مقالة شاملة.">
+    <meta name="keywords" content="ذكاء اصطناعي, أتمتة, تسويق بالعمولة, SEO, دراسات حالة">
+    <meta name="author" content="SmartAffiliate">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph للتواصل الاجتماعي -->
+    <meta property="og:title" content="SmartAffiliate 2026 | 21 مقالة متكاملة">
+    <meta property="og:description" content="منصة عربية متخصصة في الذكاء الاصطناعي والأتمتة والتسويق الرقمي">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartafiliate.com">
+    <meta property="og:image" content="https://smartafiliate.com/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SmartAffiliate 2026">
+    <meta name="twitter:description" content="21 مقالة في الذكاء الاصطناعي والأتمتة">
+    
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="7X4x5m03NWFNhlGmuoG7DfaHoNLRs5MgFDtW9nHK1co">
     
@@ -15,13 +35,19 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- تحسينات الأداء - Preload للصور المهمة -->
-    <link rel="preload" as="image" href="https://via.placeholder.com/350x200?text=AI" type="image/webp">
+    <!-- Preload للعناصر المهمة (تحسين LCP) -->
+    <link rel="preload" as="image" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='200' viewBox='0 0 350 200'%3E%3Crect width='350' height='200' fill='%2300d2ff' opacity='0.1'/%3E%3Ctext x='175' y='120' font-family='Arial' font-size='24' fill='%2300d2ff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E" as="image">
     <link rel="preload" as="font" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-solid-900.woff2" crossorigin>
     
-    <!-- تحسينات CSS -->
+    <!-- Font Awesome مع تحميل متأخر -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    
     <style>
+        /* reset */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         :root {
             --bg-deep: #050816;
             --primary-glow: #00d2ff;
@@ -31,6 +57,7 @@
             --text-muted: #b0b3c5;
             --card-radius: 32px;
         }
+        
         body {
             background: var(--bg-deep);
             background-image: radial-gradient(circle at 30% 10%, rgba(0,210,255,0.08) 0%, transparent 40%),
@@ -38,9 +65,13 @@
             color: #fff;
             font-family: 'Segoe UI', system-ui, sans-serif;
             line-height: 1.8;
+            font-display: swap;
+            min-height: 100vh;
         }
         
-        /* تحسين CLS - تحديد أبعاد العناصر مسبقاً */
+        /* ===== تحسين CLS - تحديد أبعاد ثابتة للعناصر ===== */
+        
+        /* الهيدر */
         .glass-header {
             background: rgba(8,12,25,0.95);
             backdrop-filter: blur(16px);
@@ -49,8 +80,10 @@
             top: 0;
             z-index: 1000;
             padding: 1rem 0;
-            min-height: 70px; /* تحديد ارتفاع ثابت */
+            min-height: 70px;
+            width: 100%;
         }
+        
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -60,6 +93,7 @@
             flex-wrap: wrap;
             padding: 0 2rem;
         }
+        
         .nav-container a {
             color: #fff;
             text-decoration: none;
@@ -71,41 +105,53 @@
             align-items: center;
             gap: 8px;
             font-size: 0.95rem;
+            white-space: nowrap;
         }
+        
         .nav-container a:hover,
         .nav-container a.active {
             background: rgba(0,210,255,0.15);
             color: var(--primary-glow);
         }
         
-        /* تحسين CLS - تحديد مساحة الشعار */
+        /* الشعار بأبعاد ثابتة */
         .brand-zone {
             text-align: center;
             padding: 2rem;
             min-height: 140px;
+            width: 100%;
         }
+        
         .logo-svg {
             height: 80px;
-            width: 180px; /* تحديد عرض ثابت */
+            width: 180px;
             filter: drop-shadow(0 0 18px rgba(0,210,255,0.5));
             animation: floatSmart 4s ease-in-out infinite;
             cursor: pointer;
         }
-        @keyframes floatSmart { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+        
+        @keyframes floatSmart { 
+            0%,100%{ transform: translateY(0); } 
+            50%{ transform: translateY(-10px); } 
+        }
+        
         .brand-tagline {
             color: var(--primary-glow);
             letter-spacing: 4px;
             font-size: 0.8rem;
             margin-top: 0.8rem;
             font-weight: 600;
+            height: 20px;
         }
+        
         .main-container {
             max-width: 1400px;
             margin: 2rem auto;
             padding: 0 2rem;
+            min-height: 60vh;
         }
         
-        /* أزرار التصنيفات */
+        /* الفلاتر */
         .category-filters {
             display: flex;
             justify-content: center;
@@ -114,6 +160,7 @@
             margin: 2rem 0;
             min-height: 60px;
         }
+        
         .filter-btn {
             background: transparent;
             border: 1px solid var(--primary-glow);
@@ -127,12 +174,13 @@
             align-items: center;
             gap: 8px;
         }
+        
         .filter-btn:hover, .filter-btn.active {
             background: var(--primary-glow);
             color: #050816;
         }
         
-        /* إحصائيات سريعة - بأبعاد ثابتة */
+        /* الإحصائيات */
         .stats-bar {
             display: flex;
             justify-content: center;
@@ -145,26 +193,31 @@
             border: 1px solid rgba(0,210,255,0.2);
             min-height: 120px;
         }
+        
         .stat-item {
             text-align: center;
         }
+        
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
             color: var(--primary-glow);
+            line-height: 1.2;
         }
+        
         .stat-label {
             color: var(--text-muted);
             font-size: 1rem;
         }
         
-        /* تحسين CLS - بطاقات المقالات بأبعاد ثابتة */
+        /* بطاقات المقالات بأبعاد ثابتة */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
+        
         .article-card {
             background: var(--glass-bg);
             backdrop-filter: blur(14px);
@@ -175,25 +228,30 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            min-height: 350px; /* ارتفاع ثابت لمنع الـ Layout Shift */
+            min-height: 350px;
             display: flex;
             flex-direction: column;
         }
+        
         .article-card:hover {
             transform: translateY(-8px);
             border-color: var(--primary-glow);
             box-shadow: 0 30px 40px -15px rgba(0,210,255,0.3);
         }
+        
         .article-card h2 {
             font-size: 1.5rem;
             margin: 1rem 0;
             color: var(--primary-glow);
+            line-height: 1.4;
         }
+        
         .article-card p {
             color: var(--text-muted);
             margin-bottom: 1.5rem;
             flex-grow: 1;
         }
+        
         .article-meta {
             display: flex;
             gap: 1rem;
@@ -201,6 +259,7 @@
             font-size: 0.85rem;
             margin: 1rem 0;
         }
+        
         .read-more-btn {
             display: inline-flex;
             align-items: center;
@@ -209,6 +268,7 @@
             text-decoration: none;
             font-weight: 600;
         }
+        
         .category-badge {
             position: absolute;
             top: 1rem;
@@ -219,9 +279,10 @@
             font-size: 0.75rem;
             border: 1px solid var(--primary-glow);
             color: var(--primary-glow);
+            z-index: 10;
         }
         
-        /* تحسين CLS - صفحة المقالة الكاملة */
+        /* صفحة المقالة */
         .full-article {
             background: var(--glass-bg);
             backdrop-filter: blur(14px);
@@ -231,17 +292,21 @@
             margin: 2rem 0;
             min-height: 500px;
         }
+        
         .article-header {
             text-align: center;
             margin-bottom: 3rem;
             border-bottom: 1px solid rgba(0,210,255,0.3);
             padding-bottom: 2rem;
         }
+        
         .article-header h1 {
             font-size: 2.5rem;
             color: var(--primary-glow);
             margin-bottom: 1rem;
+            line-height: 1.3;
         }
+        
         .article-meta-large {
             display: flex;
             justify-content: center;
@@ -251,12 +316,18 @@
             flex-wrap: wrap;
             margin-bottom: 1.5rem;
         }
-        .article-meta-large span i { margin-left: 5px; color: var(--primary-glow); }
+        
+        .article-meta-large span i { 
+            margin-left: 5px; 
+            color: var(--primary-glow); 
+        }
+        
         .article-content {
             color: #e0e0e0;
             line-height: 2;
             font-size: 1.1rem;
         }
+        
         .article-content h2 {
             color: var(--primary-glow);
             font-size: 2rem;
@@ -264,21 +335,26 @@
             border-right: 5px solid var(--primary-glow);
             padding-right: 1.5rem;
         }
+        
         .article-content h3 {
             color: #fff;
             font-size: 1.5rem;
             margin: 2rem 0 1rem;
         }
+        
         .article-content p {
             margin-bottom: 1.5rem;
         }
+        
         .article-content ul, .article-content ol {
             margin: 1.5rem 0;
             padding-right: 2rem;
         }
+        
         .article-content li {
             margin-bottom: 0.8rem;
         }
+        
         .stat-box {
             display: inline-block;
             background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
@@ -288,6 +364,7 @@
             font-weight: 800;
             margin: 1rem 0;
         }
+        
         .external-link {
             display: inline-flex;
             align-items: center;
@@ -301,11 +378,13 @@
             transition: 0.3s;
             margin: 1rem 0;
         }
+        
         .external-link:hover {
             background: var(--primary-glow);
             color: #050816;
             transform: translateX(-5px);
         }
+        
         .back-btn {
             display: inline-flex;
             align-items: center;
@@ -316,9 +395,12 @@
             margin-bottom: 2rem;
             cursor: pointer;
         }
-        .back-btn:hover { gap: 15px; }
         
-        /* تحسين CLS - قسم الروابط */
+        .back-btn:hover { 
+            gap: 15px; 
+        }
+        
+        /* قسم الروابط */
         .links-section {
             margin: 3rem 0;
             padding: 2rem;
@@ -390,7 +472,7 @@
             gap: 5px;
         }
         
-        /* تحسين CLS - قسم المشاركة */
+        /* قسم المشاركة */
         .share-section {
             margin: 3rem 0;
             padding: 2rem;
@@ -399,6 +481,7 @@
             text-align: center;
             min-height: 150px;
         }
+        
         .share-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -406,6 +489,7 @@
             justify-content: center;
             margin-top: 1.5rem;
         }
+        
         .share-btn {
             display: inline-flex;
             align-items: center;
@@ -419,6 +503,7 @@
             border: none;
             cursor: pointer;
         }
+        
         .share-btn.facebook { background: #1877f2; }
         .share-btn.twitter { background: #000; }
         .share-btn.whatsapp { background: #25d366; }
@@ -426,7 +511,7 @@
         .share-btn.telegram { background: #0088cc; }
         .share-btn:hover { transform: translateY(-3px); }
         
-        /* تحسين CLS - التذييل */
+        /* التذييل */
         footer {
             margin-top: 4rem;
             padding: 3rem;
@@ -434,6 +519,7 @@
             text-align: center;
             min-height: 200px;
         }
+        
         .footer-links {
             display: flex;
             justify-content: center;
@@ -441,33 +527,70 @@
             flex-wrap: wrap;
             margin-bottom: 1.5rem;
         }
+        
         .footer-links a {
             color: #8a8fb0;
             text-decoration: none;
             font-size: 0.9rem;
         }
-        .footer-links a:hover { color: var(--primary-glow); }
         
-        /* تحسين LCP - تحميل الصور بتقنية WebP */
-        img {
+        .footer-links a:hover { 
+            color: var(--primary-glow); 
+        }
+        
+        /* تحسين الصور */
+        img, svg {
             width: 100%;
             height: auto;
             aspect-ratio: 16/9;
             object-fit: cover;
         }
         
+        /* مؤشر التحميل */
+        .loader {
+            text-align: center;
+            padding: 50px;
+        }
+        
+        .loader i {
+            font-size: 3rem;
+            color: var(--primary-glow);
+        }
+        
+        /* تحسينات للشاشات الصغيرة */
         @media (max-width: 768px) {
-            .article-header h1 { font-size: 2rem; }
-            .full-article { padding: 1.5rem; }
-            .articles-grid { grid-template-columns: 1fr; }
-            .article-card { min-height: 300px; }
+            .article-header h1 { 
+                font-size: 2rem; 
+            }
+            
+            .full-article { 
+                padding: 1.5rem; 
+            }
+            
+            .articles-grid { 
+                grid-template-columns: 1fr; 
+            }
+            
+            .article-card { 
+                min-height: 300px; 
+            }
+            
+            .nav-container a {
+                white-space: normal;
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            .stats-bar {
+                padding: 1rem;
+                gap: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
         }
     </style>
-    
-    <!-- Font Awesome 6 مع تحميل متأخر لتحسين FCP -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -489,7 +612,6 @@
     </header>
 
     <div class="brand-zone">
-        <!-- SVG محسن مع أبعاد ثابتة -->
         <svg class="logo-svg" width="180" height="80" viewBox="0 0 180 80" onclick="showHome(event)">
             <path d="M20 40 L45 20 L70 40 L45 60 L20 40Z" fill="url(#grad1)" stroke="#00d2ff" stroke-width="2"/>
             <circle cx="95" cy="40" r="20" fill="url(#grad2)" stroke="#9d50bb" stroke-width="2"/>
@@ -505,9 +627,9 @@
     </div>
 
     <main class="main-container" id="main-content">
-        <!-- المحتوى سيتم تحميله عبر JavaScript -->
-        <div style="text-align: center; padding: 50px;">
-            <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: var(--primary-glow);"></i>
+        <!-- مؤشر تحميل -->
+        <div class="loader">
+            <i class="fas fa-spinner fa-spin"></i>
             <p style="margin-top: 20px;">جاري تحميل المحتوى...</p>
         </div>
     </main>
@@ -521,21 +643,13 @@
             <a href="#" onclick="showContact(event)">اتصل بنا</a>
         </div>
         <div style="color: #4a4f6e;">© 2026 smartafiliate.com - جميع الحقوق محفوظة</div>
-        <div style="color: #4a4f6e; font-size: 0.8rem; margin-top: 10px;">Google Verified Site | GTM Installed | 21 مقالة | أداء محسن ⚡</div>
+        <div style="color: #4a4f6e; font-size: 0.8rem; margin-top: 10px;">Google Verified | GTM | 21 مقالة | أداء محسن ⚡</div>
     </footer>
 
     <script>
-        // تحميل المحتوى بعد تحميل الصفحة لتحسين LCP
-        document.addEventListener('DOMContentLoaded', function() {
-            // تأخير تحميل المحتوى الثقيل
-            setTimeout(() => {
-                showHome();
-            }, 100);
-        });
-
         // ==================== جميع المقالات (21 مقالة) ====================
         const articles = [
-            // المقالات الأساسية (9) - نفس الكود السابق
+            // المقالات الأساسية (1-9)
             {
                 id: 1,
                 title: 'مستقبل الذكاء الاصطناعي في التسويق الرقمي 2026',
@@ -1080,9 +1194,9 @@
             }
         ];
 
-        // عرض الصفحة الرئيسية (جميع المقالات)
+        // عرض الصفحة الرئيسية
         function showHome(e) {
-            if (e) e?.preventDefault();
+            if (e) e.preventDefault();
             
             const stats = `
                 <div class="stats-bar">
@@ -1103,6 +1217,9 @@
             
             renderArticles(articles, stats);
             
+            // تحديث الرابط النشط
+            updateActiveLink('الرئيسية');
+            
             // إرسال حدث إلى Google Tag Manager
             if (window.dataLayer) {
                 window.dataLayer.push({
@@ -1116,13 +1233,13 @@
 
         // عرض جميع المقالات
         function showAllArticles(e) {
-            e?.preventDefault();
+            if (e) e.preventDefault();
             renderArticles(articles, '');
         }
 
         // عرض جميع الروابط
         function showLinks(e) {
-            e?.preventDefault();
+            if (e) e.preventDefault();
             
             const html = `
                 <div class="back-btn" onclick="showHome(event)">
@@ -1138,9 +1255,9 @@
                         ${articles.map(article => `
                             <div class="link-card">
                                 <div class="link-label">
-                                    <i class="fas fa-file-alt"></i> مقالة ${article.id}: ${article.title}
+                                    <i class="fas fa-file-alt"></i> مقالة ${article.id}: ${article.title.substring(0, 30)}...
                                 </div>
-                                <a href="${article.url}" target="_blank">
+                                <a href="${article.url}" target="_blank" rel="noopener">
                                     <i class="fas ${article.icon}"></i> ${article.url}
                                 </a>
                             </div>
@@ -1150,7 +1267,7 @@
                             <div class="link-label">
                                 <i class="fas fa-home"></i> الصفحة الرئيسية
                             </div>
-                            <a href="https://smartafiliate.com/index.html" target="_blank">
+                            <a href="https://smartafiliate.com/index.html" target="_blank" rel="noopener">
                                 <i class="fas fa-globe"></i> https://smartafiliate.com/index.html
                             </a>
                         </div>
@@ -1159,6 +1276,7 @@
             `;
             
             document.getElementById('main-content').innerHTML = html;
+            updateActiveLink('الروابط');
         }
 
         // تصفية حسب التصنيف
@@ -1166,11 +1284,29 @@
             const filtered = articles.filter(a => a.category === category);
             renderArticles(filtered, '');
             
-            // تحديث الزر النشط
+            // الحصول على اسم الفئة المعروض
+            const categoryNames = {
+                'ai': 'ذكاء اصطناعي',
+                'automation': 'أتمتة',
+                'affiliate': 'تسويق بالعمولة',
+                'case-study': 'دراسات حالة',
+                'seo': 'SEO',
+                'ecommerce': 'تجارة إلكترونية',
+                'content': 'تسويق محتوى',
+                'email': 'تسويق بريدي'
+            };
+            
+            updateActiveLink(categoryNames[category] || category);
+        }
+
+        // تحديث الرابط النشط في القائمة
+        function updateActiveLink(activeText) {
             document.querySelectorAll('.nav-container a').forEach(link => {
                 link.classList.remove('active');
+                if (link.textContent.includes(activeText)) {
+                    link.classList.add('active');
+                }
             });
-            if (event) event.target.classList.add('active');
         }
 
         // عرض المقالات في شبكة
@@ -1227,6 +1363,10 @@
             const article = articles.find(a => a.id === articleId);
             if (!article) return;
 
+            const relatedArticles = articles
+                .filter(a => a.id !== article.id && a.category === article.category)
+                .slice(0, 3);
+
             const html = `
                 <div class="back-btn" onclick="showHome(event)">
                     <i class="fas fa-arrow-right"></i> العودة للرئيسية
@@ -1240,7 +1380,7 @@
                             <span><i class="far fa-clock"></i> ${article.readTime}</span>
                             <span><i class="fas fa-tag"></i> ${article.categoryName}</span>
                         </div>
-                        <a href="${article.externalLink}" target="_blank" class="external-link">
+                        <a href="${article.externalLink}" target="_blank" rel="noopener" class="external-link">
                             <i class="fas fa-external-link-alt"></i> قراءة المصدر الأصلي على ${article.externalSource}
                         </a>
                     </div>
@@ -1259,24 +1399,26 @@
                         </div>
                     </div>
                     
-                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.2); border-radius: 20px;">
-                        <h4 style="color: var(--primary-glow); margin-bottom: 1rem;">📚 مقالات مقترحة</h4>
-                        <div style="display: grid; gap: 1rem;">
-                            ${articles.filter(a => a.id !== article.id && a.category === article.category).slice(0, 3).map(a => `
-                                <div onclick="showArticle(${a.id})" style="cursor: pointer; padding: 0.5rem; border-right: 2px solid var(--primary-glow);">
-                                    <i class="fas ${a.icon}" style="color: var(--primary-glow); margin-left: 10px;"></i>
-                                    ${a.title}
-                                </div>
-                            `).join('')}
+                    ${relatedArticles.length > 0 ? `
+                        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.2); border-radius: 20px;">
+                            <h4 style="color: var(--primary-glow); margin-bottom: 1rem;">📚 مقالات مقترحة</h4>
+                            <div style="display: grid; gap: 1rem;">
+                                ${relatedArticles.map(a => `
+                                    <div onclick="showArticle(${a.id})" style="cursor: pointer; padding: 0.5rem; border-right: 2px solid var(--primary-glow);">
+                                        <i class="fas ${a.icon}" style="color: var(--primary-glow); margin-left: 10px;"></i>
+                                        ${a.title}
+                                    </div>
+                                `).join('')}
+                            </div>
                         </div>
-                    </div>
+                    ` : ''}
                 </div>
             `;
             
             document.getElementById('main-content').innerHTML = html;
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
-            // إرسال حدث مشاهدة المقال إلى Google Tag Manager
+            // إرسال حدث مشاهدة المقال
             if (window.dataLayer) {
                 window.dataLayer.push({
                     'event': 'article_view',
@@ -1289,68 +1431,70 @@
 
         // دوال المشاركة
         function shareOnFacebook() {
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'noopener');
             
             if (window.dataLayer) {
                 window.dataLayer.push({
                     'event': 'share',
-                    'share_platform': 'facebook',
-                    'share_url': window.location.href
+                    'share_platform': 'facebook'
                 });
             }
         }
         
         function shareOnTwitter() {
-            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(document.title)}`, '_blank');
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent(document.title);
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'noopener');
             
             if (window.dataLayer) {
                 window.dataLayer.push({
                     'event': 'share',
-                    'share_platform': 'twitter',
-                    'share_url': window.location.href
+                    'share_platform': 'twitter'
                 });
             }
         }
         
         function shareOnWhatsApp() {
-            window.open(`https://wa.me/?text=${encodeURIComponent(document.title + ' ' + window.location.href)}`, '_blank');
+            const text = encodeURIComponent(document.title + ' ' + window.location.href);
+            window.open(`https://wa.me/?text=${text}`, '_blank', 'noopener');
             
             if (window.dataLayer) {
                 window.dataLayer.push({
                     'event': 'share',
-                    'share_platform': 'whatsapp',
-                    'share_url': window.location.href
+                    'share_platform': 'whatsapp'
                 });
             }
         }
         
         function shareOnLinkedIn() {
-            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank');
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'noopener');
             
             if (window.dataLayer) {
                 window.dataLayer.push({
                     'event': 'share',
-                    'share_platform': 'linkedin',
-                    'share_url': window.location.href
+                    'share_platform': 'linkedin'
                 });
             }
         }
         
         function shareOnTelegram() {
-            window.open(`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(document.title)}`, '_blank');
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent(document.title);
+            window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank', 'noopener');
             
             if (window.dataLayer) {
                 window.dataLayer.push({
                     'event': 'share',
-                    'share_platform': 'telegram',
-                    'share_url': window.location.href
+                    'share_platform': 'telegram'
                 });
             }
         }
 
-        // صفحات إضافية (بسيطة)
+        // صفحة من نحن
         function showAbout(e) {
-            e?.preventDefault();
+            if (e) e.preventDefault();
             document.getElementById('main-content').innerHTML = `
                 <div class="full-article" style="text-align: center;">
                     <h1 style="color: var(--primary-glow);">من نحن</h1>
@@ -1359,10 +1503,12 @@
                     <p style="margin-top: 2rem;">📚 نقدم الآن <strong>21 مقالة</strong> متخصصة في مجالات: الذكاء الاصطناعي، الأتمتة، التسويق بالعمولة، دراسات حالة، SEO، والتجارة الإلكترونية.</p>
                 </div>
             `;
+            updateActiveLink('من نحن');
         }
 
+        // صفحة اتصل بنا
         function showContact(e) {
-            e?.preventDefault();
+            if (e) e.preventDefault();
             document.getElementById('main-content').innerHTML = `
                 <div class="full-article" style="text-align: center;">
                     <h1 style="color: var(--primary-glow);">اتصل بنا</h1>
@@ -1371,9 +1517,15 @@
                     <p>📱 واتساب: +966 50 123 4567</p>
                 </div>
             `;
+            updateActiveLink('اتصل بنا');
         }
 
-        // بدء التشغيل (تم نقله إلى DOMContentLoaded في الأعلى)
+        // بدء التشغيل
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                showHome();
+            }, 100);
+        });
     </script>
 </body>
-</html>          
+</html>
