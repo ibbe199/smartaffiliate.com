@@ -1,0 +1,38 @@
+# تحسينات الأداء والأمان لموقع SmartAffiliate
+
+# تفعيل الضغط
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# التخزين المؤقت
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/html "access plus 1 day"
+</IfModule>
+
+# إعادة التوجيه إلى HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# منع الوصول إلى الملفات الحساسة
+<FilesMatch "^(\.htaccess|\.htpasswd|\.git|\.env|composer\.json|package\.json)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# منع الوصول إلى المجلدات الخاصة
+RedirectMatch 404 /\.git
+RedirectMatch 404 /admin
+RedirectMatch 404 /private
+
+# تخصيص صفحة الخطأ 404
+ErrorDocument 404 /404.html
