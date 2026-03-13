@@ -1,91 +1,511 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="ltr">
 <head>
-<title>Best Amazon Products 2026</title>
-<style>
-body{
-font-family: Arial;
-margin:40px;
-background:#f5f5f5;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Amazon Products 2026 | SmartAffiliate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.product{
-background:white;
-padding:20px;
-margin-bottom:20px;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
 
-.product img{
-width:200px;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.buy-btn{
-display:inline-block;
-padding:10px 20px;
-background:#ff9900;
-color:white;
-text-decoration:none;
-border-radius:5px;
-font-weight:bold;
-}
-</style>
+        /* الهيدر */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        /* شبكة المنتجات */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 25px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-title {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 10px;
+            min-height: 60px;
+        }
+
+        .product-rating {
+            color: #ffc107;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .product-rating span {
+            color: #666;
+            margin-left: 5px;
+            font-size: 0.9em;
+        }
+
+        .product-price {
+            font-size: 1.4em;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-price .original {
+            font-size: 0.8em;
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 10px;
+            font-weight: normal;
+        }
+
+        .product-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            min-height: 80px;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .product-features li {
+            color: #666;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .product-features li i {
+            color: #27ae60;
+            font-size: 0.9em;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #ff9900, #ff5500);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        .buy-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 20px rgba(255,85,0,0.3);
+        }
+
+        .buy-btn i {
+            margin-right: 8px;
+        }
+
+        /* قسم الروابط التابعة */
+        .affiliate-links {
+            margin-top: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .affiliate-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 15px;
+        }
+
+        .affiliate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .affiliate-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            transition: 0.3s;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .affiliate-card:hover {
+            background: #e9ecef;
+            border-color: #ff9900;
+        }
+
+        .affiliate-card a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            word-break: break-all;
+            font-family: monospace;
+        }
+
+        .affiliate-card i {
+            color: #ff9900;
+            margin-right: 8px;
+        }
+
+        .affiliate-label {
+            font-size: 0.8em;
+            color: #666;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* تذييل الصفحة */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: white;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <!-- الهيدر -->
+        <div class="header">
+            <h1>🎧 Best Amazon Products 2026</h1>
+            <p>Top-rated headphones and accessories with exclusive affiliate links</p>
+        </div>
 
-<h1>Best Amazon Products 2026</h1>
+        <!-- شبكة المنتجات -->
+        <div class="products-grid">
+            <!-- منتج 1: Sony WH-1000XM5 -->
+            <div class="product-card">
+                <div class="product-badge">#1 Best Seller</div>
+                <img src="https://m.media-amazon.com/images/I/61+btxzpfDL._AC_SL1500_.jpg" 
+                     alt="Sony WH-1000XM5" 
+                     class="product-image"
+                     onerror="this.src='https://via.placeholder.com/300x200?text=Sony+Headphones'">
+                <h2 class="product-title">Sony WH-1000XM5 Wireless Noise Cancelling Headphones</h2>
+                
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(4.8/5 - 12,453 reviews)</span>
+                </div>
+                
+                <div class="product-price">
+                    $348.00
+                    <span class="original">$399.99</span>
+                </div>
+                
+                <p class="product-description">
+                    Industry-leading noise cancellation with Auto NC Optimizer. 
+                    Perfect for travel, work, and immersive music experience.
+                </p>
+                
+                <ul class="product-features">
+                    <li><i class="fas fa-check-circle"></i> 30-hour battery life</li>
+                    <li><i class="fas fa-check-circle"></i> Multipoint connection</li>
+                    <li><i class="fas fa-check-circle"></i> Edge-AI, DSEE Extreme</li>
+                </ul>
+                
+                <a class="buy-btn" href="https://www.amazon.com/dp/B09Y2MYL5C?tag=smartaffiliate-20" target="_blank">
+                    <i class="fab fa-amazon"></i> Buy on Amazon - $348.00
+                </a>
+            </div>
 
-<div class="product">
-<h2>Sony WH-1000XM5 Headphones</h2>
+            <!-- منتج 2: JBL Tune 760NC -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71pSRlMdQIL._AC_SL1500_.jpg" 
+                     alt="JBL Tune 760NC" 
+                     class="product-image"
+                     onerror="this.src='https://via.placeholder.com/300x200?text=JBL+Headphones'">
+                <h2 class="product-title">JBL Tune 760NC Wireless Headphones</h2>
+                
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(4.6/5 - 8,234 reviews)</span>
+                </div>
+                
+                <div class="product-price">
+                    $79.95
+                    <span class="original">$129.95</span>
+                </div>
+                
+                <p class="product-description">
+                    Affordable wireless headphones with active noise cancellation 
+                    and JBL Pure Bass sound. Perfect for daily use.
+                </p>
+                
+                <ul class="product-features">
+                    <li><i class="fas fa-check-circle"></i> 35-hour battery life</li>
+                    <li><i class="fas fa-check-circle"></i> Quick charge (5 min = 2 hours)</li>
+                    <li><i class="fas fa-check-circle"></i> Foldable design</li>
+                </ul>
+                
+                <a class="buy-btn" href="https://www.amazon.com/dp/B08Q84PH5J?tag=smartaffiliate-20" target="_blank">
+                    <i class="fab fa-amazon"></i> Buy on Amazon - $79.95
+                </a>
+            </div>
 
-<img src="product-image.jpg">
+            <!-- منتج 3: Logitech MX Master 3S -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61nipJ1Rl0L._AC_SL1500_.jpg" 
+                     alt="Logitech MX Master 3S" 
+                     class="product-image"
+                     onerror="this.src='https://via.placeholder.com/300x200?text=Logitech+Mouse'">
+                <h2 class="product-title">Logitech MX Master 3S Wireless Mouse</h2>
+                
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(4.7/5 - 15,678 reviews)</span>
+                </div>
+                
+                <div class="product-price">
+                    $89.99
+                    <span class="original">$99.99</span>
+                </div>
+                
+                <p class="product-description">
+                    The ultimate productivity mouse with ultra-fast scrolling 
+                    and ergonomic design. Perfect for designers and professionals.
+                </p>
+                
+                <ul class="product-features">
+                    <li><i class="fas fa-check-circle"></i> 8K DPI optical sensor</li>
+                    <li><i class="fas fa-check-circle"></i> Quiet clicks</li>
+                    <li><i class="fas fa-check-circle"></i> Flow cross-computer control</li>
+                </ul>
+                
+                <a class="buy-btn" href="https://www.amazon.com/dp/B09HM94VDS?tag=smartaffiliate-20" target="_blank">
+                    <i class="fab fa-amazon"></i> Buy on Amazon - $89.99
+                </a>
+            </div>
 
-<p>
-High quality noise cancelling headphones with excellent sound.
-Perfect for travel and work.
-</p>
+            <!-- منتج 4: Apple AirPods Pro 2 -->
+            <div class="product-card">
+                <div class="product-badge">New</div>
+                <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" 
+                     alt="Apple AirPods Pro 2" 
+                     class="product-image"
+                     onerror="this.src='https://via.placeholder.com/300x200?text=AirPods+Pro'">
+                <h2 class="product-title">Apple AirPods Pro (2nd Generation)</h2>
+                
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(4.8/5 - 20,456 reviews)</span>
+                </div>
+                
+                <div class="product-price">
+                    $189.99
+                    <span class="original">$249.00</span>
+                </div>
+                
+                <p class="product-description">
+                    Premium wireless earbuds with adaptive audio and 
+                    industry-leading noise cancellation for Apple users.
+                </p>
+                
+                <ul class="product-features">
+                    <li><i class="fas fa-check-circle"></i> Up to 30h battery</li>
+                    <li><i class="fas fa-check-circle"></i> Find My with Precision Finding</li>
+                    <li><i class="fas fa-check-circle"></i> MagSafe Charging Case (USB-C)</li>
+                </ul>
+                
+                <a class="buy-btn" href="https://www.amazon.com/dp/B0BDHWDR12?tag=smartaffiliate-20" target="_blank">
+                    <i class="fab fa-amazon"></i> Buy on Amazon - $189.99
+                </a>
+            </div>
+        </div>
 
-<a class="buy-btn" href="YOUR_AFFILIATE_LINK">
-Buy on Amazon
-</a>
+        <!-- قسم الروابط التابعة (جميع روابط المنتجات) -->
+        <div class="affiliate-links">
+            <h3 class="affiliate-title">
+                <i class="fas fa-link" style="color: #ff9900;"></i> 
+                All Affiliate Links (SmartAffiliate)
+            </h3>
+            
+            <div class="affiliate-grid">
+                <!-- Sony Link -->
+                <div class="affiliate-card">
+                    <div class="affiliate-label">
+                        <i class="fas fa-headphones"></i> Sony WH-1000XM5:
+                    </div>
+                    <a href="https://www.amazon.com/dp/B09Y2MYL5C?tag=smartaffiliate-20" target="_blank">
+                        <i class="fab fa-amazon"></i> https://amazon.com/dp/B09Y2MYL5C?tag=smartaffiliate-20
+                    </a>
+                </div>
 
-</div>
+                <!-- JBL Link -->
+                <div class="affiliate-card">
+                    <div class="affiliate-label">
+                        <i class="fas fa-headphones"></i> JBL Tune 760NC:
+                    </div>
+                    <a href="https://www.amazon.com/dp/B08Q84PH5J?tag=smartaffiliate-20" target="_blank">
+                        <i class="fab fa-amazon"></i> https://amazon.com/dp/B08Q84PH5J?tag=smartaffiliate-20
+                    </a>
+                </div>
 
+                <!-- Logitech Link -->
+                <div class="affiliate-card">
+                    <div class="affiliate-label">
+                        <i class="fas fa-computer-mouse"></i> Logitech MX Master 3S:
+                    </div>
+                    <a href="https://www.amazon.com/dp/B09HM94VDS?tag=smartaffiliate-20" target="_blank">
+                        <i class="fab fa-amazon"></i> https://amazon.com/dp/B09HM94VDS?tag=smartaffiliate-20
+                    </a>
+                </div>
 
-<div class="product">
+                <!-- AirPods Link -->
+                <div class="affiliate-card">
+                    <div class="affiliate-label">
+                        <i class="fas fa-ear-listen"></i> Apple AirPods Pro 2:
+                    </div>
+                    <a href="https://www.amazon.com/dp/B0BDHWDR12?tag=smartaffiliate-20" target="_blank">
+                        <i class="fab fa-amazon"></i> https://amazon.com/dp/B0BDHWDR12?tag=smartaffiliate-20
+                    </a>
+                </div>
 
-<h2>JBL Tune 760NC Headphones</h2>
+                <!-- General Amazon Link -->
+                <div class="affiliate-card">
+                    <div class="affiliate-label">
+                        <i class="fas fa-shopping-cart"></i> Amazon Homepage:
+                    </div>
+                    <a href="https://www.amazon.com/?tag=smartaffiliate-20" target="_blank">
+                        <i class="fab fa-amazon"></i> https://amazon.com/?tag=smartaffiliate-20
+                    </a>
+                </div>
+            </div>
 
-<img src="product-image.jpg">
+            <!-- Disclaimer -->
+            <div style="margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 10px; font-size: 0.9em; color: #666; text-align: center;">
+                <i class="fas fa-info-circle" style="color: #ff9900;"></i> 
+                As an Amazon Associate, I earn from qualifying purchases. This helps support the site at no extra cost to you.
+            </div>
+        </div>
 
-<p>
-Affordable wireless headphones with strong bass and long battery life.
-</p>
+        <!-- تحديث الروابط في المنتجات الأصلية -->
+        <footer>
+            <p>© 2026 SmartAffiliate - Best Amazon Products Recommendations</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a> | 
+                <a href="#" style="color: white; text-decoration: none;">Terms of Service</a> | 
+                <a href="#" style="color: white; text-decoration: none;">Contact</a>
+            </p>
+        </footer>
+    </div>
 
-<a class="buy-btn" href="YOUR_AFFILIATE_LINK">
-Buy on Amazon
-</a>
-
-</div>
-
-
-<div class="product">
-
-<h2>Logitech MX Master Mouse</h2>
-
-<img src="product-image.jpg">
-
-<p>
-One of the best productivity mice for work and design.
-</p>
-
-<a class="buy-btn" href="YOUR_AFFILIATE_LINK">
-Buy on Amazon
-</a>
-
-</div>
-
+    <script>
+        // تحديث روابط الشراء لاستخدام نفس معرف الأفلييت
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                console.log('Affiliate link clicked:', this.href);
+            });
+        });
+    </script>
 </body>
 </html>
