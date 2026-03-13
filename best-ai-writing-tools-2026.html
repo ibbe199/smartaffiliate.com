@@ -223,6 +223,97 @@
             transform: translateY(-3px);
         }
 
+        /* قسم الروابط */
+        .links-section {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 30px;
+            border: 1px solid var(--border);
+        }
+
+        .links-title {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 15px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .link-card {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 15px;
+            padding: 15px;
+            transition: 0.3s;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .link-card:hover {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .link-card i {
+            color: var(--primary);
+            margin-left: 8px;
+        }
+
+        .link-card a {
+            color: var(--text);
+            text-decoration: none;
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .link-card a:hover {
+            color: var(--primary-light);
+        }
+
+        .link-label {
+            direction: rtl;
+            text-align: right;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .current-article {
+            background: rgba(99, 102, 241, 0.25);
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+
+        .current-article::after {
+            content: 'المقالة الحالية';
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: var(--primary);
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            direction: rtl;
+        }
+
         @media (max-width: 600px) {
             .container { padding: 10px; }
             .content-box { padding: 20px; }
@@ -420,6 +511,71 @@
             </div>
         </div>
 
+        <!-- قسم الروابط الشامل -->
+        <div class="links-section">
+            <div class="links-title">
+                <i class="fas fa-link"></i> جميع روابط المقالات
+            </div>
+            
+            <div class="links-grid">
+                <!-- رابط الصفحة الرئيسية -->
+                <div class="link-card">
+                    <div class="link-label">
+                        <i class="fas fa-home"></i> الصفحة الرئيسية
+                    </div>
+                    <a href="https://smartafiliate.com/index.html" target="_blank">
+                        <i class="fas fa-globe"></i> https://smartafiliate.com/index.html
+                    </a>
+                </div>
+                
+                <!-- رابط المقالة 1 (الحالية) -->
+                <div class="link-card current-article">
+                    <div class="link-label">
+                        <i class="fas fa-file-alt"></i> مقالة 1: أدوات كتابة المحتوى (الحالية)
+                    </div>
+                    <a href="https://smartafiliate.com/articles/article1.html" target="_blank">
+                        <i class="fas fa-pen-fancy"></i> https://smartafiliate.com/articles/article1.html
+                    </a>
+                </div>
+                
+                <!-- رابط المقالة 2 -->
+                <div class="link-card">
+                    <div class="link-label">
+                        <i class="fas fa-file-alt"></i> مقالة 2: إنشاء صور احترافية
+                    </div>
+                    <a href="https://smartafiliate.com/articles/article2.html" target="_blank">
+                        <i class="fas fa-image"></i> https://smartafiliate.com/articles/article2.html
+                    </a>
+                </div>
+                
+                <!-- رابط المقالة 4 -->
+                <div class="link-card">
+                    <div class="link-label">
+                        <i class="fas fa-file-alt"></i> مقالة 4: دراسة حالة
+                    </div>
+                    <a href="https://smartafiliate.com/articles/article4.html" target="_blank">
+                        <i class="fas fa-chart-line"></i> https://smartafiliate.com/articles/article4.html
+                    </a>
+                </div>
+                
+                <!-- رابط المقالة 5 -->
+                <div class="link-card">
+                    <div class="link-label">
+                        <i class="fas fa-file-alt"></i> مقالة 5: أدوات مجانية
+                    </div>
+                    <a href="https://smartafiliate.com/articles/article5.html" target="_blank">
+                        <i class="fas fa-star"></i> https://smartafiliate.com/articles/article5.html
+                    </a>
+                </div>
+            </div>
+            
+            <!-- ملخص الروابط -->
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; text-align: center;">
+                <i class="fas fa-info-circle" style="color: var(--primary);"></i> 
+                يتوفر حالياً 5 روابط: الرئيسية + 4 مقالات
+            </div>
+        </div>
+
         <!-- أزرار المشاركة -->
         <div class="share-section">
             <a href="#" onclick="shareOnFacebook()" class="share-btn"><i class="fab fa-facebook-f"></i></a>
@@ -432,9 +588,9 @@
         <div style="margin-top: 40px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 20px;">
             <h3 style="color: var(--primary); margin-bottom: 15px;">📚 قد يهمك أيضاً</h3>
             <div style="display: grid; gap: 10px;">
-                <a href="article1.html" style="color: var(--text-muted); text-decoration: none;">← أفضل أدوات SEO المجانية</a>
-                <a href="article2.html" style="color: var(--text-muted); text-decoration: none;">← دليل كتابة المحتوى التسويقي</a>
-                <a href="article3.html" style="color: var(--text-muted); text-decoration: none;">← كيف تختار أداة الذكاء الاصطناعي المناسبة</a>
+                <a href="article2.html" style="color: var(--text-muted); text-decoration: none;">← إنشاء صور احترافية باستخدام Midjourney</a>
+                <a href="article4.html" style="color: var(--text-muted); text-decoration: none;">← دراسة حالة: كيف حقق موقع صغير 100 ألف دولار</a>
+                <a href="article5.html" style="color: var(--text-muted); text-decoration: none;">← أفضل 20 أداة ذكاء اصطناعي مجانية</a>
             </div>
         </div>
     </div>
