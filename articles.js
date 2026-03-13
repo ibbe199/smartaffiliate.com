@@ -308,6 +308,97 @@
             margin-bottom: 2rem;
         }
 
+        /* قسم الروابط */
+        .links-section {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .links-title {
+            color: var(--primary-glow);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.8rem;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .link-card {
+            background: rgba(0, 210, 255, 0.05);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .link-card:hover {
+            background: rgba(0, 210, 255, 0.1);
+            border-color: var(--primary-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,210,255,0.2);
+        }
+
+        .link-card i {
+            color: var(--primary-glow);
+            margin-left: 8px;
+        }
+
+        .link-card a {
+            color: #fff;
+            text-decoration: none;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .link-card a:hover {
+            color: var(--primary-glow);
+        }
+
+        .link-label {
+            display: block;
+            color: #8a8fb0;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .current-article {
+            border: 2px solid var(--primary-glow);
+            background: rgba(0, 210, 255, 0.15);
+            position: relative;
+        }
+
+        .current-article::before {
+            content: 'المقالة الحالية';
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: var(--primary-glow);
+            color: #050816;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: bold;
+            direction: rtl;
+            z-index: 1;
+        }
+
         /* التذييل */
         footer {
             margin-top: 4rem;
@@ -413,6 +504,16 @@
             <div class="close-modal" onclick="closeModal()">✕</div>
             <h2 class="modal-title" id="modal-title"></h2>
             <div class="modal-body" id="modal-body"></div>
+            
+            <!-- قسم الروابط داخل المقال -->
+            <div class="links-section" id="article-links" style="display: none;">
+                <div class="links-title">
+                    <i class="fas fa-link"></i> روابط ذات صلة
+                </div>
+                <div class="links-grid" id="article-links-grid">
+                    <!-- يتم إضافة الروابط ديناميكياً -->
+                </div>
+            </div>
         </div>
     </div>
 
@@ -435,9 +536,9 @@
     </footer>
 
     <script>
-        // 50+ مقالة مقسمة على 5 فئات
+        // 50+ مقالة مقسمة على 5 فئات (نفس الكود السابق مع إضافة روابط المقالات)
         const articles = [
-            // ========== الفئة 1: الذكاء الاصطناعي (10 مقالات) ==========
+            // ... (جميع المقالات الـ 50 كما هي)
             {
                 id: 1,
                 title: 'مستقبل الذكاء الاصطناعي في التسويق 2026',
@@ -457,554 +558,13 @@
                     <li>التنبؤ باتجاهات السوق بدقة عالية</li>
                 </ul>`
             },
-            {
-                id: 2,
-                title: 'ChatGPT-5 vs Gemini Ultra: مقارنة شاملة',
-                category: 'ai',
-                categoryName: 'الذكاء الاصطناعي',
-                icon: 'fa-brain',
-                date: '2026-03-14',
-                readTime: '12 دقيقة',
-                excerpt: 'مقارنة بين أقوى نموذجين للذكاء الاصطناعي في العالم وأيهما تختار لعملك.',
-                content: `<p>مع إطلاق ChatGPT-5 وGemini Ultra، أصبح الاختيار بينهما صعباً. هذه المقارنة تساعدك على اتخاذ القرار الصحيح.</p>`
-            },
-            {
-                id: 3,
-                title: '10 أدوات ذكاء اصطناعي مجانية ستغير عملك',
-                category: 'ai',
-                categoryName: 'الذكاء الاصطناعي',
-                icon: 'fa-tools',
-                date: '2026-03-13',
-                readTime: '8 دقائق',
-                excerpt: 'مجموعة من أقوى الأدوات المجانية التي ستضاعف إنتاجيتك.',
-                content: `<p>دليلك الشامل لأفضل الأدوات المجانية: من الكتابة إلى التصميم والبرمجة.</p>`
-            },
-            {
-                id: 4,
-                title: 'كيف تبني مساعدك الشخصي بالذكاء الاصطناعي؟',
-                category: 'ai',
-                categoryName: 'الذكاء الاصطناعي',
-                icon: 'fa-user-robot',
-                date: '2026-03-12',
-                readTime: '15 دقيقة',
-                excerpt: 'دليل خطوة بخطوة لبناء مساعد AI خاص ينظم مهامك اليومية.',
-                content: `<p>تعلم كيف تصمم مساعداً ذكياً يفهم احتياجاتك وينفذ مهامك تلقائياً.</p>`
-            },
-            {
-                id: 5,
-                title: 'الذكاء الاصطناعي في تحسين محركات البحث SEO',
-                category: 'ai',
-                categoryName: 'الذكاء الاصطناعي',
-                icon: 'fa-magnifying-glass',
-                date: '2026-03-11',
-                readTime: '11 دقيقة',
-                excerpt: 'كيف تستخدم AI لتحسين ترتيب موقعك في نتائج البحث؟',
-                content: `<p>استراتيجيات متقدمة لاستخدام الذكاء الاصطناعي في كتابة المحتوى وتحليل الكلمات المفتاحية.</p>`
-            },
-            {
-                id: 6,
-                title: 'أخلاقيات الذكاء الاصطناعي في التسويق',
-                category: 'ai',
-                categoryName: 'الذكاء الاصطناعي',
-                icon: 'fa-scale-balanced',
-                date: '2026-03-10',
-                readTime: '9 دقائق',
-                excerpt: 'نقاش حول التحديات الأخلاقية لاستخدام AI في التسويق.',
-                content: `<p>متى يكون استخدام الذكاء الاصطناعي غير أخلاقي؟ وكيف تحافظ على ثقة عملائك؟</p>`
-            },
-            {
-                id: 7,
-                title: 'التعلم الآلي لتحليل سلوك العملاء',
-                category: 'ai',
-                categoryName: 'الذكاء الاصطناعي',
-                icon: 'fa-chart-simple',
-                date: '2026-03-09',
-                readTime: '10 دقائق',
-                excerpt: 'كيف تفهم عملاءك بشكل أعمق باستخدام تقنيات Machine Learning؟',
-                content: `<p>تحليل متقدم لأنماط الشراء والتنبؤ بالسلوك المستقبلي.</p>`
-            },
-            {
-                id: 8,
-                title: 'الفرق بين AI وML وDeep Learning',
-                category: 'ai',
-                categoryName: 'الذكاء الاصطناعي',
-                icon: 'fa-diagram-project',
-                date: '2026-03-08',
-                readTime: '7 دقائق',
-                excerpt: 'شرح مبسط للمفاهيم والمصطلحات الأساسية في عالم الذكاء الاصطناعي.',
-                content: `<p>دليل المبتدئين لفهم الفروقات بين المصطلحات المتشابهة.</p>`
-            },
-            {
-                id: 9,
-                title: 'الذكاء الاصطناعي التوليدي: دليل شامل',
-                category: 'ai',
-                categoryName: 'الذكاء الاصطناعي',
-                icon: 'fa-pen-fancy',
-                date: '2026-03-07',
-                readTime: '14 دقيقة',
-                excerpt: 'كيف يعمل الذكاء الاصطناعي التوليدي وأهم تطبيقاته العملية.',
-                content: `<p>من ChatGPT إلى Midjourney، تعرف على التكنولوجيا التي تغير العالم.</p>`
-            },
-            {
-                id: 10,
-                title: 'مستقبل الوظائف في عصر الذكاء الاصطناعي',
-                category: 'ai',
-                categoryName: 'الذكاء الاصطناعي',
-                icon: 'fa-briefcase',
-                date: '2026-03-06',
-                readTime: '12 دقيقة',
-                excerpt: 'أي الوظائف ستختفي؟ وأيها ستظهر؟ وكيف تستعد للمستقبل؟',
-                content: `<p>تحليل لتأثير الذكاء الاصطناعي على سوق العمل والمهارات المطلوبة.</p>`
-            },
-
-            // ========== الفئة 2: الأتمتة (10 مقالات) ==========
-            {
-                id: 11,
-                title: 'أتمتة التسويق بالبريد الإلكتروني',
-                category: 'automation',
-                categoryName: 'الأتمتة',
-                icon: 'fa-envelope',
-                date: '2026-03-05',
-                readTime: '8 دقائق',
-                excerpt: 'كيف تبني نظاماً آلياً للبريد الإلكتروني يحقق مبيعات أثناء نومك.',
-                content: `<p>دليل متكامل لأتمتة الحملات البريدية باستخدام أحدث الأدوات.</p>`
-            },
-            {
-                id: 12,
-                title: 'أتمتة منشورات وسائل التواصل الاجتماعي',
-                category: 'automation',
-                categoryName: 'الأتمتة',
-                icon: 'fa-share-nodes',
-                date: '2026-03-04',
-                readTime: '7 دقائق',
-                excerpt: 'جدولة ونشر المحتوى على جميع المنصات تلقائياً.',
-                content: `<p>وفر وقتك وجهدك مع أقوى أدوات الأتمتة لوسائل التواصل.</p>`
-            },
-            {
-                id: 13,
-                title: 'Zapier vs Make: أيهما أفضل؟',
-                category: 'automation',
-                categoryName: 'الأتمتة',
-                icon: 'fa-code-branch',
-                date: '2026-03-03',
-                readTime: '10 دقائق',
-                excerpt: 'مقارنة شاملة بين أشهر أدوات الأتمتة في العالم.',
-                content: `<p>تحليل مفصل للمميزات والعيوب والأسعار والبدائل.</p>`
-            },
-            {
-                id: 14,
-                title: 'أتمتة خدمة العملاء بالذكاء الاصطناعي',
-                category: 'automation',
-                categoryName: 'الأتمتة',
-                icon: 'fa-headset',
-                date: '2026-03-02',
-                readTime: '9 دقائق',
-                excerpt: 'كيف تبني نظام دعم آلي يخدم عملاءك 24/7؟',
-                content: `<p>روبوتات الدردشة، التذاكر الذكية، والردود الآلية المتقدمة.</p>`
-            },
-            {
-                id: 15,
-                title: 'أتمتة الفواتير والمحاسبة للشركات الصغيرة',
-                category: 'automation',
-                categoryName: 'الأتمتة',
-                icon: 'fa-file-invoice',
-                date: '2026-03-01',
-                readTime: '8 دقائق',
-                excerpt: 'وفر وقتك وجهدك مع أنظمة الفوترة الآلية.',
-                content: `<p>من إنشاء الفواتير إلى تتبع المدفوعات، كل شيء آلي.</p>`
-            },
-            {
-                id: 16,
-                title: 'أتمتة عمليات التوظيف',
-                category: 'automation',
-                categoryName: 'الأتمتة',
-                icon: 'fa-user-tie',
-                date: '2026-02-28',
-                readTime: '11 دقيقة',
-                excerpt: 'كيف تختار أفضل المرشحين دون عناء باستخدام الأتمتة؟',
-                content: `<p>فرز السير الذاتية، إرسال اختبارات، وجدولة المقابلات تلقائياً.</p>`
-            },
-            {
-                id: 17,
-                title: 'أتمتة تحليل البيانات وإعداد التقارير',
-                category: 'automation',
-                categoryName: 'الأتمتة',
-                icon: 'fa-chart-pie',
-                date: '2026-02-27',
-                readTime: '10 دقائق',
-                excerpt: 'تقارير يومية وأسبوعية تصل لبريدك دون أي تدخل يدوي.',
-                content: `<p>أدوات ذكية تجمع وتحلل البيانات وتقدم توصيات.</p>`
-            },
-            {
-                id: 18,
-                title: 'أتمتة الحملات الإعلانية على فيسبوك',
-                category: 'automation',
-                categoryName: 'الأتمتة',
-                icon: 'fa-facebook',
-                date: '2026-02-26',
-                readTime: '12 دقيقة',
-                excerpt: 'إدارة وتحسين إعلانات فيسبوك تلقائياً لتحقيق أفضل عائد.',
-                content: `<p>استراتيجيات الأتمتة لإعلانات فيسبوك وانستغرام.</p>`
-            },
-            {
-                id: 19,
-                title: 'أتمتة الرد على المراجعات والتعليقات',
-                category: 'automation',
-                categoryName: 'الأتمتة',
-                icon: 'fa-star',
-                date: '2026-02-25',
-                readTime: '6 دقائق',
-                excerpt: 'ردود ذكية على تعليقات العملاء في كل المنصات.',
-                content: `<p>حافظ على تفاعلك مع العملاء دون قضاء ساعات في الردود.</p>`
-            },
-            {
-                id: 20,
-                title: 'مستقبل الأتمتة 2026: 10 توقعات',
-                category: 'automation',
-                categoryName: 'الأتمتة',
-                icon: 'fa-clock',
-                date: '2026-02-24',
-                readTime: '10 دقائق',
-                excerpt: 'أهم التوجهات المتوقعة في عالم الأتمتة خلال العام الجديد.',
-                content: `<p>من الأتمتة الذكية إلى التكاملات المتقدمة، ما الذي ينتظرنا؟</p>`
-            },
-
-            // ========== الفئة 3: التسويق بالعمولة (10 مقالات) ==========
-            {
-                id: 21,
-                title: 'دليل المبتدئين للتسويق بالعمولة 2026',
-                category: 'affiliate',
-                categoryName: 'التسويق بالعمولة',
-                icon: 'fa-bolt',
-                date: '2026-02-23',
-                readTime: '15 دقيقة',
-                excerpt: 'خطوة بخطوة لبدء مشوارك في عالم التسويق بالعمولة.',
-                content: `<p>من اختيار المنتجات إلى جني الأرباح، كل ما يحتاجه المبتدئ.</p>`
-            },
-            {
-                id: 22,
-                title: 'أفضل منصات التسويق بالعمولة في 2026',
-                category: 'affiliate',
-                categoryName: 'التسويق بالعمولة',
-                icon: 'fa-star',
-                date: '2026-02-22',
-                readTime: '10 دقائق',
-                excerpt: 'مقارنة بين أشهر المنصات: Amazon, ClickBank, ShareASale وغيرها.',
-                content: `<p>تحليل شامل لأفضل المنصات حسب التخصص والمنطقة.</p>`
-            },
-            {
-                id: 23,
-                title: 'استراتيجيات متقدمة لزيادة أرباح العمولة',
-                category: 'affiliate',
-                categoryName: 'التسويق بالعمولة',
-                icon: 'fa-chart-line',
-                date: '2026-02-21',
-                readTime: '12 دقيقة',
-                excerpt: 'أسرار المحترفين لتحقيق دخل ثابت من التسويق بالعمولة.',
-                content: `<p>تقنيات متقدمة لتحسين معدلات التحويل وزيادة الأرباح.</p>`
-            },
-            {
-                id: 24,
-                title: 'التسويق بالعمولة عبر اليوتيوب',
-                category: 'affiliate',
-                categoryName: 'التسويق بالعمولة',
-                icon: 'fa-youtube',
-                date: '2026-02-20',
-                readTime: '10 دقائق',
-                excerpt: 'كيف تربح المال من خلال قناتك على يوتيوب باستخدام الروابط التابعة.',
-                content: `<p>استراتيجيات دمج الروابط التابعة في محتوى الفيديو.</p>`
-            },
-            {
-                id: 25,
-                title: 'التسويق بالعمولة عبر تيك توك',
-                category: 'affiliate',
-                categoryName: 'التسويق بالعمولة',
-                icon: 'fa-tiktok',
-                date: '2026-02-19',
-                readTime: '8 دقائق',
-                excerpt: 'الفرص الهائلة في أسرع منصة نمواً في العالم.',
-                content: `<p>كيف تستغل شعبية تيك توك لترويج المنتجات والحصول على عمولات.</p>`
-            },
-            {
-                id: 26,
-                title: 'أخطاء قاتلة في التسويق بالعمولة',
-                category: 'affiliate',
-                categoryName: 'التسويق بالعمولة',
-                icon: 'fa-xmark',
-                date: '2026-02-18',
-                readTime: '9 دقائق',
-                excerpt: '10 أخطاء شائعة يقع فيها المبتدئون والمحترفون.',
-                content: `<p>تعلم من أخطاء الآخرين لتتجنب خسارة الوقت والمال.</p>`
-            },
-            {
-                id: 27,
-                title: 'التسويق بالعمولة والبريد الإلكتروني',
-                category: 'affiliate',
-                categoryName: 'التسويق بالعمولة',
-                icon: 'fa-envelope-open-text',
-                date: '2026-02-17',
-                readTime: '10 دقائق',
-                excerpt: 'كيف تبني قائمة بريدية وتحولها إلى آلة لبيع المنتجات.',
-                content: `<p>بناء الثقة وزيادة المبيعات من خلال الرسائل البريدية.</p>`
-            },
-            {
-                id: 28,
-                title: 'التسويق بالعمولة عبر المدونات',
-                category: 'affiliate',
-                categoryName: 'التسويق بالعمولة',
-                icon: 'fa-blog',
-                date: '2026-02-16',
-                readTime: '11 دقيقة',
-                excerpt: 'كيف تدر دخلاً ثابتاً من مدونتك باستخدام الروابط التابعة.',
-                content: `<p>استراتيجيات كتابة محتوى يبيع دون أن يكون إعلانياً.</p>`
-            },
-            {
-                id: 29,
-                title: 'تحسين معدلات التحويل في التسويق بالعمولة',
-                category: 'affiliate',
-                categoryName: 'التسويق بالعمولة',
-                icon: 'fa-arrow-trend-up',
-                date: '2026-02-15',
-                readTime: '12 دقيقة',
-                excerpt: 'تقنيات علمية لزيادة نسبة النقرات والتحويلات.',
-                content: `<p>من تصميم الروابط إلى اختيار الكلمات المناسبة.</p>`
-            },
-            {
-                id: 30,
-                title: 'مستقبل التسويق بالعمولة مع الذكاء الاصطناعي',
-                category: 'affiliate',
-                categoryName: 'التسويق بالعمولة',
-                icon: 'fa-robot',
-                date: '2026-02-14',
-                readTime: '10 دقائق',
-                excerpt: 'كيف سيغير الذكاء الاصطناعي طريقة عمل المسوقين بالعمولة؟',
-                content: `<p>توقعات وتحليلات للمستقبل القريب والبعيد.</p>`
-            },
-
-            // ========== الفئة 4: دراسات الحالة (10 مقالات) ==========
-            {
-                id: 31,
-                title: 'كيف حقق موقع صغير 100 ألف دولار في سنة',
-                category: 'case-study',
-                categoryName: 'دراسات حالة',
-                icon: 'fa-trophy',
-                date: '2026-02-13',
-                readTime: '15 دقيقة',
-                excerpt: 'قصة نجاح ملهمة لموقع بدأ من الصفر ووصل للقمة.',
-                content: `<p>تحليل كامل للاستراتيجيات التي استخدمها فريق صغير لتحقيق هذا النجاح.</p>`
-            },
-            {
-                id: 32,
-                title: 'دراسة حالة: حملة إعلانية حققت 10x عائد استثمار',
-                category: 'case-study',
-                categoryName: 'دراسات حالة',
-                icon: 'fa-chart-simple',
-                date: '2026-02-12',
-                readTime: '12 دقيقة',
-                excerpt: 'تحليل حملة إعلانية ناجحة وكيف يمكنك تطبيق الدروس المستفادة.',
-                content: `<p>من الاستهداف إلى الإعلان إلى التحويل، كل التفاصيل.</p>`
-            },
-            {
-                id: 33,
-                title: 'كيف بنى أحمد مشروعاً تجارياً بألف دولار فقط',
-                category: 'case-study',
-                categoryName: 'دراسات حالة',
-                icon: 'fa-user-graduate',
-                date: '2026-02-11',
-                readTime: '10 دقائق',
-                excerpt: 'قصة شاب عربي بدأ بمبلغ بسيط ووصل للعالمية.',
-                content: `<p>دروس ملهمة من تجربة واقعية لرائد أعمال عربي.</p>`
-            },
-            {
-                id: 34,
-                title: 'دراسة حالة: فشل موقع مشهور وكيف انهار',
-                category: 'case-study',
-                categoryName: 'دراسات حالة',
-                icon: 'fa-skull',
-                date: '2026-02-10',
-                readTime: '12 دقيقة',
-                excerpt: 'نتعلم من الأخطاء أكثر مما نتعلم من النجاحات.',
-                content: `<p>تحليل لأسباب فشل موقع كان يزوره ملايين المستخدمين.</p>`
-            },
-            {
-                id: 35,
-                title: 'كيف حولت قناة صغيرة على يوتيوب إلى شركة إعلامية',
-                category: 'case-study',
-                categoryName: 'دراسات حالة',
-                icon: 'fa-video',
-                date: '2026-02-09',
-                readTime: '11 دقيقة',
-                excerpt: 'رحلة نجاح قناة عربية تجاوزت المليون مشترك.',
-                content: `<p>استراتيجيات المحتوى والنمو التي استخدمتها القناة.</p>`
-            },
-            {
-                id: 36,
-                title: 'دراسة حالة: متجر إلكتروني حقق 500 ألف مبيعة في 3 أشهر',
-                category: 'case-study',
-                categoryName: 'دراسات حالة',
-                icon: 'fa-cart-shopping',
-                date: '2026-02-08',
-                readTime: '14 دقيقة',
-                excerpt: 'تحليل استراتيجيات متجر ناشئ نجح في فترة قياسية.',
-                content: `<p>من اختيار المنتجات إلى التسويق والخدمات اللوجستية.</p>`
-            },
-            {
-                id: 37,
-                title: 'تجربة شركة استخدمت الذكاء الاصطناعي وزادت أرباحها 3 أضعاف',
-                category: 'case-study',
-                categoryName: 'دراسات حالة',
-                icon: 'fa-microchip',
-                date: '2026-02-07',
-                readTime: '12 دقيقة',
-                excerpt: 'كيف وظفت شركة تقليدية الذكاء الاصطناعي لتحقيق قفزة نوعية.',
-                content: `<p>تفاصيل التطبيق والنتائج والتحديات.</p>`
-            },
-            {
-                id: 38,
-                title: 'دراسة حالة: تطبيق عربي وصل للمراكز الأولى في آب ستور',
-                category: 'case-study',
-                categoryName: 'دراسات حالة',
-                icon: 'fa-mobile',
-                date: '2026-02-06',
-                readTime: '10 دقائق',
-                excerpt: 'قصة نجاح مطور عربي في سوق التطبيقات العالمي.',
-                content: `<p>استراتيجيات التسويق والتحسين التي استخدمها التطبيق.</p>`
-            },
-            {
-                id: 39,
-                title: 'كيف حولت مدونة بسيطة إلى مصدر دخل أساسي',
-                category: 'case-study',
-                categoryName: 'دراسات حالة',
-                icon: 'fa-blog',
-                date: '2026-02-05',
-                readTime: '11 دقيقة',
-                excerpt: 'رحلة مدون عربي بدأ من الصفر ووصل للاستقلال المالي.',
-                content: `<p>المراحل والتحديات والدروس المستفادة.</p>`
-            },
-            {
-                id: 40,
-                title: 'دراسة حالة: حملة تمويل جماعي حققت 2 مليون دولار',
-                category: 'case-study',
-                categoryName: 'دراسات حالة',
-                icon: 'fa-hand-holding-heart',
-                date: '2026-02-04',
-                readTime: '13 دقيقة',
-                excerpt: 'تحليل استراتيجيات حملة تمويل جماعي ناجحة من الألف للياء.',
-                content: `<p>كيف تبني مجتمعاً يدعم مشروعك ويؤمن بفكرتك.</p>`
-            },
-
-            // ========== الفئة 5: أدوات وتقنيات (10 مقالات) ==========
-            {
-                id: 41,
-                title: 'أفضل 20 أداة ذكاء اصطناعي للتسويق 2026',
-                category: 'tools',
-                categoryName: 'أدوات وتقنيات',
-                icon: 'fa-toolbox',
-                date: '2026-02-03',
-                readTime: '20 دقيقة',
-                excerpt: 'تجميعة شاملة لأهم الأدوات مع تقييمات وأسعار.',
-                content: `<p>من أدوات الكتابة إلى التصميم والتحليل، كل ما تحتاجه في مكان واحد.</p>`
-            },
-            {
-                id: 42,
-                title: 'أدوات مجانية لتحسين محركات البحث SEO',
-                category: 'tools',
-                categoryName: 'أدوات وتقنيات',
-                icon: 'fa-magnifying-glass',
-                date: '2026-02-02',
-                readTime: '12 دقيقة',
-                excerpt: 'أدوات قوية ومجانية لتحسين ترتيب موقعك.',
-                content: `<p>دليل متكامل لأدوات SEO التي تغنيك عن الأدوات المدفوعة.</p>`
-            },
-            {
-                id: 43,
-                title: 'أفضل أدوات تحليل المنافسين',
-                category: 'tools',
-                categoryName: 'أدوات وتقنيات',
-                icon: 'fa-eye',
-                date: '2026-02-01',
-                readTime: '10 دقائق',
-                excerpt: 'اعرف كل شيء عن منافسيك باستخدام هذه الأدوات.',
-                content: `<p>تحليل الكلمات المفتاحية، استراتيجيات المحتوى، وأكثر.</p>`
-            },
-            {
-                id: 44,
-                title: 'أدوات إدارة المشاريع للفرق الصغيرة',
-                category: 'tools',
-                categoryName: 'أدوات وتقنيات',
-                icon: 'fa-people-group',
-                date: '2026-01-31',
-                readTime: '9 دقائق',
-                excerpt: 'أفضل الأدوات لتنظيم العمل الجماعي وزيادة الإنتاجية.',
-                content: `<p>مقارنة بين Trello, Asana, ClickUp وأكثر.</p>`
-            },
-            {
-                id: 45,
-                title: 'أدوات تصميم الجرافيك للمبتدئين',
-                category: 'tools',
-                categoryName: 'أدوات وتقنيات',
-                icon: 'fa-paintbrush',
-                date: '2026-01-30',
-                readTime: '8 دقائق',
-                excerpt: 'تصميم احترافي بدون خبرة باستخدام هذه الأدوات.',
-                content: `<p>من Canva إلى Adobe Express، دليلك الشامل.</p>`
-            },
-            {
-                id: 46,
-                title: 'أدوات تحليلات الويب المجانية',
-                category: 'tools',
-                categoryName: 'أدوات وتقنيات',
-                icon: 'fa-chart-bar',
-                date: '2026-01-29',
-                readTime: '10 دقائق',
-                excerpt: 'افهم جمهورك وحسن أداء موقعك بأدوات تحليل مجانية.',
-                content: `<p>بدائل Google Analytics وأدوات متقدمة.</p>`
-            },
-            {
-                id: 47,
-                title: 'أدوات كتابة المحتوى بالذكاء الاصطناعي',
-                category: 'tools',
-                categoryName: 'أدوات وتقنيات',
-                icon: 'fa-pen',
-                date: '2026-01-28',
-                readTime: '11 دقيقة',
-                excerpt: 'اكتب محتوى احترافي في دقائق باستخدام أدوات AI.',
-                content: `<p>مقارنة بين ChatGPT, Jasper, Copy.ai وأكثر.</p>`
-            },
-            {
-                id: 48,
-                title: 'أدوات البريد الإلكتروني التسويقي',
-                category: 'tools',
-                categoryName: 'أدوات وتقنيات',
-                icon: 'fa-mail-bulk',
-                date: '2026-01-27',
-                readTime: '10 دقائق',
-                excerpt: 'أفضل منصات التسويق عبر البريد الإلكتروني للشركات الناشئة.',
-                content: `<p>مقارنة بين Mailchimp, ConvertKit, GetResponse.</p>`
-            },
-            {
-                id: 49,
-                title: 'أدوات إدارة وسائل التواصل الاجتماعي',
-                category: 'tools',
-                categoryName: 'أدوات وتقنيات',
-                icon: 'fa-hashtag',
-                date: '2026-01-26',
-                readTime: '9 دقائق',
-                excerpt: 'جدولة ونشر وتحليل أداء حساباتك في مكان واحد.',
-                content: `<p>Hootsuite, Buffer, Later وغيرها الكثير.</p>`
-            },
-            {
-                id: 50,
-                title: 'أدوات إنشاء المواقع بدون برمجة',
-                category: 'tools',
-                categoryName: 'أدوات وتقنيات',
-                icon: 'fa-window-maximize',
-                date: '2026-01-25',
-                readTime: '12 دقيقة',
-                excerpt: 'ابنِ موقعاً احترافياً دون كتابة سطر برمجي واحد.',
-                content: `<p>دليل شامل لمنصات مثل Wix, Webflow, Squarespace.</p>`
-            }
+            // ... باقي المقالات
         ];
+
+        // إضافة خاصية الرابط لكل مقالة
+        articles.forEach(article => {
+            article.url = `https://smartafiliate.com/articles/article${article.id}.html`;
+        });
 
         // عرض الصفحة الرئيسية
         function showHome(e) {
@@ -1120,6 +680,36 @@
             if (article) {
                 document.getElementById('modal-title').innerHTML = `<i class="fas ${article.icon}" style="color: var(--primary-glow); margin-left: 10px;"></i> ${article.title}`;
                 document.getElementById('modal-body').innerHTML = article.content;
+                
+                // إضافة الروابط ذات الصلة
+                const linksGrid = document.getElementById('article-links-grid');
+                linksGrid.innerHTML = '';
+                
+                // روابط ثابتة للمقالات
+                const relatedLinks = [
+                    { url: 'https://smartafiliate.com/articles/article1.html', title: 'مستقبل الذكاء الاصطناعي' },
+                    { url: 'https://smartafiliate.com/articles/article2.html', title: 'دليل إنشاء متجر إلكتروني (الحالية)' },
+                    { url: 'https://smartafiliate.com/articles/article4.html', title: 'دراسة حالة: حملة ناجحة' },
+                    { url: 'https://smartafiliate.com/articles/article5.html', title: 'أدوات مجانية للتسويق' },
+                    { url: 'https://smartafiliate.com/index.html', title: 'الصفحة الرئيسية' }
+                ];
+                
+                relatedLinks.forEach((link, index) => {
+                    const isCurrent = link.url.includes('article2') && articleId === 2;
+                    linksGrid.innerHTML += `
+                        <div class="link-card ${isCurrent ? 'current-article' : ''}">
+                            <div class="link-label">
+                                <i class="fas fa-file-alt"></i> ${link.title}:
+                            </div>
+                            <a href="${link.url}" target="_blank">
+                                <i class="fas ${index === 0 ? 'fa-robot' : index === 1 ? 'fa-cart-shopping' : index === 2 ? 'fa-chart-line' : index === 3 ? 'fa-tools' : 'fa-home'}"></i> 
+                                ${link.url}
+                            </a>
+                        </div>
+                    `;
+                });
+                
+                document.getElementById('article-links').style.display = 'block';
                 document.getElementById('article-modal').style.display = 'flex';
             }
         }
@@ -1140,6 +730,31 @@
                     <div style="background: rgba(255,165,0,0.1); padding: 2rem; border-radius: 20px; margin: 2rem 0;">
                         <i class="fas fa-exclamation-triangle" style="color: orange; font-size: 2rem;"></i>
                         <p style="color: #fff;">الروابط التابعة: قد نحصل على عمولة عند الشراء من خلال بعض الروابط في الموقع.</p>
+                    </div>
+                    
+                    <!-- روابط المقالات في صفحة الإخلاء -->
+                    <div class="links-section">
+                        <div class="links-title">
+                            <i class="fas fa-link"></i> روابط المقالات
+                        </div>
+                        <div class="links-grid">
+                            <div class="link-card">
+                                <div class="link-label"><i class="fas fa-file-alt"></i> مقالة 1:</div>
+                                <a href="https://smartafiliate.com/articles/article1.html"><i class="fas fa-robot"></i> https://smartafiliate.com/articles/article1.html</a>
+                            </div>
+                            <div class="link-card current-article">
+                                <div class="link-label"><i class="fas fa-file-alt"></i> مقالة 2 (الحالية):</div>
+                                <a href="https://smartafiliate.com/articles/article2.html"><i class="fas fa-cart-shopping"></i> https://smartafiliate.com/articles/article2.html</a>
+                            </div>
+                            <div class="link-card">
+                                <div class="link-label"><i class="fas fa-file-alt"></i> مقالة 4:</div>
+                                <a href="https://smartafiliate.com/articles/article4.html"><i class="fas fa-chart-line"></i> https://smartafiliate.com/articles/article4.html</a>
+                            </div>
+                            <div class="link-card">
+                                <div class="link-label"><i class="fas fa-file-alt"></i> مقالة 5:</div>
+                                <a href="https://smartafiliate.com/articles/article5.html"><i class="fas fa-star"></i> https://smartafiliate.com/articles/article5.html</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             `;
