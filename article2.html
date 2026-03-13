@@ -6,8 +6,8 @@
     <title>دليل إنشاء متجر إلكتروني | SmartAffiliate</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* نفس التنسيقات من المقالة الأولى */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         :root {
             --bg-deep: #050816;
             --primary-glow: #00d2ff;
@@ -16,36 +16,175 @@
             --text-muted: #b0b3c5;
             --card-radius: 24px;
         }
+        
         body {
             background: var(--bg-deep);
-            background-image: radial-gradient(circle at 30% 10%, rgba(0,210,255,0.08) 0%, transparent 40%);
+            background-image: 
+                radial-gradient(circle at 30% 10%, rgba(0,210,255,0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(157,80,187,0.08) 0%, transparent 40%);
             color: #fff;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             padding: 20px;
+            min-height: 100vh;
         }
-        .container { max-width: 900px; margin: 0 auto; }
+        
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            position: relative;
+        }
+        
         .article {
-            background: var(--glass-bg); backdrop-filter: blur(10px);
-            border: 2px solid var(--primary-glow); border-radius: var(--card-radius);
-            padding: 3rem; margin: 2rem 0;
+            background: var(--glass-bg); 
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--primary-glow); 
+            border-radius: var(--card-radius);
+            padding: 3rem; 
+            margin: 2rem 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(0,210,255,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .article h1 { color: var(--primary-glow); font-size: 2.5rem; margin-bottom: 1rem; }
-        .article h2 { color: var(--primary-glow); margin: 2rem 0 1rem; font-size: 1.8rem; }
-        .article h3 { color: #fff; margin: 1.5rem 0 1rem; }
-        .article p { margin-bottom: 1.5rem; color: #e0e0e0; }
-        .article ul, .article ol { margin: 1.5rem 0; padding-right: 2rem; color: #e0e0e0; }
+        
+        .article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 50px rgba(0,0,0,0.5), 0 0 40px rgba(0,210,255,0.3);
+        }
+        
+        .article h1 { 
+            color: var(--primary-glow); 
+            font-size: 2.5rem; 
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px rgba(0,210,255,0.3);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .article h2 { 
+            color: var(--primary-glow); 
+            margin: 2rem 0 1rem; 
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(0,210,255,0.2);
+            padding-bottom: 0.5rem;
+        }
+        
+        .article h3 { 
+            color: #fff; 
+            margin: 1.5rem 0 1rem; 
+            font-size: 1.4rem;
+        }
+        
+        .article p { 
+            margin-bottom: 1.5rem; 
+            color: #e0e0e0;
+            font-size: 1.1rem;
+        }
+        
+        .article ul, .article ol { 
+            margin: 1.5rem 0; 
+            padding-right: 2rem; 
+            color: #e0e0e0;
+        }
+        
+        .article li {
+            margin-bottom: 0.7rem;
+            font-size: 1.1rem;
+        }
+        
+        .article li strong {
+            color: var(--primary-glow);
+        }
+        
         .back-link {
-            display: inline-flex; align-items: center; gap: 10px;
-            color: var(--primary-glow); text-decoration: none; font-size: 1.2rem; margin-bottom: 2rem;
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px;
+            color: var(--primary-glow); 
+            text-decoration: none; 
+            font-size: 1.2rem; 
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            background: rgba(0,210,255,0.1);
+            border: 1px solid rgba(0,210,255,0.2);
+            transition: all 0.3s ease;
         }
-        .back-link:hover { gap: 15px; }
+        
+        .back-link:hover { 
+            gap: 15px; 
+            background: rgba(0,210,255,0.2);
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 20px rgba(0,210,255,0.3);
+        }
+        
         .meta {
-            display: flex; gap: 2rem; color: #8a8fb0;
-            margin-bottom: 2rem; padding-bottom: 1rem;
+            display: flex; 
+            gap: 2rem; 
+            color: #8a8fb0;
+            margin-bottom: 2rem; 
+            padding-bottom: 1rem;
             border-bottom: 1px solid rgba(255,255,255,0.1);
+            flex-wrap: wrap;
         }
-        footer { text-align: center; margin-top: 3rem; padding: 2rem; color: #4a4f6e; }
+        
+        .meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .meta i {
+            color: var(--primary-glow);
+        }
+        
+        .article-url {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            direction: ltr;
+            text-align: left;
+            font-family: monospace;
+            color: var(--primary-glow);
+            word-break: break-all;
+        }
+        
+        .article-url i {
+            margin-left: 10px;
+            color: var(--secondary-glow);
+        }
+        
+        .url-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #8a8fb0;
+            font-size: 0.9rem;
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .highlight {
+            background: linear-gradient(45deg, rgba(0,210,255,0.1), rgba(157,80,187,0.1));
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            border-right: 3px solid var(--primary-glow);
+        }
+        
+        footer { 
+            text-align: center; 
+            margin-top: 3rem; 
+            padding: 2rem; 
+            color: #4a4f6e;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .article { padding: 2rem; }
+            .article h1 { font-size: 2rem; }
+            .meta { gap: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -55,72 +194,85 @@
         </a>
         
         <div class="article">
-            <h1><i class="fas fa-cart-shopping" style="color: var(--primary-glow);"></i> دليل المبتدئين لإنشاء متجر إلكتروني ناجح</h1>
+            <h1>
+                <i class="fas fa-cart-shopping" style="color: var(--primary-glow);"></i> 
+                دليل المبتدئين لإنشاء متجر إلكتروني ناجح
+            </h1>
             
             <div class="meta">
-                <span><i class="far fa-calendar"></i> 8 مارس 2026</span>
+                <span><i class="far fa-calendar-alt"></i> 8 مارس 2026</span>
                 <span><i class="far fa-clock"></i> 10 دقائق قراءة</span>
                 <span><i class="fas fa-tag"></i> تجارة إلكترونية</span>
+                <span><i class="fas fa-eye"></i> 1.5k مشاهدة</span>
             </div>
             
             <h2>مقدمة: لماذا التجارة الإلكترونية؟</h2>
-            <p>سوق التجارة الإلكترونية ينمو باستمرار. في 2026، من المتوقع أن تصل مبيعات التجارة الإلكترونية إلى 8 تريليون دولار عالمياً. الفرصة متاحة للجميع.</p>
+            <p>سوق التجارة الإلكترونية ينمو باستمرار. في <span class="highlight">2026</span>، من المتوقع أن تصل مبيعات التجارة الإلكترونية إلى 8 تريليون دولار عالمياً. الفرصة متاحة للجميع لبدء مشروعهم الخاص وتحقيق دخل إضافي أو رئيسي من خلال الإنترنت.</p>
             
             <h2>الخطوة 1: اختيار المنتج المناسب</h2>
-            <p>أنواع المنتجات التي تنجح عادة:</p>
+            <p>أنواع المنتجات التي تنجح عادة في المتاجر الإلكترونية:</p>
             <ul>
-                <li>منتجات تحل مشكلة معينة</li>
-                <li>منتجات في مجال تهتم به شخصياً</li>
-                <li>منتجات رقمية (دورات، كتب إلكترونية) - هامش ربح عالي</li>
-                <li>منتجات قابلة للشحن بسهولة</li>
+                <li><strong>منتجات تحل مشكلة معينة</strong> - كلما كانت المشكلة أكبر، كان المنتج مطلوباً أكثر</li>
+                <li><strong>منتجات في مجال تهتم به شخصياً</strong> - شغفك سيجعلك متميزاً في التسويق</li>
+                <li><strong>منتجات رقمية</strong> (دورات، كتب إلكترونية، برامج) - هامش ربح عالي وتكلفة تشغيل منخفضة</li>
+                <li><strong>منتجات قابلة للشحن بسهولة</strong> - خفيفة الوزن، غير قابلة للكسر</li>
             </ul>
             
             <h2>الخطوة 2: اختيار منصة المتجر</h2>
-            <p>أشهر المنصات:</p>
+            <p>أشهر المنصات لإنشاء المتاجر الإلكترونية:</p>
             <ul>
-                <li><strong>Shopify:</strong> الأسهل والأشهر، مناسب للمبتدئين</li>
-                <li><strong>WooCommerce:</strong> مجاني، يحتاج ووردبريس، تحكم كامل</li>
-                <li><strong>Wix:</strong> بسيط جداً، لكن أقل مرونة</li>
-                <li><strong>OpenCart:</strong> مجاني، مناسب للمتاجر الكبيرة</li>
+                <li><strong>Shopify:</strong> الأسهل والأشهر، مناسب للمبتدئين - يبدأ من 29$ شهرياً</li>
+                <li><strong>WooCommerce:</strong> مجاني، يحتاج ووردبريس واستضافة، تحكم كامل بالمتجر</li>
+                <li><strong>Wix:</strong> بسيط جداً للمتاجر الصغيرة، لكن أقل مرونة في التوسع</li>
+                <li><strong>OpenCart / Magento:</strong> مجاني، مناسب للمتاجر الكبيرة ويحتاج خبرة تقنية</li>
             </ul>
             
             <h2>الخطوة 3: تصميم المتجر</h2>
             <ul>
-                <li>اختر قالباً نظيفاً وسريعاً</li>
-                <li>صور عالية الجودة للمنتجات</li>
-                <li>أوصاف مقنعة تركز على الفوائد</li>
-                <li>سهولة التصفح والبحث</li>
+                <li><strong>اختر قالباً نظيفاً وسريعاً</strong> - تجربة المستخدم أهم من الشكل المبهرج</li>
+                <li><strong>صور عالية الجودة للمنتجات</strong> - استثمر في تصوير احترافي لمنتجاتك</li>
+                <li><strong>أوصاف مقنعة تركز على الفوائد</strong> - أخبر العميل كيف سيحل المنتج مشكلته</li>
+                <li><strong>سهولة التصفح والبحث</strong> - وصول سريع للمنتجات والفئات الرئيسية</li>
             </ul>
             
             <h2>الخطوة 4: طرق الدفع والشحن</h2>
             <ul>
-                <li><strong>طرق الدفع:</strong> بطاقة ائتمان، باي بال، مدى، Apple Pay</li>
-                <li><strong>الشحن:</strong> شركات مثل أرامكس، DHL، أو الشحن المجاني للطلبات الكبيرة</li>
+                <li><strong>طرق الدفع:</strong> بطاقة ائتمان، باي بال، مدى، Apple Pay، تحويل بنكي</li>
+                <li><strong>الشحن:</strong> شركات مثل أرامكس، DHL، أو الشحن المجاني للطلبات الكبيرة لتحفيز الشراء</li>
             </ul>
             
-            <h2>الخطوة 5: جلب الزوار</h2>
+            <h2>الخطوة 5: جلب الزوار (التسويق)</h2>
             <ul>
-                <li><strong>إعلانات فيسبوك وانستغرام:</strong> أسرع طريقة</li>
-                <li><strong>SEO:</strong> محتوى يجذب زواراً مجانيين</li>
-                <li><strong>التسويق بالعمولة:</strong>让别人 يروجون لك مقابل عمولة</li>
-                <li><strong>وسائل التواصل:</strong> ابنِ متابعين وشارك منتجاتك</li>
+                <li><strong>إعلانات فيسبوك وانستغرام:</strong> أسرع طريقة لاستهداف العملاء المحتملين</li>
+                <li><strong>SEO (تحسين محركات البحث):</strong> محتوى متوافق مع السيو يجذب زواراً مجانيين</li>
+                <li><strong>التسويق بالعمولة:</strong>让别人 يروجون لك مقابل عمولة على المبيعات</li>
+                <li><strong>وسائل التواصل الاجتماعي:</strong> ابنِ متابعين وشارك محتوى قيم مع منتجاتك</li>
             </ul>
             
             <h2>الخطوة 6: تحسين المتجر باستمرار</h2>
             <ul>
-                <li>حلل سلوك الزوار (Google Analytics)</li>
-                <li>اسأل عملاءك عن تجربتهم</li>
-                <li>طور المنتجات بناء على الاقتراحات</li>
-                <li>جرب عروضاً وتخفيضات مختلفة</li>
+                <li><strong>حلل سلوك الزوار</strong> باستخدام Google Analytics</li>
+                <li><strong>اسأل عملاءك</strong> عن تجربتهم واقتراحاتهم</li>
+                <li><strong>طور المنتجات</strong> بناء على ملاحظات العملاء</li>
+                <li><strong>جرب عروضاً وتخفيضات مختلفة</strong> لزيادة المبيعات</li>
             </ul>
             
             <h2>الخلاصة</h2>
-            <p>أول مبيع هو الأصعب، لكنه يفتح الباب للثقة والاستمرارية. ابدأ صغيراً، تعلم بسرعة، وطور متجرك باستمرار.</p>
+            <p>أول مبيع هو الأصعب، لكنه يفتح الباب للثقة والاستمرارية. ابدأ صغيراً، تعلم بسرعة من أخطائك، وطور متجرك باستمرار. النجاح في التجارة الإلكترونية ليس حظاً، بل تخطيط وعمل مستمر.</p>
+            
+            <!-- رابط المقالة -->
+            <div class="article-url">
+                <div class="url-label">
+                    <i class="fas fa-link"></i> رابط المقالة:
+                </div>
+                <i class="fas fa-file-alt" style="color: var(--primary-glow);"></i> 
+                https://smartafiliate.com/articles/article2.html
+            </div>
         </div>
         
         <footer>
-            <p>© 2026 smartafiliate.com - جميع الحقوق محفوظة</p>
+            <p>© 2026 smartafiliate.com - جميع الحقوق محفوظة | تصميم وتطوير SmartAffiliate</p>
         </footer>
-    </div>https://smartafiliate.com/articles/article2.html
+    </div>
 </body>
 </html>
