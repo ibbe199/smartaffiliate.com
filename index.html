@@ -10,7 +10,7 @@
     <meta name="author" content="SmartAffiliate">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph للتواصل الاجتماعي -->
+    <!-- Open Graph -->
     <meta property="og:title" content="SmartAffiliate 2026 | 21 مقالة متكاملة">
     <meta property="og:description" content="منصة عربية متخصصة في الذكاء الاصطناعي والأتمتة والتسويق الرقمي">
     <meta property="og:type" content="website">
@@ -35,7 +35,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Preload للعناصر المهمة (تحسين LCP) -->
+    <!-- Preload للعناصر المهمة -->
     <link rel="preload" as="image" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='200' viewBox='0 0 350 200'%3E%3Crect width='350' height='200' fill='%2300d2ff' opacity='0.1'/%3E%3Ctext x='175' y='120' font-family='Arial' font-size='24' fill='%2300d2ff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E" as="image">
     <link rel="preload" as="font" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-solid-900.woff2" crossorigin>
     
@@ -68,8 +68,6 @@
             font-display: swap;
             min-height: 100vh;
         }
-        
-        /* ===== تحسين CLS - تحديد أبعاد ثابتة للعناصر ===== */
         
         /* الهيدر */
         .glass-header {
@@ -114,7 +112,7 @@
             color: var(--primary-glow);
         }
         
-        /* الشعار بأبعاد ثابتة */
+        /* الشعار */
         .brand-zone {
             text-align: center;
             padding: 2rem;
@@ -210,7 +208,7 @@
             font-size: 1rem;
         }
         
-        /* بطاقات المقالات بأبعاد ثابتة */
+        /* بطاقات المقالات */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -280,6 +278,171 @@
             border: 1px solid var(--primary-glow);
             color: var(--primary-glow);
             z-index: 10;
+        }
+        
+        /* ===== نظام التعليقات ===== */
+        .comments-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--primary-glow);
+            border-radius: var(--card-radius);
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .comments-title {
+            color: var(--primary-glow);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(0,210,255,0.3);
+            padding-bottom: 1rem;
+        }
+        
+        .comment-form {
+            background: rgba(0,0,0,0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-glow);
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(0,210,255,0.3);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-glow);
+            background: rgba(0,210,255,0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
+            color: #050816;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,210,255,0.3);
+        }
+        
+        .comments-list {
+            margin-top: 2rem;
+        }
+        
+        .comment-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(0,210,255,0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: 0.3s;
+        }
+        
+        .comment-item:hover {
+            border-color: var(--primary-glow);
+            background: rgba(0,210,255,0.05);
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .comment-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .comment-author i {
+            color: var(--primary-glow);
+            font-size: 1.5rem;
+        }
+        
+        .comment-author h4 {
+            color: var(--primary-glow);
+            font-size: 1.1rem;
+        }
+        
+        .comment-date {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        
+        .comment-text {
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+        
+        .comment-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .comment-actions button {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .comment-actions button:hover {
+            color: var(--primary-glow);
+        }
+        
+        .no-comments {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 3rem;
+            font-size: 1.2rem;
         }
         
         /* صفحة المقالة */
@@ -589,6 +752,10 @@
             .stat-number {
                 font-size: 2rem;
             }
+            
+            .comments-section {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -601,12 +768,12 @@
     <header class="glass-header">
         <div class="nav-container">
             <a href="#" onclick="showHome(event)" class="active"><i class="fas fa-home"></i> الرئيسية</a>
+            <a href="#" onclick="showBlog(event)"><i class="fas fa-blog"></i> المدونة</a>
             <a href="#" onclick="filterByCategory('ai')"><i class="fas fa-robot"></i> ذكاء اصطناعي</a>
             <a href="#" onclick="filterByCategory('automation')"><i class="fas fa-gears"></i> أتمتة</a>
             <a href="#" onclick="filterByCategory('affiliate')"><i class="fas fa-bolt"></i> تسويق بالعمولة</a>
             <a href="#" onclick="filterByCategory('case-study')"><i class="fas fa-chart-line"></i> دراسات حالة</a>
             <a href="#" onclick="filterByCategory('seo')"><i class="fas fa-magnifying-glass"></i> SEO</a>
-            <a href="#" onclick="filterByCategory('ecommerce')"><i class="fas fa-cart-shopping"></i> تجارة إلكترونية</a>
             <a href="#" onclick="showLinks(event)"><i class="fas fa-link"></i> الروابط</a>
         </div>
     </header>
@@ -637,7 +804,7 @@
     <footer>
         <div class="footer-links">
             <a href="#" onclick="showHome(event)">الرئيسية</a>
-            <a href="#" onclick="showAllArticles(event)">جميع المقالات</a>
+            <a href="#" onclick="showBlog(event)">المدونة</a>
             <a href="#" onclick="showLinks(event)">روابط المقالات</a>
             <a href="#" onclick="showAbout(event)">من نحن</a>
             <a href="#" onclick="showContact(event)">اتصل بنا</a>
@@ -1194,6 +1361,177 @@
             }
         ];
 
+        // ==================== نظام التعليقات ====================
+        // تخزين التعليقات في localStorage
+        let comments = JSON.parse(localStorage.getItem('smartaffiliate_comments')) || {};
+
+        // حفظ التعليقات
+        function saveComments() {
+            localStorage.setItem('smartaffiliate_comments', JSON.stringify(comments));
+        }
+
+        // إضافة تعليق جديد
+        function addComment(articleId, name, text) {
+            if (!comments[articleId]) {
+                comments[articleId] = [];
+            }
+            
+            const newComment = {
+                id: Date.now(),
+                name: name || 'زائر',
+                text: text,
+                date: new Date().toLocaleDateString('ar-EG', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                }),
+                likes: 0
+            };
+            
+            comments[articleId].push(newComment);
+            saveComments();
+            return newComment;
+        }
+
+        // حذف تعليق
+        function deleteComment(articleId, commentId) {
+            if (comments[articleId]) {
+                comments[articleId] = comments[articleId].filter(c => c.id !== commentId);
+                saveComments();
+            }
+        }
+
+        // إعجاب بتعليق
+        function likeComment(articleId, commentId) {
+            if (comments[articleId]) {
+                const comment = comments[articleId].find(c => c.id === commentId);
+                if (comment) {
+                    comment.likes++;
+                    saveComments();
+                }
+            }
+        }
+
+        // عرض نموذج التعليقات
+        function renderComments(articleId) {
+            const articleComments = comments[articleId] || [];
+            
+            let commentsHTML = `
+                <div class="comments-section">
+                    <h3 class="comments-title">
+                        <i class="fas fa-comments"></i>
+                        التعليقات (${articleComments.length})
+                    </h3>
+                    
+                    <div class="comment-form">
+                        <h4 style="color: var(--primary-glow); margin-bottom: 1.5rem;">أضف تعليقك</h4>
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> الاسم</label>
+                            <input type="text" id="comment-name" placeholder="اكتب اسمك" maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-comment"></i> التعليق</label>
+                            <textarea id="comment-text" placeholder="اكتب تعليقك هنا..." maxlength="500"></textarea>
+                        </div>
+                        <button onclick="submitComment(${articleId})" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> إرسال التعليق
+                        </button>
+                    </div>
+                    
+                    <div class="comments-list" id="comments-list-${articleId}">
+            `;
+            
+            if (articleComments.length === 0) {
+                commentsHTML += `
+                    <div class="no-comments">
+                        <i class="fas fa-comment-slash" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <p>لا توجد تعليقات بعد. كن أول من يعلق!</p>
+                    </div>
+                `;
+            } else {
+                articleComments.sort((a, b) => b.id - a.id).forEach(comment => {
+                    commentsHTML += `
+                        <div class="comment-item" id="comment-${comment.id}">
+                            <div class="comment-header">
+                                <div class="comment-author">
+                                    <i class="fas fa-user-circle"></i>
+                                    <h4>${comment.name}</h4>
+                                </div>
+                                <span class="comment-date"><i class="far fa-clock"></i> ${comment.date}</span>
+                            </div>
+                            <div class="comment-text">
+                                ${comment.text.replace(/\n/g, '<br>')}
+                            </div>
+                            <div class="comment-actions">
+                                <button onclick="likeCommentHandler(${articleId}, ${comment.id})">
+                                    <i class="fas fa-heart"></i> إعجاب (${comment.likes})
+                                </button>
+                                <button onclick="deleteCommentHandler(${articleId}, ${comment.id})">
+                                    <i class="fas fa-trash"></i> حذف
+                                </button>
+                                <button onclick="reportComment(${comment.id})">
+                                    <i class="fas fa-flag"></i> إبلاغ
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            
+            commentsHTML += `
+                    </div>
+                </div>
+            `;
+            
+            return commentsHTML;
+        }
+
+        // دوال التعامل مع التعليقات (للاستخدام من HTML)
+        window.submitComment = function(articleId) {
+            const nameInput = document.getElementById('comment-name');
+            const textInput = document.getElementById('comment-text');
+            
+            if (!textInput.value.trim()) {
+                alert('الرجاء كتابة التعليق');
+                return;
+            }
+            
+            const name = nameInput.value.trim() || 'زائر';
+            const text = textInput.value.trim();
+            
+            addComment(articleId, name, text);
+            
+            // تحديث عرض التعليقات
+            const article = articles.find(a => a.id === articleId);
+            if (article) {
+                showArticle(articleId);
+            }
+        };
+
+        window.likeCommentHandler = function(articleId, commentId) {
+            likeComment(articleId, commentId);
+            const article = articles.find(a => a.id === articleId);
+            if (article) {
+                showArticle(articleId);
+            }
+        };
+
+        window.deleteCommentHandler = function(articleId, commentId) {
+            if (confirm('هل أنت متأكد من حذف هذا التعليق؟')) {
+                deleteComment(articleId, commentId);
+                const article = articles.find(a => a.id === articleId);
+                if (article) {
+                    showArticle(articleId);
+                }
+            }
+        };
+
+        window.reportComment = function(commentId) {
+            alert('تم الإبلاغ عن هذا التعليق. شكراً لك!');
+        };
+
         // عرض الصفحة الرئيسية
         function showHome(e) {
             if (e) e.preventDefault();
@@ -1216,25 +1554,46 @@
             `;
             
             renderArticles(articles, stats);
-            
-            // تحديث الرابط النشط
             updateActiveLink('الرئيسية');
             
-            // إرسال حدث إلى Google Tag Manager
             if (window.dataLayer) {
                 window.dataLayer.push({
                     'event': 'page_view',
                     'page_type': 'home',
-                    'page_title': 'الرئيسية',
                     'total_articles': articles.length
                 });
             }
         }
 
-        // عرض جميع المقالات
-        function showAllArticles(e) {
+        // عرض المدونة
+        function showBlog(e) {
             if (e) e.preventDefault();
-            renderArticles(articles, '');
+            
+            const html = `
+                <div class="full-article" style="text-align: center;">
+                    <h1 style="color: var(--primary-glow);"><i class="fas fa-blog"></i> مدونة SmartAffiliate</h1>
+                    <p style="font-size: 1.2rem; margin: 2rem 0;">آخر المقالات والتحديثات في عالم الذكاء الاصطناعي والتسويق الرقمي</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                        ${articles.slice(0, 6).map(article => `
+                            <div onclick="showArticle(${article.id})" style="cursor: pointer; padding: 1.5rem; background: rgba(0,210,255,0.05); border-radius: 20px; border: 1px solid rgba(0,210,255,0.2);">
+                                <i class="fas ${article.icon}" style="font-size: 2rem; color: var(--primary-glow); margin-bottom: 1rem;"></i>
+                                <h3 style="color: var(--primary-glow);">${article.title}</h3>
+                                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">${article.date}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div style="margin-top: 3rem;">
+                        <button onclick="showHome(event)" class="filter-btn">
+                            <i class="fas fa-arrow-left"></i> عرض جميع المقالات
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('main-content').innerHTML = html;
+            updateActiveLink('المدونة');
         }
 
         // عرض جميع الروابط
@@ -1284,7 +1643,6 @@
             const filtered = articles.filter(a => a.category === category);
             renderArticles(filtered, '');
             
-            // الحصول على اسم الفئة المعروض
             const categoryNames = {
                 'ai': 'ذكاء اصطناعي',
                 'automation': 'أتمتة',
@@ -1299,7 +1657,7 @@
             updateActiveLink(categoryNames[category] || category);
         }
 
-        // تحديث الرابط النشط في القائمة
+        // تحديث الرابط النشط
         function updateActiveLink(activeText) {
             document.querySelectorAll('.nav-container a').forEach(link => {
                 link.classList.remove('active');
@@ -1358,7 +1716,7 @@
             document.getElementById('main-content').innerHTML = html;
         }
 
-        // عرض مقالة محددة
+        // عرض مقالة محددة مع التعليقات
         function showArticle(articleId) {
             const article = articles.find(a => a.id === articleId);
             if (!article) return;
@@ -1366,6 +1724,8 @@
             const relatedArticles = articles
                 .filter(a => a.id !== article.id && a.category === article.category)
                 .slice(0, 3);
+
+            const commentsHTML = renderComments(articleId);
 
             const html = `
                 <div class="back-btn" onclick="showHome(event)">
@@ -1399,6 +1759,8 @@
                         </div>
                     </div>
                     
+                    ${commentsHTML}
+                    
                     ${relatedArticles.length > 0 ? `
                         <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.2); border-radius: 20px;">
                             <h4 style="color: var(--primary-glow); margin-bottom: 1rem;">📚 مقالات مقترحة</h4>
@@ -1418,7 +1780,6 @@
             document.getElementById('main-content').innerHTML = html;
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
-            // إرسال حدث مشاهدة المقال
             if (window.dataLayer) {
                 window.dataLayer.push({
                     'event': 'article_view',
