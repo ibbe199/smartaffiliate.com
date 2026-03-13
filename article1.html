@@ -6,120 +6,353 @@
     <title>دليل إنشاء متجر إلكتروني | SmartAffiliate</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* نفس التنسيقات من المقالة الأولى */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* === تنسيقات متطورة مع لمسات تفاعلية === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
             --bg-deep: #050816;
             --primary-glow: #00d2ff;
             --secondary-glow: #9d50bb;
             --glass-bg: rgba(20, 30, 45, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.08);
             --text-muted: #b0b3c5;
-            --card-radius: 24px;
+            --card-radius: 32px;
+            --glow-opacity: 0.5;
         }
+
         body {
             background: var(--bg-deep);
-            background-image: radial-gradient(circle at 30% 10%, rgba(0,210,255,0.08) 0%, transparent 40%);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(157, 80, 187, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 90% 70%, rgba(0, 210, 255, 0.1) 0%, transparent 40%);
             color: #fff;
-            font-family: 'Segoe UI', sans-serif;
-            line-height: 1.8;
-            padding: 20px;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            padding: 1.5rem;
+            min-height: 100vh;
         }
-        .container { max-width: 900px; margin: 0 auto; }
-        .article {
-            background: var(--glass-bg); backdrop-filter: blur(10px);
-            border: 2px solid var(--primary-glow); border-radius: var(--card-radius);
-            padding: 3rem; margin: 2rem 0;
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        .article h1 { color: var(--primary-glow); font-size: 2.5rem; margin-bottom: 1rem; }
-        .article h2 { color: var(--primary-glow); margin: 2rem 0 1rem; font-size: 1.8rem; }
-        .article h3 { color: #fff; margin: 1.5rem 0 1rem; }
-        .article p { margin-bottom: 1.5rem; color: #e0e0e0; }
-        .article ul, .article ol { margin: 1.5rem 0; padding-right: 2rem; color: #e0e0e0; }
+
+        /* رابط العودة بتأثير سلس */
         .back-link {
-            display: inline-flex; align-items: center; gap: 10px;
-            color: var(--primary-glow); text-decoration: none; font-size: 1.2rem; margin-bottom: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--primary-glow);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1.8rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            background: rgba(0, 210, 255, 0.05);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
-        .back-link:hover { gap: 15px; }
-        .meta {
-            display: flex; gap: 2rem; color: #8a8fb0;
-            margin-bottom: 2rem; padding-bottom: 1rem;
+
+        .back-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(0, 210, 255, 0.15);
+            border-color: var(--primary-glow);
+            gap: 1rem;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+        }
+
+        .back-link:hover i {
+            transform: translateX(-5px);
+        }
+
+        /* بطاقة المقالة الرئيسية */
+        .article {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--card-radius);
+            padding: 2.8rem;
+            margin: 1.5rem 0 2.5rem;
+            box-shadow: 0 30px 50px -20px rgba(0,0,0,0.8), 0 0 0 1px rgba(0, 210, 255, 0.15) inset;
+            transition: box-shadow 0.4s ease;
+        }
+
+        .article:hover {
+            box-shadow: 0 35px 60px -20px #000, 0 0 0 2px rgba(0, 210, 255, 0.3) inset;
+        }
+
+        /* عنوان المقالة مع أيقونة */
+        .article h1 {
+            color: var(--primary-glow);
+            font-size: 2.6rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1.2rem;
+            text-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
         }
-        footer { text-align: center; margin-top: 3rem; padding: 2rem; color: #4a4f6e; }
+
+        .article h1 i {
+            font-size: 2.4rem;
+            filter: drop-shadow(0 0 8px currentColor);
+        }
+
+        /* البيانات الوصفية */
+        .meta {
+            display: flex;
+            gap: 2.2rem;
+            color: #8f94bb;
+            margin-bottom: 2.2rem;
+            padding: 0.8rem 1.2rem;
+            background: rgba(10, 15, 30, 0.5);
+            border-radius: 60px;
+            border: 1px solid rgba(255,255,255,0.05);
+            flex-wrap: wrap;
+        }
+
+        .meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .meta i {
+            color: var(--primary-glow);
+            width: 1.3rem;
+            text-align: center;
+        }
+
+        /* العناوين */
+        .article h2 {
+            color: var(--primary-glow);
+            margin: 2.5rem 0 1.2rem;
+            font-size: 2rem;
+            position: relative;
+            padding-right: 1.2rem;
+        }
+
+        .article h2::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0.2rem;
+            height: 70%;
+            width: 5px;
+            background: linear-gradient(to bottom, var(--primary-glow), var(--secondary-glow));
+            border-radius: 10px;
+            box-shadow: 0 0 12px var(--primary-glow);
+        }
+
+        .article h3 {
+            color: #fff;
+            margin: 1.8rem 0 1rem;
+            font-size: 1.6rem;
+            font-weight: 400;
+            border-right: 3px solid var(--secondary-glow);
+            padding-right: 1rem;
+        }
+
+        /* الفقرات والقوائم */
+        .article p {
+            margin-bottom: 1.8rem;
+            color: #e4e6f0;
+            font-size: 1.1rem;
+        }
+
+        .article ul, .article ol {
+            margin: 1.5rem 0 2rem;
+            padding-right: 2rem;
+            color: #e0e0e0;
+        }
+
+        .article li {
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            list-style-type: none;
+            position: relative;
+            padding-right: 1.8rem;
+        }
+
+        .article ul li::before {
+            content: '▹';
+            position: absolute;
+            right: 0;
+            color: var(--primary-glow);
+            font-size: 1.3rem;
+            line-height: 1;
+            text-shadow: 0 0 8px currentColor;
+        }
+
+        .article ol {
+            list-style: none;
+            counter-reset: custom-counter;
+        }
+
+        .article ol li {
+            counter-increment: custom-counter;
+            padding-right: 2.2rem;
+        }
+
+        .article ol li::before {
+            content: counter(custom-counter) ".";
+            position: absolute;
+            right: 0;
+            color: var(--primary-glow);
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 0 0 5px currentColor;
+        }
+
+        /* تنسيق خاص للنقاط القوية */
+        .article strong {
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0,210,255,0.3);
+        }
+
+        /* الفوتر */
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem 1rem 1rem;
+            color: #4a4f75;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.95rem;
+        }
+
+        footer p {
+            transition: color 0.3s;
+        }
+
+        footer:hover p {
+            color: #7a80b0;
+        }
+
+        /* استجابة للشاشات الصغيرة */
+        @media (max-width: 600px) {
+            body { padding: 0.8rem; }
+            .article { padding: 1.8rem; }
+            .article h1 { font-size: 2rem; }
+            .article h2 { font-size: 1.7rem; }
+            .meta { gap: 1rem; flex-direction: column; align-items: flex-start; border-radius: 30px; }
+            .back-link { margin-right: 0.5rem; }
+        }
+
+        /* شريط تمرير أنيق */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0f1422; }
+        ::-webkit-scrollbar-thumb { background: #2a3457; border-radius: 20px; border: 2px solid #0f1422; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-glow); }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- رابط العودة إلى الصفحة الرئيسية (يفترض وجود index.html) -->
         <a href="index.html" class="back-link">
             <i class="fas fa-arrow-right"></i> العودة للرئيسية
         </a>
         
+        <!-- بطاقة المقالة التفصيلية -->
         <div class="article">
-            <h1><i class="fas fa-cart-shopping" style="color: var(--primary-glow);"></i> دليل المبتدئين لإنشاء متجر إلكتروني ناجح</h1>
+            <h1>
+                <i class="fas fa-cart-shopping" style="color: var(--primary-glow);"></i>
+                دليل المبتدئين لإنشاء متجر إلكتروني ناجح
+            </h1>
             
+            <!-- البيانات الوصفية: تاريخ ووقت القراءة والتصنيف -->
             <div class="meta">
-                <span><i class="far fa-calendar"></i> 8 مارس 2026</span>
+                <span><i class="far fa-calendar-alt"></i> 8 مارس 2026</span>
                 <span><i class="far fa-clock"></i> 10 دقائق قراءة</span>
                 <span><i class="fas fa-tag"></i> تجارة إلكترونية</span>
+                <span><i class="fas fa-eye"></i> 2.4k مشاهدة</span>
             </div>
             
+            <!-- مقدمة -->
             <h2>مقدمة: لماذا التجارة الإلكترونية؟</h2>
-            <p>سوق التجارة الإلكترونية ينمو باستمرار. في 2026، من المتوقع أن تصل مبيعات التجارة الإلكترونية إلى 8 تريليون دولار عالمياً. الفرصة متاحة للجميع.</p>
+            <p>في عام 2026، تجاوزت مبيعات التجارة الإلكترونية حاجز 8 تريليون دولار عالميًا، والنمو لا يزال متسارعًا. المتجر الإلكتروني لم يعد رفاهية، بل وسيلة ذكية لتحقيق دخل مستقل ومرن. الفرصة متاحة للجميع: من صانع المنتجات اليدوية إلى مقدم الخدمات الرقمية. الأهم هو البداية الصحيحة.</p>
             
+            <!-- الخطوة الأولى -->
             <h2>الخطوة 1: اختيار المنتج المناسب</h2>
-            <p>أنواع المنتجات التي تنجح عادة:</p>
+            <p>قبل شراء دومين أو استضافة، يجب أن تحدد بدقة ماذا ستبيع. المنتجات التي تنجح عادةً تمتلك واحدة أو أكثر من هذه الصفات:</p>
             <ul>
-                <li>منتجات تحل مشكلة معينة</li>
-                <li>منتجات في مجال تهتم به شخصياً</li>
-                <li>منتجات رقمية (دورات، كتب إلكترونية) - هامش ربح عالي</li>
-                <li>منتجات قابلة للشحن بسهولة</li>
+                <li><strong>تحل مشكلة حقيقية:</strong> منتج يقدم حلاً لمشكلة يومية (مثل إكسسوارات تنظيم، أدوات مطبخ مبتكرة).</li>
+                <li><strong>شغفك به واضح:</strong> إذا كنت مهتمًا بمجال (رياضة، تقنية، موضة)، فستتواصل مع جمهورك بصدق.</li>
+                <li><strong>منتجات رقمية:</strong> قوالب، كتب إلكترونية، دورات تدريبية. هامش الربح فيها عالي جداً وسهولة التوصيل.</li>
+                <li><strong>منتجات قابلة للشحن بسهولة:</strong> خفيفة، غير قابلة للكسر، ويمكن تعبئتها بأقل تكلفة.</li>
             </ul>
             
+            <!-- الخطوة الثانية -->
             <h2>الخطوة 2: اختيار منصة المتجر</h2>
-            <p>أشهر المنصات:</p>
+            <p>المنصة هي قلب متجرك. لكل منصة ميزاتها وتكاليفها. إليك أبرز الخيارات:</p>
             <ul>
-                <li><strong>Shopify:</strong> الأسهل والأشهر، مناسب للمبتدئين</li>
-                <li><strong>WooCommerce:</strong> مجاني، يحتاج ووردبريس، تحكم كامل</li>
-                <li><strong>Wix:</strong> بسيط جداً، لكن أقل مرونة</li>
-                <li><strong>OpenCart:</strong> مجاني، مناسب للمتاجر الكبيرة</li>
+                <li><strong>Shopify:</strong> الأشهر والأسهل للمبتدئين. يوفر كل شيء: استضافة، بوابات دفع، قوالب جاهزة. مناسب لمن لا يريد الدخول في تعقيدات تقنية.</li>
+                <li><strong>WooCommerce:</strong> إضافة مجانية لووردبريس. تحتاج استضافة وتهيئة، لكنك تمتلك تحكمًا كاملًا بكل التفاصيل ومناسب للنمو.</li>
+                <li><strong>Wix:</strong> بسيط جداً ومناسب للمتاجر الصغيرة جداً، لكن مرونته أقل في التوسع.</li>
+                <li><strong>OpenCart / PrestaShop:</strong> حلول مفتوحة المصدر، مجانية لكنها تحتاج خبرة تقنية. مناسبة للمتاجر الكبيرة.</li>
             </ul>
             
+            <!-- الخطوة الثالثة -->
             <h2>الخطوة 3: تصميم المتجر</h2>
+            <p>تصميم متجرك يحدد ما إذا كان الزائر سيبقى أو يغادر. ركز على:</p>
             <ul>
-                <li>اختر قالباً نظيفاً وسريعاً</li>
-                <li>صور عالية الجودة للمنتجات</li>
-                <li>أوصاف مقنعة تركز على الفوائد</li>
-                <li>سهولة التصفح والبحث</li>
+                <li><strong>اختيار قالب نظيف وسريع:</strong> تجنب التعقيد، واهتم بسرعة التحميل (Google Pagespeed).</li>
+                <li><strong>صور عالية الجودة:</strong> صور احترافية للمنتج من زوايا متعددة، مع فيديوهات قصيرة إن أمكن.</li>
+                <li><strong>أوصاف مقنعة:</strong> لا تذكر المواصفات فقط، بل ركز على الفوائد. "حذاء مقاوم للماء" أفضل من "حذاء مصنوع من الجلد".</li>
+                <li><strong>سهولة التصفح:</strong> قوائم واضحة، زر بحث بارز، وتصنيفات منتجات منظمة.</li>
             </ul>
             
+            <!-- الخطوة الرابعة -->
             <h2>الخطوة 4: طرق الدفع والشحن</h2>
             <ul>
-                <li><strong>طرق الدفع:</strong> بطاقة ائتمان، باي بال، مدى، Apple Pay</li>
-                <li><strong>الشحن:</strong> شركات مثل أرامكس، DHL، أو الشحن المجاني للطلبات الكبيرة</li>
+                <li><strong>طرق الدفع:</strong> وفر خيارات متعددة: بطاقات ائتمان (فيزا، ماستركارد)، باي بال، محافظ رقمية مثل Apple Pay، وطرق محلية مثل "مدى" في السعودية.</li>
+                <li><strong>الشحن:</strong> تعاقد مع شركة شحن موثوقة (أرامكس، DHL، أو الخدمات البريدية). قدم خيار الشحن المجاني للطلبات فوق مبلغ معين لتحفيز الشراء.</li>
             </ul>
             
-            <h2>الخطوة 5: جلب الزوار</h2>
+            <!-- الخطوة الخامسة -->
+            <h2>الخطوة 5: جلب الزوار (التسويق)</h2>
+            <p>بعد تجهيز المتجر، تحتاج زوار. إليك أهم القنوات:</p>
             <ul>
-                <li><strong>إعلانات فيسبوك وانستغرام:</strong> أسرع طريقة</li>
-                <li><strong>SEO:</strong> محتوى يجذب زواراً مجانيين</li>
-                <li><strong>التسويق بالعمولة:</strong>让别人 يروجون لك مقابل عمولة</li>
-                <li><strong>وسائل التواصل:</strong> ابنِ متابعين وشارك منتجاتك</li>
+                <li><strong>إعلانات فيسبوك وانستغرام:</strong> أسرع وسيلة لاستهداف جمهور محدد. ابدأ بميزانية صغيرة وحسّن إعلاناتك.</li>
+                <li><strong>SEO (تحسين محركات البحث):</strong> أنشئ محتوى (مقالات، أدلة) يجلب زواراً مجانيين عبر البحث. ركز على كلمات مفتاحية ذات صلة بمنتجاتك.</li>
+                <li><strong>التسويق بالعمولة (Affiliate Marketing):</strong> وفر برنامج عمولة للمؤثرين والمدونين للترويج لمنتجاتك مقابل نسبة من المبيعات.</li>
+                <li><strong>وسائل التواصل الاجتماعي:</strong> ابنِ مجتمعاً مهتماً بمجالك، وشارك محتوى قيمًا مع الترويج غير المباشر لمنتجاتك.</li>
             </ul>
             
+            <!-- الخطوة السادسة -->
             <h2>الخطوة 6: تحسين المتجر باستمرار</h2>
             <ul>
-                <li>حلل سلوك الزوار (Google Analytics)</li>
-                <li>اسأل عملاءك عن تجربتهم</li>
-                <li>طور المنتجات بناء على الاقتراحات</li>
-                <li>جرب عروضاً وتخفيضات مختلفة</li>
+                <li><strong>حلل البيانات:</strong> استخدم Google Analytics لمعرفة سلوك الزوار، الصفحات الأكثر مشاهدة، ونسبة التخلي عن سلة الشراء.</li>
+                <li><strong>اسأل عملاءك:</strong> استخدم استبيانات بسيطة لمعرفة رأيهم في تجربة الشراء والمنتجات.</li>
+                <li><strong>طور منتجاتك:</strong> بناء على الاقتراحات، أضف منتجات جديدة أو طور الحالية.</li>
+                <li><strong>جرب العروض:</strong> اختبر عروض مختلفة: خصم لفترة محدودة، اشتر 2 واحصل على 1، أو شحن مجاني.</li>
             </ul>
             
+            <!-- خلاصة -->
             <h2>الخلاصة</h2>
-            <p>أول مبيع هو الأصعب، لكنه يفتح الباب للثقة والاستمرارية. ابدأ صغيراً، تعلم بسرعة، وطور متجرك باستمرار.</p>
+            <p>أول عملية بيع هي الأصعب نفسياً، لكنها تمنحك الثقة لمواصلة المشوار. لا تنتظر الكمال، ابدأ بمنتج واحد ومنصة بسيطة، وتعلم من كل خطأ. التجارة الإلكترونية رحلة تعلم مستمر، ومع كل تحسين تقترب من النجاح. ابدأ الآن.</p>
+            
+            <!-- إضافة عبارة تحفيزية بسيطة (اختياري) -->
+            <div style="margin-top: 2.5rem; padding: 1.5rem; background: rgba(0,210,255,0.03); border-radius: 40px; border: 1px dashed rgba(0,210,255,0.3); text-align: center;">
+                <i class="fas fa-rocket" style="color: var(--primary-glow); font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                <p style="margin-bottom: 0;">✨ جاهز لإنشاء متجرك؟ ابدأ باختيار المنتج اليوم، وشاركنا تجربتك!</p>
+            </div>
         </div>
         
+        <!-- تذييل الحقوق -->
         <footer>
-            <p>© 2026 smartafiliate.com - جميع الحقوق محفوظة</p>
+            <p>© 2026 smartafiliate.com - جميع الحقوق محفوظة. محتوى احترافي لرواد الأعمال.</p>
         </footer>
     </div>
 </body>
