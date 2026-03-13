@@ -2,14 +2,23 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <!-- Google Site Verification - تم الإضافة -->
+    <!-- Google Site Verification -->
     <meta name="google-site-verification" content="7X4x5m03NWFNhlGmuoG7DfaHoNLRs5MgFDtW9nHK1co">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P96QVPT3');</script>
+    <!-- End Google Tag Manager -->
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartAffiliate 2026 | 9 مقالات متكاملة</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* جميع التنسيقات كما هي */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --bg-deep: #050816;
@@ -408,6 +417,10 @@
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P96QVPT3"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <header class="glass-header">
         <div class="nav-container">
@@ -447,7 +460,7 @@
             <a href="#" onclick="showContact(event)">اتصل بنا</a>
         </div>
         <div style="color: #4a4f6e;">© 2026 smartafiliate.cm - جميع الحقوق محفوظة</div>
-        <div style="color: #4a4f6e; font-size: 0.8rem; margin-top: 10px;">Google Verified Site</div>
+        <div style="color: #4a4f6e; font-size: 0.8rem; margin-top: 10px;">Google Verified Site | GTM Installed</div>
     </footer>
 
     <script>
@@ -699,6 +712,15 @@
         function showHome(e) {
             e?.preventDefault();
             renderArticles(articles);
+            
+            // إرسال حدث إلى Google Tag Manager
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'page_view',
+                    'page_type': 'home',
+                    'page_title': 'الرئيسية'
+                });
+            }
         }
 
         // عرض جميع المقالات
@@ -853,27 +875,78 @@
             
             document.getElementById('main-content').innerHTML = html;
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // إرسال حدث مشاهدة المقال إلى Google Tag Manager
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'article_view',
+                    'article_id': article.id,
+                    'article_title': article.title,
+                    'article_category': article.category
+                });
+            }
         }
 
         // دوال المشاركة
         function shareOnFacebook() {
             window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+            
+            // تتبع المشاركة
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'share',
+                    'share_platform': 'facebook',
+                    'share_url': window.location.href
+                });
+            }
         }
         
         function shareOnTwitter() {
             window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(document.title)}`, '_blank');
+            
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'share',
+                    'share_platform': 'twitter',
+                    'share_url': window.location.href
+                });
+            }
         }
         
         function shareOnWhatsApp() {
             window.open(`https://wa.me/?text=${encodeURIComponent(document.title + ' ' + window.location.href)}`, '_blank');
+            
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'share',
+                    'share_platform': 'whatsapp',
+                    'share_url': window.location.href
+                });
+            }
         }
         
         function shareOnLinkedIn() {
             window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank');
+            
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'share',
+                    'share_platform': 'linkedin',
+                    'share_url': window.location.href
+                });
+            }
         }
         
         function shareOnTelegram() {
             window.open(`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(document.title)}`, '_blank');
+            
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'share',
+                    'share_platform': 'telegram',
+                    'share_url': window.location.href
+                });
+            }
         }
 
         // صفحات إضافية (بسيطة)
