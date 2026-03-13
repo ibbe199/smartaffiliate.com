@@ -45,6 +45,35 @@
             margin-bottom: 2rem; padding-bottom: 1rem;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
+        .article-link {
+            margin-top: 2.5rem;
+            padding: 1.2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            direction: ltr;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            color: var(--primary-glow);
+            word-break: break-all;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .article-link i {
+            font-size: 1.5rem;
+            color: var(--secondary-glow);
+        }
+        .link-label {
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 0.5rem;
+            color: #8a8fb0;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
         footer { text-align: center; margin-top: 3rem; padding: 2rem; color: #4a4f6e; }
     </style>
 </head>
@@ -116,6 +145,15 @@
             
             <h2>الخلاصة</h2>
             <p>أول مبيع هو الأصعب، لكنه يفتح الباب للثقة والاستمرارية. ابدأ صغيراً، تعلم بسرعة، وطور متجرك باستمرار.</p>
+            
+            <!-- رابط المقالة بشكل منظم -->
+            <div class="link-label">
+                <i class="fas fa-link"></i> رابط المقالة:
+            </div>
+            <div class="article-link">
+                <i class="fas fa-file-alt"></i>
+                https://smartafiliate.com/articles/article2.html
+            </div>
         </div>
         
         <footer>
@@ -123,4 +161,4 @@
         </footer>
     </div>
 </body>
-</html>https://smartafiliate.com/articles/article3.html
+</html>
