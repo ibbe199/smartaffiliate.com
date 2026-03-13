@@ -5,11 +5,398 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatGPT Review 2026: Is It Still the Best AI Writer? | SmartAffiliate</title>
     <meta name="description" content="Detailed 2026 review of ChatGPT. We test its Deep Research mode, pricing, and output quality for bloggers and developers.">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts & CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* === GLOBAL STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --accent: #8b5cf6;
+            --bg-light: #f9fafc;
+            --text-dark: #1e293b;
+            --text-muted: #475569;
+            --border-light: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --card-shadow: 0 20px 35px -10px rgba(0,0,0,0.08);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        .main-header {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
+        }
+
+        .main-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(145deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            background: none;
+            -webkit-text-fill-color: var(--primary);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        /* === REVIEW HERO === */
+        .review-hero {
+            text-align: center;
+            margin: 50px 0 30px;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f0fc 100%);
+            border-radius: 40px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .review-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            background: linear-gradient(145deg, #1e293b, #334155);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .review-hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .rating-big {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin: 25px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .rating-big::before {
+            content: "★★★★★";
+            letter-spacing: 5px;
+            font-size: 2rem;
+            color: #fbbf24;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 38px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(59,130,246,0.25);
+        }
+
+        .primary-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(59,130,246,0.35);
+        }
+
+        /* === VERDICT BOX === */
+        .verdict-box {
+            background: #1e293b;
+            color: white;
+            border-radius: 30px;
+            padding: 45px 40px;
+            margin: 60px 0;
+            background-image: radial-gradient(circle at 80% 30%, #2d3b52 0%, #1e293b 70%);
+            box-shadow: var(--card-shadow);
+        }
+
+        .verdict-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            color: #facc15;
+        }
+
+        .verdict-content h3 i {
+            font-size: 2.2rem;
+        }
+
+        .verdict-content p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            color: #e2e8f0;
+            line-height: 1.7;
+        }
+
+        .verdict-content strong {
+            color: white;
+            background: var(--primary);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* === DETAILS TABLE === */
+        .details-section {
+            margin: 60px 0;
+        }
+
+        .details-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 12px;
+            display: inline-block;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-light);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 18px 24px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .data-table th {
+            background: #f1f5f9;
+            font-weight: 700;
+            color: var(--text-dark);
+            width: 30%;
+        }
+
+        .data-table td {
+            color: var(--text-muted);
+            background: white;
+        }
+
+        .data-table tr:last-child td,
+        .data-table tr:last-child th {
+            border-bottom: none;
+        }
+
+        /* === PROS / CONS === */
+        .pros-cons .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .pros, .cons {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 30px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-light);
+        }
+
+        .pros h3, .cons h3 {
+            font-size: 1.7rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pros h3 i { color: var(--success); }
+        .cons h3 i { color: var(--warning); }
+
+        .pros ul, .cons ul {
+            list-style: none;
+        }
+
+        .pros li, .cons li {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            color: var(--text-dark);
+        }
+
+        .pros li i { color: var(--success); margin-top: 4px; }
+        .cons li i { color: var(--warning); margin-top: 4px; }
+
+        /* === FEATURE HIGHLIGHT === */
+        .feature-highlight {
+            background: #f8fafc;
+            padding: 50px 40px;
+            border-radius: 30px;
+            margin: 60px 0;
+            border-left: 8px solid var(--accent);
+            box-shadow: var(--card-shadow);
+        }
+
+        .feature-highlight h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .feature-highlight p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 900px;
+        }
+
+        .feature-highlight strong {
+            color: var(--primary);
+            background: #dbeafe;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        /* === AFFILIATE & FOOTER === */
+        .site-footer {
+            background: #f1f5f9;
+            padding: 40px 0;
+            margin-top: 80px;
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            margin-top: 18px;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .main-header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
+            .review-hero h1 { font-size: 2.2rem; }
+            .pros-cons .grid { grid-template-columns: 1fr; }
+            .rating-big { font-size: 2rem; flex-direction: column; }
+            .rating-big::before { font-size: 1.8rem; }
+        }
+
+        @media (max-width: 480px) {
+            .btn { padding: 14px 28px; font-size: 1rem; }
+            .verdict-content p { font-size: 1.1rem; }
+        }
+
+        /* Extra polish */
+        .fa-star, .fa-star-half-alt {
+            color: #fbbf24;
+        }
+    </style>
 </head>
 <body>
 
+    <!-- STICKY HEADER -->
     <header class="main-header">
         <div class="container">
             <div class="logo">
@@ -28,21 +415,27 @@
     </header>
 
     <main class="container review-page">
+
+        <!-- HERO SECTION (with rating) -->
         <section class="review-hero">
-            <div class="badge">Updated for 2026</div>
+            <span class="badge">Updated for 2026</span>
             <h1>ChatGPT Review: The Gold Standard of AI?</h1>
             <p>We spent 100+ hours testing ChatGPT's latest 2026 features. Here is our honest verdict.</p>
-            <div class="rating-big">⭐ 4.9/5</div>
-            <a href="https://chat.openai.com" class="btn primary-btn" target="_blank" rel="nofollow sponsored">Try ChatGPT Pro →</a>
+            <div class="rating-big">4.9/5</div>  <!-- numeric fallback -->
+            <a href="https://chat.openai.com" class="btn primary-btn" target="_blank" rel="nofollow sponsored">
+                <i class="fas fa-arrow-left" style="margin-left: 8px;"></i> Try ChatGPT Pro →
+            </a>
         </section>
 
+        <!-- VERDICT BOX (highlighted) -->
         <section class="verdict-box">
             <div class="verdict-content">
-                <h3>The SmartAffiliate Verdict</h3>
+                <h3><i class="fas fa-gavel"></i> The SmartAffiliate Verdict</h3>
                 <p>ChatGPT remains the most versatile AI tool on the market. In 2026, its new <strong>Deep Research Mode</strong> makes it unbeatable for long-form content, though it still requires a human touch for brand-specific voice.</p>
             </div>
         </section>
 
+        <!-- SPEC TABLE -->
         <section class="details-section">
             <h2>Key Specifications</h2>
             <table class="data-table">
@@ -69,39 +462,59 @@
             </table>
         </section>
 
+        <!-- PROS / CONS SECTION -->
         <section class="pros-cons">
             <div class="grid">
                 <div class="pros">
-                    <h3>What We Like (Pros)</h3>
+                    <h3><i class="fas fa-thumbs-up"></i> What We Like (Pros)</h3>
                     <ul>
-                        <li>Unmatched reasoning and logic capabilities.</li>
-                        <li>Extremely fast response times in 2026.</li>
-                        <li>The most affordable "all-in-one" AI tool.</li>
-                        <li>Massive ecosystem of Custom GPTs.</li>
+                        <li><i class="fas fa-check-circle"></i> Unmatched reasoning and logic capabilities.</li>
+                        <li><i class="fas fa-check-circle"></i> Extremely fast response times in 2026.</li>
+                        <li><i class="fas fa-check-circle"></i> The most affordable "all-in-one" AI tool.</li>
+                        <li><i class="fas fa-check-circle"></i> Massive ecosystem of Custom GPTs.</li>
                     </ul>
                 </div>
                 <div class="cons">
-                    <h3>What Could Be Better (Cons)</h3>
+                    <h3><i class="fas fa-thumbs-down"></i> What Could Be Better (Cons)</h3>
                     <ul>
-                        <li>Free version is often congested.</li>
-                        <li>Can produce "generic" sounding prose if not prompted correctly.</li>
+                        <li><i class="fas fa-exclamation-circle"></i> Free version is often congested.</li>
+                        <li><i class="fas fa-exclamation-circle"></i> Can produce "generic" sounding prose if not prompted correctly.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!-- FEATURE HIGHLIGHT (2026 update) -->
         <section class="feature-highlight">
             <h2>ChatGPT in 2026: What's New?</h2>
-            <p>The 2026 update introduced <strong>Prism Workspaces</strong>, allowing users to manage entire book projects or complex coding repos inside a single chat window. Our testing showed a 40% increase in factual accuracy compared to 2024 models.</p>
+            <p>The 2026 update introduced <strong>Prism Workspaces</strong>, allowing users to manage entire book projects or complex coding repos inside a single chat window. Our testing showed a <strong>40% increase in factual accuracy</strong> compared to 2024 models.</p>
         </section>
+
+        <!-- AFFILIATE LINKS / RESOURCES SECTION (added for completeness) -->
+        <section class="details-section" style="margin-top: 30px;">
+            <h2>🔗 Helpful Resources</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 25px;">
+                <a href="https://chat.openai.com" target="_blank" rel="nofollow sponsored" style="background: #e6f0fc; padding: 12px 25px; border-radius: 40px; color: var(--primary-dark); text-decoration: none; font-weight: 600;"><i class="fas fa-external-link-alt"></i> Try ChatGPT (Official Site)</a>
+                <a href="jasper-review.html" style="background: #f1f5f9; padding: 12px 25px; border-radius: 40px; color: var(--text-dark); text-decoration: none; font-weight: 600;"><i class="fas fa-arrow-left"></i> Jasper Review</a>
+                <a href="best-ai-writing-tools-2026.html" style="background: #f1f5f9; padding: 12px 25px; border-radius: 40px; color: var(--text-dark); text-decoration: none; font-weight: 600;"><i class="fas fa-crown"></i> Best AI Tools 2026</a>
+            </div>
+        </section>
+
+        <!-- MICRO DISCLAIMER (affiliate) -->
+        <div style="margin: 40px 0 20px; padding: 20px; background: #f1f5f9; border-radius: 40px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+            <i class="fas fa-info-circle" style="color: var(--primary);"></i> We may earn a commission if you purchase through our links (at no extra cost to you). This helps keep SmartAffiliate independent.
+        </div>
+
     </main>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
-            <p>© 2026 <strong>SmartAffiliate.com</strong></p>
+            <p>© 2026 <strong>SmartAffiliate.com</strong> — Honest reviews since 2020.</p>
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a> | 
-                <a href="disclosure.html">Affiliate Disclosure</a>
+                <a href="disclosure.html">Affiliate Disclosure</a> |
+                <a href="contact.html">Contact</a>
             </div>
         </div>
     </footer>
