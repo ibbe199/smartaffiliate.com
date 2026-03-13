@@ -1,0 +1,79 @@
+# 🚀 ملف robots.txt لموقع SmartAffiliate
+# آخر تحديث: مارس 2026
+
+# ===== التوجيهات العامة لجميع محركات البحث =====
+User-agent: *
+Allow: /
+Allow: /articles/
+Allow: /blog/
+Allow: /category/
+Allow: /about/
+Allow: /contact/
+
+# منع فهرسة الصفحات الخاصة والإدارية
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /draft/
+Disallow: /preview/
+Disallow: /test/
+
+# منع فهرسة ملفات معينة
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.zip$
+Disallow: /*.rar$
+Disallow: /*.tar$
+Disallow: /*.gz$
+
+# منع فهرسة نتائج البحث الداخلية
+Disallow: /search?
+Disallow: /?s=
+Disallow: /*?page=
+Disallow: /*?sort=
+Disallow: /*?filter=
+
+# ===== توجيهات خاصة لـ Google =====
+User-agent: Googlebot
+Allow: /
+Allow: /*.html$
+Allow: /*.php$
+Crawl-delay: 1  # مهلة ثانية واحدة بين الطلبات
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# منع صور معينة
+User-agent: Googlebot-Image
+Disallow: /images/private/
+Disallow: /images/temp/
+Disallow: /images/drafts/
+Allow: /images/articles/
+Allow: /images/blog/
+Allow: /images/*.jpg$
+Allow: /images/*.png$
+Allow: /images/*.webp$
+
+# ===== توجيهات لمحركات البحث الأخرى =====
+User-agent: Bingbot
+Crawl-delay: 2
+Allow: /
+
+User-agent: Yandex
+Crawl-delay: 2
+Allow: /
+
+User-agent: Baiduspider
+Crawl-delay: 3
+Allow: /
+
+# ===== مواقع الوصول =====
+Sitemap: https://smartafiliate.com/sitemap.xml
+Sitemap: https://smartafiliate.com/sitemap-images.xml
+Sitemap: https://smartafiliate.com/sitemap-articles.xml
+
+# ===== توضيح للمطورين =====
+# هذا الملف يتحكم في كيفية زحف محركات البحث لموقعنا
+# للمساعدة: https://smartafiliate.com/robots-help
