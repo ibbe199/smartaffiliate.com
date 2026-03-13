@@ -1,95 +1,529 @@
-<footer class="site-footer">
-    <div class="container">
-        <!-- الشعار ووصف الموقع -->
-        <div class="footer-brand">
-            <svg class="footer-logo" width="140" height="50" viewBox="0 0 140 50">
-                <path d="M15 25 L30 15 L45 25 L30 35 L15 25Z" fill="#00d2ff" opacity="0.8"/>
-                <circle cx="65" cy="25" r="10" fill="#9d50bb" opacity="0.8"/>
-                <path d="M100 20 L115 25 L100 30 L85 25 L100 20Z" fill="#00d2ff" opacity="0.8"/>
-                <text x="60" y="45" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">SMARTAFFILIATE</text>
-            </svg>
-            <p class="footer-tagline">منصتك العربية الموثوقة لأدوات التسويق بالذكاء الاصطناعي</p>
-        </div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAffiliate - التذييل المحسن</title>
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        <!-- شبكة الروابط الرئيسية (4 أعمدة) -->
-        <div class="footer-grid">
-            <!-- العمود 1: المحتوى -->
-            <div class="footer-col">
-                <h4 class="footer-title"><i class="fas fa-newspaper"></i> المحتوى</h4>
-                <ul class="footer-menu">
-                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
-                    <li><a href="articles/ai-writing-tools.html"><i class="fas fa-robot"></i> أحدث المقالات</a></li>
-                    <li><a href="blog.html"><i class="fas fa-blog"></i> المدونة</a></li>
-                    <li><a href="tools.html"><i class="fas fa-tools"></i> أدوات مجانية</a></li>
-                </ul>
-            </div>
+        :root {
+            --bg-deep: #050816;
+            --primary-glow: #00d2ff;
+            --secondary-glow: #9d50bb;
+            --glass-bg: rgba(20, 30, 45, 0.85);
+            --text-muted: #b0b3c5;
+            --card-radius: 24px;
+        }
 
-            <!-- العمود 2: الشركة -->
-            <div class="footer-col">
-                <h4 class="footer-title"><i class="fas fa-building"></i> عن الموقع</h4>
-                <ul class="footer-menu">
-                    <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
-                    <li><a href="team.html"><i class="fas fa-users"></i> فريق العمل</a></li>
-                    <li><a href="careers.html"><i class="fas fa-briefcase"></i> وظائف</a></li>
-                </ul>
-            </div>
+        body {
+            background: var(--bg-deep);
+            background-image: radial-gradient(circle at 30% 10%, rgba(0,210,255,0.08) 0%, transparent 40%),
+                              radial-gradient(circle at 80% 70%, rgba(157,80,187,0.08) 0%, transparent 45%);
+            color: #fff;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-            <!-- العمود 3: سياسات -->
-            <div class="footer-col">
-                <h4 class="footer-title"><i class="fas fa-scale-balanced"></i> السياسات</h4>
-                <ul class="footer-menu">
-                    <li><a href="privacy.html"><i class="fas fa-lock"></i> سياسة الخصوصية</a></li>
-                    <li><a href="terms.html"><i class="fas fa-file-contract"></i> شروط الاستخدام</a></li>
-                    <li><a href="disclosure.html" class="highlight-link"><i class="fas fa-hand-holding-heart"></i> الإفصاح التسويقي</a></li>
-                    <li><a href="cookies.html"><i class="fas fa-cookie-bite"></i> سياسة الكوكيز</a></li>
-                </ul>
-            </div>
+        /* محتوى تجريبي للصفحة */
+        .dummy-content {
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-            <!-- العمود 4: تواصل اجتماعي -->
-            <div class="footer-col">
-                <h4 class="footer-title"><i class="fas fa-share-alt"></i> تابعنا</h4>
-                <div class="social-links">
-                    <a href="#" class="social-link facebook" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link twitter" aria-label="تويتر"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="social-link linkedin" aria-label="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link youtube" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-link tiktok" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="social-link instagram" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
-                </div>
-                
-                <!-- نموذج اشتراك بريد سريع -->
-                <div class="footer-newsletter">
-                    <h5><i class="fas fa-envelope-open-text"></i> النشرة البريدية</h5>
-                    <form class="footer-form" onsubmit="event.preventDefault(); alert('شكراً لاشتراكك!');">
-                        <input type="email" placeholder="بريدك الإلكتروني" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
+        /* ===== تنسيقات التذييل المحسن ===== */
+        .site-footer {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-top: 2px solid var(--primary-glow);
+            padding: 60px 20px 30px;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
 
-        <!-- صندوق الإفصاح التسويقي (مطور) -->
-        <div class="disclosure-enhanced">
-            <div class="disclosure-icon">
-                <i class="fas fa-hand-holding-heart"></i>
-            </div>
-            <div class="disclosure-text">
-                <strong>⚡ إفصاح تسويقي مهم:</strong> SmartAffiliate موقع متخصص في مراجعات أدوات التسويق. قد نحصل على عمولة عند شرائك من خلال الروابط الموجودة في الموقع، وهذا لا يزيد السعر عليك أبداً. جميع المراجعات نزيهة ومبنية على تجربة فعلية.
-            </div>
-        </div>
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-glow), transparent);
+        }
 
-        <!-- السطر الأخير مع الشهادات -->
-        <div class="footer-bottom">
-            <div class="copyright">
-                <i class="far fa-copyright"></i> 2026 <strong>SmartAffiliate.cm</strong> - جميع الحقوق محفوظة.
-                <span class="badge">مدعوم بالذكاء الاصطناعي</span>
-            </div>
-            <div class="trust-badges">
-                <span><i class="fas fa-shield-alt"></i> خصوصية آمنة</span>
-                <span><i class="fas fa-credit-card"></i> دفع آمن</span>
-                <span><i class="fas fa-robot"></i> تقييمات AI</span>
-            </div>
-        </div>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* الشعار ووصف الموقع */
+        .footer-brand {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 20px var(--primary-glow));
+        }
+
+        .footer-tagline {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* شبكة الروابط */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* أعمدة التذييل */
+        .footer-col {
+            text-align: right;
+        }
+
+        .footer-title {
+            color: var(--primary-glow);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0,210,255,0.2);
+        }
+
+        .footer-title i {
+            margin-left: 8px;
+            color: var(--secondary-glow);
+        }
+
+        .footer-menu {
+            list-style: none;
+        }
+
+        .footer-menu li {
+            margin-bottom: 12px;
+        }
+
+        .footer-menu a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.8;
+        }
+
+        .footer-menu a:hover {
+            color: var(--primary-glow);
+            opacity: 1;
+            transform: translateX(-5px);
+        }
+
+        .footer-menu a i {
+            width: 20px;
+            color: var(--primary-glow);
+            font-size: 0.9rem;
+        }
+
+        .highlight-link {
+            color: var(--primary-glow) !important;
+            font-weight: bold;
+            opacity: 1 !important;
+        }
+
+        /* روابط التواصل الاجتماعي */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white !important;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .social-link.facebook { background: #1877f2; }
+        .social-link.twitter { background: #000000; }
+        .social-link.linkedin { background: #0077b5; }
+        .social-link.youtube { background: #ff0000; }
+        .social-link.tiktok { background: linear-gradient(45deg, #ff0050, #00f2ea); }
+        .social-link.instagram { background: linear-gradient(45deg, #f09433, #d62976, #962fbf, #4f5bd5); }
+
+        /* النشرة البريدية */
+        .footer-newsletter {
+            background: rgba(0,210,255,0.05);
+            border: 1px solid rgba(0,210,255,0.2);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .footer-newsletter h5 {
+            color: var(--primary-glow);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-form input {
+            flex: 1;
+            padding: 12px 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(0,210,255,0.3);
+            border-radius: 30px;
+            color: #fff;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .footer-form input:focus {
+            outline: none;
+            border-color: var(--primary-glow);
+            background: rgba(0,210,255,0.1);
+        }
+
+        .footer-form input::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
+
+        .footer-form button {
+            width: 45px;
+            height: 45px;
+            border: none;
+            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
+            color: #050816;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-form button:hover {
+            transform: rotate(15deg) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0,210,255,0.3);
+        }
+
+        /* صندوق الإفصاح التسويقي */
+        .disclosure-enhanced {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--primary-glow);
+            border-radius: 60px;
+            padding: 20px 30px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .disclosure-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #050816;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .disclosure-text {
+            flex: 1;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .disclosure-text strong {
+            color: var(--primary-glow);
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        /* السطر الأخير */
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,210,255,0.2);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .copyright strong {
+            color: var(--primary-glow);
+        }
+
+        .badge {
+            background: rgba(0,210,255,0.1);
+            border: 1px solid var(--primary-glow);
+            padding: 3px 10px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            margin-right: 10px;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badges span {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .trust-badges i {
+            color: var(--primary-glow);
+        }
+
+        /* تحسينات متجاوبة إضافية */
+        @media (max-width: 768px) {
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .trust-badges {
+                justify-content: center;
+            }
+            
+            .disclosure-enhanced {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+        }
+
+        /* تأثيرات حركية */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .footer-col:nth-child(1) { animation: float 4s infinite; }
+        .footer-col:nth-child(2) { animation: float 4s infinite 0.5s; }
+        .footer-col:nth-child(3) { animation: float 4s infinite 1s; }
+        .footer-col:nth-child(4) { animation: float 4s infinite 1.5s; }
+    </style>
+</head>
+<body>
+    <!-- محتوى تجريبي للصفحة -->
+    <div class="dummy-content">
+        <h1 style="color: var(--primary-glow); margin-bottom: 20px;">🌐 SmartAffiliate</h1>
+        <p style="color: #fff; font-size: 1.2rem;">مرحباً بك في موقعنا - التذييل أدناه</p>
     </div>
-</footer>
+
+    <!-- ===== التذييل المحسن ===== -->
+    <footer class="site-footer">
+        <div class="container">
+            <!-- الشعار ووصف الموقع -->
+            <div class="footer-brand">
+                <svg class="footer-logo" width="140" height="50" viewBox="0 0 140 50" onclick="window.location.href='index.html'">
+                    <path d="M15 25 L30 15 L45 25 L30 35 L15 25Z" fill="#00d2ff" opacity="0.8"/>
+                    <circle cx="65" cy="25" r="10" fill="#9d50bb" opacity="0.8"/>
+                    <path d="M100 20 L115 25 L100 30 L85 25 L100 20Z" fill="#00d2ff" opacity="0.8"/>
+                    <text x="60" y="45" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">SMARTAFFILIATE</text>
+                </svg>
+                <p class="footer-tagline">منصتك العربية الموثوقة لأدوات التسويق بالذكاء الاصطناعي ومراجعات المنتجات الرقمية</p>
+            </div>
+
+            <!-- شبكة الروابط الرئيسية (4 أعمدة) -->
+            <div class="footer-grid">
+                <!-- العمود 1: المحتوى -->
+                <div class="footer-col">
+                    <h4 class="footer-title"><i class="fas fa-newspaper"></i> المحتوى</h4>
+                    <ul class="footer-menu">
+                        <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                        <li><a href="articles/ai-writing-tools.html"><i class="fas fa-robot"></i> أحدث المقالات</a></li>
+                        <li><a href="blog.html"><i class="fas fa-blog"></i> المدونة</a></li>
+                        <li><a href="tools.html"><i class="fas fa-tools"></i> أدوات مجانية</a></li>
+                        <li><a href="comparisons.html"><i class="fas fa-scale-balanced"></i> مقارنات</a></li>
+                    </ul>
+                </div>
+
+                <!-- العمود 2: الشركة -->
+                <div class="footer-col">
+                    <h4 class="footer-title"><i class="fas fa-building"></i> عن الموقع</h4>
+                    <ul class="footer-menu">
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> من نحن</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                        <li><a href="team.html"><i class="fas fa-users"></i> فريق العمل</a></li>
+                        <li><a href="careers.html"><i class="fas fa-briefcase"></i> وظائف</a></li>
+                        <li><a href="advertise.html"><i class="fas fa-chart-line"></i> إعلن معنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- العمود 3: سياسات -->
+                <div class="footer-col">
+                    <h4 class="footer-title"><i class="fas fa-scale-balanced"></i> السياسات</h4>
+                    <ul class="footer-menu">
+                        <li><a href="privacy.html"><i class="fas fa-lock"></i> سياسة الخصوصية</a></li>
+                        <li><a href="terms.html"><i class="fas fa-file-contract"></i> شروط الاستخدام</a></li>
+                        <li><a href="disclosure.html" class="highlight-link"><i class="fas fa-hand-holding-heart"></i> الإفصاح التسويقي</a></li>
+                        <li><a href="cookies.html"><i class="fas fa-cookie-bite"></i> سياسة الكوكيز</a></li>
+                        <li><a href="returns.html"><i class="fas fa-undo-alt"></i> سياسة الإرجاع</a></li>
+                    </ul>
+                </div>
+
+                <!-- العمود 4: تواصل اجتماعي -->
+                <div class="footer-col">
+                    <h4 class="footer-title"><i class="fas fa-share-alt"></i> تابعنا</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/smartaffiliate" class="social-link facebook" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/smartaffiliate" class="social-link twitter" target="_blank" aria-label="تويتر"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://linkedin.com/company/smartaffiliate" class="social-link linkedin" target="_blank" aria-label="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com/@smartaffiliate" class="social-link youtube" target="_blank" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+                        <a href="https://tiktok.com/@smartaffiliate" class="social-link tiktok" target="_blank" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://instagram.com/smartaffiliate" class="social-link instagram" target="_blank" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    
+                    <!-- نموذج اشتراك بريد سريع -->
+                    <div class="footer-newsletter">
+                        <h5><i class="fas fa-envelope-open-text"></i> النشرة البريدية</h5>
+                        <form class="footer-form" onsubmit="event.preventDefault(); subscribeNewsletter();">
+                            <input type="email" id="newsletter-email" placeholder="بريدك الإلكتروني" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                        <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 10px;">نرسل لك أسبوعياً أحدث المقالات</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- صندوق الإفصاح التسويقي (مطور) -->
+            <div class="disclosure-enhanced">
+                <div class="disclosure-icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <div class="disclosure-text">
+                    <strong>⚡ إفصاح تسويقي مهم:</strong> SmartAffiliate موقع متخصص في مراجعات أدوات التسويق. قد نحصل على عمولة عند شرائك من خلال الروابط الموجودة في الموقع، وهذا لا يزيد السعر عليك أبداً. جميع المراجعات نزيهة ومبنية على تجربة فعلية. <a href="disclosure.html" style="color: var(--primary-glow);">اقرأ المزيد</a>
+                </div>
+            </div>
+
+            <!-- السطر الأخير مع الشهادات -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <i class="far fa-copyright"></i> 2026 <strong>SmartAffiliate.com</strong> - جميع الحقوق محفوظة.
+                    <span class="badge"><i class="fas fa-robot"></i> مدعوم بالذكاء الاصطناعي</span>
+                </div>
+                <div class="trust-badges">
+                    <span><i class="fas fa-shield-alt"></i> خصوصية آمنة</span>
+                    <span><i class="fas fa-credit-card"></i> دفع آمن</span>
+                    <span><i class="fas fa-robot"></i> تقييمات AI</span>
+                    <span><i class="fas fa-star"></i> 21+ مقالة</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // دالة الاشتراك في النشرة البريدية
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            
+            // محاكاة إرسال الاشتراك
+            alert(`✅ شكراً لاشتراكك! تم إرسال تأكيد إلى ${email}`);
+            
+            // إعادة تعيين النموذج
+            document.getElementById('newsletter-email').value = '';
+            
+            // هنا يمكن إضافة كود حقيقي للإرسال إلى API
+            console.log('Newsletter subscription:', email);
+        }
+
+        // إضافة تأثيرات تفاعلية للروابط
+        document.querySelectorAll('.footer-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert(`سيتم توجيهك إلى: ${this.getAttribute('href')}`);
+                // في الموقع الحقيقي، نزيل هذا التنبيه
+                // window.location.href = this.getAttribute('href');
+            });
+        });
+    </script>
+</body>
+</html>
