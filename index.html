@@ -2,6 +2,9 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <!-- Google Site Verification - تم الإضافة -->
+    <meta name="google-site-verification" content="7X4x5m03NWFNhlGmuoG7DfaHoNLRs5MgFDtW9nHK1co">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartAffiliate 2026 | 9 مقالات متكاملة</title>
     <!-- Font Awesome 6 -->
@@ -272,6 +275,76 @@
         }
         .back-btn:hover { gap: 15px; }
         
+        /* قسم الروابط الشامل */
+        .links-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 30px;
+            border: 1px solid var(--primary-glow);
+        }
+        
+        .links-title {
+            color: var(--primary-glow);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(0,210,255,0.3);
+            padding-bottom: 1rem;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .link-card {
+            background: rgba(0,210,255,0.05);
+            border: 1px solid rgba(0,210,255,0.2);
+            border-radius: 15px;
+            padding: 1.2rem;
+            transition: 0.3s;
+            direction: ltr;
+            text-align: left;
+        }
+        
+        .link-card:hover {
+            background: rgba(0,210,255,0.1);
+            border-color: var(--primary-glow);
+            transform: translateY(-3px);
+        }
+        
+        .link-card i {
+            color: var(--primary-glow);
+            margin-left: 8px;
+        }
+        
+        .link-card a {
+            color: #fff;
+            text-decoration: none;
+            word-break: break-all;
+            font-family: monospace;
+            display: block;
+        }
+        
+        .link-card a:hover {
+            color: var(--primary-glow);
+        }
+        
+        .link-label {
+            direction: rtl;
+            text-align: right;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
         /* قسم المشاركة */
         .share-section {
             margin: 3rem 0;
@@ -344,6 +417,7 @@
             <a href="#" onclick="filterByCategory('affiliate')"><i class="fas fa-bolt"></i> تسويق بالعمولة</a>
             <a href="#" onclick="filterByCategory('case-study')"><i class="fas fa-chart-line"></i> دراسات حالة</a>
             <a href="#" onclick="filterByCategory('seo')"><i class="fas fa-magnifying-glass"></i> SEO</a>
+            <a href="#" onclick="showLinks(event)"><i class="fas fa-link"></i> الروابط</a>
         </div>
     </header>
 
@@ -368,10 +442,12 @@
         <div class="footer-links">
             <a href="#" onclick="showHome(event)">الرئيسية</a>
             <a href="#" onclick="showAllArticles(event)">جميع المقالات</a>
+            <a href="#" onclick="showLinks(event)">روابط المقالات</a>
             <a href="#" onclick="showAbout(event)">من نحن</a>
             <a href="#" onclick="showContact(event)">اتصل بنا</a>
         </div>
         <div style="color: #4a4f6e;">© 2026 smartafiliate.cm - جميع الحقوق محفوظة</div>
+        <div style="color: #4a4f6e; font-size: 0.8rem; margin-top: 10px;">Google Verified Site</div>
     </footer>
 
     <script>
@@ -389,6 +465,7 @@
                 excerpt: 'تحليل شامل وعميق لكيفية تغيير الذكاء الاصطناعي لقواعد اللعبة في عالم التسويق الرقمي.',
                 externalLink: 'https://www.technologyreview.com/2026/ai-marketing-future/',
                 externalSource: 'MIT Technology Review',
+                url: 'https://smartafiliate.cm/articles/article1.html',
                 content: `
                     <div class="stat-box"><i class="fas fa-chart-line"></i> أكثر من 80% من الشركات تستخدم الذكاء الاصطناعي في تسويقها</div>
                     
@@ -416,6 +493,7 @@
                 excerpt: 'دليل عملي شامل لبناء نظام أتمتة متكامل لعملك، من البريد الإلكتروني إلى خدمة العملاء.',
                 externalLink: 'https://www.forbes.com/sites/automation-guide-2026',
                 externalSource: 'Forbes',
+                url: 'https://smartafiliate.cm/articles/article2.html',
                 content: `
                     <div class="stat-box"><i class="fas fa-clock"></i> الأتمتة توفر للشركات الصغيرة 20-30 ساعة أسبوعياً</div>
                     
@@ -440,6 +518,7 @@
                 excerpt: 'كل ما تحتاج معرفته لبدء مشوارك في عالم التسويق بالعمولة وتحقيق دخل ثابت.',
                 externalLink: 'https://www.smartpassiveincome.com/affiliate-marketing-guide-2026',
                 externalSource: 'Smart Passive Income',
+                url: 'https://smartafiliate.cm/articles/article3.html',
                 content: `
                     <div class="stat-box"><i class="fas fa-dollar-sign"></i> سوق التسويق بالعمولة سيصل إلى 20 مليار دولار في 2026</div>
                     
@@ -464,6 +543,7 @@
                 excerpt: 'تحليل مفصل لرحلة متجر إلكتروني ناشئ من الصفر إلى المليون دولار في 12 شهراً.',
                 externalLink: 'https://www.shopify.com/blog/million-dollar-case-study',
                 externalSource: 'Shopify',
+                url: 'https://smartafiliate.cm/articles/article4.html',
                 content: `
                     <div class="stat-box"><i class="fas fa-trophy"></i> من 0 إلى 1,000,000$ في 365 يوماً</div>
                     
@@ -486,6 +566,7 @@
                 excerpt: 'دليل عملي لبناء استراتيجية محتوى تجذب الزوار وتحولهم لعملاء.',
                 externalLink: 'https://www.hubspot.com/content-marketing-guide',
                 externalSource: 'HubSpot',
+                url: 'https://smartafiliate.cm/articles/article5.html',
                 content: `
                     <h2>تحديد الجمهور المستهدف</h2>
                     <p>أنشئ شخصية افتراضية (Buyer Persona) تشمل: العمر، الاهتمامات، التحديات.</p>
@@ -513,6 +594,7 @@
                 excerpt: 'تجميعة لأقوى الأدوات المجانية التي تساعدك في تحسين ترتيب موقعك.',
                 externalLink: 'https://www.moz.com/free-seo-tools',
                 externalSource: 'Moz',
+                url: 'https://smartafiliate.cm/articles/article6.html',
                 content: `
                     <h2>1. Google Search Console</h2>
                     <p>الأداة الرسمية من جوجل لمراقبة أداء موقعك.</p>
@@ -541,6 +623,7 @@
                 excerpt: 'خطوة بخطوة لإنشاء أول متجر إلكتروني وتحقيق أول مبيع.',
                 externalLink: 'https://www.shopify.com/blog/how-to-start-an-online-store',
                 externalSource: 'Shopify',
+                url: 'https://smartafiliate.cm/articles/article7.html',
                 content: `
                     <h2>الخطوة 1: اختيار المنتج المناسب</h2>
                     <p>منتجات تحل مشكلة، منتجات رقمية، منتجات قابلة للشحن.</p>
@@ -566,6 +649,7 @@
                 excerpt: 'استراتيجيات فعالة لبناء قائمة بريدية ضخمة وتحويل المشتركين لعملاء.',
                 externalLink: 'https://www.convertkit.com/email-list-building',
                 externalSource: 'ConvertKit',
+                url: 'https://smartafiliate.cm/articles/article8.html',
                 content: `
                     <h2>مغناطيس جذب قوي</h2>
                     <p>كتاب إلكتروني، دورة مجانية، قالب جاهز.</p>
@@ -591,6 +675,7 @@
                 excerpt: 'تعلم من أخطاء الآخرين لتتجنب خسارة الوقت والمال.',
                 externalLink: 'https://www.smartpassiveincome.com/affiliate-marketing-mistakes',
                 externalSource: 'Smart Passive Income',
+                url: 'https://smartafiliate.cm/articles/article9.html',
                 content: `
                     <h2>الخطأ 1: الترويج لكل شيء</h2>
                     <p>ركز على مجال واحد وكن خبيراً فيه.</p>
@@ -620,6 +705,47 @@
         function showAllArticles(e) {
             e?.preventDefault();
             renderArticles(articles);
+        }
+
+        // عرض جميع الروابط
+        function showLinks(e) {
+            e?.preventDefault();
+            
+            const html = `
+                <div class="back-btn" onclick="showHome(event)">
+                    <i class="fas fa-arrow-right"></i> العودة للرئيسية
+                </div>
+                
+                <div class="links-section">
+                    <div class="links-title">
+                        <i class="fas fa-link"></i> جميع روابط المقالات (9 مقالات)
+                    </div>
+                    
+                    <div class="links-grid">
+                        ${articles.map(article => `
+                            <div class="link-card">
+                                <div class="link-label">
+                                    <i class="fas fa-file-alt"></i> مقالة ${article.id}: ${article.title}
+                                </div>
+                                <a href="${article.url}" target="_blank">
+                                    <i class="fas ${article.icon}"></i> ${article.url}
+                                </a>
+                            </div>
+                        `).join('')}
+                        
+                        <div class="link-card">
+                            <div class="link-label">
+                                <i class="fas fa-home"></i> الصفحة الرئيسية
+                            </div>
+                            <a href="https://smartafiliate.cm/index.html" target="_blank">
+                                <i class="fas fa-globe"></i> https://smartafiliate.cm/index.html
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('main-content').innerHTML = html;
         }
 
         // تصفية حسب التصنيف
