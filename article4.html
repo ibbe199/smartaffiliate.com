@@ -45,6 +45,96 @@
             margin-bottom: 2rem; padding-bottom: 1rem;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
+        
+        /* تنسيقات قسم الروابط */
+        .links-section {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .links-title {
+            color: var(--primary-glow);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.8rem;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .link-card {
+            background: rgba(0, 210, 255, 0.05);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            direction: ltr;
+            text-align: left;
+        }
+        
+        .link-card:hover {
+            background: rgba(0, 210, 255, 0.1);
+            border-color: var(--primary-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,210,255,0.2);
+        }
+        
+        .link-card i {
+            color: var(--primary-glow);
+            margin-left: 8px;
+        }
+        
+        .link-card a {
+            color: #fff;
+            text-decoration: none;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .link-card a:hover {
+            color: var(--primary-glow);
+        }
+        
+        .link-label {
+            display: block;
+            color: #8a8fb0;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .current-article {
+            border: 2px solid var(--primary-glow);
+            background: rgba(0, 210, 255, 0.15);
+            position: relative;
+        }
+        
+        .current-article::before {
+            content: 'المقالة الحالية';
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: var(--primary-glow);
+            color: #050816;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: bold;
+            direction: rtl;
+        }
+        
         footer { text-align: center; margin-top: 3rem; padding: 2rem; color: #4a4f6e; }
     </style>
 </head>
@@ -114,14 +204,62 @@
                 <li>جرب عروضاً وتخفيضات مختلفة</li>
             </ul>
             
-            
             <h2>الخلاصة</h2>
             <p>أول مبيع هو الأصعب، لكنه يفتح الباب للثقة والاستمرارية. ابدأ صغيراً، تعلم بسرعة، وطور متجرك باستمرار.</p>
+            
+            <!-- قسم الروابط المنظم -->
+            <div class="links-section">
+                <div class="links-title">
+                    <i class="fas fa-link"></i> روابط المقالات
+                </div>
+                
+                <div class="links-grid">
+                    <!-- المقالة الحالية -->
+                    <div class="link-card current-article">
+                        <div class="link-label">
+                            <i class="fas fa-file-alt"></i> المقالة الحالية:
+                        </div>
+                        <a href="https://smartafiliate.com/articles/article2.html" target="_blank">
+                            <i class="fas fa-cart-shopping"></i> https://smartafiliate.com/articles/article2.html
+                        </a>
+                    </div>
+                    
+                    <!-- رابط المقالة 1 -->
+                    <div class="link-card">
+                        <div class="link-label">
+                            <i class="fas fa-file-alt"></i> مقالة 1:
+                        </div>
+                        <a href="https://smartafiliate.com/articles/article1.html" target="_blank">
+                            <i class="fas fa-newspaper"></i> https://smartafiliate.com/articles/article1.html
+                        </a>
+                    </div>
+                    
+                    <!-- رابط المقالة 4 -->
+                    <div class="link-card">
+                        <div class="link-label">
+                            <i class="fas fa-file-alt"></i> مقالة 4:
+                        </div>
+                        <a href="https://smartafiliate.com/articles/article4.html" target="_blank">
+                            <i class="fas fa-chart-line"></i> https://smartafiliate.com/articles/article4.html
+                        </a>
+                    </div>
+                    
+                    <!-- رابط إضافي للصفحة الرئيسية -->
+                    <div class="link-card">
+                        <div class="link-label">
+                            <i class="fas fa-home"></i> الرئيسية:
+                        </div>
+                        <a href="index.html" target="_blank">
+                            <i class="fas fa-globe"></i> https://smartafiliate.com
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <footer>
             <p>© 2026 smartafiliate.com - جميع الحقوق محفوظة</p>
         </footer>
     </div>
-</body>https://smartafiliate.com/articles/article4.html
-</html>https://smartafiliate.com/articles/article1.html
+</body>
+</html>
