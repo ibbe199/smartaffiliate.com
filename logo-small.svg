@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad_small" x1="0" y1="20" x2="120" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00d2ff"/>
+      <stop offset="1" stop-color="#9d50bb"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- شكل مبسط -->
+  <path d="M15 20 L30 10 L45 20 L30 30 L15 20Z" fill="url(#grad_small)"/>
+  <circle cx="60" cy="20" r="8" fill="url(#grad_small)"/>
+  <path d="M85 15 L100 20 L85 25 L70 20 L85 15Z" fill="url(#grad_small)"/>
+  
+  <text x="70" y="35" font-family="Arial" font-size="8" fill="white" text-anchor="middle" font-weight="bold">S</text>
+</svg>
