@@ -959,5 +959,107 @@
         // بدء التشغيل
         window.onload = () => showHome();
     </script>
+    <!-- ===== إصلاح مشكلة Redirecting Pages ===== -->
+<script>
+    // قائمة الروابط الصحيحة (محدثة)
+    const validUrls = [
+        '/',
+        '/index.html',
+        '/article1.html',
+        '/article2.html',
+        '/article3.html',
+        '/article4.html',
+        '/article5.html',
+        '/article6.html',
+        '/article7.html',
+        '/article8.html',
+        '/article9.html',
+        '/article10.html',
+        '/article11.html',
+        '/article12.html',
+        '/article13.html',
+        '/article14.html',
+        '/article15.html',
+        '/article16.html',
+        '/article17.html',
+        '/article18.html',
+        '/article19.html',
+        '/article20.html',
+        '/article21.html',
+        '/article22.html',
+        '/article23.html',
+        '/article24.html',
+        '/article25.html',
+        '/article26.html',
+        '/article27.html',
+        '/article28.html',
+        '/article29.html',
+        '/article30.html',
+        '/article31.html',
+        '/article32.html',
+        '/article33.html',
+        '/article34.html',
+        '/article35.html',
+        '/article36.html',
+        '/article37.html',
+        '/article38.html',
+        '/article39.html',
+        '/article40.html',
+        '/article41.html',
+        '/article42.html',
+        '/article43.html',
+        '/article44.html',
+        '/article45.html',
+        '/article46.html',
+        '/article47.html',
+        '/article48.html',
+        '/article49.html',
+        '/article50.html'
+    ];
+
+    // التحقق من الرابط الحالي
+    function checkCurrentUrl() {
+        const currentPath = window.location.pathname;
+        console.log('📍 المسار الحالي:', currentPath);
+        
+        // التحقق من وجود الرابط في القائمة الصحيحة
+        if (!validUrls.includes(currentPath) && !validUrls.includes(currentPath.replace('.html', ''))) {
+            console.warn('⚠️ هذا الرابط قديم أو غير صحيح:', currentPath);
+            
+            // اقتراح الرابط الصحيح
+            const suggestedUrl = currentPath.replace(/old-|temp-|test-/g, '');
+            console.log('✅ الرابط المقترح:', suggestedUrl);
+        } else {
+            console.log('✅ الرابط صحيح');
+        }
+    }
+
+    // تشغيل الفحص
+    window.addEventListener('load', checkCurrentUrl);
+
+    // إضافة دالة للإبلاغ عن الروابط المعطوبة
+    window.reportBrokenLinks = function() {
+        const links = document.querySelectorAll('a[href]');
+        const brokenLinks = [];
+        
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('/') && !validUrls.includes(href)) {
+                brokenLinks.push({
+                    text: link.textContent,
+                    href: href
+                });
+            }
+        });
+        
+        if (brokenLinks.length > 0) {
+            console.warn('⚠️ روابط داخلية معطوبة:', brokenLinks);
+            return brokenLinks;
+        } else {
+            console.log('✅ جميع الروابط الداخلية سليمة');
+            return [];
+        }
+    };
+</script>
 </body>
 </html>
