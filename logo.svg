@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- تعريف التدرجات اللونية -->
+  <defs>
+    <linearGradient id="gradient1" x1="25" y1="45" x2="75" y2="45" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00d2ff"/>
+      <stop offset="1" stop-color="#9d50bb"/>
+    </linearGradient>
+    
+    <linearGradient id="gradient2" x1="78" y1="23" x2="122" y2="67" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9d50bb"/>
+      <stop offset="1" stop-color="#00d2ff"/>
+    </linearGradient>
+    
+    <linearGradient id="gradient3" x1="130" y1="45" x2="170" y2="45" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00d2ff"/>
+      <stop offset="1" stop-color="#6a4e9b"/>
+    </linearGradient>
+    
+    <linearGradient id="gradient4" x1="0" y1="40" x2="200" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00d2ff" offset="0%"/>
+      <stop stop-color="#9d50bb" offset="50%"/>
+      <stop stop-color="#00d2ff" offset="100%"/>
+    </linearGradient>
+    
+    <!-- فلتر الظل -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+    
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ظل خلفي خفيف -->
+  <circle cx="100" cy="40" r="30" fill="url(#gradient4)" opacity="0.2" filter="url(#shadow)"/>
+  
+  <!-- الأشكال الرئيسية -->
+  <g filter="url(#glow)">
+    <!-- الشكل الأول: مثلث -->
+    <path d="M25 45 L50 22 L75 45 L50 68 L25 45Z" 
+          fill="url(#gradient1)" 
+          stroke="white" 
+          stroke-width="1.5"
+          stroke-opacity="0.3">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- الشكل الثاني: دائرة -->
+    <circle cx="100" cy="45" r="22" 
+            fill="url(#gradient2)" 
+            stroke="white" 
+            stroke-width="1.5"
+            stroke-opacity="0.3">
+      <animate attributeName="r" values="22;23;22" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- الشكل الثالث: مثلث مقلوب -->
+    <path d="M150 27 L170 45 L150 63 L130 45 L150 27Z" 
+          fill="url(#gradient3)" 
+          stroke="white" 
+          stroke-width="1.5"
+          stroke-opacity="0.3">
+      <animate attributeName="opacity" values="1;0.9;1" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- نقاط زخرفية صغيرة -->
+  <circle cx="70" cy="35" r="2" fill="white" opacity="0.5"/>
+  <circle cx="130" cy="55" r="2" fill="white" opacity="0.5"/>
+  <circle cx="45" cy="50" r="1.5" fill="white" opacity="0.3"/>
+  <circle cx="155" cy="40" r="1.5" fill="white" opacity="0.3"/>
+  
+  <!-- نص الشعار -->
+  <text x="115" y="70" 
+        font-family="Arial, Helvetica, sans-serif" 
+        font-size="12" 
+        font-weight="bold" 
+        fill="white" 
+        text-anchor="middle"
+        letter-spacing="1">
+    SMARTAFF
+  </text>
+  
+  <!-- نص ثانوي صغير (اختياري) -->
+  <text x="115" y="78" 
+        font-family="Arial, Helvetica, sans-serif" 
+        font-size="5" 
+        fill="rgba(255,255,255,0.5)" 
+        text-anchor="middle"
+        letter-spacing="2">
+    AFFILIATE MARKETING
+  </text>
+</svg>
