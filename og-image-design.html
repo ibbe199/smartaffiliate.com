@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تصميم og-image لموقع SmartAffiliate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .og-container {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #050816 0%, #1a1a3a 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        /* خلفية متحركة */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0,210,255,0.1) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(157,80,187,0.1) 0%, transparent 40%);
+        }
+        
+        /* أشكال هندسية */
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+        }
+        
+        .shape-1 {
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00d2ff, #9d50bb);
+        }
+        
+        .shape-2 {
+            bottom: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #9d50bb, #00d2ff);
+        }
+        
+        .shape-3 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            border: 2px solid rgba(0,210,255,0.2);
+            border-radius: 50%;
+        }
+        
+        /* المحتوى الرئيسي */
+        .content {
+            position: relative;
+            z-index: 10;
+            padding: 60px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        /* الشعار */
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #00d2ff, #9d50bb);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,210,255,0.3);
+        }
+        
+        .logo-icon span {
+            font-size: 40px;
+            font-weight: bold;
+            color: #050816;
+        }
+        
+        .logo-text {
+            color: white;
+        }
+        
+        .logo-text h1 {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(45deg, #00d2ff, #9d50bb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 18px;
+            color: #b0b3c5;
+            letter-spacing: 2px;
+        }
+        
+        /* العنوان الرئيسي */
+        .main-title {
+            margin: 40px 0 20px;
+        }
+        
+        .main-title h2 {
+            font-size: 64px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .main-title .highlight {
+            background: linear-gradient(45deg, #00d2ff, #9d50bb);
+            padding: 0 10px;
+            color: #050816;
+            display: inline-block;
+        }
+        
+        .main-title p {
+            font-size: 24px;
+            color: #b0b3c5;
+            max-width: 800px;
+        }
+        
+        /* الإحصائيات */
+        .stats {
+            display: flex;
+            gap: 50px;
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #00d2ff;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            color: #9d50bb;
+        }
+        
+        /* رابط الموقع */
+        .site-url {
+            font-size: 28px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 2px;
+            padding: 15px 0;
+            border-top: 2px solid rgba(0,210,255,0.3);
+            border-bottom: 2px solid rgba(0,210,255,0.3);
+            display: inline-block;
+            align-self: flex-start;
+        }
+        
+        .site-url i {
+            color: #00d2ff;
+            margin-left: 10px;
+        }
+        
+        /* التذييل */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #b0b3c5;
+            font-size: 16px;
+        }
+        
+        .footer-icons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .footer-icons i {
+            font-size: 24px;
+            color: rgba(0,210,255,0.5);
+        }
+        
+        /* للتصدير - إزالة التأثيرات غير الضرورية */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .og-container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="og-container" id="ogImage">
+        <!-- خلفية -->
+        <div class="bg-pattern"></div>
+        
+        <!-- أشكال -->
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        
+        <!-- المحتوى -->
+        <div class="content">
+            <!-- الشعار -->
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <span>S</span>
+                </div>
+                <div class="logo-text">
+                    <h1>SmartAffiliate</h1>
+                    <p>منصة الذكاء الاصطناعي والتسويق</p>
+                </div>
+            </div>
+            
+            <!-- العنوان الرئيسي -->
+            <div class="main-title">
+                <h2>
+                    أكثر من <span class="highlight">50 مقالة</span><br>
+                    في الذكاء الاصطناعي<br>
+                    والأتمتة والتسويق
+                </h2>
+                <p>مراجعات احترافية • أدوات مجانية • دراسات حالة</p>
+            </div>
+            
+            <!-- إحصائيات -->
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">مقالة</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">فئات</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">ساعة محتوى</div>
+                </div>
+            </div>
+            
+            <!-- رابط الموقع -->
+            <div class="site-url">
+                <i class="fas fa-globe"></i> smartaffiliate.cm
+            </div>
+            
+            <!-- التذييل -->
+            <div class="footer">
+                <span>© 2026 SmartAffiliate - جميع الحقوق محفوظة</span>
+                <div class="footer-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-x-twitter"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- أدوات التحكم -->
+    <div style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; background: white; padding: 10px 20px; border-radius: 50px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 100;">
+        <button onclick="exportAsImage()" style="padding: 8px 20px; background: linear-gradient(45deg, #00d2ff, #9d50bb); color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: bold;">
+            <i class="fas fa-download"></i> تصدير كصورة
+        </button>
+        <button onclick="copyToClipboard()" style="padding: 8px 20px; background: #333; color: white; border: none; border-radius: 30px; cursor: pointer;">
+            <i class="fas fa-copy"></i> نسخ الكود
+        </button>
+    </div>
+    
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function exportAsImage() {
+            const element = document.getElementById('ogImage');
+            
+            html2canvas(element, {
+                scale: 2,
+                backgroundColor: null,
+                allowTaint: true,
+                useCORS: true,
+                logging: false
+            }).then(canvas => {
+                // إنشاء رابط التحميل
+                const link = document.createElement('a');
+                link.download = 'smartaffiliate-og-image.jpg';
+                link.href = canvas.toDataURL('image/jpeg', 0.9);
+                link.click();
+                
+                alert('✅ تم تصدير الصورة بنجاح!');
+            }).catch(error => {
+                console.error('خطأ في التصدير:', error);
+                alert('❌ حدث خطأ في تصدير الصورة');
+            });
+        }
+        
+        function copyToClipboard() {
+            const html = document.getElementById('ogImage').outerHTML;
+            navigator.clipboard.writeText(html).then(() => {
+                alert('✅ تم نسخ كود الصورة');
+            });
+        }
+    </script>
+</body>
+</html>
