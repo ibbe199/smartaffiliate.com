@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار مجلد images - SmartAffiliate</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 40px;
+            padding: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 2.5rem;
+        }
+        
+        h1 i {
+            color: #667eea;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .stats-bar {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-card i {
+            font-size: 2rem;
+        }
+        
+        .stat-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .stat-info p {
+            opacity: 0.9;
+        }
+        
+        .search-box {
+            margin-bottom: 30px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102,126,234,0.2);
+        }
+        
+        .folder-structure {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .folder-structure h3 {
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .folder-tree {
+            font-family: monospace;
+            color: #333;
+            line-height: 2;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            overflow-x: auto;
+        }
+        
+        .folder-tree i {
+            color: #f39c12;
+            margin-left: 5px;
+        }
+        
+        .folder-tree .file {
+            color: #27ae60;
+        }
+        
+        .folder-tree .folder {
+            color: #e67e22;
+            font-weight: bold;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+        
+        .btn-warning {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .image-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            transition: 0.3s;
+            position: relative;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .image-preview {
+            width: 100%;
+            height: 150px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .image-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .image-preview .placeholder {
+            font-size: 3rem;
+            color: #ccc;
+        }
+        
+        .image-name {
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 5px;
+            word-break: break-all;
+            font-weight: 600;
+        }
+        
+        .image-path {
+            font-size: 0.7rem;
+            color: #999;
+            margin-bottom: 5px;
+        }
+        
+        .image-size {
+            font-size: 0.7rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .status-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .status-error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .status-warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .image-actions {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .action-btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.7rem;
+        }
+        
+        .action-btn:hover {
+            opacity: 0.8;
+        }
+        
+        .action-btn.copy {
+            background: #667eea;
+            color: white;
+        }
+        
+        .action-btn.view {
+            background: #10b981;
+            color: white;
+        }
+        
+        .summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .summary-item {
+            text-align: center;
+        }
+        
+        .summary-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        .summary-label {
+            opacity: 0.9;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <i class="fas fa-images"></i>
+            اختبار مجلد images
+        </h1>
+        <div class="subtitle">التحقق من وجود جميع الصور المطلوبة في موقع SmartAffiliate</div>
+        
+        <!-- إحصائيات سريعة -->
+        <div class="stats-bar" id="stats">
+            <div class="stat-card">
+                <i class="fas fa-images"></i>
+                <div class="stat-info">
+                    <h3 id="totalImages">0</h3>
+                    <p>إجمالي الصور</p>
+                </div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                <i class="fas fa-check-circle"></i>
+                <div class="stat-info">
+                    <h3 id="successImages">0</h3>
+                    <p>صور موجودة</p>
+                </div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="stat-info">
+                    <h3 id="errorImages">0</h3>
+                    <p>صور مفقودة</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- هيكل المجلدات -->
+        <div class="folder-structure">
+            <h3>
+                <i class="fas fa-folder-tree"></i>
+                هيكل مجلد images
+            </h3>
+            <div class="folder-tree" id="folderTree">
+                <i class="fas fa-folder folder"></i> images/<br>
+                &nbsp;&nbsp;├── <i class="fas fa-file-image file"></i> logo.svg<br>
+                &nbsp;&nbsp;├── <i class="fas fa-file-image file"></i> favicon.ico<br>
+                &nbsp;&nbsp;├── <i class="fas fa-file-image file"></i> og-image.jpg<br>
+                &nbsp;&nbsp;├── <i class="fas fa-file-image file"></i> apple-touch-icon.png<br>
+                &nbsp;&nbsp;├── <i class="fas fa-folder folder"></i> articles/<br>
+                &nbsp;&nbsp;│&nbsp;&nbsp;├── <i class="fas fa-file-image file"></i> ai-article.jpg<br>
+                &nbsp;&nbsp;│&nbsp;&nbsp;├── <i class="fas fa-file-image file"></i> automation-article.jpg<br>
+                &nbsp;&nbsp;│&nbsp;&nbsp;└── <i class="fas fa-file-image file"></i> jasper-review.jpg<br>
+                &nbsp;&nbsp;└── <i class="fas fa-folder folder"></i> team/<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <i class="fas fa-file-image file"></i> founder.jpg<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <i class="fas fa-file-image file"></i> team.jpg
+            </div>
+        </div>
+        
+        <!-- أزرار التحكم -->
+        <div class="controls">
+            <button class="btn btn-primary" onclick="checkAllImages()">
+                <i class="fas fa-sync-alt"></i> فحص الكل
+            </button>
+            <button class="btn btn-success" onclick="showOnlySuccess()">
+                <i class="fas fa-check-circle"></i> إظهار الموجود فقط
+            </button>
+            <button class="btn btn-danger" onclick="showOnlyErrors()">
+                <i class="fas fa-exclamation-triangle"></i> إظهار المفقود فقط
+            </button>
+            <button class="btn btn-warning" onclick="resetFilter()">
+                <i class="fas fa-undo"></i> إظهار الكل
+            </button>
+        </div>
+        
+        <!-- مربع البحث -->
+        <div class="search-box">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 بحث عن صورة..." onkeyup="filterImages()">
+        </div>
+        
+        <!-- شبكة الصور -->
+        <div class="image-grid" id="imageGrid"></div>
+        
+        <!-- ملخص النتائج -->
+        <div class="summary" id="summary">
+            <h2 style="text-align: center; margin-bottom: 20px;">📊 ملخص الفحص</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-number" id="summaryTotal">0</div>
+                    <div class="summary-label">إجمالي الصور</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number" id="summarySuccess">0</div>
+                    <div class="summary-label">صور موجودة</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number" id="summaryError">0</div>
+                    <div class="summary-label">صور مفقودة</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number" id="summaryPercentage">0%</div>
+                    <div class="summary-label">نسبة النجاح</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <i class="far fa-copyright"></i> 2026 SmartAffiliate - جميع الحقوق محفوظة
+        </div>
+    </div>
+    
+    <script>
+        // قائمة جميع الصور المطلوبة
+        const imageList = [
+            // الشعارات الرئيسية
+            { name: 'logo.svg', path: '/images/logo.svg', category: 'شعارات', size: 'SVG' },
+            { name: 'logo-white.svg', path: '/images/logo-white.svg', category: 'شعارات', size: 'SVG' },
+            { name: 'logo-dark.svg', path: '/images/logo-dark.svg', category: 'شعارات', size: 'SVG' },
+            
+            // أيقونات المتصفح
+            { name: 'favicon.ico', path: '/images/favicon.ico', category: 'أيقونات', size: 'ICO' },
+            { name: 'favicon-16x16.png', path: '/images/favicon-16x16.png', category: 'أيقونات', size: '1KB' },
+            { name: 'favicon-32x32.png', path: '/images/favicon-32x32.png', category: 'أيقونات', size: '2KB' },
+            { name: 'favicon-96x96.png', path: '/images/favicon-96x96.png', category: 'أيقونات', size: '5KB' },
+            
+            // أيقونات Apple
+            { name: 'apple-touch-icon.png', path: '/images/apple-touch-icon.png', category: 'أيقونات Apple', size: '15KB' },
+            { name: 'apple-icon-57x57.png', path: '/images/apple-icon-57x57.png', category: 'أيقونات Apple', size: '3KB' },
+            { name: 'apple-icon-60x60.png', path: '/images/apple-icon-60x60.png', category: 'أيقونات Apple', size: '3KB' },
+            { name: 'apple-icon-72x72.png', path: '/images/apple-icon-72x72.png', category: 'أيقونات Apple', size: '4KB' },
+            { name: 'apple-icon-76x76.png', path: '/images/apple-icon-76x76.png', category: 'أيقونات Apple', size: '4KB' },
+            { name: 'apple-icon-114x114.png', path: '/images/apple-icon-114x114.png', category: 'أيقونات Apple', size: '6KB' },
+            { name: 'apple-icon-120x120.png', path: '/images/apple-icon-120x120.png', category: 'أيقونات Apple', size: '7KB' },
+            { name: 'apple-icon-144x144.png', path: '/images/apple-icon-144x144.png', category: 'أيقونات Apple', size: '8KB' },
+            { name: 'apple-icon-152x152.png', path: '/images/apple-icon-152x152.png', category: 'أيقونات Apple', size: '9KB' },
+            { name: 'apple-icon-167x167.png', path: '/images/apple-icon-167x167.png', category: 'أيقونات Apple', size: '10KB' },
+            { name: 'apple-icon-180x180.png', path: '/images/apple-icon-180x180.png', category: 'أيقونات Apple', size: '12KB' },
+            
+            // أيقونات Android
+            { name: 'android-chrome-192x192.png', path: '/images/android-chrome-192x192.png', category: 'أيقونات Android', size: '10KB' },
+            { name: 'android-chrome-512x512.png', path: '/images/android-chrome-512x512.png', category: 'أيقونات Android', size: '25KB' },
+            
+            // صور المشاركات الاجتماعية
+            { name: 'og-image.jpg', path: '/images/og-image.jpg', category: 'اجتماعي', size: '50KB' },
+            { name: 'twitter-card.jpg', path: '/images/twitter-card.jpg', category: 'اجتماعي', size: '45KB' },
+            { name: 'linkedin-card.jpg', path: '/images/linkedin-card.jpg', category: 'اجتماعي', size: '45KB' },
+            
+            // صور الخلفيات
+            { name: 'hero-bg.svg', path: '/images/hero-bg.svg', category: 'خلفيات', size: 'SVG' },
+            { name: 'bg-pattern.png', path: '/images/bg-pattern.png', category: 'خلفيات', size: '20KB' },
+            { name: 'placeholder.jpg', path: '/images/placeholder.jpg', category: 'خلفيات', size: '5KB' },
+            
+            // صور المقالات
+            { name: 'articles/ai-article.jpg', path: '/images/articles/ai-article.jpg', category: 'مقالات', size: '30KB' },
+            { name: 'articles/automation-article.jpg', path: '/images/articles/automation-article.jpg', category: 'مقالات', size: '28KB' },
+            { name: 'articles/affiliate-article.jpg', path: '/images/articles/affiliate-article.jpg', category: 'مقالات', size: '32KB' },
+            { name: 'articles/case-study-article.jpg', path: '/images/articles/case-study-article.jpg', category: 'مقالات', size: '35KB' },
+            { name: 'articles/seo-article.jpg', path: '/images/articles/seo-article.jpg', category: 'مقالات', size: '25KB' },
+            { name: 'articles/ecommerce-article.jpg', path: '/images/articles/ecommerce-article.jpg', category: 'مقالات', size: '27KB' },
+            { name: 'articles/jasper-review.jpg', path: '/images/articles/jasper-review.jpg', category: 'مقالات', size: '33KB' },
+            { name: 'articles/chatgpt-review.jpg', path: '/images/articles/chatgpt-review.jpg', category: 'مقالات', size: '31KB' },
+            
+            // صور الفريق
+            { name: 'team/founder.jpg', path: '/images/team/founder.jpg', category: 'فريق', size: '20KB' },
+            { name: 'team/editor.jpg', path: '/images/team/editor.jpg', category: 'فريق', size: '18KB' },
+            { name: 'team/writer-1.jpg', path: '/images/team/writer-1.jpg', category: 'فريق', size: '15KB' },
+            { name: 'team/writer-2.jpg', path: '/images/team/writer-2.jpg', category: 'فريق', size: '16KB' },
+            
+            // صور التصنيفات
+            { name: 'category-ai.jpg', path: '/images/category-ai.jpg', category: 'تصنيفات', size: '12KB' },
+            { name: 'category-automation.jpg', path: '/images/category-automation.jpg', category: 'تصنيفات', size: '13KB' },
+            { name: 'category-affiliate.jpg', path: '/images/category-affiliate.jpg', category: 'تصنيفات', size: '11KB' },
+            
+            // صور الأخطاء
+            { name: '404-illustration.svg', path: '/images/404-illustration.svg', category: 'أخطاء', size: 'SVG' },
+            { name: 'error-illustration.svg', path: '/images/error-illustration.svg', category: 'أخطاء', size: 'SVG' },
+            
+            // صور إضافية
+            { name: 'loading.gif', path: '/images/loading.gif', category: 'إضافية', size: '10KB' },
+            { name: 'success-icon.svg', path: '/images/success-icon.svg', category: 'إضافية', size: 'SVG' }
+        ];
+        
+        let filteredImages = [...imageList];
+        let imageStatus = {};
+        
+        // فحص جميع الصور
+        function checkAllImages() {
+            imageStatus = {};
+            let checked = 0;
+            
+            imageList.forEach(img => {
+                const testImg = new Image();
+                testImg.onload = () => {
+                    imageStatus[img.path] = true;
+                    checked++;
+                    if (checked === imageList.length) {
+                        renderImages();
+                        updateStats();
+                    }
+                };
+                testImg.onerror = () => {
+                    imageStatus[img.path] = false;
+                    checked++;
+                    if (checked === imageList.length) {
+                        renderImages();
+                        updateStats();
+                    }
+                };
+                testImg.src = img.path;
+            });
+        }
+        
+        // عرض الصور
+        function renderImages() {
+            const grid = document.getElementById('imageGrid');
+            grid.innerHTML = '';
+            
+            filteredImages.forEach(img => {
+                const status = imageStatus[img.path];
+                const statusText = status ? 'موجود' : 'غير موجود';
+                const statusClass = status ? 'status-success' : 'status-error';
+                
+                const card = document.createElement('div');
+                card.className = 'image-card';
+                card.setAttribute('data-status', status ? 'success' : 'error');
+                card.setAttribute('data-category', img.category);
+                
+                card.innerHTML = `
+                    <div class="image-preview">
+                        ${status ? 
+                            `<img src="${img.path}" alt="${img.name}" onerror="this.style.display='none'; this.parentNode.innerHTML+='<div class=\'placeholder\'><i class=\'fas fa-exclamation-triangle\'></i></div>'">` : 
+                            `<div class="placeholder"><i class="fas fa-image"></i></div>`
+                        }
+                    </div>
+                    <div class="image-name">${img.name}</div>
+                    <div class="image-path">${img.path}</div>
+                    <div class="image-size">${img.size}</div>
+                    <div>
+                        <span class="status-badge ${statusClass}">
+                            <i class="fas ${status ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                            ${statusText}
+                        </span>
+                    </div>
+                    <div class="image-actions">
+                        <button class="action-btn copy" onclick="copyPath('${img.path}')">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        ${status ? 
+                            `<button class="action-btn view" onclick="window.open('${img.path}', '_blank')">
+                                <i class="fas fa-eye"></i>
+                            </button>` : 
+                            ''
+                        }
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+        
+        // تحديث الإحصائيات
+        function updateStats() {
+            const total = imageList.length;
+            const success = Object.values(imageStatus).filter(v => v === true).length;
+            const error = total - success;
+            const percentage = ((success / total) * 100).toFixed(1);
+            
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('successImages').textContent = success;
+            document.getElementById('errorImages').textContent = error;
+            
+            document.getElementById('summaryTotal').textContent = total;
+            document.getElementById('summarySuccess').textContent = success;
+            document.getElementById('summaryError').textContent = error;
+            document.getElementById('summaryPercentage').textContent = percentage + '%';
+        }
+        
+        // تصفية حسب البحث
+        function filterImages() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            filteredImages = imageList.filter(img => 
+                img.name.toLowerCase().includes(searchTerm) || 
+                img.category.toLowerCase().includes(searchTerm) ||
+                img.path.toLowerCase().includes(searchTerm)
+            );
+            
+            renderImages();
+        }
+        
+        // إظهار الموجود فقط
+        function showOnlySuccess() {
+            filteredImages = imageList.filter(img => imageStatus[img.path] === true);
+            renderImages();
+        }
+        
+        // إظهار المفقود فقط
+        function showOnlyErrors() {
+            filteredImages = imageList.filter(img => imageStatus[img.path] === false);
+            renderImages();
+        }
+        
+        // إعادة تعيين التصفية
+        function resetFilter() {
+            filteredImages = [...imageList];
+            document.getElementById('searchInput').value = '';
+            renderImages();
+        }
+        
+        // نسخ المسار
+        function copyPath(path) {
+            navigator.clipboard.writeText(path).then(() => {
+                alert(`✅ تم نسخ المسار: ${path}`);
+            });
+        }
+        
+        // بدء الفحص عند تحميل الصفحة
+        window.onload = () => {
+            checkAllImages();
+        };
+    </script>
+</body>
+</html>
