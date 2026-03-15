@@ -431,10 +431,10 @@
     </header>
 
     <div class="brand-zone">
-        <!-- الشعار الجديد رغم 2 - بدلاً من القديم -->
+        <!-- الشعار الجديد - بدلاً من القديم -->
         <div class="new-logo" onclick="showHome(event)">
             <span class="new-logo-icon">🤖⚡</span>
-            <span class="new-logo-text">[SMART]AFFILIATE</span>
+            <span class="new-logo-text">SMARTAFFILIATE</span>
             <span class="new-logo-badge">رغم ٢</span>
         </div>
         <div class="brand-tagline">smartafiliate.com | 26 مقالة شاملة</div>
