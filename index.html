@@ -304,6 +304,8 @@
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
+            border: none;
+            cursor: pointer;
         }
         
         .share-btn.facebook { background: #1877f2; }
@@ -332,10 +334,38 @@
             color: #8a8fb0;
             text-decoration: none;
             transition: 0.3s;
+            cursor: pointer;
         }
         
         .footer-links a:hover {
             color: var(--primary-glow);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            color: #fff;
+        }
+        
+        th {
+            background: rgba(0,210,255,0.2);
+            padding: 0.8rem;
+            text-align: right;
+        }
+        
+        td {
+            padding: 0.8rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-glow);
+            cursor: pointer;
+            margin-bottom: 2rem;
         }
         
         @media (max-width: 768px) {
@@ -346,6 +376,15 @@
             .stats-bar {
                 flex-direction: column;
                 gap: 1rem;
+            }
+            
+            .nav-container {
+                gap: 0.5rem;
+            }
+            
+            .nav-container a {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -378,7 +417,7 @@
                 <linearGradient id="grad3" x1="120" y1="40" x2="160" y2="40"><stop stop-color="#00d2ff"/><stop offset="1" stop-color="#6a4e9b"/></linearGradient>
             </defs>
         </svg>
-        <div class="brand-tagline">smartafiliate.com | 26 مقالة شاملة</div>
+        <div class="brand-tagline">smartafiliate.com | 27 مقالة شاملة</div>
     </div>
 
     <main class="main-container" id="main-content">
@@ -396,13 +435,13 @@
             <a href="#" onclick="showContact(event)">اتصل بنا</a>
             <a href="#" onclick="showExternalLinks(event)">روابط خارجية</a>
         </div>
-        <div style="color: #4a4f6e;">© 2026 smartafiliate.com - جميع الحقوق محفوظة | 26 مقالة</div>
+        <div style="color: #4a4f6e;">© 2026 smartafiliate.com - جميع الحقوق محفوظة | 27 مقالة</div>
     </footer>
 
     <script>
-        // ==================== جميع المقالات (26 مقالة كاملة) ====================
+        // ==================== جميع المقالات (27 مقالة كاملة) ====================
         const articles = [
-            // ========== مقالات ذكاء اصطناعي (7 مقالات) ==========
+            // ========== مقالات ذكاء اصطناعي (8 مقالات) ==========
             {
                 id: 1,
                 title: 'مستقبل الذكاء الاصطناعي في التسويق الرقمي 2026',
@@ -1180,7 +1219,41 @@
                     <div style="background: linear-gradient(45deg, #00d2ff, #9d50bb); padding: 1rem; border-radius: 30px; margin: 1rem 0;">
                         <i class="fas fa-star"></i> التقييم: 4.7/5 - ممتاز
                     </div>
-                                // ========== مقالة جديدة: DeepSeek V4 (27) ==========
+                    
+                    <h2>ما هو Perplexity؟</h2>
+                    <p>Perplexity هو محرك بحث مدعوم بالذكاء الاصطناعي، يجيب على أسئلتك بإجابات دقيقة مع ذكر المصادر. إنه مزيج من ChatGPT وجوجل.</p>
+                    
+                    <h2>الميزات الفريدة</h2>
+                    <ul>
+                        <li><strong>إجابات مع مصادر:</strong> كل إجابة تأتي مع روابط المصادر</li>
+                        <li><strong>البحث المتقدم:</strong> يمكنه البحث في الأكاديمي، الفيديوهات، وسائل التواصل</li>
+                        <li><strong>مكتبة الأبحاث:</strong> يحفظ أبحاثك وينظمها</li>
+                        <li><strong>تطبيقات للجوال:</strong> مع ميزة البحث الصوتي</li>
+                    </ul>
+                    
+                    <h2>المميزات</h2>
+                    <ul>
+                        <li>مصداقية عالية بفضل ذكر المصادر</li>
+                        <li>معلومات محدثة باستمرار</li>
+                        <li>واجهة أنيقة وسريعة</li>
+                        <li>مجاني مع خيار مدفوع ممتاز</li>
+                    </ul>
+                    
+                    <h2>العيوب</h2>
+                    <ul>
+                        <li>بعض الإجابات قد تكون سطحية</li>
+                        <li>دعم اللغة العربية محدود</li>
+                        <li>يعتمد على الإنترنت دائماً</li>
+                    </ul>
+                    
+                    <h2>الأسعار</h2>
+                    <p>نسخة مجانية ممتازة. Perplexity Pro: 20$ شهرياً (أو 200$ سنوياً) مع نماذج أقوى ورفع ملفات.</p>
+                    
+                    <h2>الخلاصة</h2>
+                    <p>Perplexity هو الأداة المثالية للباحثين والطلاب وأي شخص يحتاج معلومات دقيقة مع مصادر موثوقة.</p>
+                `
+            },
+            // ========== مقالة جديدة: DeepSeek V4 (27) ==========
             {
                 id: 27,
                 title: 'DeepSeek V4: الثورة الصينية القادمة - 4 ابتكارات ستهز عرش الذكاء الاصطناعي',
@@ -1253,39 +1326,6 @@
                         <i class="fas fa-calendar-alt" style="color: #00d2ff;"></i>
                         <strong style="color:#00d2ff;">المقالة القادمة غداً:</strong> تأثير الذكاء الاصطناعي على التسويق بالعمولة: هل ستنتهي المهنة؟
                     </div>
-                `
-            },
-                    <h2>ما هو Perplexity؟</h2>
-                    <p>Perplexity هو محرك بحث مدعوم بالذكاء الاصطناعي، يجيب على أسئلتك بإجابات دقيقة مع ذكر المصادر. إنه مزيج من ChatGPT وجوجل.</p>
-                    
-                    <h2>الميزات الفريدة</h2>
-                    <ul>
-                        <li><strong>إجابات مع مصادر:</strong> كل إجابة تأتي مع روابط المصادر</li>
-                        <li><strong>البحث المتقدم:</strong> يمكنه البحث في الأكاديمي، الفيديوهات، وسائل التواصل</li>
-                        <li><strong>مكتبة الأبحاث:</strong> يحفظ أبحاثك وينظمها</li>
-                        <li><strong>تطبيقات للجوال:</strong> مع ميزة البحث الصوتي</li>
-                    </ul>
-                    
-                    <h2>المميزات</h2>
-                    <ul>
-                        <li>مصداقية عالية بفضل ذكر المصادر</li>
-                        <li>معلومات محدثة باستمرار</li>
-                        <li>واجهة أنيقة وسريعة</li>
-                        <li>مجاني مع خيار مدفوع ممتاز</li>
-                    </ul>
-                    
-                    <h2>العيوب</h2>
-                    <ul>
-                        <li>بعض الإجابات قد تكون سطحية</li>
-                        <li>دعم اللغة العربية محدود</li>
-                        <li>يعتمد على الإنترنت دائماً</li>
-                    </ul>
-                    
-                    <h2>الأسعار</h2>
-                    <p>نسخة مجانية ممتازة. Perplexity Pro: 20$ شهرياً (أو 200$ سنوياً) مع نماذج أقوى ورفع ملفات.</p>
-                    
-                    <h2>الخلاصة</h2>
-                    <p>Perplexity هو الأداة المثالية للباحثين والطلاب وأي شخص يحتاج معلومات دقيقة مع مصادر موثوقة.</p>
                 `
             }
         ];
@@ -1322,86 +1362,12 @@
             const categoryNames = {
                 'ai': 'ذكاء اصطناعي',
                 'automation': 'أتمتة',
-                'afiliate': 'تسويق بالعمولة',
+                'affiliate': 'تسويق بالعمولة',
                 'case-study': 'دراسات حالة',
                 'seo': 'SEO',
                 'ecommerce': 'تجارة إلكترونية',
                 'reviews': 'مراجعات'
-            };            // ========== مقالة جديدة: DeepSeek V4 (27) ==========
-            {
-                id: 27,
-                title: 'DeepSeek V4: الثورة الصينية القادمة - 4 ابتكارات ستهز عرش الذكاء الاصطناعي',
-                icon: 'fa-microchip',
-                date: '16 مارس 2026',
-                readTime: '12 دقيقة',
-                category: 'ai',
-                categoryName: 'الذكاء الاصطناعي',
-                excerpt: 'بينما يركز العالم على OpenAI و Google، تعمل DeepSeek الصينية بصمت على أكبر تحديث في تاريخها. التسريبات تشير إلى أن DeepSeek V4 قادم في غضون أسابيع، وهذه المرة، المستهدف ليس ChatGPT فقط، بل NVIDIA نفسها.',
-                externalLink: 'https://www.deepseek.com',
-                externalSource: 'DeepSeek',
-                url: '#article27',
-                content: `
-                    <div style="background: linear-gradient(45deg, #00d2ff, #9d50bb); padding: 1rem; border-radius: 30px; margin: 1rem 0;">
-                        <i class="fas fa-chart-line"></i> 4 ابتكارات ثورية في نموذج واحد
-                    </div>
-                    
-                    <h2>الابتكار 1: العقل المتخصص - Mixture of Experts 4.0</h2>
-                    <p>النماذج العملاقة اليوم تستهلك طاقة هائلة لأنها تشغل كل أجزاء الدماغ لكل سؤال. نظام MoE المتقدم في DeepSeek V4 يشغل فقط 1% من الخلايا العصبية لكل مهمة. هذا يعني: قوة GPT-5 باستهلاك DeepSeek V2.</p>
-                    
-                    <h2>الابتكار 2: كسر احتكار NVIDIA - دعم AMD بشكل أصلي</h2>
-                    <p>معظم نماذج الذكاء الاصطناعي اليوم تُدرّب على معالجات NVIDIA فقط بسبب منصة CUDA الحصرية. DeepSeek V4 سيدعم AMD ROCm بشكل كامل وأصلي، مما يعني أن مراكز البيانات يمكنها استخدام معالجات AMD الأرخص بنسبة 30-40%. DeepSeek V4 درب نموذجاً تجريبياً على معالجات AMD وحقق 92% من كفاءة NVIDIA.</p>
-                    
-                    <h2>الابتكار 3: الذاكرة الطويلة بلا حدود</h2>
-                    <p>حتى أفضل النماذج اليوم تدعم 2 مليون توكن. DeepSeek V4 تعد بـ 10 ملايين توكن في الإصدار الأول، مع "ذاكرة لا نهائية" عبر تقنية ضغط متقدمة. القدرة على قراءة سلسلة كتب كاملة وفهم العلاقات بين الأجزاء.</p>
-                    
-                    <h2>الابتكار 4: سياسة "المجانية إلى الأبد"</h2>
-                    <p>بينما ترفع OpenAI أسعار ChatGPT Plus إلى 20$ و Google تفرض اشتراكات، DeepSeek تؤكد: سنبقى مجانيين. نموذجنا الأساسي سيكون متاحاً للجميع إلى الأبد. كيف يكسبون المال؟ خدمات المؤسسات والشركات، واستضافة النماذج على خوادمهم.</p>
-                    
-                    <h2>جدول المقارنة: DeepSeek V4 vs المنافسين</h2>
-                    <table style="width:100%; border-collapse:collapse; margin:1rem 0;">
-                        <tr style="background:rgba(0,210,255,0.2);">
-                            <th style="padding:0.8rem; text-align:right;">الميزة</th>
-                            <th style="padding:0.8rem; text-align:right;">DeepSeek V4</th>
-                            <th style="padding:0.8rem; text-align:right;">ChatGPT-5</th>
-                            <th style="padding:0.8rem; text-align:right;">Gemini Ultra 2.0</th>
-                        </tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
-                            <td style="padding:0.8rem;">السعر</td>
-                            <td style="padding:0.8rem; color:#00d2ff;">مجاني</td>
-                            <td style="padding:0.8rem;">20$ / 200$</td>
-                            <td style="padding:0.8rem;">30$ / 500$</td>
-                        </tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
-                            <td style="padding:0.8rem;">الذاكرة</td>
-                            <td style="padding:0.8rem; color:#00d2ff;">10M+ توكن</td>
-                            <td style="padding:0.8rem;">1M توكن</td>
-                            <td style="padding:0.8rem;">2M توكن</td>
-                        </tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
-                            <td style="padding:0.8rem;">دعم AMD</td>
-                            <td style="padding:0.8rem; color:#00d2ff;">✅ أصلي</td>
-                            <td style="padding:0.8rem;">❌</td>
-                            <td style="padding:0.8rem;">❌</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:0.8rem;">التخصص</td>
-                            <td style="padding:0.8rem;">MoE 4.0</td>
-                            <td style="padding:0.8rem;">MoE 3.0</td>
-                            <td style="padding:0.8rem;">MoE 3.5</td>
-                        </tr>
-                    </table>
-                    
-                    <h2>الخلاصة: لماذا يجب أن تهتم؟</h2>
-                    <p>إذا كنت مطوراً: DeepSeek V4 سيكون أقوى وأرخص منصة للتجربة. دعم AMD يعني خوادم أرخص لمشاريعك.</p>
-                    <p>إذا كنت مسوقاً بالعمولة: أدوات DeepSeek المجانية تعني تكلفة صفر لتوليد المحتوى. الذاكرة الطويلة تعني تحليل آلاف المنتجات دفعة واحدة. الفرصة: ابدأ بمراجعة أدوات DeepSeek الآن قبل أن تنتشر، وكن المصدر الأول عربياً.</p>
-                    <p>إذا كنت مستثمراً: راقب سهم NVIDIA عن كثب. DeepSeek V4 قد يكون أول صدع حقيقي في درع NVIDIA.</p>
-                    
-                    <div style="background: rgba(0,210,255,0.1); padding: 1.5rem; border-radius: 20px; margin-top: 2rem; border-right: 4px solid #00d2ff;">
-                        <i class="fas fa-calendar-alt" style="color: #00d2ff;"></i>
-                        <strong style="color:#00d2ff;">المقالة القادمة غداً:</strong> تأثير الذكاء الاصطناعي على التسويق بالعمولة: هل ستنتهي المهنة؟
-                    </div>
-                `
-            },
+            };
             
             updateActiveLink(categoryNames[category] || category);
         }
@@ -1480,7 +1446,7 @@
                 .slice(0, 3);
 
             const html = `
-                <div class="back-btn" onclick="showHome(event)" style="display: inline-flex; align-items: center; gap: 10px; color: var(--primary-glow); cursor: pointer; margin-bottom: 2rem;">
+                <div class="back-btn" onclick="showHome(event)">
                     <i class="fas fa-arrow-right"></i> العودة للرئيسية
                 </div>
                 
@@ -1547,7 +1513,7 @@
                     <h1 style="color: var(--primary-glow);">من نحن</h1>
                     <p style="font-size: 1.2rem; margin: 2rem 0;">smartafiliate.com هي منصة متخصصة في تقديم محتوى عربي احترافي حول الذكاء الاصطناعي، الأتمتة، والتسويق الرقمي.</p>
                     <p>نهدف لتمكين المسوقين العرب بأحدث المعرفة والأدوات.</p>
-                    <p style="margin-top: 2rem;">📚 نقدم الآن <strong>26 مقالة</strong> متخصصة في مجالات: الذكاء الاصطناعي، الأتمتة، التسويق بالعمولة، دراسات حالة، SEO، ومراجعات الأدوات.</p>
+                    <p style="margin-top: 2rem;">📚 نقدم الآن <strong>${articles.length} مقالة</strong> متخصصة في مجالات: الذكاء الاصطناعي، الأتمتة، التسويق بالعمولة، دراسات حالة، SEO، ومراجعات الأدوات.</p>
                 </div>
             `;
         }
@@ -1568,7 +1534,7 @@
             const externalLinks = articles.filter(a => a.externalLink);
             
             let linksHTML = `
-                <div class="back-btn" onclick="showHome(event)" style="display: inline-flex; align-items: center; gap: 10px; color: var(--primary-glow); cursor: pointer; margin-bottom: 2rem;">
+                <div class="back-btn" onclick="showHome(event)">
                     <i class="fas fa-arrow-right"></i> العودة للرئيسية
                 </div>
                 
