@@ -131,6 +131,45 @@
             margin-top: 0.8rem;
             font-weight: 600;
         }
+
+        /* الشعار الجديد - رغم 2 */
+        .new-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: rgba(0, 210, 255, 0.1);
+            border-radius: 50px;
+            border: 1px solid var(--primary-glow);
+            backdrop-filter: blur(5px);
+            direction: ltr;
+        }
+        
+        .new-logo-text {
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #00d2ff, #9d50bb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .new-logo-badge {
+            background: linear-gradient(45deg, #00d2ff, #9d50bb);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .new-logo-icon {
+            font-size: 28px;
+            filter: drop-shadow(0 0 8px #00d2ff);
+        }
         
         .main-container {
             max-width: 1400px;
@@ -304,8 +343,6 @@
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
-            border: none;
-            cursor: pointer;
         }
         
         .share-btn.facebook { background: #1877f2; }
@@ -334,38 +371,10 @@
             color: #8a8fb0;
             text-decoration: none;
             transition: 0.3s;
-            cursor: pointer;
         }
         
         .footer-links a:hover {
             color: var(--primary-glow);
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-            color: #fff;
-        }
-        
-        th {
-            background: rgba(0,210,255,0.2);
-            padding: 0.8rem;
-            text-align: right;
-        }
-        
-        td {
-            padding: 0.8rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary-glow);
-            cursor: pointer;
-            margin-bottom: 2rem;
         }
         
         @media (max-width: 768px) {
@@ -376,15 +385,6 @@
             .stats-bar {
                 flex-direction: column;
                 gap: 1rem;
-            }
-            
-            .nav-container {
-                gap: 0.5rem;
-            }
-            
-            .nav-container a {
-                padding: 0.5rem 0.8rem;
-                font-size: 0.8rem;
             }
         }
     </style>
@@ -417,7 +417,13 @@
                 <linearGradient id="grad3" x1="120" y1="40" x2="160" y2="40"><stop stop-color="#00d2ff"/><stop offset="1" stop-color="#6a4e9b"/></linearGradient>
             </defs>
         </svg>
-        <div class="brand-tagline">smartafiliate.com | 27 مقالة شاملة</div>
+        <!-- إضافة الشعار الجديد رغم 2 - بدون تغيير في المحتوى -->
+        <div class="new-logo">
+            <span class="new-logo-icon">🤖⚡</span>
+            <span class="new-logo-text">[SMART]AFFILIATE</span>
+            <span class="new-logo-badge">رغم ٢</span>
+        </div>
+        <div class="brand-tagline">smartafiliate.com | 26 مقالة شاملة</div>
     </div>
 
     <main class="main-container" id="main-content">
@@ -435,13 +441,13 @@
             <a href="#" onclick="showContact(event)">اتصل بنا</a>
             <a href="#" onclick="showExternalLinks(event)">روابط خارجية</a>
         </div>
-        <div style="color: #4a4f6e;">© 2026 smartafiliate.com - جميع الحقوق محفوظة | 27 مقالة</div>
+        <div style="color: #4a4f6e;">© 2026 smartafiliate.com - جميع الحقوق محفوظة | 26 مقالة</div>
     </footer>
 
     <script>
-        // ==================== جميع المقالات (27 مقالة كاملة) ====================
+        // ==================== جميع المقالات (26 مقالة كاملة) ====================
         const articles = [
-            // ========== مقالات ذكاء اصطناعي (8 مقالات) ==========
+            // ========== مقالات ذكاء اصطناعي (7 مقالات) ==========
             {
                 id: 1,
                 title: 'مستقبل الذكاء الاصطناعي في التسويق الرقمي 2026',
@@ -1252,81 +1258,6 @@
                     <h2>الخلاصة</h2>
                     <p>Perplexity هو الأداة المثالية للباحثين والطلاب وأي شخص يحتاج معلومات دقيقة مع مصادر موثوقة.</p>
                 `
-            },
-            // ========== مقالة جديدة: DeepSeek V4 (27) ==========
-            {
-                id: 27,
-                title: 'DeepSeek V4: الثورة الصينية القادمة - 4 ابتكارات ستهز عرش الذكاء الاصطناعي',
-                icon: 'fa-microchip',
-                date: '16 مارس 2026',
-                readTime: '12 دقيقة',
-                category: 'ai',
-                categoryName: 'الذكاء الاصطناعي',
-                excerpt: 'بينما يركز العالم على OpenAI و Google، تعمل DeepSeek الصينية بصمت على أكبر تحديث في تاريخها. التسريبات تشير إلى أن DeepSeek V4 قادم في غضون أسابيع، وهذه المرة، المستهدف ليس ChatGPT فقط، بل NVIDIA نفسها.',
-                externalLink: 'https://www.deepseek.com',
-                externalSource: 'DeepSeek',
-                url: '#article27',
-                content: `
-                    <div style="background: linear-gradient(45deg, #00d2ff, #9d50bb); padding: 1rem; border-radius: 30px; margin: 1rem 0;">
-                        <i class="fas fa-chart-line"></i> 4 ابتكارات ثورية في نموذج واحد
-                    </div>
-                    
-                    <h2>الابتكار 1: العقل المتخصص - Mixture of Experts 4.0</h2>
-                    <p>النماذج العملاقة اليوم تستهلك طاقة هائلة لأنها تشغل كل أجزاء الدماغ لكل سؤال. نظام MoE المتقدم في DeepSeek V4 يشغل فقط 1% من الخلايا العصبية لكل مهمة. هذا يعني: قوة GPT-5 باستهلاك DeepSeek V2.</p>
-                    
-                    <h2>الابتكار 2: كسر احتكار NVIDIA - دعم AMD بشكل أصلي</h2>
-                    <p>معظم نماذج الذكاء الاصطناعي اليوم تُدرّب على معالجات NVIDIA فقط بسبب منصة CUDA الحصرية. DeepSeek V4 سيدعم AMD ROCm بشكل كامل وأصلي، مما يعني أن مراكز البيانات يمكنها استخدام معالجات AMD الأرخص بنسبة 30-40%. DeepSeek V4 درب نموذجاً تجريبياً على معالجات AMD وحقق 92% من كفاءة NVIDIA.</p>
-                    
-                    <h2>الابتكار 3: الذاكرة الطويلة بلا حدود</h2>
-                    <p>حتى أفضل النماذج اليوم تدعم 2 مليون توكن. DeepSeek V4 تعد بـ 10 ملايين توكن في الإصدار الأول، مع "ذاكرة لا نهائية" عبر تقنية ضغط متقدمة. القدرة على قراءة سلسلة كتب كاملة وفهم العلاقات بين الأجزاء.</p>
-                    
-                    <h2>الابتكار 4: سياسة "المجانية إلى الأبد"</h2>
-                    <p>بينما ترفع OpenAI أسعار ChatGPT Plus إلى 20$ و Google تفرض اشتراكات، DeepSeek تؤكد: سنبقى مجانيين. نموذجنا الأساسي سيكون متاحاً للجميع إلى الأبد. كيف يكسبون المال؟ خدمات المؤسسات والشركات، واستضافة النماذج على خوادمهم.</p>
-                    
-                    <h2>جدول المقارنة: DeepSeek V4 vs المنافسين</h2>
-                    <table style="width:100%; border-collapse:collapse; margin:1rem 0;">
-                        <tr style="background:rgba(0,210,255,0.2);">
-                            <th style="padding:0.8rem; text-align:right;">الميزة</th>
-                            <th style="padding:0.8rem; text-align:right;">DeepSeek V4</th>
-                            <th style="padding:0.8rem; text-align:right;">ChatGPT-5</th>
-                            <th style="padding:0.8rem; text-align:right;">Gemini Ultra 2.0</th>
-                        </tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
-                            <td style="padding:0.8rem;">السعر</td>
-                            <td style="padding:0.8rem; color:#00d2ff;">مجاني</td>
-                            <td style="padding:0.8rem;">20$ / 200$</td>
-                            <td style="padding:0.8rem;">30$ / 500$</td>
-                        </tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
-                            <td style="padding:0.8rem;">الذاكرة</td>
-                            <td style="padding:0.8rem; color:#00d2ff;">10M+ توكن</td>
-                            <td style="padding:0.8rem;">1M توكن</td>
-                            <td style="padding:0.8rem;">2M توكن</td>
-                        </tr>
-                        <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
-                            <td style="padding:0.8rem;">دعم AMD</td>
-                            <td style="padding:0.8rem; color:#00d2ff;">✅ أصلي</td>
-                            <td style="padding:0.8rem;">❌</td>
-                            <td style="padding:0.8rem;">❌</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:0.8rem;">التخصص</td>
-                            <td style="padding:0.8rem;">MoE 4.0</td>
-                            <td style="padding:0.8rem;">MoE 3.0</td>
-                            <td style="padding:0.8rem;">MoE 3.5</td>
-                        </tr>
-                    </table>
-                    
-                    <h2>الخلاصة: لماذا يجب أن تهتم؟</h2>
-                    <p>إذا كنت مطوراً: DeepSeek V4 سيكون أقوى وأرخص منصة للتجربة. دعم AMD يعني خوادم أرخص لمشاريعك.</p>
-                    <p>إذا كنت مسوقاً بالعمولة: أدوات DeepSeek المجانية تعني تكلفة صفر لتوليد المحتوى. الذاكرة الطويلة تعني تحليل آلاف المنتجات دفعة واحدة. الفرصة: ابدأ بمراجعة أدوات DeepSeek الآن قبل أن تنتشر، وكن المصدر الأول عربياً.</p>
-                    <p>إذا كنت مستثمراً: راقب سهم NVIDIA عن كثب. DeepSeek V4 قد يكون أول صدع حقيقي في درع NVIDIA.</p>
-                    
-                    <div style="background: rgba(0,210,255,0.1); padding: 1.5rem; border-radius: 20px; margin-top: 2rem; border-right: 4px solid #00d2ff;">
-                        <i class="fas fa-calendar-alt" style="color: #00d2ff;"></i>
-                        <strong style="color:#00d2ff;">المقالة القادمة غداً:</strong> تأثير الذكاء الاصطناعي على التسويق بالعمولة: هل ستنتهي المهنة؟
-                    </div>
-                `
             }
         ];
 
@@ -1446,7 +1377,7 @@
                 .slice(0, 3);
 
             const html = `
-                <div class="back-btn" onclick="showHome(event)">
+                <div class="back-btn" onclick="showHome(event)" style="display: inline-flex; align-items: center; gap: 10px; color: var(--primary-glow); cursor: pointer; margin-bottom: 2rem;">
                     <i class="fas fa-arrow-right"></i> العودة للرئيسية
                 </div>
                 
@@ -1513,7 +1444,7 @@
                     <h1 style="color: var(--primary-glow);">من نحن</h1>
                     <p style="font-size: 1.2rem; margin: 2rem 0;">smartafiliate.com هي منصة متخصصة في تقديم محتوى عربي احترافي حول الذكاء الاصطناعي، الأتمتة، والتسويق الرقمي.</p>
                     <p>نهدف لتمكين المسوقين العرب بأحدث المعرفة والأدوات.</p>
-                    <p style="margin-top: 2rem;">📚 نقدم الآن <strong>${articles.length} مقالة</strong> متخصصة في مجالات: الذكاء الاصطناعي، الأتمتة، التسويق بالعمولة، دراسات حالة، SEO، ومراجعات الأدوات.</p>
+                    <p style="margin-top: 2rem;">📚 نقدم الآن <strong>26 مقالة</strong> متخصصة في مجالات: الذكاء الاصطناعي، الأتمتة، التسويق بالعمولة، دراسات حالة، SEO، ومراجعات الأدوات.</p>
                 </div>
             `;
         }
@@ -1534,7 +1465,7 @@
             const externalLinks = articles.filter(a => a.externalLink);
             
             let linksHTML = `
-                <div class="back-btn" onclick="showHome(event)">
+                <div class="back-btn" onclick="showHome(event)" style="display: inline-flex; align-items: center; gap: 10px; color: var(--primary-glow); cursor: pointer; margin-bottom: 2rem;">
                     <i class="fas fa-arrow-right"></i> العودة للرئيسية
                 </div>
                 
