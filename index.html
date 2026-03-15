@@ -111,64 +111,69 @@
             padding: 2rem;
         }
         
-        .logo-svg {
-            height: 80px;
-            width: 180px;
-            filter: drop-shadow(0 0 18px rgba(0,210,255,0.5));
-            animation: floatSmart 4s ease-in-out infinite;
-            cursor: pointer;
-        }
-        
-        @keyframes floatSmart { 
-            0%,100%{ transform: translateY(0); } 
-            50%{ transform: translateY(-10px); } 
-        }
-        
-        .brand-tagline {
-            color: var(--primary-glow);
-            letter-spacing: 4px;
-            font-size: 0.8rem;
-            margin-top: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* الشعار الجديد - رغم 2 */
+        /* الشعار الجديد - رغم 2 (بدلاً من القديم) */
         .new-logo {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
-            padding: 8px 20px;
+            gap: 15px;
+            margin: 0 auto 15px;
+            padding: 12px 30px;
             background: rgba(0, 210, 255, 0.1);
-            border-radius: 50px;
-            border: 1px solid var(--primary-glow);
-            backdrop-filter: blur(5px);
+            border-radius: 60px;
+            border: 2px solid var(--primary-glow);
+            backdrop-filter: blur(10px);
             direction: ltr;
+            box-shadow: 0 0 30px rgba(0,210,255,0.3);
+            animation: glowPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(0,210,255,0.3); }
+            50% { box-shadow: 0 0 50px rgba(157,80,187,0.5); }
+        }
+        
+        .new-logo-icon {
+            font-size: 36px;
+            filter: drop-shadow(0 0 10px #00d2ff);
+            animation: floatIcon 4s ease-in-out infinite;
+        }
+        
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
         
         .new-logo-text {
-            font-size: 24px;
+            font-size: 32px;
             font-weight: 900;
             background: linear-gradient(45deg, #00d2ff, #9d50bb);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-family: 'Segoe UI', Arial, sans-serif;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(0,210,255,0.5);
         }
         
         .new-logo-badge {
             background: linear-gradient(45deg, #00d2ff, #9d50bb);
             color: white;
-            padding: 4px 12px;
-            border-radius: 30px;
-            font-size: 14px;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 18px;
             font-weight: bold;
+            font-family: 'Cairo', sans-serif;
+            border: 1px solid white;
+            box-shadow: 0 0 15px rgba(157,80,187,0.5);
         }
         
-        .new-logo-icon {
-            font-size: 28px;
-            filter: drop-shadow(0 0 8px #00d2ff);
+        .brand-tagline {
+            color: var(--primary-glow);
+            letter-spacing: 4px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(0,210,255,0.5);
         }
         
         .main-container {
@@ -343,6 +348,8 @@
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
+            border: none;
+            cursor: pointer;
         }
         
         .share-btn.facebook { background: #1877f2; }
@@ -386,6 +393,24 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+            
+            .new-logo {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
+            
+            .new-logo-text {
+                font-size: 24px;
+            }
+            
+            .new-logo-icon {
+                font-size: 30px;
+            }
+            
+            .new-logo-badge {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -406,19 +431,8 @@
     </header>
 
     <div class="brand-zone">
-        <svg class="logo-svg" width="180" height="80" viewBox="0 0 180 80" onclick="showHome(event)">
-            <path d="M20 40 L45 20 L70 40 L45 60 L20 40Z" fill="url(#grad1)" stroke="#00d2ff" stroke-width="2"/>
-            <circle cx="95" cy="40" r="20" fill="url(#grad2)" stroke="#9d50bb" stroke-width="2"/>
-            <path d="M140 25 L160 40 L140 55 L120 40 L140 25Z" fill="url(#grad3)" stroke="#00d2ff" stroke-width="2"/>
-            <text x="105" y="70" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">SMARTAFF</text>
-            <defs>
-                <linearGradient id="grad1" x1="20" y1="40" x2="70" y2="40"><stop stop-color="#00d2ff"/><stop offset="1" stop-color="#9d50bb"/></linearGradient>
-                <linearGradient id="grad2" x1="75" y1="20" x2="115" y2="60"><stop stop-color="#9d50bb"/><stop offset="1" stop-color="#00d2ff"/></linearGradient>
-                <linearGradient id="grad3" x1="120" y1="40" x2="160" y2="40"><stop stop-color="#00d2ff"/><stop offset="1" stop-color="#6a4e9b"/></linearGradient>
-            </defs>
-        </svg>
-        <!-- إضافة الشعار الجديد رغم 2 - بدون تغيير في المحتوى -->
-        <div class="new-logo">
+        <!-- الشعار الجديد رغم 2 - بدلاً من القديم -->
+        <div class="new-logo" onclick="showHome(event)">
             <span class="new-logo-icon">🤖⚡</span>
             <span class="new-logo-text">[SMART]AFFILIATE</span>
             <span class="new-logo-badge">رغم ٢</span>
