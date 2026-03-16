@@ -48,8 +48,8 @@
             --secondary-glow: #9d50bb;
             --glass-bg: rgba(20, 30, 45, 0.85);
             --glass-border: rgba(255, 255, 255, 0.08);
-            --text-muted: #b0b3c5;
-            --card-radius: 32px;
+            --text-muted: #c9cce3;
+            --card-radius: 28px;
             --success: #10b981;
             --warning: #f59e0b;
             --error: #ef4444;
@@ -69,7 +69,7 @@
         .glass-header {
             background: rgba(8,12,25,0.95);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--primary-glow);
+            border-bottom: 1px solid rgba(0,210,255,0.35);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -82,7 +82,7 @@
             margin: 0 auto;
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
             padding: 0 2rem;
         }
@@ -115,21 +115,21 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin: 0 auto 15px;
-            padding: 12px 30px;
-            background: rgba(0, 210, 255, 0.1);
+            gap: 14px;
+            margin: 0 auto 20px;
+            padding: 14px 32px;
+            background: linear-gradient(145deg, rgba(0,210,255,0.15), rgba(157,80,187,0.15));
             border-radius: 60px;
-            border: 2px solid var(--primary-glow);
+            border: 1px solid rgba(0,210,255,0.4);
             backdrop-filter: blur(10px);
             direction: ltr;
-            box-shadow: 0 0 30px rgba(0,210,255,0.3);
-            animation: glowPulse 3s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(0,210,255,0.25);
+            transition: 0.3s ease;
         }
         
-        @keyframes glowPulse {
-            0%, 100% { box-shadow: 0 0 30px rgba(0,210,255,0.3); }
-            50% { box-shadow: 0 0 50px rgba(157,80,187,0.5); }
+        .new-logo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(0,210,255,0.28);
         }
         
         .new-logo-icon {
@@ -151,7 +151,7 @@
             -webkit-text-fill-color: transparent;
             font-family: 'Segoe UI', Arial, sans-serif;
             letter-spacing: 2px;
-            text-shadow: 0 0 20px rgba(0,210,255,0.5);
+            text-shadow: 0 0 20px rgba(0,210,255,0.35);
         }
         
         .new-logo-badge {
@@ -162,17 +162,18 @@
             font-size: 18px;
             font-weight: bold;
             font-family: 'Cairo', sans-serif;
-            border: 1px solid white;
-            box-shadow: 0 0 15px rgba(157,80,187,0.5);
+            border: 1px solid rgba(255,255,255,0.8);
+            box-shadow: 0 0 15px rgba(157,80,187,0.35);
         }
         
         .brand-tagline {
             color: var(--primary-glow);
-            letter-spacing: 4px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-top: 1rem;
             font-weight: 600;
-            text-shadow: 0 0 10px rgba(0,210,255,0.5);
+            text-shadow: 0 0 10px rgba(0,210,255,0.35);
+            letter-spacing: 1px;
+            direction: ltr;
         }
         
         .main-container {
@@ -191,20 +192,21 @@
         }
         
         .filter-btn {
-            background: transparent;
-            border: 1px solid var(--primary-glow);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(0,210,255,0.3);
             color: #fff;
-            padding: 0.7rem 1.8rem;
-            border-radius: 40px;
+            padding: 0.65rem 1.6rem;
+            border-radius: 30px;
             cursor: pointer;
-            transition: 0.3s;
-            font-size: 0.95rem;
+            transition: 0.25s;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
             gap: 8px;
         }
         
-        .filter-btn:hover, .filter-btn.active {
+        .filter-btn:hover,
+        .filter-btn.active {
             background: var(--primary-glow);
             color: #050816;
         }
@@ -238,37 +240,38 @@
         
         .articles-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
         
         .article-card {
-            background: var(--glass-bg);
+            background: linear-gradient(180deg, rgba(20,30,45,0.9), rgba(10,15,25,0.9));
             backdrop-filter: blur(14px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--card-radius);
+            border: 1px solid rgba(0,210,255,0.15);
+            border-radius: 28px;
             padding: 2rem;
-            transition: 0.4s;
+            transition: 0.35s;
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            min-height: 380px;
+            min-height: 360px;
             display: flex;
             flex-direction: column;
         }
         
         .article-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             border-color: var(--primary-glow);
-            box-shadow: 0 30px 40px -15px rgba(0,210,255,0.3);
+            box-shadow: 0 20px 40px rgba(0,210,255,0.25);
         }
         
         .article-card h2 {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             margin: 1rem 0;
             color: var(--primary-glow);
-            line-height: 1.4;
+            line-height: 1.45;
+            min-height: 90px;
         }
         
         .article-card p {
@@ -280,9 +283,10 @@
         .article-meta {
             display: flex;
             gap: 1rem;
-            color: #8a8fb0;
+            color: #aab0cf;
             font-size: 0.85rem;
             margin: 1rem 0;
+            flex-wrap: wrap;
         }
         
         .read-more-btn {
@@ -298,11 +302,11 @@
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background: rgba(0,210,255,0.2);
-            padding: 0.3rem 1rem;
+            background: rgba(0,210,255,0.14);
+            padding: 0.35rem 1rem;
             border-radius: 30px;
             font-size: 0.75rem;
-            border: 1px solid var(--primary-glow);
+            border: 1px solid rgba(0,210,255,0.4);
             color: var(--primary-glow);
             z-index: 10;
         }
@@ -316,7 +320,7 @@
             border-radius: 30px;
             color: var(--primary-glow);
             text-decoration: none;
-            border: 1px solid var(--primary-glow);
+            border: 1px solid rgba(0,210,255,0.35);
             font-size: 0.8rem;
             margin-top: 1rem;
         }
@@ -325,8 +329,9 @@
             margin: 3rem 0;
             padding: 2rem;
             background: rgba(0,210,255,0.05);
-            border-radius: 50px;
+            border-radius: 40px;
             text-align: center;
+            border: 1px solid rgba(0,210,255,0.12);
         }
         
         .share-buttons {
@@ -361,7 +366,7 @@
         footer {
             margin-top: 4rem;
             padding: 3rem;
-            border-top: 2px solid var(--primary-glow);
+            border-top: 1px solid rgba(0,210,255,0.25);
             text-align: center;
         }
         
@@ -374,7 +379,7 @@
         }
         
         .footer-links a {
-            color: #8a8fb0;
+            color: #9aa0c0;
             text-decoration: none;
             transition: 0.3s;
         }
@@ -410,11 +415,18 @@
             .new-logo-badge {
                 font-size: 16px;
             }
+
+            .brand-tagline {
+                font-size: 0.9rem;
+            }
+
+            .article-card h2 {
+                min-height: auto;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P96QVPT3"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
@@ -1374,7 +1386,7 @@
                             <span><i class="far fa-clock"></i> ${article.readTime}</span>
                         </div>
                         <p>${article.excerpt}</p>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
                             <span class="read-more-btn">
                                 اقرأ المقال <i class="fas fa-arrow-left"></i>
                             </span>
@@ -1418,22 +1430,22 @@
                     <i class="fas fa-arrow-right"></i> العودة للرئيسية
                 </div>
                 
-                <div style="background: var(--glass-bg); backdrop-filter: blur(14px); border: 2px solid var(--primary-glow); border-radius: var(--card-radius); padding: 3rem; margin: 2rem 0;">
-                    <div style="text-align: center; margin-bottom: 3rem; border-bottom: 2px solid rgba(0,210,255,0.3); padding-bottom: 2rem;">
+                <div style="background: var(--glass-bg); backdrop-filter: blur(14px); border: 1px solid rgba(0,210,255,0.25); border-radius: var(--card-radius); padding: 3rem; margin: 2rem 0;">
+                    <div style="text-align: center; margin-bottom: 3rem; border-bottom: 2px solid rgba(0,210,255,0.2); padding-bottom: 2rem;">
                         <h1 style="font-size: 2.5rem; color: var(--primary-glow); margin-bottom: 1rem;">${article.title}</h1>
-                        <div style="display: flex; justify-content: center; gap: 2rem; color: #8a8fb0; font-size: 1rem; margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: center; gap: 2rem; color: #8a8fb0; font-size: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
                             <span><i class="far fa-calendar"></i> ${article.date}</span>
                             <span><i class="far fa-clock"></i> ${article.readTime}</span>
                             <span><i class="fas fa-tag"></i> ${article.categoryName}</span>
                         </div>
                         ${article.externalLink ? `
-                            <a href="${article.externalLink}" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 1rem 2rem; border-radius: 50px; color: var(--primary-glow); text-decoration: none; border: 1px solid var(--primary-glow);">
+                            <a href="${article.externalLink}" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 1rem 2rem; border-radius: 50px; color: var(--primary-glow); text-decoration: none; border: 1px solid rgba(0,210,255,0.35);">
                                 <i class="fas fa-external-link-alt"></i> قراءة المصدر الأصلي على ${article.externalSource}
                             </a>
                         ` : ''}
                     </div>
                     
-                    <div style="color: #e0e0e0; line-height: 2; font-size: 1.1rem;">
+                    <div style="color: #e6e8f5; line-height: 2; font-size: 1.1rem;">
                         ${article.content || '<p>محتوى المقالة قيد الإعداد...</p>'}
                     </div>
                     
@@ -1442,7 +1454,7 @@
                             <h4 style="color: var(--primary-glow); margin-bottom: 1rem;">📚 مقالات مقترحة</h4>
                             <div style="display: grid; gap: 1rem;">
                                 ${relatedArticles.map(a => `
-                                    <div onclick="showArticle(${a.id})" style="cursor: pointer; padding: 0.5rem; border-right: 2px solid var(--primary-glow);">
+                                    <div onclick="showArticle(${a.id})" style="cursor: pointer; padding: 0.75rem; border-right: 2px solid var(--primary-glow); background: rgba(255,255,255,0.02); border-radius: 10px;">
                                         <i class="fas ${a.icon}" style="color: var(--primary-glow); margin-left: 10px;"></i>
                                         ${a.title}
                                     </div>
@@ -1476,7 +1488,7 @@
         function showAbout(e) {
             if (e) e.preventDefault();
             document.getElementById('main-content').innerHTML = `
-                <div style="background: var(--glass-bg); backdrop-filter: blur(14px); border: 2px solid var(--primary-glow); border-radius: var(--card-radius); padding: 3rem; text-align: center;">
+                <div style="background: var(--glass-bg); backdrop-filter: blur(14px); border: 1px solid rgba(0,210,255,0.25); border-radius: var(--card-radius); padding: 3rem; text-align: center;">
                     <h1 style="color: var(--primary-glow);">من نحن</h1>
                     <p style="font-size: 1.2rem; margin: 2rem 0;">smartafiliate.com هي منصة متخصصة في تقديم محتوى عربي احترافي حول الذكاء الاصطناعي، الأتمتة، والتسويق الرقمي.</p>
                     <p>نهدف لتمكين المسوقين العرب بأحدث المعرفة والأدوات.</p>
@@ -1488,7 +1500,7 @@
         function showContact(e) {
             if (e) e.preventDefault();
             document.getElementById('main-content').innerHTML = `
-                <div style="background: var(--glass-bg); backdrop-filter: blur(14px); border: 2px solid var(--primary-glow); border-radius: var(--card-radius); padding: 3rem; text-align: center;">
+                <div style="background: var(--glass-bg); backdrop-filter: blur(14px); border: 1px solid rgba(0,210,255,0.25); border-radius: var(--card-radius); padding: 3rem; text-align: center;">
                     <h1 style="color: var(--primary-glow);">اتصل بنا</h1>
                     <p style="font-size: 1.2rem; margin: 2rem 0;">📧 البريد الإلكتروني: info@smartafiliate.com</p>
                     <p>🐦 تويتر: @smartafiliate</p>
@@ -1505,7 +1517,7 @@
                     <i class="fas fa-arrow-right"></i> العودة للرئيسية
                 </div>
                 
-                <div style="background: var(--glass-bg); backdrop-filter: blur(14px); border: 2px solid var(--primary-glow); border-radius: var(--card-radius); padding: 3rem;">
+                <div style="background: var(--glass-bg); backdrop-filter: blur(14px); border: 1px solid rgba(0,210,255,0.25); border-radius: var(--card-radius); padding: 3rem;">
                     <h2 style="color: var(--primary-glow); margin-bottom: 2rem;">🔗 روابط خارجية للمقالات</h2>
                     <div style="display: grid; gap: 1rem;">
             `;
