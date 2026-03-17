@@ -1,0 +1,12 @@
+title: متجري الإلكتروني
+email: admin@example.com
+description: >- # وصف يظهر في محركات البحث
+  أفضل المنتجات التقنية بأقل الأسعار.
+baseurl: "" # اتركه فارغاً إذا كان هذا هو المستودع الرئيسي
+url: "https://yourusername.github.io"
+
+# إعدادات المعالج
+markdown: kramdown
+theme: minima # القالب الافتراضي
+plugins:
+  - jekyll-feed
