@@ -3,7 +3,7 @@ email: admin@example.com
 description: >- # وصف يظهر في محركات البحث
   أفضل المنتجات التقنية بأقل الأسعار.
 baseurl: "" # اتركه فارغاً إذا كان هذا هو المستودع الرئيسي
-url: "https://smartafiliate.github.io"
+url: "https://ibb199.github.io"
 
 # إعدادات المعالج
 markdown: kramdown
