@@ -1,12 +1,106 @@
-┌─────────────────────────────────────────────────┐
-│                                                 │
-│   🚀 SmartAffiliate                             │
-│                                                 │
-│   أكثر من 50 مقالة في                          │
-│   الذكاء الاصطناعي والأتمتة والتسويق           │
-│                                                 │
-│   smartaffiliate.cm                             │
-│                                                 │
-│   [شعار الموقع - تدرج أزرق - بنفسجي]           │
-│                                                 │
-└─────────────────────────────────────────────────┘
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>OG Image</title>
+
+<style>
+body{
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#111;
+font-family:Arial;
+}
+
+.og{
+width:1200px;
+height:630px;
+background:linear-gradient(135deg,#050816,#1a1a3a);
+color:white;
+padding:80px;
+box-sizing:border-box;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+/* الشعار */
+.logo{
+font-size:42px;
+font-weight:bold;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo span{
+background:linear-gradient(45deg,#00d2ff,#9d50bb);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* العنوان */
+.title{
+font-size:52px;
+line-height:1.4;
+font-weight:bold;
+margin-top:20px;
+}
+
+/* الرابط */
+.url{
+font-size:28px;
+color:#00d2ff;
+margin-top:20px;
+}
+
+/* الشريط السفلي */
+.bar{
+height:10px;
+width:250px;
+background:linear-gradient(45deg,#00d2ff,#9d50bb);
+border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="og" id="image">
+
+<div>
+<div class="logo">
+🚀 <span>SmartAffiliate</span>
+</div>
+
+<div class="title">
+أكثر من 50 مقالة في<br>
+الذكاء الاصطناعي والأتمتة والتسويق
+</div>
+</div>
+
+<div>
+<div class="url">smartafiliate.com</div>
+<div class="bar"></div>
+</div>
+
+</div>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<script>
+window.onload = () => {
+html2canvas(document.getElementById("image"), {scale:2}).then(canvas => {
+const link = document.createElement("a");
+link.download = "og-image.jpg";
+link.href = canvas.toDataURL("image/jpeg",0.9);
+link.click();
+});
+}
+</script>
+
+</body>
+</html>
