@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- أشكال سوداء للخلفيات الفاتحة -->
-  <path d="M25 45 L50 22 L75 45 L50 68 L25 45Z" fill="#1e293b" opacity="0.9"/>
-  <circle cx="100" cy="45" r="22" fill="#1e293b" opacity="0.9"/>
-  <path d="M150 27 L170 45 L150 63 L130 45 L150 27Z" fill="#1e293b" opacity="0.9"/>
-  
-  <text x="115" y="70" font-family="Arial" font-size="12" fill="#1e293b" text-anchor="middle" font-weight="bold">SMARTAFF</text>
-</svg>
