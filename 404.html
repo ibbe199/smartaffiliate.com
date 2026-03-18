@@ -4,62 +4,101 @@
     <meta charset="UTF-8">
     <title>الصفحة غير موجودة - SmartAffiliate</title>
     <meta name="robots" content="noindex, follow">
+
+    <!-- SEO تحسين -->
+    <meta name="description" content="الصفحة غير موجودة، يمكنك الرجوع للرئيسية أو تصفح أفضل أدوات الذكاء الاصطناعي والمراجعات.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: 'Segoe UI', sans-serif;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0;
-            padding: 20px;
         }
+
         .error-box {
-            background: rgba(255,255,255,0.95);
+            background: #fff;
             padding: 50px;
-            border-radius: 30px;
+            border-radius: 20px;
             text-align: center;
-            max-width: 500px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            max-width: 520px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
+
         h1 {
-            font-size: 5rem;
+            font-size: 80px;
             margin: 0;
             color: #667eea;
-            line-height: 1;
         }
+
         h2 {
+            margin: 10px 0;
             color: #333;
-            margin: 10px 0 20px;
         }
+
         p {
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
+
         .btn {
             display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            margin: 8px;
+            padding: 12px 25px;
+            background: #667eea;
+            color: #fff;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
             transition: 0.3s;
         }
+
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(102,126,234,0.3);
+            background: #5a67d8;
+        }
+
+        .links {
+            margin-top: 20px;
+        }
+
+        .links a {
+            display: block;
+            margin: 5px 0;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
     <div class="error-box">
         <h1>404</h1>
         <h2>الصفحة غير موجودة</h2>
-        <p>عذراً، الصفحة التي تبحث عنها قد تكون انتقلت أو تم حذفها</p>
-        <a href="/" class="btn"><i class="fas fa-home"></i> العودة للرئيسية</a>
+        <p>يبدو أن الرابط غير صحيح أو تم حذف الصفحة</p>
+
+        <!-- أزرار -->
+        <a href="/" class="btn"><i class="fas fa-home"></i> الصفحة الرئيسية</a>
+        <a href="/article1.html" class="btn">أفضل الأدوات</a>
+
+        <!-- روابط مفيدة -->
+        <div class="links">
+            <strong>روابط مهمة:</strong>
+            <a href="/article2.html">مراجعة ChatGPT</a>
+            <a href="/article3.html">أفضل أدوات AI</a>
+            <a href="/contact.html">تواصل معنا</a>
+        </div>
     </div>
 </body>
 </html>
