@@ -5,23 +5,28 @@
   <url>
     <loc>https://smartafiliate.com/</loc>
     <lastmod>2026-03-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
   </url>
 
-  <!-- الصفحات الأساسية -->
+  <!-- الصفحات -->
   <url>
-    <loc>https://smartafiliate.com/about.html</loc>
+    <loc>https://smartafiliate.com/about</loc>
     <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://smartafiliate.com/contact.html</loc>
+    <loc>https://smartafiliate.com/contact</loc>
     <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
 
   <!-- المقالات -->
+  <url>
+    <loc>https://smartafiliate.com/ai-marketing-guide</loc>
+    <lastmod>2026-03-15</lastmod>
+  </url>
+
+  <url>
+    <loc>https://smartafiliate.com/automation-tools-2026</loc>
+    <lastmod>2026-03-14</lastmod>
+  </url>
+
+</urlset>
