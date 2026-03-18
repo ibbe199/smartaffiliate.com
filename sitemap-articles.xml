@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- المقالة 1: الذكاء الاصطناعي -->
+
+  <!-- الصفحة الرئيسية -->
   <url>
-    <loc>https://smartafiliate.com/article1.html</loc>
+    <loc>https://smartafiliate.com/</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+
+  <!-- الصفحات الأساسية -->
+  <url>
+    <loc>https://smartafiliate.com/about</loc>
+    <lastmod>2026-03-10</lastmod>
+  </url>
+
+  <url>
+    <loc>https://smartafiliate.com/contact</loc>
+    <lastmod>2026-03-10</lastmod>
+  </url>
+
+  <!-- المقالات -->
+  <url>
+    <loc>https://smartafiliate.com/ai-marketing-guide</loc>
     <lastmod>2026-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
-  
-  <!-- المقالة 2: الأتمتة -->
+
   <url>
-    <loc>https://smartafiliate.com/article2.html</loc>
+    <loc>https://smartafiliate.com/automation-tools-2026</loc>
     <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
-  
-  <!-- أضف باقي المقالات بالمثل حتى 21 مقالة -->
-  
-  <!-- ملاحظة: يمكن إنشاء هذا الملف تلقائياً باستخدام PHP أو JavaScript -->
+
 </urlset>
